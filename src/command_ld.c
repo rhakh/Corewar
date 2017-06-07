@@ -18,7 +18,7 @@ void		ld_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_label_
 		else
 		{
 			if (find_label_by_name(table, lex_str->arr[*i + 2]) != NULL)
-				args[0] = *(lex_str->glob_pc) - find_label_by_name(table, lex_str->arr[*i + 2])->offset;
+				args[0] = find_label_by_name(table, lex_str->arr[*i + 2])->offset - *(lex_str->glob_pc);
 			else
 				print_error("unknown label in line ", lex_str);
 			*i += 1;
@@ -69,5 +69,5 @@ void		command_ld(t_array_string *lex_str, t_bcode **bcode, t_label_table *table,
 
 	build_args_ld(lex_str, args, op, i + 1, table);
 	add_bcode(bcode, new_bcode(2, op, args));
-	(op == 0x90) ? (*pc += 7) : (*pc += 5);
+	(op == (char)0x90) ? (*pc += 7) : (*pc += 5);
 }

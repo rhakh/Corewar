@@ -12,142 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72e192f5-e14d-4b07-8410-95d65946af2b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/._.DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/._.DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/._2014" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._bguy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._bjacob" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._brandazz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._cdivry" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._clafleur" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._dcohen" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._ekocevar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._esusseli" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._evlasova" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._fcorre" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gbir" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gjestin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gleger" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gmange" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gpetrov" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._gudepard" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._hmichals" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._hmoutaou" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._kelickel" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._kmonrose" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._ldesgoui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._lseguin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._lsirigna" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._mbacoux" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._mconraux" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._rabid-on" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._results.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._rmasse" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._sbuono" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._srabah-m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._tdemay" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._vrey" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/championships/2014/._ybouvet" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._bee_gees.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._bigzork.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._fluttershy.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._helltrain.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._turtle.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/champs/examples/._zork.s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._.DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._author" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._libft.a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._obj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/._srcs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._.DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._check_colour.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._check_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._check_spec_helper.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_atoi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_atoll.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_bzero.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_factorial.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_isalnum.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_isalpha.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_isascii.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_isdigit.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_isprint.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_itoa.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstadd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstdel.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstdelone.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstiter.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstmap.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstnew.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_lstrev.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memalloc.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memccpy.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memchr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memcmp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memcpy.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memdel.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memdup.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memmove.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_memset.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_power.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_printf.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putchar.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putchar_fd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putendl.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putendl_fd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putnbr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putnbr_fd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putstr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_putstr_fd.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_sqrt.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strcat.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strchr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strclr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strcmp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strcpy.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strdel.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strdup.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strequ.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_striter.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_striteri.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strjoin.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strlcat.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strlen.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strmap.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strmapi.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strncat.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strncmp.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strncpy.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strnequ.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strnew.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strnstr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strrchr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strsplit.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strstr.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strsub.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_strtrim.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_swap.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_tolower.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._ft_toupper.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_b_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_c_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_d_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_ls_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_next_line.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_o_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_p_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_result.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_s_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_u_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._get_x_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._libft.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._new_spec.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._numb_to_char.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._spec_helper.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._str_capitalizer.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/new_libft/srcs/._strp_functions.c" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/command_ld.c" afterPath="$PROJECT_DIR$/src/command_ld.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/command_live.c" afterPath="$PROJECT_DIR$/src/command_live.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,10 +25,61 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="syntax_analyze.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/syntax_analyze.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="command_live.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/command_live.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding>
+                <element signature="e#1220#1266#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="command_ld.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/command_ld.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1065">
+              <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/command_live.c" />
+        <option value="$PROJECT_DIR$/src/command_ld.c" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -171,7 +88,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1160" />
+    <option name="x" value="1136" />
     <option name="y" value="46" />
     <option name="width" value="1362" />
     <option name="height" value="1308" />
@@ -200,6 +117,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Corewar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Corewar" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Corewar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,7 +332,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="Corewar" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Corewar" TARGET_NAME="Corewar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Corewar" RUN_TARGET_NAME="Corewar">
+    <configuration default="false" name="Corewar" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="test_live.s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Corewar" TARGET_NAME="Corewar" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Corewar" RUN_TARGET_NAME="Corewar">
       <envs />
       <method />
     </configuration>
@@ -420,25 +351,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1496857881499</updated>
-      <workItem from="1496857885789" duration="194000" />
+      <workItem from="1496857885789" duration="1174000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194000" />
+    <option name="totallyTimeSpent" value="1174000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1160" y="46" width="1362" height="1308" extended-state="0" />
+    <frame x="1136" y="46" width="1362" height="1308" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15638767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39951575" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -457,7 +390,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/command_live.c</url>
+          <line>29</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/command_ld.c</url>
+          <line>49</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -505,6 +451,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/syntax_analyze.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command_live.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#1220#1266#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/command_ld.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
           <folding />
         </state>
       </provider>

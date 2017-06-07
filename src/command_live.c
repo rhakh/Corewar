@@ -10,6 +10,7 @@ int			is_error_live(t_array_string *lex_str, char op)
 
 void		live_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_label_table *table)
 {
+	(*i)++;
 	if (lex_str->arr[*i][0] == '%')
 	{
 		if (is_number(lex_str->arr[*i + 1]))
@@ -17,7 +18,7 @@ void		live_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_labe
 		else
 		{
 			if (find_label_by_name(table, lex_str->arr[*i + 2]) != NULL)
-				args[0] = *(lex_str->glob_pc) - find_label_by_name(table, lex_str->arr[*i + 2])->offset;
+				args[0] = find_label_by_name(table, lex_str->arr[*i + 2])->offset - *(lex_str->glob_pc);
 			else
 				print_error("unknown label in line ", lex_str);
 		}
