@@ -17,8 +17,6 @@ typedef struct			s_array_string
 	char 				**arr;
 	int 				i;				//str count
 	size_t 				size;
-	int 				is_error;
-	int 				*glob_pc;
 }						t_array_string;
 
 typedef struct			s_label_table
@@ -109,12 +107,34 @@ void				add_bcode(t_bcode **table, t_bcode *code);
 /*
 ** command_live.c
 */
-void				command_live(t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc);
+void				command_live(t_main *main, t_array_string *lex_str);
 
 /*
 ** command_ld.c
 */
-void				command_ld(t_main *main, t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc);
+void				command_ld(t_main *main, t_array_string *lex_str);
+
+/*
+** command_st.c
+*/
+void				command_st(t_main *main, t_array_string *lex_str);
+
+/*
+** command_add.c
+*/
+void				command_add(t_main *main, t_array_string *lex_str);
+
+/*
+** command_sub.c
+*/
+void				command_sub(t_main *main, t_array_string *lex_str);
+
+/*
+** command_and.c
+*/
+void				command_and(t_main *main, t_array_string *lex_str);
+
+
 
 /*
 * is_number.c
@@ -134,5 +154,6 @@ int 		get_op_code(t_array_string *lex_str, char *op, int i, int pair_bit);
 ** error_messenger.c
 */
 void		print_error(char *message, t_array_string *lex_str);
+void		print_syntax_error(char *message, t_array_string *lex_str, t_main *main);
 
 #endif

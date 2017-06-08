@@ -14,7 +14,6 @@ t_array_string	*new_array_string(size_t size)
 	arr->i = 0;
 	ft_bzero(arr->arr, sizeof(char *) * size);
 	arr->size = size;
-	arr->glob_pc = NULL;
 	return (arr);
 }
 

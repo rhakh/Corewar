@@ -6,331 +6,331 @@
 
 #IncludeRegexTransform: 
 
-/home/rhakh/Corewar/new_libft/srcs/check_colour.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_colour.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/check_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/check_spec_helper.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_spec_helper.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_atoi.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_atoi.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_atoll.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_atoll.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_bzero.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_bzero.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_factorial.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_factorial.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_isalnum.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isalnum.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_isalpha.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isalpha.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_isascii.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isascii.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_isdigit.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isdigit.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_isprint.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isprint.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_itoa.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_itoa.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstadd.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstadd.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstdel.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstdel.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstdelone.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstdelone.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstiter.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstiter.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstmap.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstmap.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstnew.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstnew.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_lstrev.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstrev.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memalloc.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memalloc.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memccpy.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memccpy.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memchr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memchr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memcmp.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memcmp.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memcpy.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memcpy.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memdel.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memdel.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memdup.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memdup.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memmove.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memmove.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_memset.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memset.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_power.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_power.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_printf.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_printf.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putchar.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putchar.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putchar_fd.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putchar_fd.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putendl.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putendl.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putendl_fd.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putendl_fd.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putnbr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putnbr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putnbr_fd.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putnbr_fd.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putstr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putstr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_putstr_fd.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putstr_fd.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_sqrt.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_sqrt.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strcat.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcat.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strchr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strchr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strclr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strclr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strcmp.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcmp.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strcpy.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcpy.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strdel.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strdel.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strdup.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strdup.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strequ.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strequ.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_striter.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_striter.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_striteri.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_striteri.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strjoin.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strjoin.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strlcat.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strlcat.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strlen.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strlen.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strmap.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strmap.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strmapi.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strmapi.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strncat.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncat.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strncmp.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncmp.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strncpy.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncpy.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strnequ.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnequ.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strnew.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnew.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strnstr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnstr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strrchr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strrchr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strsplit.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strsplit.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strstr.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strstr.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strsub.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strsub.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_strtrim.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strtrim.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_swap.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_swap.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_tolower.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_tolower.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/ft_toupper.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_toupper.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_b_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_b_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_c_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_c_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_d_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_d_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_ls_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_ls_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_next_line.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_next_line.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_o_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_o_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_p_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_p_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_result.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_result.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_s_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_s_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_u_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_u_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/get_x_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_x_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 stdarg.h
 -
 unistd.h
@@ -348,91 +348,107 @@ wctype.h
 limits.h
 -
 
-/home/rhakh/Corewar/new_libft/srcs/new_spec.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/new_spec.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/numb_to_char.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/numb_to_char.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/spec_helper.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/spec_helper.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/str_capitalizer.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/str_capitalizer.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/new_libft/srcs/strp_functions.c
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/strp_functions.c
 libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/home/rhakh/Corewar/src/array_string.c
+/nfs/2016/r/rhakh/Corewar/src/array_string.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/bcode.c
+/nfs/2016/r/rhakh/Corewar/src/bcode.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 stdio.h
 -
 
-/home/rhakh/Corewar/src/command_ld.c
+/nfs/2016/r/rhakh/Corewar/src/command_add.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/command_live.c
+/nfs/2016/r/rhakh/Corewar/src/command_and.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/data_constructor.c
+/nfs/2016/r/rhakh/Corewar/src/command_ld.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/error_messenger.c
+/nfs/2016/r/rhakh/Corewar/src/command_live.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/get_op_code.c
+/nfs/2016/r/rhakh/Corewar/src/command_st.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/is_number.c
+/nfs/2016/r/rhakh/Corewar/src/command_sub.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/label_table.c
+/nfs/2016/r/rhakh/Corewar/src/data_constructor.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/lex_analyze.c
+/nfs/2016/r/rhakh/Corewar/src/error_messenger.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/main.c
+/nfs/2016/r/rhakh/Corewar/src/get_op_code.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/is_number.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/label_table.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/lex_analyze.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/main.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/main.h
 op.h
-/home/rhakh/Corewar/src/op.h
+/nfs/2016/r/rhakh/Corewar/src/op.h
 ../new_libft/srcs/libft.h
-/home/rhakh/Corewar/new_libft/srcs/libft.h
+/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 fcntl.h
 -
 
-/home/rhakh/Corewar/src/op.c
+/nfs/2016/r/rhakh/Corewar/src/op.c
 op.h
-/home/rhakh/Corewar/src/op.h
+/nfs/2016/r/rhakh/Corewar/src/op.h
 
-/home/rhakh/Corewar/src/op.h
+/nfs/2016/r/rhakh/Corewar/src/op.h
 
-/home/rhakh/Corewar/src/split_line.c
+/nfs/2016/r/rhakh/Corewar/src/split_line.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
-/home/rhakh/Corewar/src/syntax_analyze.c
+/nfs/2016/r/rhakh/Corewar/src/syntax_analyze.c
 main.h
-/home/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 

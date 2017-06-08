@@ -1,31 +1,32 @@
 #include "main.h"
 
-int			is_error_live(t_array_string *lex_str, char op)
+int			is_error_live(t_main *main, t_array_string *lex_str, char op)
 {
 	if (op == (char)0x80)
 		return (0);
-	print_error("wrong argument in line", lex_str);
+	print_syntax_error("wrong argument in line", lex_str, main);
 	return (1);
 }
 
-void		live_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_label_table *table)
+int			live_first_arg(t_main *main, t_array_string *lex_str, int *i)
 {
 	(*i)++;
 	if (lex_str->arr[*i][0] == '%')
 	{
 		if (is_number(lex_str->arr[*i + 1]))
-			args[0] = ft_atoi(lex_str->arr[*i + 1]);
+			return (ft_atoi(lex_str->arr[*i + 1]));
 		else
 		{
-			if (find_label_by_name(table, lex_str->arr[*i + 2]) != NULL)
-				args[0] = find_label_by_name(table, lex_str->arr[*i + 2])->offset - *(lex_str->glob_pc);
+			if (find_label_by_name(main->table, lex_str->arr[*i + 2]) != NULL)
+				return (find_label_by_name(main->table, lex_str->arr[*i + 2])->offset - main->pc);
 			else
-				print_error("unknown label in line ", lex_str);
+				print_syntax_error("unknown label in line ", lex_str, main);
 		}
 	}
+	return (0);
 }
 
-void		command_live(t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc)
+void		command_live(t_main *main, t_array_string *lex_str)
 {
 	int 	i;
 	int 	args[3];
@@ -44,12 +45,12 @@ void		command_live(t_array_string *lex_str, t_bcode **bcode, t_label_table *tabl
 	print_string(lex_str);
 	ft_printf("ret = %d, OP_CODE = %x\n", ret, op);
 
-	if (ret == 0 || is_error_live(lex_str, op))
+	if (ret == 0 || is_error_live(main, lex_str, op))
 		return ;
 
-	live_first_arg(lex_str, args, op, &i, table);
-	add_bcode(bcode, new_bcode(1, 0, args));
-	*pc += 5;
+	args[0] = live_first_arg(main, lex_str, &i);
+	add_bcode(&main->bcode, new_bcode(1, 0, args));
+	main->pc += 5;
 }
 
 

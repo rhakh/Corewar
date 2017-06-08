@@ -33,5 +33,5 @@
 //	{0, 0, {0}, 0, 0, 0, 0, 0}
 //};
 
-//command name, arguments number, possible arguments, command id, ???, command description, modify the carry ?, ???
+//command name, arguments number, possible arguments, command id, cycle to done command ?, command description, modify the carry ?, dir as label
 //T_REG = 01, T_DIR = 10, T_IND = 11,
