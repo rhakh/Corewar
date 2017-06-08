@@ -36,6 +36,15 @@ typedef struct			s_bcode
 	void				*next;
 }						t_bcode;
 
+typedef struct			s_main
+{
+	t_data				*code;
+	t_array_string		**lex_strings;
+	t_label_table		*table;
+	t_bcode				*bcode;
+	int 				errors;
+	int 				pc;
+}						t_main;
 
 //typedef enum e_op
 //{
@@ -78,7 +87,7 @@ void				del_lex_strs(t_array_string ***str);
 /*
 ** syntax_analyze.c
 */
-void		syntax_analyze(t_array_string **lex_strs);
+void		syntax_analyze(t_main *main);
 
 /*
 ** label_table.c
@@ -105,7 +114,7 @@ void				command_live(t_array_string *lex_str, t_bcode **bcode, t_label_table *ta
 /*
 ** command_ld.c
 */
-void				command_ld(t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc);
+void				command_ld(t_main *main, t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc);
 
 /*
 * is_number.c

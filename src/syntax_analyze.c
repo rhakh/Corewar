@@ -14,7 +14,7 @@ void		set_labels(t_label_table **table, t_array_string **lex_strs)
 	}
 }
 
-void		create_com_line(t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc)
+void		create_com_line(t_main *main, t_array_string *lex_str)
 {
 	char 	*str;
 
@@ -26,46 +26,36 @@ void		create_com_line(t_array_string *lex_str, t_bcode **bcode, t_label_table *t
 		else
 			return;
 	}
-	(ft_strcmp(str, "live")) ? 0 : (command_live(lex_str, bcode, table, pc));
-	(ft_strcmp(str, "ld")) ? 0 : (command_ld(lex_str, bcode, table, pc));
+	(ft_strcmp(str, "live")) ? 0 : (command_live(lex_str, &main->bcode, main->table, &main->pc));
+	(ft_strcmp(str, "ld")) ? 0 : (command_ld(main, lex_str, &main->bcode, main->table, &main->pc));
 }
 
-void		build_bcode(t_array_string **lex_strs, t_bcode **bcode, t_label_table *table)
+void		build_bcode(t_main *main)
 {
 	int 	i;
-	int 	*pc;
 
 	i = 0;
-	if ((pc = (int *)malloc(sizeof(int))) == NULL)
-		return ;
-	*pc = 0;
-	while (lex_strs[i] != NULL)
+	while (main->lex_strings[i] != NULL)
 	{
-		lex_strs[i]->glob_pc = pc;
-		if (lex_strs[i]->i >= 2)
+		if (main->lex_strings[i]->i >= 2)
 		{
-			if (i < lex_strs[i]->i && !ft_strcmp(lex_strs[i]->arr[1], ":") && !is_command(lex_strs[i]->arr[0]))
-				find_label_by_name(table, lex_strs[i]->arr[0])->offset = *pc;
-			create_com_line(lex_strs[i], bcode, table, pc);
+			if (i < main->lex_strings[i]->i && !ft_strcmp(main->lex_strings[i]->arr[1], ":") && !is_command(main->lex_strings[i]->arr[0]))
+				find_label_by_name(main->table, main->lex_strings[i]->arr[0])->offset = main->pc;
+			create_com_line(main, main->lex_strings[i]);
 		}
 		else
 		{
 			ft_printf("{red}Error:{eoc} {yellow}wrong command or label: {eoc}");
-			print_string(lex_strs[i]);
+			print_string(main->lex_strings[i]);
 			ft_printf("\n");
 		}
 		i++;
 	}
 }
 
-void		syntax_analyze(t_array_string **lex_strs)
+void		syntax_analyze(t_main *main)
 {
-	t_label_table	*table;
-	t_bcode			*bcode;
-
-	bcode = NULL;
-	table = NULL;
-	set_labels(&table, lex_strs);
-	build_bcode(lex_strs, &bcode, table);
-	print_bcode(bcode);
+	set_labels(&(main->table), main->lex_strings);
+	build_bcode(main);
+	print_bcode(main->bcode);
 }

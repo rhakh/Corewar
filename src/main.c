@@ -5,10 +5,12 @@ int 	main(int argc, char **argv)
 	t_data			*code;
 	t_array_string	**lex_strings;
 	int 			fd;
+	t_main			main;
 
-//	argv[1] = "/home/rhakh/Corewar/champs/jumper.s";
-    argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
-    argv[1] = "/nfs/2016/r/rhakh/Corewar/test_live.s";
+	ft_bzero(&main, sizeof(t_main));
+	argv[1] = "/home/rhakh/Corewar/test_live.s";
+//    argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
+//    argv[1] = "/nfs/2016/r/rhakh/Corewar/test_live.s";
 	if (argc != 2)
 	{
 		ft_printf("{red}Error:{eoc} wrong number of arguments.\n");
@@ -19,17 +21,17 @@ int 	main(int argc, char **argv)
 		ft_printf("{red}Error:{eoc} can't open file '%s'.\n", argv[1]);
 		exit(2);
 	}
-	code = new_data(30);
-	read_data(fd, &code);
-	print_data(code);
+	main.code = new_data(30);
+	read_data(fd, &(main.code));
+	print_data(main.code);
 
-	lex_strings = lex_analyze(code);
-	print_lex(lex_strings);
+	main.lex_strings = lex_analyze(main.code);
+	print_lex(main.lex_strings);
 
-	syntax_analyze(lex_strings);
+	syntax_analyze(&main);
 
-	del_lex_strs(&lex_strings);
-	del_all_data(&code);
+	del_lex_strs(&main.lex_strings);
+	del_all_data(&main.code);
 	close(fd);
 	return (0);
 }

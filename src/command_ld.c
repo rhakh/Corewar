@@ -9,7 +9,7 @@ int			is_error_ld(t_array_string *lex_str, char op)
 	return (1);
 }
 
-void		ld_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_label_table *table)
+void		ld_first_arg(t_main *main, t_array_string *lex_str, int *args, char op, int *i, t_label_table *table)
 {
 	if (lex_str->arr[*i][0] == '%')//todo load by link
 	{
@@ -38,14 +38,14 @@ void		ld_first_arg(t_array_string *lex_str, int *args, char op, int *i, t_label_
 	*i += 1;
 }
 
-void		build_args_ld(t_array_string *lex_str, int *args, char op, int i, t_label_table *table)
+void		build_args_ld(t_main *main, t_array_string *lex_str, int *args, char op, int i)
 {
-	ld_first_arg(lex_str, args, op, &i, table);
+	ld_first_arg(main, lex_str, args, op, &i, main->table);
 	i++;
 	args[1] = ft_atoi(lex_str->arr[i] + 1);
 }
 
-void		command_ld(t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc)
+void		command_ld(t_main *main, t_array_string *lex_str, t_bcode **bcode, t_label_table *table, int *pc)
 {
 	int 	i;
 	int 	args[3];
@@ -67,7 +67,7 @@ void		command_ld(t_array_string *lex_str, t_bcode **bcode, t_label_table *table,
 	if (ret == 0 || is_error_ld(lex_str, op))
 		return ;
 
-	build_args_ld(lex_str, args, op, i + 1, table);
-	add_bcode(bcode, new_bcode(2, op, args));
-	(op == (char)0x90) ? (*pc += 7) : (*pc += 5);
+	build_args_ld(main, lex_str, args, op, i + 1);
+	add_bcode(&main->bcode, new_bcode(2, op, args));
+	(op == (char)0x90) ? (main->pc += 7) : (main->pc += 5);
 }
