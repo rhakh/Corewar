@@ -289,6 +289,11 @@ CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/command_live.c
 CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/command_or.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/command_or.c
+CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/op.h
+
 CMakeFiles/Corewar.dir/src/command_st.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/command_st.c.o: ../src/command_st.c
 CMakeFiles/Corewar.dir/src/command_st.c.o: ../src/main.h
@@ -299,6 +304,11 @@ CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/command_sub.c
 CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/command_xor.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/command_xor.c
+CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/op.h
+
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/data_constructor.c
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/main.h
@@ -308,6 +318,11 @@ CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/error_messenger.c
 CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/op.h
+
+CMakeFiles/Corewar.dir/src/get_arg.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/get_arg.c
+CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/op.h
 
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/get_op_code.c

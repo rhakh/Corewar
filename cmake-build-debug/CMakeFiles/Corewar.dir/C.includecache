@@ -394,6 +394,10 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/command_or.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/command_st.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
@@ -402,11 +406,19 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/command_xor.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/data_constructor.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/error_messenger.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/get_arg.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 

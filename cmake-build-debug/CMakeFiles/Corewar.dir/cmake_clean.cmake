@@ -103,6 +103,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src/command_add.c.o"
   "CMakeFiles/Corewar.dir/src/command_sub.c.o"
   "CMakeFiles/Corewar.dir/src/command_and.c.o"
+  "CMakeFiles/Corewar.dir/src/get_arg.c.o"
+  "CMakeFiles/Corewar.dir/src/command_or.c.o"
+  "CMakeFiles/Corewar.dir/src/command_xor.c.o"
   "Corewar.pdb"
   "Corewar"
 )

@@ -361,16 +361,25 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_live.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_or.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_st.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_sub.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_xor.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/data_constructor.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/error_messenger.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_arg.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_op_code.c">

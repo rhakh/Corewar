@@ -2607,6 +2607,33 @@ src/command_live.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_live.c.s
 .PHONY : src/command_live.c.s
 
+src/command_or.o: src/command_or.c.o
+
+.PHONY : src/command_or.o
+
+# target to build an object file
+src/command_or.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_or.c.o
+.PHONY : src/command_or.c.o
+
+src/command_or.i: src/command_or.c.i
+
+.PHONY : src/command_or.i
+
+# target to preprocess a source file
+src/command_or.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_or.c.i
+.PHONY : src/command_or.c.i
+
+src/command_or.s: src/command_or.c.s
+
+.PHONY : src/command_or.s
+
+# target to generate assembly for a file
+src/command_or.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_or.c.s
+.PHONY : src/command_or.c.s
+
 src/command_st.o: src/command_st.c.o
 
 .PHONY : src/command_st.o
@@ -2661,6 +2688,33 @@ src/command_sub.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_sub.c.s
 .PHONY : src/command_sub.c.s
 
+src/command_xor.o: src/command_xor.c.o
+
+.PHONY : src/command_xor.o
+
+# target to build an object file
+src/command_xor.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_xor.c.o
+.PHONY : src/command_xor.c.o
+
+src/command_xor.i: src/command_xor.c.i
+
+.PHONY : src/command_xor.i
+
+# target to preprocess a source file
+src/command_xor.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_xor.c.i
+.PHONY : src/command_xor.c.i
+
+src/command_xor.s: src/command_xor.c.s
+
+.PHONY : src/command_xor.s
+
+# target to generate assembly for a file
+src/command_xor.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_xor.c.s
+.PHONY : src/command_xor.c.s
+
 src/data_constructor.o: src/data_constructor.c.o
 
 .PHONY : src/data_constructor.o
@@ -2714,6 +2768,33 @@ src/error_messenger.s: src/error_messenger.c.s
 src/error_messenger.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/error_messenger.c.s
 .PHONY : src/error_messenger.c.s
+
+src/get_arg.o: src/get_arg.c.o
+
+.PHONY : src/get_arg.o
+
+# target to build an object file
+src/get_arg.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.o
+.PHONY : src/get_arg.c.o
+
+src/get_arg.i: src/get_arg.c.i
+
+.PHONY : src/get_arg.i
+
+# target to preprocess a source file
+src/get_arg.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.i
+.PHONY : src/get_arg.c.i
+
+src/get_arg.s: src/get_arg.c.s
+
+.PHONY : src/get_arg.s
+
+# target to generate assembly for a file
+src/get_arg.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.s
+.PHONY : src/get_arg.c.s
 
 src/get_op_code.o: src/get_op_code.c.o
 
@@ -3216,18 +3297,27 @@ help:
 	@echo "... src/command_live.o"
 	@echo "... src/command_live.i"
 	@echo "... src/command_live.s"
+	@echo "... src/command_or.o"
+	@echo "... src/command_or.i"
+	@echo "... src/command_or.s"
 	@echo "... src/command_st.o"
 	@echo "... src/command_st.i"
 	@echo "... src/command_st.s"
 	@echo "... src/command_sub.o"
 	@echo "... src/command_sub.i"
 	@echo "... src/command_sub.s"
+	@echo "... src/command_xor.o"
+	@echo "... src/command_xor.i"
+	@echo "... src/command_xor.s"
 	@echo "... src/data_constructor.o"
 	@echo "... src/data_constructor.i"
 	@echo "... src/data_constructor.s"
 	@echo "... src/error_messenger.o"
 	@echo "... src/error_messenger.i"
 	@echo "... src/error_messenger.s"
+	@echo "... src/get_arg.o"
+	@echo "... src/get_arg.i"
+	@echo "... src/get_arg.s"
 	@echo "... src/get_op_code.o"
 	@echo "... src/get_op_code.i"
 	@echo "... src/get_op_code.s"

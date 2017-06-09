@@ -1,15 +1,15 @@
 #include "main.h"
 
-void		set_labels(t_label_table **table, t_array_string **lex_strs)
+void		set_labels(t_main *main)
 {
 	int 	i;
 
 	i = 0;
-	while (lex_strs[i] != NULL)
+	while (main->lex_strings[i] != NULL)
 	{
-		if (lex_strs[i]->i > 1)
-			if (lex_strs[i]->arr[1] != NULL && !strcmp(lex_strs[i]->arr[1], ":"))
-				add_label_to_table(table, new_label_table(lex_strs[i]->arr[0], 0));
+		if (main->lex_strings[i]->i > 1)
+			if (main->lex_strings[i]->arr[1] != NULL && !strcmp(main->lex_strings[i]->arr[1], ":") && !is_command(main->lex_strings[i]->arr[0]))
+				add_label_to_table(&main->table, new_label_table(main->lex_strings[i]->arr[0], 0));
 		i++;
 	}
 }
@@ -32,6 +32,8 @@ void		create_com_line(t_main *main, t_array_string *lex_str)
 	(ft_strcmp(str, "add")) ? 0 : (command_add(main, lex_str));
 	(ft_strcmp(str, "sub")) ? 0 : (command_sub(main, lex_str));
 	(ft_strcmp(str, "and")) ? 0 : (command_and(main, lex_str));
+	(ft_strcmp(str, "or")) ? 0 : (command_or(main, lex_str));
+	(ft_strcmp(str, "xor")) ? 0 : (command_xor(main, lex_str));
 
 }
 
@@ -64,11 +66,12 @@ void		build_bcode(t_main *main)
 
 void		syntax_analyze(t_main *main)
 {
-	set_labels(&(main->table), main->lex_strings);
+	set_labels(main);
 
 	build_bcode(main);
 	del_bcode(&main->bcode);
 	main->pc = 0;
+	print_label_table(main->table);
 
 	build_bcode(main);
 	print_bcode(main->bcode);

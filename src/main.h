@@ -134,7 +134,16 @@ void				command_sub(t_main *main, t_array_string *lex_str);
 */
 void				command_and(t_main *main, t_array_string *lex_str);
 
+/*
+** command_or.c
+*/
+void				command_or(t_main *main, t_array_string *lex_str);
 
+/*
+** command_xor.c
+*/
+void				command_xor(t_main *main, t_array_string *lex_str);
+void				inc_pc_and_or_xor(t_main *main, char op);
 
 /*
 * is_number.c
@@ -148,12 +157,17 @@ int 				is_command(const char *str);
 /*
 ** get_op_code.c
 */
-int 		get_op_code(t_array_string *lex_str, char *op, int i, int pair_bit);
+int 				get_op_code(t_array_string *lex_str, char *op, int i, int pair_bit);
 
 /*
 ** error_messenger.c
 */
-void		print_error(char *message, t_array_string *lex_str);
-void		print_syntax_error(char *message, t_array_string *lex_str, t_main *main);
+void				print_error(char *message, t_array_string *lex_str);
+void				print_syntax_error(char *message, t_array_string *lex_str, t_main *main);
+
+/*
+** get_arg.c
+*/
+int 				get_arg(t_main *main, t_array_string *lex_str, int *i);
 
 #endif

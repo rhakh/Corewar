@@ -1,6 +1,6 @@
 #include "main.h"
 
-int			is_error_and(t_main *main, t_array_string *lex_str, char op)
+int			is_error_or(t_main *main, t_array_string *lex_str, char op)
 {
 	if (op == (char)0x54 ||
 		op == (char)0xa4 ||
@@ -12,7 +12,7 @@ int			is_error_and(t_main *main, t_array_string *lex_str, char op)
 	return (1);
 }
 
-void		build_args_and(t_main *main, t_array_string *lex_str, int *args, int i)
+void		build_args_or(t_main *main, t_array_string *lex_str, int *args, int i)
 {
 	args[0] = get_arg(main, lex_str, &i);
 	i += 2;
@@ -21,7 +21,7 @@ void		build_args_and(t_main *main, t_array_string *lex_str, int *args, int i)
 	args[2] = ft_atoi(lex_str->arr[i] + 1);
 }
 
-void		command_and(t_main *main, t_array_string *lex_str)
+void		command_or(t_main *main, t_array_string *lex_str)
 {
 	int 	i;
 	int 	args[3];
@@ -40,11 +40,11 @@ void		command_and(t_main *main, t_array_string *lex_str)
 	print_string(lex_str);
 	ft_printf("ret = %d, OP_CODE = %x\n", ret, op);
 
-	if (ret == 0 || is_error_and(main, lex_str, op))
+	if (ret == 0 || is_error_or(main, lex_str, op))
 		return ;
 
-	build_args_and(main, lex_str, args, i + 1);
-	add_bcode(&main->bcode, new_bcode(6, op, args));
+	build_args_or(main, lex_str, args, i + 1);
+	add_bcode(&main->bcode, new_bcode(7, op, args));
 	inc_pc_and_or_xor(main, op);
 }
 
