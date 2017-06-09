@@ -34,6 +34,14 @@ void		create_com_line(t_main *main, t_array_string *lex_str)
 	(ft_strcmp(str, "and")) ? 0 : (command_and(main, lex_str));
 	(ft_strcmp(str, "or")) ? 0 : (command_or(main, lex_str));
 	(ft_strcmp(str, "xor")) ? 0 : (command_xor(main, lex_str));
+	(ft_strcmp(str, "zjmp")) ? 0 : (command_zjmp(main, lex_str));
+	(ft_strcmp(str, "ldi")) ? 0 : (command_ldi(main, lex_str));
+	(ft_strcmp(str, "sti")) ? 0 : (command_sti(main, lex_str));
+	(ft_strcmp(str, "fork")) ? 0 : (command_fork(main, lex_str));
+	(ft_strcmp(str, "lld")) ? 0 : (command_lld(main, lex_str));
+	(ft_strcmp(str, "lldi")) ? 0 : (command_lldi(main, lex_str));
+	(ft_strcmp(str, "lfork")) ? 0 : (command_lfork(main, lex_str));
+	(ft_strcmp(str, "aff")) ? 0 : (command_aff(main, lex_str));
 
 }
 
@@ -71,7 +79,6 @@ void		syntax_analyze(t_main *main)
 	build_bcode(main);
 	del_bcode(&main->bcode);
 	main->pc = 0;
-	print_label_table(main->table);
 
 	build_bcode(main);
 	print_bcode(main->bcode);

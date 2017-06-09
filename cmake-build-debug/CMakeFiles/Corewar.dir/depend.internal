@@ -274,9 +274,19 @@ CMakeFiles/Corewar.dir/src/command_add.c.o
  /nfs/2016/r/rhakh/Corewar/src/command_add.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_aff.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_aff.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/command_and.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
  /nfs/2016/r/rhakh/Corewar/src/command_and.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_fork.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_fork.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/command_ld.c.o
@@ -284,9 +294,29 @@ CMakeFiles/Corewar.dir/src/command_ld.c.o
  /nfs/2016/r/rhakh/Corewar/src/command_ld.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_ldi.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_ldi.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_lfork.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_lfork.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/command_live.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
  /nfs/2016/r/rhakh/Corewar/src/command_live.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_lld.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_lld.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_lldi.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_lldi.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/command_or.c.o
@@ -299,6 +329,11 @@ CMakeFiles/Corewar.dir/src/command_st.c.o
  /nfs/2016/r/rhakh/Corewar/src/command_st.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_sti.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_sti.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/command_sub.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
  /nfs/2016/r/rhakh/Corewar/src/command_sub.c
@@ -307,6 +342,11 @@ CMakeFiles/Corewar.dir/src/command_sub.c.o
 CMakeFiles/Corewar.dir/src/command_xor.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
  /nfs/2016/r/rhakh/Corewar/src/command_xor.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/command_zjmp.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/command_zjmp.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/data_constructor.c.o

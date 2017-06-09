@@ -352,13 +352,31 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_add.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_aff.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_and.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_fork.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_ld.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_ldi.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lfork.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_live.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lld.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lldi.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_or.c">
@@ -367,10 +385,16 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_st.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_sti.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_sub.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_xor.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_zjmp.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/data_constructor.c">

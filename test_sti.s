@@ -1,27 +1,24 @@
 .name "bot"
 .comment "just a basic living bot"
 
-# live %66
-# live %66
-# l: live %66
-# live %66
-# live %66
-# ld %100, r7
-# sti r2, %30000000000 , %0
+la: live %2
 
-l: st r1, 6
-# live %87
+sti r1, r1, r1
+sti r2, %65, r1 
+sti r3, %65, %66
+sti r4, %:la, r1
+sti r5, %:li, r1
+sti r6, :li, r1 
+sti r7, :li, %65
+sti r8, :la, r1 
+sti r9, 8, r1
+sti r10, r1, %65 
+sti r11, r1, %:li
+sti r12, r1, %:la
+sti r13, r1, r2
 
-# ld :l, r2
-
-
-
-
-
-# live %99
-# st r2, 50
+li: live %1
 
 
-# live %1
 
-live %:l
+

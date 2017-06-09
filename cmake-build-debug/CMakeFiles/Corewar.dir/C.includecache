@@ -382,7 +382,15 @@ stdio.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/command_aff.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/command_and.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/command_fork.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
@@ -390,7 +398,23 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/command_ldi.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/command_lfork.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/command_live.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/command_lld.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/command_lldi.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
@@ -402,11 +426,19 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/command_sti.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/command_sub.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/command_xor.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/command_zjmp.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 

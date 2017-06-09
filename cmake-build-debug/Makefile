@@ -2526,6 +2526,33 @@ src/command_add.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_add.c.s
 .PHONY : src/command_add.c.s
 
+src/command_aff.o: src/command_aff.c.o
+
+.PHONY : src/command_aff.o
+
+# target to build an object file
+src/command_aff.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_aff.c.o
+.PHONY : src/command_aff.c.o
+
+src/command_aff.i: src/command_aff.c.i
+
+.PHONY : src/command_aff.i
+
+# target to preprocess a source file
+src/command_aff.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_aff.c.i
+.PHONY : src/command_aff.c.i
+
+src/command_aff.s: src/command_aff.c.s
+
+.PHONY : src/command_aff.s
+
+# target to generate assembly for a file
+src/command_aff.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_aff.c.s
+.PHONY : src/command_aff.c.s
+
 src/command_and.o: src/command_and.c.o
 
 .PHONY : src/command_and.o
@@ -2552,6 +2579,33 @@ src/command_and.s: src/command_and.c.s
 src/command_and.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_and.c.s
 .PHONY : src/command_and.c.s
+
+src/command_fork.o: src/command_fork.c.o
+
+.PHONY : src/command_fork.o
+
+# target to build an object file
+src/command_fork.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_fork.c.o
+.PHONY : src/command_fork.c.o
+
+src/command_fork.i: src/command_fork.c.i
+
+.PHONY : src/command_fork.i
+
+# target to preprocess a source file
+src/command_fork.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_fork.c.i
+.PHONY : src/command_fork.c.i
+
+src/command_fork.s: src/command_fork.c.s
+
+.PHONY : src/command_fork.s
+
+# target to generate assembly for a file
+src/command_fork.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_fork.c.s
+.PHONY : src/command_fork.c.s
 
 src/command_ld.o: src/command_ld.c.o
 
@@ -2580,6 +2634,60 @@ src/command_ld.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_ld.c.s
 .PHONY : src/command_ld.c.s
 
+src/command_ldi.o: src/command_ldi.c.o
+
+.PHONY : src/command_ldi.o
+
+# target to build an object file
+src/command_ldi.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_ldi.c.o
+.PHONY : src/command_ldi.c.o
+
+src/command_ldi.i: src/command_ldi.c.i
+
+.PHONY : src/command_ldi.i
+
+# target to preprocess a source file
+src/command_ldi.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_ldi.c.i
+.PHONY : src/command_ldi.c.i
+
+src/command_ldi.s: src/command_ldi.c.s
+
+.PHONY : src/command_ldi.s
+
+# target to generate assembly for a file
+src/command_ldi.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_ldi.c.s
+.PHONY : src/command_ldi.c.s
+
+src/command_lfork.o: src/command_lfork.c.o
+
+.PHONY : src/command_lfork.o
+
+# target to build an object file
+src/command_lfork.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lfork.c.o
+.PHONY : src/command_lfork.c.o
+
+src/command_lfork.i: src/command_lfork.c.i
+
+.PHONY : src/command_lfork.i
+
+# target to preprocess a source file
+src/command_lfork.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lfork.c.i
+.PHONY : src/command_lfork.c.i
+
+src/command_lfork.s: src/command_lfork.c.s
+
+.PHONY : src/command_lfork.s
+
+# target to generate assembly for a file
+src/command_lfork.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lfork.c.s
+.PHONY : src/command_lfork.c.s
+
 src/command_live.o: src/command_live.c.o
 
 .PHONY : src/command_live.o
@@ -2606,6 +2714,60 @@ src/command_live.s: src/command_live.c.s
 src/command_live.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_live.c.s
 .PHONY : src/command_live.c.s
+
+src/command_lld.o: src/command_lld.c.o
+
+.PHONY : src/command_lld.o
+
+# target to build an object file
+src/command_lld.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lld.c.o
+.PHONY : src/command_lld.c.o
+
+src/command_lld.i: src/command_lld.c.i
+
+.PHONY : src/command_lld.i
+
+# target to preprocess a source file
+src/command_lld.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lld.c.i
+.PHONY : src/command_lld.c.i
+
+src/command_lld.s: src/command_lld.c.s
+
+.PHONY : src/command_lld.s
+
+# target to generate assembly for a file
+src/command_lld.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lld.c.s
+.PHONY : src/command_lld.c.s
+
+src/command_lldi.o: src/command_lldi.c.o
+
+.PHONY : src/command_lldi.o
+
+# target to build an object file
+src/command_lldi.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lldi.c.o
+.PHONY : src/command_lldi.c.o
+
+src/command_lldi.i: src/command_lldi.c.i
+
+.PHONY : src/command_lldi.i
+
+# target to preprocess a source file
+src/command_lldi.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lldi.c.i
+.PHONY : src/command_lldi.c.i
+
+src/command_lldi.s: src/command_lldi.c.s
+
+.PHONY : src/command_lldi.s
+
+# target to generate assembly for a file
+src/command_lldi.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_lldi.c.s
+.PHONY : src/command_lldi.c.s
 
 src/command_or.o: src/command_or.c.o
 
@@ -2661,6 +2823,33 @@ src/command_st.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_st.c.s
 .PHONY : src/command_st.c.s
 
+src/command_sti.o: src/command_sti.c.o
+
+.PHONY : src/command_sti.o
+
+# target to build an object file
+src/command_sti.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_sti.c.o
+.PHONY : src/command_sti.c.o
+
+src/command_sti.i: src/command_sti.c.i
+
+.PHONY : src/command_sti.i
+
+# target to preprocess a source file
+src/command_sti.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_sti.c.i
+.PHONY : src/command_sti.c.i
+
+src/command_sti.s: src/command_sti.c.s
+
+.PHONY : src/command_sti.s
+
+# target to generate assembly for a file
+src/command_sti.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_sti.c.s
+.PHONY : src/command_sti.c.s
+
 src/command_sub.o: src/command_sub.c.o
 
 .PHONY : src/command_sub.o
@@ -2714,6 +2903,33 @@ src/command_xor.s: src/command_xor.c.s
 src/command_xor.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_xor.c.s
 .PHONY : src/command_xor.c.s
+
+src/command_zjmp.o: src/command_zjmp.c.o
+
+.PHONY : src/command_zjmp.o
+
+# target to build an object file
+src/command_zjmp.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_zjmp.c.o
+.PHONY : src/command_zjmp.c.o
+
+src/command_zjmp.i: src/command_zjmp.c.i
+
+.PHONY : src/command_zjmp.i
+
+# target to preprocess a source file
+src/command_zjmp.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_zjmp.c.i
+.PHONY : src/command_zjmp.c.i
+
+src/command_zjmp.s: src/command_zjmp.c.s
+
+.PHONY : src/command_zjmp.s
+
+# target to generate assembly for a file
+src/command_zjmp.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_zjmp.c.s
+.PHONY : src/command_zjmp.c.s
 
 src/data_constructor.o: src/data_constructor.c.o
 
@@ -3288,27 +3504,51 @@ help:
 	@echo "... src/command_add.o"
 	@echo "... src/command_add.i"
 	@echo "... src/command_add.s"
+	@echo "... src/command_aff.o"
+	@echo "... src/command_aff.i"
+	@echo "... src/command_aff.s"
 	@echo "... src/command_and.o"
 	@echo "... src/command_and.i"
 	@echo "... src/command_and.s"
+	@echo "... src/command_fork.o"
+	@echo "... src/command_fork.i"
+	@echo "... src/command_fork.s"
 	@echo "... src/command_ld.o"
 	@echo "... src/command_ld.i"
 	@echo "... src/command_ld.s"
+	@echo "... src/command_ldi.o"
+	@echo "... src/command_ldi.i"
+	@echo "... src/command_ldi.s"
+	@echo "... src/command_lfork.o"
+	@echo "... src/command_lfork.i"
+	@echo "... src/command_lfork.s"
 	@echo "... src/command_live.o"
 	@echo "... src/command_live.i"
 	@echo "... src/command_live.s"
+	@echo "... src/command_lld.o"
+	@echo "... src/command_lld.i"
+	@echo "... src/command_lld.s"
+	@echo "... src/command_lldi.o"
+	@echo "... src/command_lldi.i"
+	@echo "... src/command_lldi.s"
 	@echo "... src/command_or.o"
 	@echo "... src/command_or.i"
 	@echo "... src/command_or.s"
 	@echo "... src/command_st.o"
 	@echo "... src/command_st.i"
 	@echo "... src/command_st.s"
+	@echo "... src/command_sti.o"
+	@echo "... src/command_sti.i"
+	@echo "... src/command_sti.s"
 	@echo "... src/command_sub.o"
 	@echo "... src/command_sub.i"
 	@echo "... src/command_sub.s"
 	@echo "... src/command_xor.o"
 	@echo "... src/command_xor.i"
 	@echo "... src/command_xor.s"
+	@echo "... src/command_zjmp.o"
+	@echo "... src/command_zjmp.i"
+	@echo "... src/command_zjmp.s"
 	@echo "... src/data_constructor.o"
 	@echo "... src/data_constructor.i"
 	@echo "... src/data_constructor.s"

@@ -146,6 +146,47 @@ void				command_xor(t_main *main, t_array_string *lex_str);
 void				inc_pc_and_or_xor(t_main *main, char op);
 
 /*
+** command_zjmp.c
+*/
+void				command_zjmp(t_main *main, t_array_string *lex_str);
+
+
+/*
+** command_ldi.c
+*/
+void				command_ldi(t_main *main, t_array_string *lex_str);
+
+/*
+** command_sti.c
+*/
+void				command_sti(t_main *main, t_array_string *lex_str);
+
+/*
+** command_fork.c
+*/
+void				command_fork(t_main *main, t_array_string *lex_str);
+
+/*
+** command_lld.c
+*/
+void				command_lld(t_main *main, t_array_string *lex_str);
+
+/*
+** command_lldi.c
+*/
+void				command_lldi(t_main *main, t_array_string *lex_str);
+
+/*
+** command_lfork.c
+*/
+void				command_lfork(t_main *main, t_array_string *lex_str);
+
+/*
+** command_aff.c
+*/
+void				command_aff(t_main *main, t_array_string *lex_str);
+
+/*
 * is_number.c
 */
 int 				is_number(const char *str);
