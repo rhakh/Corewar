@@ -355,9 +355,6 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_aff.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_and.c">
-			<Option target="Corewar"/>
-		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_fork.c">
 			<Option target="Corewar"/>
 		</Unit>
@@ -397,6 +394,9 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_zjmp.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/create_command.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/data_constructor.c">
 			<Option target="Corewar"/>
 		</Unit>
@@ -404,6 +404,9 @@
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_arg.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_args_type.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_op_code.c">

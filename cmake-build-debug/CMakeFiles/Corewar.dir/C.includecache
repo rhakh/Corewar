@@ -386,10 +386,6 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/command_and.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
 /nfs/2016/r/rhakh/Corewar/src/command_fork.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
@@ -442,6 +438,10 @@ main.h
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
+/nfs/2016/r/rhakh/Corewar/src/create_command.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/data_constructor.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
@@ -451,6 +451,10 @@ main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/get_arg.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/get_args_type.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
@@ -483,8 +487,8 @@ fcntl.h
 -
 
 /nfs/2016/r/rhakh/Corewar/src/op.c
-op.h
-/nfs/2016/r/rhakh/Corewar/src/op.h
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/op.h
 

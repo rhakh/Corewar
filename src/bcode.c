@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 
-t_bcode				*new_bcode(char op, char op_code, int *args)
+t_bcode				*new_bcode(char op, char op_code[3], int *args)
 {
 	t_bcode			*new;
 
@@ -9,7 +9,7 @@ t_bcode				*new_bcode(char op, char op_code, int *args)
 	{
 		if ((new->op = (char *)malloc(sizeof(char))) == NULL)
 			return (NULL);
-		if ((new->op_code = (char *)malloc(sizeof(char))) == NULL)
+		if ((new->op_code = (char *)malloc(sizeof(char) * 3)) == NULL)
 			return (NULL);
 		if ((new->args = (int *)malloc(sizeof(int) * 3)) == NULL)
 			return (NULL);
@@ -17,7 +17,9 @@ t_bcode				*new_bcode(char op, char op_code, int *args)
 	else
 		return (NULL);
 	*new->op = op;
-	*new->op_code = op_code;
+	new->op_code[0] = op_code[0];
+	new->op_code[1] = op_code[1];
+	new->op_code[2] = op_code[2];
 	new->args[0] = args[0];
 	new->args[1] = args[1];
 	new->args[2] = args[2];
@@ -49,7 +51,7 @@ void				print_bcode(t_bcode *bcode)
 	ft_printf("{yellow}%s %s %8s %8s %8s{eoc}\n", "OP", "OC", "ARG1", "ARG2", "ARG3");
 	while (curr != NULL)
 	{
-		ft_printf("{yellow}%hh2x %hh2x %8x %8x %8x{eoc}\n", *curr->op, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
+		ft_printf("{yellow}%hh2x %8x %8x %8x{eoc}\n", *curr->op, /* *curr->op_code,*/ curr->args[0], curr->args[1], curr->args[2]);
 //		printf("%2hhx %2hhx %8x %8x %8x\n", *curr->op, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
 		curr = curr->next;
 	}

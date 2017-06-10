@@ -50,7 +50,7 @@ livex:	live %66
 	sti r1,%:boucle,%17
 	sti r1,%:boucle,%25
 	
-boucle:	live %66
+boucle:	live %67
 	fork %:goboucle0
 	live %66
 	fork %:boucle

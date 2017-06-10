@@ -102,7 +102,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src/command_st.c.o"
   "CMakeFiles/Corewar.dir/src/command_add.c.o"
   "CMakeFiles/Corewar.dir/src/command_sub.c.o"
-  "CMakeFiles/Corewar.dir/src/command_and.c.o"
+  "CMakeFiles/Corewar.dir/src/create_command.c.o"
   "CMakeFiles/Corewar.dir/src/get_arg.c.o"
   "CMakeFiles/Corewar.dir/src/command_or.c.o"
   "CMakeFiles/Corewar.dir/src/command_xor.c.o"
@@ -114,6 +114,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src/command_lldi.c.o"
   "CMakeFiles/Corewar.dir/src/command_lfork.c.o"
   "CMakeFiles/Corewar.dir/src/command_aff.c.o"
+  "CMakeFiles/Corewar.dir/src/get_args_type.c.o"
   "Corewar.pdb"
   "Corewar"
 )

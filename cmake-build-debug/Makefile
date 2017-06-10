@@ -2553,33 +2553,6 @@ src/command_aff.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_aff.c.s
 .PHONY : src/command_aff.c.s
 
-src/command_and.o: src/command_and.c.o
-
-.PHONY : src/command_and.o
-
-# target to build an object file
-src/command_and.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_and.c.o
-.PHONY : src/command_and.c.o
-
-src/command_and.i: src/command_and.c.i
-
-.PHONY : src/command_and.i
-
-# target to preprocess a source file
-src/command_and.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_and.c.i
-.PHONY : src/command_and.c.i
-
-src/command_and.s: src/command_and.c.s
-
-.PHONY : src/command_and.s
-
-# target to generate assembly for a file
-src/command_and.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_and.c.s
-.PHONY : src/command_and.c.s
-
 src/command_fork.o: src/command_fork.c.o
 
 .PHONY : src/command_fork.o
@@ -2931,6 +2904,33 @@ src/command_zjmp.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/command_zjmp.c.s
 .PHONY : src/command_zjmp.c.s
 
+src/create_command.o: src/create_command.c.o
+
+.PHONY : src/create_command.o
+
+# target to build an object file
+src/create_command.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.o
+.PHONY : src/create_command.c.o
+
+src/create_command.i: src/create_command.c.i
+
+.PHONY : src/create_command.i
+
+# target to preprocess a source file
+src/create_command.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.i
+.PHONY : src/create_command.c.i
+
+src/create_command.s: src/create_command.c.s
+
+.PHONY : src/create_command.s
+
+# target to generate assembly for a file
+src/create_command.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.s
+.PHONY : src/create_command.c.s
+
 src/data_constructor.o: src/data_constructor.c.o
 
 .PHONY : src/data_constructor.o
@@ -3011,6 +3011,33 @@ src/get_arg.s: src/get_arg.c.s
 src/get_arg.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.s
 .PHONY : src/get_arg.c.s
+
+src/get_args_type.o: src/get_args_type.c.o
+
+.PHONY : src/get_args_type.o
+
+# target to build an object file
+src/get_args_type.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.o
+.PHONY : src/get_args_type.c.o
+
+src/get_args_type.i: src/get_args_type.c.i
+
+.PHONY : src/get_args_type.i
+
+# target to preprocess a source file
+src/get_args_type.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.i
+.PHONY : src/get_args_type.c.i
+
+src/get_args_type.s: src/get_args_type.c.s
+
+.PHONY : src/get_args_type.s
+
+# target to generate assembly for a file
+src/get_args_type.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.s
+.PHONY : src/get_args_type.c.s
 
 src/get_op_code.o: src/get_op_code.c.o
 
@@ -3507,9 +3534,6 @@ help:
 	@echo "... src/command_aff.o"
 	@echo "... src/command_aff.i"
 	@echo "... src/command_aff.s"
-	@echo "... src/command_and.o"
-	@echo "... src/command_and.i"
-	@echo "... src/command_and.s"
 	@echo "... src/command_fork.o"
 	@echo "... src/command_fork.i"
 	@echo "... src/command_fork.s"
@@ -3549,6 +3573,9 @@ help:
 	@echo "... src/command_zjmp.o"
 	@echo "... src/command_zjmp.i"
 	@echo "... src/command_zjmp.s"
+	@echo "... src/create_command.o"
+	@echo "... src/create_command.i"
+	@echo "... src/create_command.s"
 	@echo "... src/data_constructor.o"
 	@echo "... src/data_constructor.i"
 	@echo "... src/data_constructor.s"
@@ -3558,6 +3585,9 @@ help:
 	@echo "... src/get_arg.o"
 	@echo "... src/get_arg.i"
 	@echo "... src/get_arg.s"
+	@echo "... src/get_args_type.o"
+	@echo "... src/get_args_type.i"
+	@echo "... src/get_args_type.s"
 	@echo "... src/get_op_code.o"
 	@echo "... src/get_op_code.i"
 	@echo "... src/get_op_code.s"

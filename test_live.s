@@ -30,8 +30,9 @@
 # ld %:link, r1
 # ld r1, %65
 
+live2: live %65
 live %:live1
-live1: ld %65, r1
-
+live1: live %65
+live %:live2
 
 

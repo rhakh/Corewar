@@ -44,6 +44,39 @@ typedef struct			s_main
 	int 				pc;
 }						t_main;
 
+typedef struct 			s_op
+{
+	char 				*name;
+	int 				n_arg;
+	char 				type_arg[3];
+	char 				command_number;
+	int 				cycles_to_done;
+	char 				*description;
+	char 				have_opcode;
+	char 				dir_as_label;
+}						t_op;
+
+extern t_op    op_tab[17];//[17] =
+//{
+//		{"live", 1, {T_DIR, 0, 0}, 1, 10, "alive", 0, 0},
+//		{"ld", 2, {T_DIR | T_IND, T_REG, 0}, 2, 5, "load", 1, 0},
+//		{"st", 2, {T_REG, T_IND | T_REG, 0}, 3, 5, "store", 1, 0},
+//		{"add", 3, {T_REG, T_REG, T_REG}, 4, 10, "addition", 1, 0},
+//		{"sub", 3, {T_REG, T_REG, T_REG}, 5, 10, "soustraction", 1, 0},
+//		{"and", 3, {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 6, 6, "et (and  r1, r2, r3   r1&r2 -> r3", 1, 0},
+//		{"or", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 7, 6, "ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 0},
+//		{"xor", 3, {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 8, 6, "ou (xor  r1, r2, r3   r1^r2 -> r3", 1, 0},
+//		{"zjmp", 1, {T_DIR, 0 , 0}, 9, 20, "jump if zero", 0, 1},
+//		{"ldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 10, 25, "load index", 1, 1},
+//		{"sti", 3, {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 11, 25, "store index", 1, 1},
+//		{"fork", 1, {T_DIR, 0 , 0}, 12, 800, "fork", 0, 1},
+//		{"lld", 2, {T_DIR | T_IND, T_REG, 0}, 13, 10, "long load", 1, 0},
+//		{"lldi", 3, {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 14, 50, "long load index", 1, 1},
+//		{"lfork", 1, {T_DIR}, 15, 1000, "long fork", 0, 1},
+//		{"aff", 1, {T_REG}, 16, 2, "aff", 1, 0},
+//		{0, 0, {0}, 0, 0, 0, 0, 0}
+//};
+
 //typedef enum e_op
 //{
 //	live = 1, ld, st, add ,sub, and, or, xor, zjmp,
@@ -99,7 +132,7 @@ t_label_table		*find_label_by_name(t_label_table *table, char *name);
 /*
 ** bcode.c
 */
-t_bcode				*new_bcode(char op, char op_code, int *args);
+t_bcode				*new_bcode(char op, char op_code[3], int *args);
 void				del_bcode(t_bcode **bcode);
 void				print_bcode(t_bcode *bcode);
 void				add_bcode(t_bcode **table, t_bcode *code);
@@ -132,7 +165,7 @@ void				command_sub(t_main *main, t_array_string *lex_str);
 /*
 ** command_and.c
 */
-void				command_and(t_main *main, t_array_string *lex_str);
+void				create_command(t_main *main, t_array_string *lex_str);
 
 /*
 ** command_or.c
@@ -199,6 +232,11 @@ int 				is_command(const char *str);
 ** get_op_code.c
 */
 int 				get_op_code(t_array_string *lex_str, char *op, int i, int pair_bit);
+
+/*
+** get_arg_type.c
+*/
+int				get_args_type(t_array_string *lex_str, char arg_type[3], int i, int pair_bit);
 
 /*
 ** error_messenger.c

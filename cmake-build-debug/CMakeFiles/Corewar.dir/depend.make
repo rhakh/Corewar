@@ -279,11 +279,6 @@ CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/command_aff.c
 CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/op.h
 
-CMakeFiles/Corewar.dir/src/command_and.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_and.c.o: ../src/command_and.c
-CMakeFiles/Corewar.dir/src/command_and.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_and.c.o: ../src/op.h
-
 CMakeFiles/Corewar.dir/src/command_fork.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/command_fork.c.o: ../src/command_fork.c
 CMakeFiles/Corewar.dir/src/command_fork.c.o: ../src/main.h
@@ -349,6 +344,11 @@ CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/command_zjmp.c
 CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/create_command.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/create_command.c
+CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/op.h
+
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/data_constructor.c
 CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/main.h
@@ -363,6 +363,11 @@ CMakeFiles/Corewar.dir/src/get_arg.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/get_arg.c
 CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/op.h
+
+CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/get_args_type.c
+CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/op.h
 
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/get_op_code.c
@@ -389,6 +394,8 @@ CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.c
 CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/main.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/op.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/op.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.c
 CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.h
 
