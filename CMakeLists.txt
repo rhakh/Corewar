@@ -93,8 +93,6 @@ set(SOURCE_FILES
         new_libft/srcs/strp_functions.c
         src/array_string.c
         src/bcode.c
-        src/command_ld.c
-        src/command_live.c
         src/data_constructor.c
         src/error_messenger.c
         src/get_op_code.c
@@ -106,6 +104,6 @@ set(SOURCE_FILES
         src/op.c
         src/op.h
         src/split_line.c
-        src/syntax_analyze.c src/command_st.c src/command_add.c src/command_sub.c src/create_command.c src/get_arg.c src/command_or.c src/command_xor.c src/command_zjmp.c src/command_ldi.c src/command_sti.c src/command_fork.c src/command_lld.c src/command_lldi.c src/command_lfork.c src/command_aff.c src/get_args_type.c)
+        src/syntax_analyze.c src/create_command.c src/get_arg.c src/get_args_type.c src/linked_list.c src/put_label.c)
 
 add_executable(Corewar ${SOURCE_FILES})

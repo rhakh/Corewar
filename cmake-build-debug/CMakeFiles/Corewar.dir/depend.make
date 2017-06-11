@@ -269,81 +269,6 @@ CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/bcode.c
 CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/op.h
 
-CMakeFiles/Corewar.dir/src/command_add.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_add.c.o: ../src/command_add.c
-CMakeFiles/Corewar.dir/src/command_add.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_add.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_aff.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/command_aff.c
-CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_aff.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_fork.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_fork.c.o: ../src/command_fork.c
-CMakeFiles/Corewar.dir/src/command_fork.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_fork.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_ld.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_ld.c.o: ../src/command_ld.c
-CMakeFiles/Corewar.dir/src/command_ld.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_ld.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_ldi.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_ldi.c.o: ../src/command_ldi.c
-CMakeFiles/Corewar.dir/src/command_ldi.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_ldi.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_lfork.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_lfork.c.o: ../src/command_lfork.c
-CMakeFiles/Corewar.dir/src/command_lfork.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_lfork.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_live.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/command_live.c
-CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_live.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_lld.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_lld.c.o: ../src/command_lld.c
-CMakeFiles/Corewar.dir/src/command_lld.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_lld.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_lldi.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_lldi.c.o: ../src/command_lldi.c
-CMakeFiles/Corewar.dir/src/command_lldi.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_lldi.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_or.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/command_or.c
-CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_or.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_st.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_st.c.o: ../src/command_st.c
-CMakeFiles/Corewar.dir/src/command_st.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_st.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_sti.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_sti.c.o: ../src/command_sti.c
-CMakeFiles/Corewar.dir/src/command_sti.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_sti.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_sub.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/command_sub.c
-CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_sub.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_xor.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/command_xor.c
-CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_xor.c.o: ../src/op.h
-
-CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/command_zjmp.c
-CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/command_zjmp.c.o: ../src/op.h
-
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/create_command.c
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/main.h
@@ -389,6 +314,11 @@ CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/lex_analyze.c
 CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/linked_list.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/linked_list.c
+CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/op.h
+
 CMakeFiles/Corewar.dir/src/main.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.c
 CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.h
@@ -398,6 +328,11 @@ CMakeFiles/Corewar.dir/src/op.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/op.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.c
 CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.h
+
+CMakeFiles/Corewar.dir/src/put_label.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/put_label.c
 
 CMakeFiles/Corewar.dir/src/split_line.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/split_line.c.o: ../src/main.h

@@ -28,11 +28,26 @@ typedef struct			s_label_table
 
 typedef struct			s_bcode
 {
-	char 				*op;
+	char 				*oper_number;
 	char 				*op_code;
+	char 				*arg_type;
 	int 				*args;
 	void				*next;
 }						t_bcode;
+
+typedef struct			s_put_label
+{
+	char 				*name;
+	int 				*arg;
+	int 				curr_pc;
+	void				(*print)(struct s_put_label*);
+}						t_put_label;
+
+typedef struct 			s_linked_list
+{
+	void 				*data;
+	void				*next;
+}						t_linked_list;
 
 typedef struct			s_main
 {
@@ -40,6 +55,7 @@ typedef struct			s_main
 	t_array_string		**lex_strings;
 	t_label_table		*table;
 	t_bcode				*bcode;
+	t_linked_list		*list;
 	int 				errors;
 	int 				pc;
 }						t_main;
@@ -138,86 +154,10 @@ void				print_bcode(t_bcode *bcode);
 void				add_bcode(t_bcode **table, t_bcode *code);
 
 /*
-** command_live.c
-*/
-void				command_live(t_main *main, t_array_string *lex_str);
-
-/*
-** command_ld.c
-*/
-void				command_ld(t_main *main, t_array_string *lex_str);
-
-/*
-** command_st.c
-*/
-void				command_st(t_main *main, t_array_string *lex_str);
-
-/*
-** command_add.c
-*/
-void				command_add(t_main *main, t_array_string *lex_str);
-
-/*
-** command_sub.c
-*/
-void				command_sub(t_main *main, t_array_string *lex_str);
-
-/*
-** command_and.c
+** create_command.c
 */
 void				create_command(t_main *main, t_array_string *lex_str);
 
-/*
-** command_or.c
-*/
-void				command_or(t_main *main, t_array_string *lex_str);
-
-/*
-** command_xor.c
-*/
-void				command_xor(t_main *main, t_array_string *lex_str);
-void				inc_pc_and_or_xor(t_main *main, char op);
-
-/*
-** command_zjmp.c
-*/
-void				command_zjmp(t_main *main, t_array_string *lex_str);
-
-
-/*
-** command_ldi.c
-*/
-void				command_ldi(t_main *main, t_array_string *lex_str);
-
-/*
-** command_sti.c
-*/
-void				command_sti(t_main *main, t_array_string *lex_str);
-
-/*
-** command_fork.c
-*/
-void				command_fork(t_main *main, t_array_string *lex_str);
-
-/*
-** command_lld.c
-*/
-void				command_lld(t_main *main, t_array_string *lex_str);
-
-/*
-** command_lldi.c
-*/
-void				command_lldi(t_main *main, t_array_string *lex_str);
-
-/*
-** command_lfork.c
-*/
-void				command_lfork(t_main *main, t_array_string *lex_str);
-
-/*
-** command_aff.c
-*/
-void				command_aff(t_main *main, t_array_string *lex_str);
 
 /*
 * is_number.c
@@ -231,7 +171,7 @@ int 				is_command(const char *str);
 /*
 ** get_op_code.c
 */
-int 				get_op_code(t_array_string *lex_str, char *op, int i, int pair_bit);
+char				get_op_code(char arg_type[3]);
 
 /*
 ** get_arg_type.c
@@ -247,6 +187,22 @@ void				print_syntax_error(char *message, t_array_string *lex_str, t_main *main)
 /*
 ** get_arg.c
 */
-int 				get_arg(t_main *main, t_array_string *lex_str, int *i);
+int 				get_arg(t_main *main, t_array_string *lex_str, int *i, int *arg);
+
+
+/*
+** put_label.c
+*/
+t_put_label			*new_put_label(char *name_label, int *arg, int curr_pc);
+void				del_put_label(t_put_label **put_label);
+
+/*
+** stack.c
+*/
+t_linked_list	*new_elem();
+void			list_push_back(t_linked_list **head, void *data);
+void			print_list_as_put_label(t_linked_list *curr);
+
+
 
 #endif

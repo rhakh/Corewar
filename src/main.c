@@ -11,6 +11,7 @@ int 	main(int argc, char **argv)
 //	argv[1] = "/home/rhakh/Corewar/test_live.s";
 //    argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
     argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
+//    argv[1] = "/nfs/2016/r/rhakh/Corewar/test_and.s";
 	if (argc != 2)
 	{
 		ft_printf("{red}Error:{eoc} wrong number of arguments.\n");
@@ -21,6 +22,7 @@ int 	main(int argc, char **argv)
 		ft_printf("{red}Error:{eoc} can't open file '%s'.\n", argv[1]);
 		exit(2);
 	}
+	main.list = NULL;
 	main.code = new_data(30);
 	read_data(fd, &(main.code));
 	print_data(main.code);

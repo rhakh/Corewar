@@ -378,66 +378,6 @@ main.h
 stdio.h
 -
 
-/nfs/2016/r/rhakh/Corewar/src/command_add.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_aff.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_fork.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_ld.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_ldi.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_lfork.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_live.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_lld.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_lldi.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_or.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_st.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_sti.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_sub.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_xor.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
-/nfs/2016/r/rhakh/Corewar/src/command_zjmp.c
-main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-
 /nfs/2016/r/rhakh/Corewar/src/create_command.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
@@ -461,6 +401,8 @@ main.h
 /nfs/2016/r/rhakh/Corewar/src/get_op_code.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
+stdio.h
+-
 
 /nfs/2016/r/rhakh/Corewar/src/is_number.c
 main.h
@@ -471,6 +413,10 @@ main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/lex_analyze.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
+/nfs/2016/r/rhakh/Corewar/src/linked_list.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
@@ -491,6 +437,10 @@ main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/op.h
+
+/nfs/2016/r/rhakh/Corewar/src/put_label.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
 
 /nfs/2016/r/rhakh/Corewar/src/split_line.c
 main.h

@@ -349,51 +349,6 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/bcode.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_add.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_aff.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_fork.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_ld.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_ldi.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lfork.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_live.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lld.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_lldi.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_or.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_st.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_sti.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_sub.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_xor.c">
-			<Option target="Corewar"/>
-		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/command_zjmp.c">
-			<Option target="Corewar"/>
-		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/create_command.c">
 			<Option target="Corewar"/>
 		</Unit>
@@ -421,6 +376,9 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/lex_analyze.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/linked_list.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/main.c">
 			<Option target="Corewar"/>
 		</Unit>
@@ -431,6 +389,9 @@
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/op.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/put_label.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/split_line.c">
