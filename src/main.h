@@ -40,7 +40,7 @@ typedef struct			s_put_label
 	char 				*name;
 	int 				*arg;
 	int 				curr_pc;
-	void				(*print)(struct s_put_label*);
+	void				(* print)();
 }						t_put_label;
 
 typedef struct 			s_linked_list
@@ -201,7 +201,7 @@ void				del_put_label(t_put_label **put_label);
 */
 t_linked_list	*new_elem();
 void			list_push_back(t_linked_list **head, void *data);
-void			print_list_as_put_label(t_linked_list *curr);
+void			print_list(t_linked_list *curr, void (* print)(void *));
 
 
 

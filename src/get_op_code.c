@@ -62,11 +62,6 @@ char 		get_op_code(char arg_type[3])
 	op = 0;
 	while (i < 3)
 	{
-		ft_printf("nbr_REG = %#0hhb\n", (char)0b00000001 << (6 - i * 2));
-		ft_printf("nbr_DIR = %#0hhb\n", (char)0b00000010 << (6 - i * 2));
-		ft_printf("nbr_IND = %#0hhb\n", (char)0b00000011 << (6 - i * 2));
-
-
 		(arg_type[i] == T_REG) ? (op = ((char)0b00000001 << (6 - i * 2)) | op) : 0;
 		(arg_type[i] == T_DIR) ? (op = ((char)0b00000010 << (6 - i * 2)) | op) : 0;
 		(arg_type[i] == T_IND) ? (op = ((char)0b00000011 << (6 - i * 2)) | op) : 0;

@@ -53,7 +53,6 @@ void				print_bcode(t_bcode *bcode)
 	while (curr != NULL)
 	{
 		ft_printf("{yellow}%hh3x %hh2x %8x %8x %8x{eoc}\n", *curr->oper_number, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
-//		printf("%2hhx %2hhx %8x %8x %8x\n", *curr->op, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
 		curr = curr->next;
 	}
 	ft_printf("\n");

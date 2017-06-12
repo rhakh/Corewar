@@ -35,16 +35,16 @@ void			list_push_back(t_linked_list **head, void *data)
 	}
 }
 
-void			print_list_as_put_label(t_linked_list *curr)
+void			print_list(t_linked_list *curr, void (* function_for_print)(void *))
 {
-	t_put_label	*label;
+	void		*label;
 
 	while (curr != NULL)
 	{
 		label = curr->data;
 		if (label != NULL)
 		{
-			label->print(label);
+			function_for_print(label);
 			ft_printf("\n");
 		}
 		curr = curr->next;

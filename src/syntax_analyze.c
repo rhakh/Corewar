@@ -54,7 +54,6 @@ void		build_bcode(t_main *main)
 			print_string(main->lex_strings[i]);
 			ft_printf("\n");
 		}
-		print_list_as_put_label(main->list);
 		i++;
 	}
 }
@@ -66,7 +65,7 @@ void		syntax_analyze(t_main *main)
 	build_bcode(main);
 
 	print_label_table(main->table);
-	print_list_as_put_label(main->list);
+	print_list(main->list, ((t_put_label *)main->list->data)->print);
 
 	correct_labels(main);
 	print_bcode(main->bcode);
