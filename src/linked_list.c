@@ -1,6 +1,6 @@
 #include "main.h"
 
-t_linked_list			*new_elem()
+t_linked_list			*new_linked_list_elem()
 {
 	t_linked_list		*new;
 
@@ -10,7 +10,7 @@ t_linked_list			*new_elem()
 	return (new);
 }
 
-void			list_push_back(t_linked_list **head, void *data)
+void			linked_list_push_back(t_linked_list **head, void *data)
 {
 	t_linked_list		*curr;
 	t_linked_list		*ptr;
@@ -22,20 +22,20 @@ void			list_push_back(t_linked_list **head, void *data)
 		{
 			while (curr->next != NULL)
 				curr = curr->next;
-			curr->next = new_elem();
+			curr->next = new_linked_list_elem();
 			ptr = curr->next;
 			ptr->data = data;
 		}
 		else
 		{
-			curr = new_elem();
+			curr = new_linked_list_elem();
 			curr->data = data;
 			*head = curr;
 		}
 	}
 }
 
-void			print_list(t_linked_list *curr, void (* function_for_print)(void *))
+void			print_linked_list(t_linked_list *curr, void (* function_for_print)(void *))
 {
 	void		*label;
 
@@ -48,5 +48,30 @@ void			print_list(t_linked_list *curr, void (* function_for_print)(void *))
 			ft_printf("\n");
 		}
 		curr = curr->next;
+	}
+}
+
+void			del_linked_list(t_linked_list **head, void (* function_for_del_data)(void *))
+{
+	t_linked_list	*curr;
+	t_linked_list	*next;
+
+	curr = *head;
+	if (curr != NULL)
+	{
+		next = curr;
+		while (next != NULL)
+		{
+			if (curr != NULL)
+			{
+				next = curr->next;
+				function_for_del_data(&curr->data);
+				curr->data = NULL;
+				curr->next = NULL;
+				free(curr);
+				curr = next;
+			}
+		}
+		*head = NULL;
 	}
 }

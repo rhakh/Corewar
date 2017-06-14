@@ -11,8 +11,6 @@ t_bcode				*new_bcode(char oper_number, char arg_type[3], int *args)
 			return (NULL);
 		if ((new->arg_type = (char *)malloc(sizeof(char) * 3)) == NULL)
 			return (NULL);
-		if ((new->args = (int *)malloc(sizeof(int) * 3)) == NULL)
-			return (NULL);
 		if ((new->op_code = (char *)malloc(sizeof(char))) == NULL)
 			return (NULL);
 	}
@@ -34,6 +32,8 @@ void				del_bcode(t_bcode **bcode)
 		del_bcode((t_bcode **)&((*bcode)->next));
 	if ((*bcode)->oper_number != NULL)
 		free((*bcode)->oper_number);
+	if ((*bcode)->arg_type != NULL)
+		free((*bcode)->arg_type);
 	if ((*bcode)->op_code != NULL)
 		free((*bcode)->op_code);
 	if ((*bcode)->args != NULL)

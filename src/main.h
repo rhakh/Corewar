@@ -40,7 +40,8 @@ typedef struct			s_put_label
 	char 				*name;
 	int 				*arg;
 	int 				curr_pc;
-	void				(* print)();
+	void				(* print_put_label)();
+	void				(* del_put_label)();
 }						t_put_label;
 
 typedef struct 			s_linked_list
@@ -183,6 +184,7 @@ int				get_args_type(t_array_string *lex_str, char arg_type[3], int i, int pair_
 */
 void				print_error(char *message, t_array_string *lex_str);
 void				print_syntax_error(char *message, t_array_string *lex_str, t_main *main);
+void				print_syntax_error_label(char *message, char *label_name, t_main *main);
 
 /*
 ** get_arg.c
@@ -197,11 +199,12 @@ t_put_label			*new_put_label(char *name_label, int *arg, int curr_pc);
 void				del_put_label(t_put_label **put_label);
 
 /*
-** stack.c
+** linked_list.c
 */
-t_linked_list	*new_elem();
-void			list_push_back(t_linked_list **head, void *data);
-void			print_list(t_linked_list *curr, void (* print)(void *));
+t_linked_list	*new_linked_list_elem();
+void			linked_list_push_back(t_linked_list **head, void *data);
+void			print_linked_list(t_linked_list *curr, void (* print)(void *));
+void			del_linked_list(t_linked_list **head, void (* function_for_del_data)(void *));
 
 
 

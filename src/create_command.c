@@ -44,7 +44,6 @@ void  		inc_pc(t_main *main, char op[3], int n_command)
 			main->pc += 4;
 		i++;
 	}
-	ft_printf("--------- PC = %d\n", main->pc);
 }
 
 int 		is_error_args(t_main *main, t_array_string *lex_str, char op[3], int n_command)
@@ -91,11 +90,14 @@ void		create_command(t_main *main, t_array_string *lex_str)
 	n_command = find_command_by_name(lex_str->arr[i]);
 
 	ret = get_args_type(lex_str, arg_type, i + 1, 1);
-	print_string(lex_str);
-	ft_printf("ret = %d, OP_CODE = %x\n", ret, arg_type);
+//	print_string(lex_str);
+//	ft_printf("ret = %d, OP_CODE = %x\n", ret, arg_type);
 
 	if (ret == 0 || is_error_args(main, lex_str, arg_type, n_command))
+	{
+		free(args);
 		return ;
+	}
 
 	build_args(main, lex_str, args, i + 1);
 	add_bcode(&main->bcode, new_bcode(op_tab[n_command].command_number, arg_type, args));

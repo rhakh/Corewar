@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 project(Corewar)
 
 set(CMAKE_C_FLAGS -std=c99)
+set(CMAKE_C_FLAGS "-Wall -Werror -Wextra")
 
 set(SOURCE_FILES
         new_libft/srcs/check_colour.c

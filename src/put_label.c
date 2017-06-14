@@ -1,6 +1,17 @@
 #include "main.h"
 
-void			print_label(t_put_label *label)
+void			del_put_label(t_put_label **put_label)
+{
+	if (*put_label != NULL)
+	{
+		free((*put_label)->name);
+		free(*put_label);
+		put_label = NULL;
+	}
+}
+
+
+void			print_put_label(t_put_label *label)
 {
 	ft_printf("label_name = %s, &arg = %p, *arg = %d, curr_pc = %d", label->name, label->arg, *label->arg, label->curr_pc);
 }
@@ -13,17 +24,9 @@ t_put_label		*new_put_label(char *name_label, int *arg, int curr_pc)
 		return (NULL);
 	new->name = ft_strdup(name_label);
 	new->arg = arg;
-	new->print = &print_label;
+	new->print_put_label = &print_put_label;
+	new->del_put_label = &del_put_label;
 	new->curr_pc = curr_pc;
 	return (new);
 }
 
-void			del_put_label(t_put_label **put_label)
-{
-	if (*put_label != NULL)
-	{
-		free((*put_label)->name);
-		free(*put_label);
-		put_label = NULL;
-	}
-}

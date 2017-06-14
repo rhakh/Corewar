@@ -1,31 +1,24 @@
 #include "main.h"
 
-void		set_labels(t_main *main)
-{
-	int 	i;
-
-	i = 0;
-	while (main->lex_strings[i] != NULL)
-	{
-		if (main->lex_strings[i]->i > 1)
-			if (main->lex_strings[i]->arr[1] != NULL && !strcmp(main->lex_strings[i]->arr[1], ":") && !is_command(main->lex_strings[i]->arr[0]))
-				add_label_to_table(&main->table, new_label_table(main->lex_strings[i]->arr[0], -1));
-		i++;
-	}
-}
-
 void		correct_labels(t_main *main)
 {
 	t_linked_list	*curr;
-	t_put_label		*label;
+	t_label_table	*curr_label;
+	t_put_label		*put_label;
 
 	curr = main->list;
 	while (curr)
 	{
-		label = curr->data;
-		if (label)
+		put_label = curr->data;
+		if (put_label)
 		{
-			*label->arg = find_label_by_name(main->table, label->name)->offset - label->curr_pc;
+			curr_label = find_label_by_name(main->table, put_label->name);
+			if (curr_label != NULL)
+				*put_label->arg = curr_label->offset - put_label->curr_pc;
+			else
+			{
+				print_syntax_error_label(" there isn't link named ", put_label->name, main);
+			}
 		}
 		curr = curr->next;
 	}
@@ -43,7 +36,8 @@ void		build_bcode(t_main *main)
 		{
 			if (1 < main->lex_strings[i]->i && !ft_strcmp(main->lex_strings[i]->arr[1], ":") && !is_command(main->lex_strings[i]->arr[0]))
 			{
-				link = find_label_by_name(main->table, main->lex_strings[i]->arr[0]);
+				link = new_label_table(main->lex_strings[i]->arr[0], -1);
+				add_label_to_table(&main->table, link);
 				link->offset = main->pc;
 			}
 			create_command(main, main->lex_strings[i]);
@@ -60,13 +54,16 @@ void		build_bcode(t_main *main)
 
 void		syntax_analyze(t_main *main)
 {
-	set_labels(main);
-
 	build_bcode(main);
 
 	print_label_table(main->table);
-	print_list(main->list, ((t_put_label *)main->list->data)->print);
+	if (main->list != NULL)
+	{
+		ft_printf("{red}PUT_LABEL LINKED_LIST{eoc}\n");
+		print_linked_list(main->list, ((t_put_label *)main->list->data)->print_put_label);
+	}
 
 	correct_labels(main);
-	print_bcode(main->bcode);
+	if (!main->errors)
+		print_bcode(main->bcode);
 }
