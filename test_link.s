@@ -7,3 +7,5 @@ live %:begin
 
 
 
+https]
+        proxy = http://91.224.203.5:8080
