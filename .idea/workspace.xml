@@ -11,7 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72e192f5-e14d-4b07-8410-95d65946af2b" name="Default" comment="" />
+    <list default="true" id="72e192f5-e14d-4b07-8410-95d65946af2b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_link.s" afterPath="$PROJECT_DIR$/test_link.s" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,8 +93,8 @@
       <file leaf-file-name="test_link.s" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_link.s">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -465,12 +467,12 @@
       <workItem from="1497175501879" duration="16945000" />
       <workItem from="1497283288134" duration="4911000" />
       <workItem from="1497372097036" duration="6918000" />
-      <workItem from="1497459352786" duration="993000" />
+      <workItem from="1497459352786" duration="1273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72478000" />
+    <option name="totallyTimeSpent" value="72758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1084" y="48" width="1427" height="1302" extended-state="0" />
@@ -748,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_link.s">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
