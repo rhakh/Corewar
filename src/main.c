@@ -41,8 +41,6 @@ int 	main(int argc, char **argv)
 }
 
 //todo trim input string
-//todo recode is_link
-//todo recode is_register
 /*
  * argv[1] = "/home/rhakh/Corewar/test_live.s";
  *

@@ -7,7 +7,7 @@ int 	is_register(const char *str)
 	i = 0;
 	if (str[i] != 'r')
 		return (0);
-	if (ft_atoi(str + 1) < 1 || ft_atoi(str + 1) > 16)
+	if (ft_atoi(str + 1) < 1 || ft_atoi(str + 1) > REG_NUMBER)
 		return (0);
 	if (ft_strlen(str + 1) > 2)
 		return (0);
@@ -21,7 +21,7 @@ int 	is_link(const char *str)
 	i = 0;
 	while (str[i] != 0)
 	{
-		if (!ft_isalnum(str[i]) && str[i] != '_')
+		if (ft_strchr(LABEL_CHARS, str[i]) == NULL)
 			return (0);
 		i++;
 	}
@@ -56,24 +56,14 @@ int 	is_number(const char *str)
 
 int 	is_command(const char *str)
 {
-	int ret;
+	int i;
 
-	ret = 0;
-	(ft_strcmp(str, "live")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "ld")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "st")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "add")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "sub")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "and")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "or")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "xor")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "zjmp")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "ldi")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "sti")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "fork")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "lld")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "lldi")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "lfork")) ? 0 : (ret = 1);
-	(ft_strcmp(str, "aff")) ? 0 : (ret = 1);
-	return (ret);
+	i = 0;
+	while (op_tab[i].name)
+	{
+		if (!ft_strcmp(str, op_tab[i].name))
+			return (1);
+		i++;
+	}
+	return (0);
 }

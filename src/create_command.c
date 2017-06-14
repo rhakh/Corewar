@@ -82,23 +82,15 @@ void		create_command(t_main *main, t_array_string *lex_str)
 		return ;
 	ft_bzero(arg_type, sizeof(char) * 3);
 	ft_bzero(args, sizeof(int) * 3);
-
-
 	if (lex_str->i >= 1 && !ft_strcmp(lex_str->arr[1], ":") && !is_command(lex_str->arr[0]))
 		i = 2;
-
 	n_command = find_command_by_name(lex_str->arr[i]);
-
 	ret = get_args_type(lex_str, arg_type, i + 1, 1);
-//	print_string(lex_str);
-//	ft_printf("ret = %d, OP_CODE = %x\n", ret, arg_type);
-
 	if (ret == 0 || is_error_args(main, lex_str, arg_type, n_command))
 	{
 		free(args);
 		return ;
 	}
-
 	build_args(main, lex_str, args, i + 1);
 	add_bcode(&main->bcode, new_bcode(op_tab[n_command].command_number, arg_type, args));
 	inc_pc(main, arg_type, n_command);

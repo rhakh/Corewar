@@ -16,9 +16,7 @@ void		correct_labels(t_main *main)
 			if (curr_label != NULL)
 				*put_label->arg = curr_label->offset - put_label->curr_pc;
 			else
-			{
 				print_syntax_error_label(" there isn't link named ", put_label->name, main);
-			}
 		}
 		curr = curr->next;
 	}
@@ -43,11 +41,7 @@ void		build_bcode(t_main *main)
 			create_command(main, main->lex_strings[i]);
 		}
 		else
-		{
-			ft_printf("{red}Error:{eoc} {yellow}wrong command or label: {eoc}");
-			print_string(main->lex_strings[i]);
-			ft_printf("\n");
-		}
+			print_syntax_error(" wrong command or label: ", main->lex_strings[i], main);
 		i++;
 	}
 }

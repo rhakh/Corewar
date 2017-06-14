@@ -59,6 +59,8 @@ typedef struct			s_main
 	t_linked_list		*list;
 	int 				errors;
 	int 				pc;
+	char 				name[PROG_NAME_LENGTH];
+	char 				comment[COMMENT_LENGTH];
 }						t_main;
 
 typedef struct 			s_op
