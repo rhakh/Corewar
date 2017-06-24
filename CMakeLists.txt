@@ -105,6 +105,6 @@ set(SOURCE_FILES
         src/op.c
         src/op.h
         src/split_line.c
-        src/syntax_analyze.c src/create_command.c src/get_arg.c src/get_args_type.c src/linked_list.c src/put_label.c)
+        src/syntax_analyze.c src/create_command.c src/get_arg.c src/get_args_type.c src/linked_list.c src/put_label.c src/write_bcode.c)
 
 add_executable(Corewar ${SOURCE_FILES})

@@ -28,17 +28,17 @@ t_array_string		*split_line(char *code)
 			save_line(arr, buff);
 			add_str_to_array_string(arr, ft_strdup(","));
 		}
-		else if (code[i] == '%')
+		else if ((code[i] == '%') && (is_printable(code[i - 1]) || is_printable(code[i + 1])))
 		{
 			save_line(arr, buff);
 			add_str_to_array_string(arr, ft_strdup("%"));
 		}
-		else if (code[i] == ':')
+		else if ((code[i] == ':') && (is_printable(code[i - 1]) || is_printable(code[i + 1])))
 		{
 			save_line(arr, buff);
 			add_str_to_array_string(arr, ft_strdup(":"));
 		}
-		else
+		else if (ft_strchr(LABEL_CHARS, code[i]))
 			put_char_to_strp(buff, code[i]);
 		i++;
 	}

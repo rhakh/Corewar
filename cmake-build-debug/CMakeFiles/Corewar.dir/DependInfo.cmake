@@ -107,6 +107,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/r/rhakh/Corewar/src/put_label.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src/put_label.c.o"
   "/nfs/2016/r/rhakh/Corewar/src/split_line.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src/split_line.c.o"
   "/nfs/2016/r/rhakh/Corewar/src/syntax_analyze.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src/syntax_analyze.c.o"
+  "/nfs/2016/r/rhakh/Corewar/src/write_bcode.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src/write_bcode.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

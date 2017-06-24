@@ -35,3 +35,16 @@ t_op    op_tab[17] =
 
 //command name, arguments number, possible arguments, command id, cycle to done command ?, command description, modify the carry ?, dir as label
 //T_REG = 01, T_DIR = 10, T_IND = 11,
+/*
+ * typedef struct 			s_op
+{
+	char 				*name;
+	int 				n_arg;
+	char 				type_arg[3];
+	char 				command_number;
+	int 				cycles_to_done;
+	char 				*description;
+	char 				have_opcode;
+	char 				dir_as_label;
+}						t_op;
+ */

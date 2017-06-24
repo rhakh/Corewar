@@ -2904,6 +2904,33 @@ src/syntax_analyze.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/syntax_analyze.c.s
 .PHONY : src/syntax_analyze.c.s
 
+src/write_bcode.o: src/write_bcode.c.o
+
+.PHONY : src/write_bcode.o
+
+# target to build an object file
+src/write_bcode.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.o
+.PHONY : src/write_bcode.c.o
+
+src/write_bcode.i: src/write_bcode.c.i
+
+.PHONY : src/write_bcode.i
+
+# target to preprocess a source file
+src/write_bcode.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.i
+.PHONY : src/write_bcode.c.i
+
+src/write_bcode.s: src/write_bcode.c.s
+
+.PHONY : src/write_bcode.s
+
+# target to generate assembly for a file
+src/write_bcode.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.s
+.PHONY : src/write_bcode.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -3222,6 +3249,9 @@ help:
 	@echo "... src/syntax_analyze.o"
 	@echo "... src/syntax_analyze.i"
 	@echo "... src/syntax_analyze.s"
+	@echo "... src/write_bcode.o"
+	@echo "... src/write_bcode.i"
+	@echo "... src/write_bcode.s"
 .PHONY : help
 
 

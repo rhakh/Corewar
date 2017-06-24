@@ -67,3 +67,10 @@ int 	is_command(const char *str)
 	}
 	return (0);
 }
+
+int 	is_printable(int c)
+{
+	if (c >= 33 && c<= 126)
+		return (1);
+	return (0);
+}

@@ -344,3 +344,8 @@ CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/op.h
 CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/syntax_analyze.c
 
+CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/write_bcode.c
+

@@ -102,6 +102,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src/get_args_type.c.o"
   "CMakeFiles/Corewar.dir/src/linked_list.c.o"
   "CMakeFiles/Corewar.dir/src/put_label.c.o"
+  "CMakeFiles/Corewar.dir/src/write_bcode.c.o"
   "Corewar.pdb"
   "Corewar"
 )

@@ -170,6 +170,7 @@ int 				is_empty_line(const char *str);
 int 				is_link(const char *str);
 int 				is_register(const char *str);
 int 				is_command(const char *str);
+int 				is_printable(int c);
 
 /*
 ** get_op_code.c
@@ -208,6 +209,10 @@ void			linked_list_push_back(t_linked_list **head, void *data);
 void			print_linked_list(t_linked_list *curr, void (* print)(void *));
 void			del_linked_list(t_linked_list **head, void (* function_for_del_data)(void *));
 
+/*
+** write_bcode.c
+*/
+void			write_bcode(char *src_name, t_main *main);
 
 
 #endif

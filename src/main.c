@@ -30,6 +30,8 @@ int 	main(int argc, char **argv)
 
 	syntax_analyze(&main);
 
+	write_bcode(argv[1], &main);
+
 	del_bcode(&main.bcode);
 	if (main.list != NULL)
 		del_linked_list(&main.list, ((t_put_label *)main.list->data)->del_put_label);
