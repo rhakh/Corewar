@@ -38,7 +38,7 @@ t_array_string		*split_line(char *code)
 			save_line(arr, buff);
 			add_str_to_array_string(arr, ft_strdup(":"));
 		}
-		else if (ft_strchr(LABEL_CHARS, code[i]))
+		else if (ft_strchr(CORRECT_CHARS, code[i]))
 			put_char_to_strp(buff, code[i]);
 		i++;
 	}

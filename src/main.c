@@ -6,10 +6,11 @@ int 	main(int argc, char **argv)
 	t_main			main;
 
 	ft_bzero(&main, sizeof(t_main));
-//	argv[1] = "/home/rhakh/Corewar/test_live.s";
+	argv[1] = "/home/rhakh/Corewar/jumper_test.s";
+//	argv[1] = "/home/rhakh/Corewar/all_test.s";
 //    argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
 //    argv[1] = "/nfs/2016/r/rhakh/Corewar/champs/jumper.s";
-    argv[1] = "/nfs/2016/r/rhakh/Corewar/test_link.s";
+//    argv[1] = "/nfs/2016/r/rhakh/Corewar/test_link.s";
 	if (argc != 2)
 	{
 		ft_printf("{red}Error:{eoc} wrong number of arguments.\n");
@@ -43,6 +44,8 @@ int 	main(int argc, char **argv)
 }
 
 //todo trim input string
+//todo file without dot
+//todo link table == NULL
 /*
  * argv[1] = "/home/rhakh/Corewar/test_live.s";
  *

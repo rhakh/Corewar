@@ -3,7 +3,11 @@
 
 #include "op.h"
 #include "../new_libft/srcs/libft.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
+
+#define CORRECT_CHARS				"abcdefghijklmnopqrstuvwxyz_-+0123456789"
 
 typedef struct			s_data
 {

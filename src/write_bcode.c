@@ -6,7 +6,7 @@ static void		write_one_arg(int fd, int arg, int i)
 
 	while (i >= 0)
 	{
-		a = (signed char)arg >> i;
+		a = (signed char)(arg >> i);
 		write(fd, &a, 1);
 		i -= 8;
 	}
@@ -20,9 +20,9 @@ static void		write_args(int fd, t_bcode *curr)
 	while (curr->arg_type[i] != 0)
 	{
 		if (curr->arg_type[i] == T_DIR)
-			(op_tab[*curr->oper_number - 1].dir_as_label) ? (write_one_arg(fd, curr->args[i], 16)) : (write_one_arg(fd, curr->args[i], 24));
+			(op_tab[*curr->oper_number - 1].dir_as_label) ? (write_one_arg(fd, curr->args[i], 8)) : (write_one_arg(fd, curr->args[i], 24));
 		else if (curr->arg_type[i] == T_IND)
-			write_one_arg(fd, curr->args[i], 16);
+			write_one_arg(fd, curr->args[i], 8);
 		else if (curr->arg_type[i] == T_REG)
 			write(fd, curr->args + i, 1);
 		i++;
@@ -57,7 +57,7 @@ void			write_bcode(char *src_name, t_main *main)
 	*(ft_strrchr(file_name, '.') + 3) = 'r';
 	*(ft_strrchr(file_name, '.') + 4) = '\0';
 	ft_printf("\n%s\n", file_name);
-	fd = open(file_name, O_WRONLY | O_CREAT);
+	fd = open(file_name, O_RDWR | O_CREAT | O_TRUNC, S_IRWXU | S_IRGRP | S_IROTH);
 	if (fd == -1)
 	{
 		ft_printf("{red}Error:{eoc} can't create file.");
