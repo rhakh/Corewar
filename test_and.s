@@ -15,4 +15,3 @@ and 8, 9, r8
 
 li: and r1, r1, r1
 # li: live %1
-

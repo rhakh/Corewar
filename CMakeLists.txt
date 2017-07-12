@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.7)
 project(Corewar)
 
 set(CMAKE_C_FLAGS -std=c99)
@@ -91,25 +91,26 @@ set(SOURCE_FILES
         new_libft/srcs/spec_helper.c
         new_libft/srcs/str_capitalizer.c
         new_libft/srcs/strp_functions.c
-        src/array_string.c
-        src/bcode.c
-        src/create_command.c
-        src/data_constructor.c
-        src/error_messenger.c
-        src/get_arg.c
-        src/get_args_type.c
-        src/get_op_code.c
-        src/helpers.c
-        src/label_table.c
-        src/lex_analyze.c
-        src/linked_list.c
-        src/main.c
-        src/main.h
-        src/op.c
-        src/op.h
-        src/put_label.c
-        src/split_line.c
-        src/syntax_analyze.c
-        src/write_bcode.c src/check_bot_params.c)
+        src_asm/array_string.c
+        src_asm/bcode.c
+        src_asm/check_bot_params.c
+        src_asm/create_command.c
+        src_asm/data_constructor.c
+        src_asm/error_messenger.c
+        src_asm/get_arg.c
+        src_asm/get_args_type.c
+        src_asm/get_op_code.c
+        src_asm/helpers.c
+        src_asm/label_table.c
+        src_asm/lex_analyze.c
+        src_asm/linked_list.c
+        src_asm/main.c
+        src_asm/main.h
+        src_asm/op.c
+        src_asm/op.h
+        src_asm/put_label.c
+        src_asm/split_line.c
+        src_asm/syntax_analyze.c
+        src_asm/write_bcode.c)
 
 add_executable(Corewar ${SOURCE_FILES})

@@ -10,21 +10,31 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = main
+NAME = my_asm
 
-SRC =   main.c \
-        op.c \
+SRC =   array_string.c \
+        bcode.c \
+        check_bot_params.c \
+        create_command.c \
         data_constructor.c \
-	    lex_analyze.c \
-	    array_string.c \
-	    split_line.c \
-	    syntax_analyze.c \
-	    label_table.c \
-	    command_live.c \
+        error_messenger.c \
+        get_arg.c \
+        get_args_type.c \
+        get_op_code.c \
+        helpers.c \
+        label_table.c \
+        lex_analyze.c \
+        linked_list.c \
+        main.c \
+        op.c \
+        put_label.c \
+        split_line.c \
+        syntax_analyze.c \
+        write_bcode.c \
 
-SRCDIR = ./src/
+SRCDIR = ./src_asm/
 
-OBJDIR = ./obj/
+OBJDIR = ./obj_asm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 

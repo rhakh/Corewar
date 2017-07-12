@@ -2445,518 +2445,518 @@ new_libft/srcs/strp_functions.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.s
 .PHONY : new_libft/srcs/strp_functions.c.s
 
-src/array_string.o: src/array_string.c.o
+src_asm/array_string.o: src_asm/array_string.c.o
 
-.PHONY : src/array_string.o
-
-# target to build an object file
-src/array_string.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/array_string.c.o
-.PHONY : src/array_string.c.o
-
-src/array_string.i: src/array_string.c.i
-
-.PHONY : src/array_string.i
-
-# target to preprocess a source file
-src/array_string.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/array_string.c.i
-.PHONY : src/array_string.c.i
-
-src/array_string.s: src/array_string.c.s
-
-.PHONY : src/array_string.s
-
-# target to generate assembly for a file
-src/array_string.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/array_string.c.s
-.PHONY : src/array_string.c.s
-
-src/bcode.o: src/bcode.c.o
-
-.PHONY : src/bcode.o
+.PHONY : src_asm/array_string.o
 
 # target to build an object file
-src/bcode.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/bcode.c.o
-.PHONY : src/bcode.c.o
+src_asm/array_string.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/array_string.c.o
+.PHONY : src_asm/array_string.c.o
 
-src/bcode.i: src/bcode.c.i
+src_asm/array_string.i: src_asm/array_string.c.i
 
-.PHONY : src/bcode.i
+.PHONY : src_asm/array_string.i
 
 # target to preprocess a source file
-src/bcode.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/bcode.c.i
-.PHONY : src/bcode.c.i
+src_asm/array_string.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/array_string.c.i
+.PHONY : src_asm/array_string.c.i
 
-src/bcode.s: src/bcode.c.s
+src_asm/array_string.s: src_asm/array_string.c.s
 
-.PHONY : src/bcode.s
+.PHONY : src_asm/array_string.s
 
 # target to generate assembly for a file
-src/bcode.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/bcode.c.s
-.PHONY : src/bcode.c.s
+src_asm/array_string.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/array_string.c.s
+.PHONY : src_asm/array_string.c.s
 
-src/check_bot_params.o: src/check_bot_params.c.o
+src_asm/bcode.o: src_asm/bcode.c.o
 
-.PHONY : src/check_bot_params.o
+.PHONY : src_asm/bcode.o
 
 # target to build an object file
-src/check_bot_params.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.o
-.PHONY : src/check_bot_params.c.o
+src_asm/bcode.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/bcode.c.o
+.PHONY : src_asm/bcode.c.o
 
-src/check_bot_params.i: src/check_bot_params.c.i
+src_asm/bcode.i: src_asm/bcode.c.i
 
-.PHONY : src/check_bot_params.i
+.PHONY : src_asm/bcode.i
 
 # target to preprocess a source file
-src/check_bot_params.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.i
-.PHONY : src/check_bot_params.c.i
+src_asm/bcode.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/bcode.c.i
+.PHONY : src_asm/bcode.c.i
 
-src/check_bot_params.s: src/check_bot_params.c.s
+src_asm/bcode.s: src_asm/bcode.c.s
 
-.PHONY : src/check_bot_params.s
+.PHONY : src_asm/bcode.s
 
 # target to generate assembly for a file
-src/check_bot_params.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.s
-.PHONY : src/check_bot_params.c.s
+src_asm/bcode.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/bcode.c.s
+.PHONY : src_asm/bcode.c.s
 
-src/create_command.o: src/create_command.c.o
+src_asm/check_bot_params.o: src_asm/check_bot_params.c.o
 
-.PHONY : src/create_command.o
+.PHONY : src_asm/check_bot_params.o
 
 # target to build an object file
-src/create_command.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.o
-.PHONY : src/create_command.c.o
+src_asm/check_bot_params.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.o
+.PHONY : src_asm/check_bot_params.c.o
 
-src/create_command.i: src/create_command.c.i
+src_asm/check_bot_params.i: src_asm/check_bot_params.c.i
 
-.PHONY : src/create_command.i
+.PHONY : src_asm/check_bot_params.i
 
 # target to preprocess a source file
-src/create_command.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.i
-.PHONY : src/create_command.c.i
+src_asm/check_bot_params.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.i
+.PHONY : src_asm/check_bot_params.c.i
 
-src/create_command.s: src/create_command.c.s
+src_asm/check_bot_params.s: src_asm/check_bot_params.c.s
 
-.PHONY : src/create_command.s
+.PHONY : src_asm/check_bot_params.s
 
 # target to generate assembly for a file
-src/create_command.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/create_command.c.s
-.PHONY : src/create_command.c.s
+src_asm/check_bot_params.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.s
+.PHONY : src_asm/check_bot_params.c.s
 
-src/data_constructor.o: src/data_constructor.c.o
+src_asm/create_command.o: src_asm/create_command.c.o
 
-.PHONY : src/data_constructor.o
+.PHONY : src_asm/create_command.o
 
 # target to build an object file
-src/data_constructor.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/data_constructor.c.o
-.PHONY : src/data_constructor.c.o
+src_asm/create_command.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/create_command.c.o
+.PHONY : src_asm/create_command.c.o
 
-src/data_constructor.i: src/data_constructor.c.i
+src_asm/create_command.i: src_asm/create_command.c.i
 
-.PHONY : src/data_constructor.i
+.PHONY : src_asm/create_command.i
 
 # target to preprocess a source file
-src/data_constructor.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/data_constructor.c.i
-.PHONY : src/data_constructor.c.i
+src_asm/create_command.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/create_command.c.i
+.PHONY : src_asm/create_command.c.i
 
-src/data_constructor.s: src/data_constructor.c.s
+src_asm/create_command.s: src_asm/create_command.c.s
 
-.PHONY : src/data_constructor.s
+.PHONY : src_asm/create_command.s
 
 # target to generate assembly for a file
-src/data_constructor.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/data_constructor.c.s
-.PHONY : src/data_constructor.c.s
+src_asm/create_command.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/create_command.c.s
+.PHONY : src_asm/create_command.c.s
 
-src/error_messenger.o: src/error_messenger.c.o
+src_asm/data_constructor.o: src_asm/data_constructor.c.o
 
-.PHONY : src/error_messenger.o
+.PHONY : src_asm/data_constructor.o
 
 # target to build an object file
-src/error_messenger.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/error_messenger.c.o
-.PHONY : src/error_messenger.c.o
+src_asm/data_constructor.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/data_constructor.c.o
+.PHONY : src_asm/data_constructor.c.o
 
-src/error_messenger.i: src/error_messenger.c.i
+src_asm/data_constructor.i: src_asm/data_constructor.c.i
 
-.PHONY : src/error_messenger.i
+.PHONY : src_asm/data_constructor.i
 
 # target to preprocess a source file
-src/error_messenger.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/error_messenger.c.i
-.PHONY : src/error_messenger.c.i
+src_asm/data_constructor.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/data_constructor.c.i
+.PHONY : src_asm/data_constructor.c.i
 
-src/error_messenger.s: src/error_messenger.c.s
+src_asm/data_constructor.s: src_asm/data_constructor.c.s
 
-.PHONY : src/error_messenger.s
+.PHONY : src_asm/data_constructor.s
 
 # target to generate assembly for a file
-src/error_messenger.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/error_messenger.c.s
-.PHONY : src/error_messenger.c.s
+src_asm/data_constructor.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/data_constructor.c.s
+.PHONY : src_asm/data_constructor.c.s
 
-src/get_arg.o: src/get_arg.c.o
+src_asm/error_messenger.o: src_asm/error_messenger.c.o
 
-.PHONY : src/get_arg.o
+.PHONY : src_asm/error_messenger.o
 
 # target to build an object file
-src/get_arg.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.o
-.PHONY : src/get_arg.c.o
+src_asm/error_messenger.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/error_messenger.c.o
+.PHONY : src_asm/error_messenger.c.o
 
-src/get_arg.i: src/get_arg.c.i
+src_asm/error_messenger.i: src_asm/error_messenger.c.i
 
-.PHONY : src/get_arg.i
+.PHONY : src_asm/error_messenger.i
 
 # target to preprocess a source file
-src/get_arg.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.i
-.PHONY : src/get_arg.c.i
+src_asm/error_messenger.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/error_messenger.c.i
+.PHONY : src_asm/error_messenger.c.i
 
-src/get_arg.s: src/get_arg.c.s
+src_asm/error_messenger.s: src_asm/error_messenger.c.s
 
-.PHONY : src/get_arg.s
+.PHONY : src_asm/error_messenger.s
 
 # target to generate assembly for a file
-src/get_arg.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_arg.c.s
-.PHONY : src/get_arg.c.s
+src_asm/error_messenger.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/error_messenger.c.s
+.PHONY : src_asm/error_messenger.c.s
 
-src/get_args_type.o: src/get_args_type.c.o
+src_asm/get_arg.o: src_asm/get_arg.c.o
 
-.PHONY : src/get_args_type.o
+.PHONY : src_asm/get_arg.o
 
 # target to build an object file
-src/get_args_type.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.o
-.PHONY : src/get_args_type.c.o
+src_asm/get_arg.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_arg.c.o
+.PHONY : src_asm/get_arg.c.o
 
-src/get_args_type.i: src/get_args_type.c.i
+src_asm/get_arg.i: src_asm/get_arg.c.i
 
-.PHONY : src/get_args_type.i
+.PHONY : src_asm/get_arg.i
 
 # target to preprocess a source file
-src/get_args_type.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.i
-.PHONY : src/get_args_type.c.i
+src_asm/get_arg.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_arg.c.i
+.PHONY : src_asm/get_arg.c.i
 
-src/get_args_type.s: src/get_args_type.c.s
+src_asm/get_arg.s: src_asm/get_arg.c.s
 
-.PHONY : src/get_args_type.s
+.PHONY : src_asm/get_arg.s
 
 # target to generate assembly for a file
-src/get_args_type.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_args_type.c.s
-.PHONY : src/get_args_type.c.s
+src_asm/get_arg.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_arg.c.s
+.PHONY : src_asm/get_arg.c.s
 
-src/get_op_code.o: src/get_op_code.c.o
+src_asm/get_args_type.o: src_asm/get_args_type.c.o
 
-.PHONY : src/get_op_code.o
+.PHONY : src_asm/get_args_type.o
 
 # target to build an object file
-src/get_op_code.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_op_code.c.o
-.PHONY : src/get_op_code.c.o
+src_asm/get_args_type.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_args_type.c.o
+.PHONY : src_asm/get_args_type.c.o
 
-src/get_op_code.i: src/get_op_code.c.i
+src_asm/get_args_type.i: src_asm/get_args_type.c.i
 
-.PHONY : src/get_op_code.i
+.PHONY : src_asm/get_args_type.i
 
 # target to preprocess a source file
-src/get_op_code.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_op_code.c.i
-.PHONY : src/get_op_code.c.i
+src_asm/get_args_type.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_args_type.c.i
+.PHONY : src_asm/get_args_type.c.i
 
-src/get_op_code.s: src/get_op_code.c.s
+src_asm/get_args_type.s: src_asm/get_args_type.c.s
 
-.PHONY : src/get_op_code.s
+.PHONY : src_asm/get_args_type.s
 
 # target to generate assembly for a file
-src/get_op_code.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_op_code.c.s
-.PHONY : src/get_op_code.c.s
+src_asm/get_args_type.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_args_type.c.s
+.PHONY : src_asm/get_args_type.c.s
 
-src/helpers.o: src/helpers.c.o
+src_asm/get_op_code.o: src_asm/get_op_code.c.o
 
-.PHONY : src/helpers.o
+.PHONY : src_asm/get_op_code.o
 
 # target to build an object file
-src/helpers.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.o
-.PHONY : src/helpers.c.o
+src_asm/get_op_code.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_op_code.c.o
+.PHONY : src_asm/get_op_code.c.o
 
-src/helpers.i: src/helpers.c.i
+src_asm/get_op_code.i: src_asm/get_op_code.c.i
 
-.PHONY : src/helpers.i
+.PHONY : src_asm/get_op_code.i
 
 # target to preprocess a source file
-src/helpers.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.i
-.PHONY : src/helpers.c.i
+src_asm/get_op_code.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_op_code.c.i
+.PHONY : src_asm/get_op_code.c.i
 
-src/helpers.s: src/helpers.c.s
+src_asm/get_op_code.s: src_asm/get_op_code.c.s
 
-.PHONY : src/helpers.s
+.PHONY : src_asm/get_op_code.s
 
 # target to generate assembly for a file
-src/helpers.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.s
-.PHONY : src/helpers.c.s
+src_asm/get_op_code.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/get_op_code.c.s
+.PHONY : src_asm/get_op_code.c.s
 
-src/label_table.o: src/label_table.c.o
+src_asm/helpers.o: src_asm/helpers.c.o
 
-.PHONY : src/label_table.o
+.PHONY : src_asm/helpers.o
 
 # target to build an object file
-src/label_table.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/label_table.c.o
-.PHONY : src/label_table.c.o
+src_asm/helpers.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/helpers.c.o
+.PHONY : src_asm/helpers.c.o
 
-src/label_table.i: src/label_table.c.i
+src_asm/helpers.i: src_asm/helpers.c.i
 
-.PHONY : src/label_table.i
+.PHONY : src_asm/helpers.i
 
 # target to preprocess a source file
-src/label_table.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/label_table.c.i
-.PHONY : src/label_table.c.i
+src_asm/helpers.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/helpers.c.i
+.PHONY : src_asm/helpers.c.i
 
-src/label_table.s: src/label_table.c.s
+src_asm/helpers.s: src_asm/helpers.c.s
 
-.PHONY : src/label_table.s
+.PHONY : src_asm/helpers.s
 
 # target to generate assembly for a file
-src/label_table.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/label_table.c.s
-.PHONY : src/label_table.c.s
+src_asm/helpers.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/helpers.c.s
+.PHONY : src_asm/helpers.c.s
 
-src/lex_analyze.o: src/lex_analyze.c.o
+src_asm/label_table.o: src_asm/label_table.c.o
 
-.PHONY : src/lex_analyze.o
+.PHONY : src_asm/label_table.o
 
 # target to build an object file
-src/lex_analyze.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/lex_analyze.c.o
-.PHONY : src/lex_analyze.c.o
+src_asm/label_table.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/label_table.c.o
+.PHONY : src_asm/label_table.c.o
 
-src/lex_analyze.i: src/lex_analyze.c.i
+src_asm/label_table.i: src_asm/label_table.c.i
 
-.PHONY : src/lex_analyze.i
+.PHONY : src_asm/label_table.i
 
 # target to preprocess a source file
-src/lex_analyze.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/lex_analyze.c.i
-.PHONY : src/lex_analyze.c.i
+src_asm/label_table.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/label_table.c.i
+.PHONY : src_asm/label_table.c.i
 
-src/lex_analyze.s: src/lex_analyze.c.s
+src_asm/label_table.s: src_asm/label_table.c.s
 
-.PHONY : src/lex_analyze.s
+.PHONY : src_asm/label_table.s
 
 # target to generate assembly for a file
-src/lex_analyze.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/lex_analyze.c.s
-.PHONY : src/lex_analyze.c.s
+src_asm/label_table.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/label_table.c.s
+.PHONY : src_asm/label_table.c.s
 
-src/linked_list.o: src/linked_list.c.o
+src_asm/lex_analyze.o: src_asm/lex_analyze.c.o
 
-.PHONY : src/linked_list.o
+.PHONY : src_asm/lex_analyze.o
 
 # target to build an object file
-src/linked_list.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/linked_list.c.o
-.PHONY : src/linked_list.c.o
+src_asm/lex_analyze.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.o
+.PHONY : src_asm/lex_analyze.c.o
 
-src/linked_list.i: src/linked_list.c.i
+src_asm/lex_analyze.i: src_asm/lex_analyze.c.i
 
-.PHONY : src/linked_list.i
+.PHONY : src_asm/lex_analyze.i
 
 # target to preprocess a source file
-src/linked_list.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/linked_list.c.i
-.PHONY : src/linked_list.c.i
+src_asm/lex_analyze.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.i
+.PHONY : src_asm/lex_analyze.c.i
 
-src/linked_list.s: src/linked_list.c.s
+src_asm/lex_analyze.s: src_asm/lex_analyze.c.s
 
-.PHONY : src/linked_list.s
+.PHONY : src_asm/lex_analyze.s
 
 # target to generate assembly for a file
-src/linked_list.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/linked_list.c.s
-.PHONY : src/linked_list.c.s
+src_asm/lex_analyze.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.s
+.PHONY : src_asm/lex_analyze.c.s
 
-src/main.o: src/main.c.o
+src_asm/linked_list.o: src_asm/linked_list.c.o
 
-.PHONY : src/main.o
+.PHONY : src_asm/linked_list.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/main.c.o
-.PHONY : src/main.c.o
+src_asm/linked_list.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/linked_list.c.o
+.PHONY : src_asm/linked_list.c.o
 
-src/main.i: src/main.c.i
+src_asm/linked_list.i: src_asm/linked_list.c.i
 
-.PHONY : src/main.i
+.PHONY : src_asm/linked_list.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/main.c.i
-.PHONY : src/main.c.i
+src_asm/linked_list.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/linked_list.c.i
+.PHONY : src_asm/linked_list.c.i
 
-src/main.s: src/main.c.s
+src_asm/linked_list.s: src_asm/linked_list.c.s
 
-.PHONY : src/main.s
+.PHONY : src_asm/linked_list.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/main.c.s
-.PHONY : src/main.c.s
+src_asm/linked_list.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/linked_list.c.s
+.PHONY : src_asm/linked_list.c.s
 
-src/op.o: src/op.c.o
+src_asm/main.o: src_asm/main.c.o
 
-.PHONY : src/op.o
+.PHONY : src_asm/main.o
 
 # target to build an object file
-src/op.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/op.c.o
-.PHONY : src/op.c.o
+src_asm/main.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/main.c.o
+.PHONY : src_asm/main.c.o
 
-src/op.i: src/op.c.i
+src_asm/main.i: src_asm/main.c.i
 
-.PHONY : src/op.i
+.PHONY : src_asm/main.i
 
 # target to preprocess a source file
-src/op.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/op.c.i
-.PHONY : src/op.c.i
+src_asm/main.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/main.c.i
+.PHONY : src_asm/main.c.i
 
-src/op.s: src/op.c.s
+src_asm/main.s: src_asm/main.c.s
 
-.PHONY : src/op.s
+.PHONY : src_asm/main.s
 
 # target to generate assembly for a file
-src/op.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/op.c.s
-.PHONY : src/op.c.s
+src_asm/main.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/main.c.s
+.PHONY : src_asm/main.c.s
 
-src/put_label.o: src/put_label.c.o
+src_asm/op.o: src_asm/op.c.o
 
-.PHONY : src/put_label.o
+.PHONY : src_asm/op.o
 
 # target to build an object file
-src/put_label.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/put_label.c.o
-.PHONY : src/put_label.c.o
+src_asm/op.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/op.c.o
+.PHONY : src_asm/op.c.o
 
-src/put_label.i: src/put_label.c.i
+src_asm/op.i: src_asm/op.c.i
 
-.PHONY : src/put_label.i
+.PHONY : src_asm/op.i
 
 # target to preprocess a source file
-src/put_label.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/put_label.c.i
-.PHONY : src/put_label.c.i
+src_asm/op.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/op.c.i
+.PHONY : src_asm/op.c.i
 
-src/put_label.s: src/put_label.c.s
+src_asm/op.s: src_asm/op.c.s
 
-.PHONY : src/put_label.s
+.PHONY : src_asm/op.s
 
 # target to generate assembly for a file
-src/put_label.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/put_label.c.s
-.PHONY : src/put_label.c.s
+src_asm/op.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/op.c.s
+.PHONY : src_asm/op.c.s
 
-src/split_line.o: src/split_line.c.o
+src_asm/put_label.o: src_asm/put_label.c.o
 
-.PHONY : src/split_line.o
+.PHONY : src_asm/put_label.o
 
 # target to build an object file
-src/split_line.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/split_line.c.o
-.PHONY : src/split_line.c.o
+src_asm/put_label.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/put_label.c.o
+.PHONY : src_asm/put_label.c.o
 
-src/split_line.i: src/split_line.c.i
+src_asm/put_label.i: src_asm/put_label.c.i
 
-.PHONY : src/split_line.i
+.PHONY : src_asm/put_label.i
 
 # target to preprocess a source file
-src/split_line.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/split_line.c.i
-.PHONY : src/split_line.c.i
+src_asm/put_label.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/put_label.c.i
+.PHONY : src_asm/put_label.c.i
 
-src/split_line.s: src/split_line.c.s
+src_asm/put_label.s: src_asm/put_label.c.s
 
-.PHONY : src/split_line.s
+.PHONY : src_asm/put_label.s
 
 # target to generate assembly for a file
-src/split_line.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/split_line.c.s
-.PHONY : src/split_line.c.s
+src_asm/put_label.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/put_label.c.s
+.PHONY : src_asm/put_label.c.s
 
-src/syntax_analyze.o: src/syntax_analyze.c.o
+src_asm/split_line.o: src_asm/split_line.c.o
 
-.PHONY : src/syntax_analyze.o
+.PHONY : src_asm/split_line.o
 
 # target to build an object file
-src/syntax_analyze.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/syntax_analyze.c.o
-.PHONY : src/syntax_analyze.c.o
+src_asm/split_line.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/split_line.c.o
+.PHONY : src_asm/split_line.c.o
 
-src/syntax_analyze.i: src/syntax_analyze.c.i
+src_asm/split_line.i: src_asm/split_line.c.i
 
-.PHONY : src/syntax_analyze.i
+.PHONY : src_asm/split_line.i
 
 # target to preprocess a source file
-src/syntax_analyze.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/syntax_analyze.c.i
-.PHONY : src/syntax_analyze.c.i
+src_asm/split_line.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/split_line.c.i
+.PHONY : src_asm/split_line.c.i
 
-src/syntax_analyze.s: src/syntax_analyze.c.s
+src_asm/split_line.s: src_asm/split_line.c.s
 
-.PHONY : src/syntax_analyze.s
+.PHONY : src_asm/split_line.s
 
 # target to generate assembly for a file
-src/syntax_analyze.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/syntax_analyze.c.s
-.PHONY : src/syntax_analyze.c.s
+src_asm/split_line.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/split_line.c.s
+.PHONY : src_asm/split_line.c.s
 
-src/write_bcode.o: src/write_bcode.c.o
+src_asm/syntax_analyze.o: src_asm/syntax_analyze.c.o
 
-.PHONY : src/write_bcode.o
+.PHONY : src_asm/syntax_analyze.o
 
 # target to build an object file
-src/write_bcode.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.o
-.PHONY : src/write_bcode.c.o
+src_asm/syntax_analyze.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o
+.PHONY : src_asm/syntax_analyze.c.o
 
-src/write_bcode.i: src/write_bcode.c.i
+src_asm/syntax_analyze.i: src_asm/syntax_analyze.c.i
 
-.PHONY : src/write_bcode.i
+.PHONY : src_asm/syntax_analyze.i
 
 # target to preprocess a source file
-src/write_bcode.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.i
-.PHONY : src/write_bcode.c.i
+src_asm/syntax_analyze.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.i
+.PHONY : src_asm/syntax_analyze.c.i
 
-src/write_bcode.s: src/write_bcode.c.s
+src_asm/syntax_analyze.s: src_asm/syntax_analyze.c.s
 
-.PHONY : src/write_bcode.s
+.PHONY : src_asm/syntax_analyze.s
 
 # target to generate assembly for a file
-src/write_bcode.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/write_bcode.c.s
-.PHONY : src/write_bcode.c.s
+src_asm/syntax_analyze.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.s
+.PHONY : src_asm/syntax_analyze.c.s
+
+src_asm/write_bcode.o: src_asm/write_bcode.c.o
+
+.PHONY : src_asm/write_bcode.o
+
+# target to build an object file
+src_asm/write_bcode.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o
+.PHONY : src_asm/write_bcode.c.o
+
+src_asm/write_bcode.i: src_asm/write_bcode.c.i
+
+.PHONY : src_asm/write_bcode.i
+
+# target to preprocess a source file
+src_asm/write_bcode.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/write_bcode.c.i
+.PHONY : src_asm/write_bcode.c.i
+
+src_asm/write_bcode.s: src_asm/write_bcode.c.s
+
+.PHONY : src_asm/write_bcode.s
+
+# target to generate assembly for a file
+src_asm/write_bcode.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_asm/write_bcode.c.s
+.PHONY : src_asm/write_bcode.c.s
 
 # Help Target
 help:
@@ -3225,63 +3225,63 @@ help:
 	@echo "... new_libft/srcs/strp_functions.o"
 	@echo "... new_libft/srcs/strp_functions.i"
 	@echo "... new_libft/srcs/strp_functions.s"
-	@echo "... src/array_string.o"
-	@echo "... src/array_string.i"
-	@echo "... src/array_string.s"
-	@echo "... src/bcode.o"
-	@echo "... src/bcode.i"
-	@echo "... src/bcode.s"
-	@echo "... src/check_bot_params.o"
-	@echo "... src/check_bot_params.i"
-	@echo "... src/check_bot_params.s"
-	@echo "... src/create_command.o"
-	@echo "... src/create_command.i"
-	@echo "... src/create_command.s"
-	@echo "... src/data_constructor.o"
-	@echo "... src/data_constructor.i"
-	@echo "... src/data_constructor.s"
-	@echo "... src/error_messenger.o"
-	@echo "... src/error_messenger.i"
-	@echo "... src/error_messenger.s"
-	@echo "... src/get_arg.o"
-	@echo "... src/get_arg.i"
-	@echo "... src/get_arg.s"
-	@echo "... src/get_args_type.o"
-	@echo "... src/get_args_type.i"
-	@echo "... src/get_args_type.s"
-	@echo "... src/get_op_code.o"
-	@echo "... src/get_op_code.i"
-	@echo "... src/get_op_code.s"
-	@echo "... src/helpers.o"
-	@echo "... src/helpers.i"
-	@echo "... src/helpers.s"
-	@echo "... src/label_table.o"
-	@echo "... src/label_table.i"
-	@echo "... src/label_table.s"
-	@echo "... src/lex_analyze.o"
-	@echo "... src/lex_analyze.i"
-	@echo "... src/lex_analyze.s"
-	@echo "... src/linked_list.o"
-	@echo "... src/linked_list.i"
-	@echo "... src/linked_list.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/op.o"
-	@echo "... src/op.i"
-	@echo "... src/op.s"
-	@echo "... src/put_label.o"
-	@echo "... src/put_label.i"
-	@echo "... src/put_label.s"
-	@echo "... src/split_line.o"
-	@echo "... src/split_line.i"
-	@echo "... src/split_line.s"
-	@echo "... src/syntax_analyze.o"
-	@echo "... src/syntax_analyze.i"
-	@echo "... src/syntax_analyze.s"
-	@echo "... src/write_bcode.o"
-	@echo "... src/write_bcode.i"
-	@echo "... src/write_bcode.s"
+	@echo "... src_asm/array_string.o"
+	@echo "... src_asm/array_string.i"
+	@echo "... src_asm/array_string.s"
+	@echo "... src_asm/bcode.o"
+	@echo "... src_asm/bcode.i"
+	@echo "... src_asm/bcode.s"
+	@echo "... src_asm/check_bot_params.o"
+	@echo "... src_asm/check_bot_params.i"
+	@echo "... src_asm/check_bot_params.s"
+	@echo "... src_asm/create_command.o"
+	@echo "... src_asm/create_command.i"
+	@echo "... src_asm/create_command.s"
+	@echo "... src_asm/data_constructor.o"
+	@echo "... src_asm/data_constructor.i"
+	@echo "... src_asm/data_constructor.s"
+	@echo "... src_asm/error_messenger.o"
+	@echo "... src_asm/error_messenger.i"
+	@echo "... src_asm/error_messenger.s"
+	@echo "... src_asm/get_arg.o"
+	@echo "... src_asm/get_arg.i"
+	@echo "... src_asm/get_arg.s"
+	@echo "... src_asm/get_args_type.o"
+	@echo "... src_asm/get_args_type.i"
+	@echo "... src_asm/get_args_type.s"
+	@echo "... src_asm/get_op_code.o"
+	@echo "... src_asm/get_op_code.i"
+	@echo "... src_asm/get_op_code.s"
+	@echo "... src_asm/helpers.o"
+	@echo "... src_asm/helpers.i"
+	@echo "... src_asm/helpers.s"
+	@echo "... src_asm/label_table.o"
+	@echo "... src_asm/label_table.i"
+	@echo "... src_asm/label_table.s"
+	@echo "... src_asm/lex_analyze.o"
+	@echo "... src_asm/lex_analyze.i"
+	@echo "... src_asm/lex_analyze.s"
+	@echo "... src_asm/linked_list.o"
+	@echo "... src_asm/linked_list.i"
+	@echo "... src_asm/linked_list.s"
+	@echo "... src_asm/main.o"
+	@echo "... src_asm/main.i"
+	@echo "... src_asm/main.s"
+	@echo "... src_asm/op.o"
+	@echo "... src_asm/op.i"
+	@echo "... src_asm/op.s"
+	@echo "... src_asm/put_label.o"
+	@echo "... src_asm/put_label.i"
+	@echo "... src_asm/put_label.s"
+	@echo "... src_asm/split_line.o"
+	@echo "... src_asm/split_line.i"
+	@echo "... src_asm/split_line.s"
+	@echo "... src_asm/syntax_analyze.o"
+	@echo "... src_asm/syntax_analyze.i"
+	@echo "... src_asm/syntax_analyze.s"
+	@echo "... src_asm/write_bcode.o"
+	@echo "... src_asm/write_bcode.i"
+	@echo "... src_asm/write_bcode.s"
 .PHONY : help
 
 

@@ -368,69 +368,67 @@ libft.h
 libft.h
 /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 
-/nfs/2016/r/rhakh/Corewar/src/array_string.c
+/nfs/2016/r/rhakh/Corewar/src_asm/array_string.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/bcode.c
+/nfs/2016/r/rhakh/Corewar/src_asm/bcode.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 stdio.h
 -
 
-/nfs/2016/r/rhakh/Corewar/src/check_bot_params.c
+/nfs/2016/r/rhakh/Corewar/src_asm/check_bot_params.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/create_command.c
+/nfs/2016/r/rhakh/Corewar/src_asm/create_command.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/data_constructor.c
+/nfs/2016/r/rhakh/Corewar/src_asm/data_constructor.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/error_messenger.c
+/nfs/2016/r/rhakh/Corewar/src_asm/error_messenger.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/get_arg.c
+/nfs/2016/r/rhakh/Corewar/src_asm/get_arg.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/get_args_type.c
+/nfs/2016/r/rhakh/Corewar/src_asm/get_args_type.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/get_op_code.c
+/nfs/2016/r/rhakh/Corewar/src_asm/get_op_code.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
-stdio.h
--
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/helpers.c
+/nfs/2016/r/rhakh/Corewar/src_asm/helpers.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/label_table.c
+/nfs/2016/r/rhakh/Corewar/src_asm/label_table.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/lex_analyze.c
+/nfs/2016/r/rhakh/Corewar/src_asm/lex_analyze.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/linked_list.c
+/nfs/2016/r/rhakh/Corewar/src_asm/linked_list.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/main.c
+/nfs/2016/r/rhakh/Corewar/src_asm/main.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 op.h
-/nfs/2016/r/rhakh/Corewar/src/op.h
+/nfs/2016/r/rhakh/Corewar/src_asm/op.h
 ../new_libft/srcs/libft.h
 /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
 sys/types.h
@@ -440,25 +438,25 @@ sys/stat.h
 fcntl.h
 -
 
-/nfs/2016/r/rhakh/Corewar/src/op.c
+/nfs/2016/r/rhakh/Corewar/src_asm/op.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/op.h
+/nfs/2016/r/rhakh/Corewar/src_asm/op.h
 
-/nfs/2016/r/rhakh/Corewar/src/put_label.c
+/nfs/2016/r/rhakh/Corewar/src_asm/put_label.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/split_line.c
+/nfs/2016/r/rhakh/Corewar/src_asm/split_line.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/syntax_analyze.c
+/nfs/2016/r/rhakh/Corewar/src_asm/syntax_analyze.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 
-/nfs/2016/r/rhakh/Corewar/src/write_bcode.c
+/nfs/2016/r/rhakh/Corewar/src_asm/write_bcode.c
 main.h
-/nfs/2016/r/rhakh/Corewar/src/main.h
+/nfs/2016/r/rhakh/Corewar/src_asm/main.h
 

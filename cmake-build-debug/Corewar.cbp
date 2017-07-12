@@ -343,67 +343,67 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/strp_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/array_string.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/array_string.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/bcode.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/bcode.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/check_bot_params.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/check_bot_params.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/create_command.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/create_command.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/data_constructor.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/data_constructor.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/error_messenger.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/error_messenger.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_arg.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/get_arg.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_args_type.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/get_args_type.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_op_code.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/get_op_code.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/helpers.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/helpers.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/label_table.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/label_table.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/lex_analyze.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/lex_analyze.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/linked_list.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/linked_list.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/main.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/main.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/main.h">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/main.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/op.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/op.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/op.h">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/op.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/put_label.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/put_label.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/split_line.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/split_line.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/syntax_analyze.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/syntax_analyze.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/write_bcode.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_asm/write_bcode.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/CMakeLists.txt">

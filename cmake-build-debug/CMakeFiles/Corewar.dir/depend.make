@@ -259,98 +259,98 @@ CMakeFiles/Corewar.dir/new_libft/srcs/str_capitalizer.c.o: ../new_libft/srcs/str
 CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.o: ../new_libft/srcs/strp_functions.c
 
-CMakeFiles/Corewar.dir/src/array_string.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/array_string.c.o: ../src/array_string.c
-CMakeFiles/Corewar.dir/src/array_string.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/array_string.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/array_string.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/array_string.c.o: ../src_asm/array_string.c
+CMakeFiles/Corewar.dir/src_asm/array_string.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/array_string.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/bcode.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/bcode.c
-CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/bcode.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/bcode.c.o: ../src_asm/bcode.c
+CMakeFiles/Corewar.dir/src_asm/bcode.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/bcode.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/check_bot_params.c
-CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.o: ../src_asm/check_bot_params.c
+CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/check_bot_params.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/create_command.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/create_command.c
-CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/create_command.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/create_command.c.o: ../src_asm/create_command.c
+CMakeFiles/Corewar.dir/src_asm/create_command.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/create_command.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/data_constructor.c
-CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/data_constructor.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/data_constructor.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/data_constructor.c.o: ../src_asm/data_constructor.c
+CMakeFiles/Corewar.dir/src_asm/data_constructor.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/data_constructor.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/error_messenger.c
-CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/error_messenger.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/error_messenger.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/error_messenger.c.o: ../src_asm/error_messenger.c
+CMakeFiles/Corewar.dir/src_asm/error_messenger.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/error_messenger.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/get_arg.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/get_arg.c
-CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/get_arg.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/get_arg.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/get_arg.c.o: ../src_asm/get_arg.c
+CMakeFiles/Corewar.dir/src_asm/get_arg.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/get_arg.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/get_args_type.c
-CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/get_args_type.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/get_args_type.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/get_args_type.c.o: ../src_asm/get_args_type.c
+CMakeFiles/Corewar.dir/src_asm/get_args_type.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/get_args_type.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/get_op_code.c
-CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/get_op_code.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/get_op_code.c.o: ../src_asm/get_op_code.c
+CMakeFiles/Corewar.dir/src_asm/get_op_code.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/get_op_code.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/helpers.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/helpers.c
-CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/helpers.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/helpers.c.o: ../src_asm/helpers.c
+CMakeFiles/Corewar.dir/src_asm/helpers.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/helpers.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/label_table.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/label_table.c.o: ../src/label_table.c
-CMakeFiles/Corewar.dir/src/label_table.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/label_table.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/label_table.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/label_table.c.o: ../src_asm/label_table.c
+CMakeFiles/Corewar.dir/src_asm/label_table.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/label_table.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/lex_analyze.c
-CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/lex_analyze.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.o: ../src_asm/lex_analyze.c
+CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/lex_analyze.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/linked_list.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/linked_list.c
-CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/linked_list.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/linked_list.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/linked_list.c.o: ../src_asm/linked_list.c
+CMakeFiles/Corewar.dir/src_asm/linked_list.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/linked_list.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/main.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.c
-CMakeFiles/Corewar.dir/src/main.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/main.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/main.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/main.c.o: ../src_asm/main.c
+CMakeFiles/Corewar.dir/src_asm/main.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/main.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/op.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/op.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.c
-CMakeFiles/Corewar.dir/src/op.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src_asm/op.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/op.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/op.c.o: ../src_asm/op.c
+CMakeFiles/Corewar.dir/src_asm/op.c.o: ../src_asm/op.h
 
-CMakeFiles/Corewar.dir/src/put_label.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/op.h
-CMakeFiles/Corewar.dir/src/put_label.c.o: ../src/put_label.c
+CMakeFiles/Corewar.dir/src_asm/put_label.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/put_label.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/put_label.c.o: ../src_asm/op.h
+CMakeFiles/Corewar.dir/src_asm/put_label.c.o: ../src_asm/put_label.c
 
-CMakeFiles/Corewar.dir/src/split_line.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/split_line.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/split_line.c.o: ../src/op.h
-CMakeFiles/Corewar.dir/src/split_line.c.o: ../src/split_line.c
+CMakeFiles/Corewar.dir/src_asm/split_line.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/split_line.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/split_line.c.o: ../src_asm/op.h
+CMakeFiles/Corewar.dir/src_asm/split_line.c.o: ../src_asm/split_line.c
 
-CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/op.h
-CMakeFiles/Corewar.dir/src/syntax_analyze.c.o: ../src/syntax_analyze.c
+CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o: ../src_asm/op.h
+CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o: ../src_asm/syntax_analyze.c
 
-CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/op.h
-CMakeFiles/Corewar.dir/src/write_bcode.c.o: ../src/write_bcode.c
+CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o: ../src_asm/main.h
+CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o: ../src_asm/op.h
+CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o: ../src_asm/write_bcode.c
 
