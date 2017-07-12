@@ -269,6 +269,11 @@ CMakeFiles/Corewar.dir/src/bcode.c.o
  /nfs/2016/r/rhakh/Corewar/src/bcode.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
+CMakeFiles/Corewar.dir/src/check_bot_params.c.o
+ /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+ /nfs/2016/r/rhakh/Corewar/src/check_bot_params.c
+ /nfs/2016/r/rhakh/Corewar/src/main.h
+ /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/create_command.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
  /nfs/2016/r/rhakh/Corewar/src/create_command.c
@@ -299,9 +304,9 @@ CMakeFiles/Corewar.dir/src/get_op_code.c.o
  /nfs/2016/r/rhakh/Corewar/src/get_op_code.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
-CMakeFiles/Corewar.dir/src/is_number.c.o
+CMakeFiles/Corewar.dir/src/helpers.c.o
  /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
- /nfs/2016/r/rhakh/Corewar/src/is_number.c
+ /nfs/2016/r/rhakh/Corewar/src/helpers.c
  /nfs/2016/r/rhakh/Corewar/src/main.h
  /nfs/2016/r/rhakh/Corewar/src/op.h
 CMakeFiles/Corewar.dir/src/label_table.c.o

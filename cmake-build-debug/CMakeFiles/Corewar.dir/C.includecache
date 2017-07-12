@@ -378,6 +378,10 @@ main.h
 stdio.h
 -
 
+/nfs/2016/r/rhakh/Corewar/src/check_bot_params.c
+main.h
+/nfs/2016/r/rhakh/Corewar/src/main.h
+
 /nfs/2016/r/rhakh/Corewar/src/create_command.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
@@ -404,7 +408,7 @@ main.h
 stdio.h
 -
 
-/nfs/2016/r/rhakh/Corewar/src/is_number.c
+/nfs/2016/r/rhakh/Corewar/src/helpers.c
 main.h
 /nfs/2016/r/rhakh/Corewar/src/main.h
 
@@ -429,6 +433,10 @@ op.h
 /nfs/2016/r/rhakh/Corewar/src/op.h
 ../new_libft/srcs/libft.h
 /nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h
+sys/types.h
+-
+sys/stat.h
+-
 fcntl.h
 -
 

@@ -56,7 +56,10 @@ void			del_linked_list(t_linked_list **head, void (* function_for_del_data)(void
 	t_linked_list	*curr;
 	t_linked_list	*next;
 
-	curr = *head;
+	if (head != NULL)
+		curr = *head;
+	else
+		return ;
 	if (curr != NULL)
 	{
 		next = curr;

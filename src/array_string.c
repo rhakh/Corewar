@@ -17,7 +17,7 @@ t_array_string	*new_array_string(size_t size)
 	return (arr);
 }
 
-int			realloc_array_string(t_array_string **arr)
+static int			realloc_array_string(t_array_string **arr)
 {
 	char	**new;
 	int 	i;

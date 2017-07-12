@@ -1,6 +1,6 @@
 #include "main.h"
 
-void		realloc_data(t_data **src)
+static void		realloc_data(t_data **src)
 {
 	t_data	*dst;
 	int		i;

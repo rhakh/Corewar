@@ -1,8 +1,7 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.6)
 project(Corewar)
 
 set(CMAKE_C_FLAGS -std=c99)
-set(CMAKE_C_FLAGS "-Wall -Werror -Wextra")
 
 set(SOURCE_FILES
         new_libft/srcs/check_colour.c
@@ -94,17 +93,23 @@ set(SOURCE_FILES
         new_libft/srcs/strp_functions.c
         src/array_string.c
         src/bcode.c
+        src/create_command.c
         src/data_constructor.c
         src/error_messenger.c
+        src/get_arg.c
+        src/get_args_type.c
         src/get_op_code.c
-        src/is_number.c
+        src/helpers.c
         src/label_table.c
         src/lex_analyze.c
+        src/linked_list.c
         src/main.c
         src/main.h
         src/op.c
         src/op.h
+        src/put_label.c
         src/split_line.c
-        src/syntax_analyze.c src/create_command.c src/get_arg.c src/get_args_type.c src/linked_list.c src/put_label.c src/write_bcode.c)
+        src/syntax_analyze.c
+        src/write_bcode.c src/check_bot_params.c)
 
 add_executable(Corewar ${SOURCE_FILES})

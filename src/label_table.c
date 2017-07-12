@@ -14,13 +14,16 @@ t_label_table		*new_label_table(char *name, int offset)
 
 void				del_label_table(t_label_table **table)
 {
-	if ((*table)->next != NULL)
-		del_label_table((t_label_table **)&((*table)->next));
-	if ((*table)->link != NULL)
-		free((*table)->link);
-	if ((*table) != NULL)
-		free(*table);
-	*table = NULL;
+	if (*table != NULL)
+	{
+		if ((*table)->next != NULL)
+			del_label_table((t_label_table **)&((*table)->next));
+		if ((*table)->link != NULL)
+			free((*table)->link);
+		if ((*table) != NULL)
+			free(*table);
+		*table = NULL;
+	}
 }
 
 void				print_label_table(t_label_table *table)

@@ -1,6 +1,15 @@
 #include "main.h"
 
-t_array_string		**lex_analyze(t_data *code)
+int 				is_comment(char *str)
+{
+	while (*str <= 32 && *str != 0)
+		str++;
+	if (*str == '#')
+		return (1);
+	return (0);
+}
+
+t_array_string		**lex_analyze(t_main *main, t_data *code)
 {
 	t_array_string	**lex_strs;
 	int 			i;
@@ -8,14 +17,18 @@ t_array_string		**lex_analyze(t_data *code)
 
 	k = 0;
 	i = 0;
-	if ((lex_strs = (t_array_string **)malloc(sizeof(t_array_string *) * code->i)) == NULL)
+	if ((lex_strs = (t_array_string **)
+						malloc(sizeof(t_array_string *) * code->i)) == NULL)
 		return (NULL);
 	while (i < code->i)
 	{
-		if (!is_empty_line(code->arr[i]) && code->arr[i][0] != '#')
+		if (!is_empty_line(code->arr[i]) && !is_comment(code->arr[i]))
 		{
-			lex_strs[k] = split_line(code->arr[i]);
-			k++;
+			if (!check_bot_params(main->name, main->comment, code->arr[i]))
+			{
+				lex_strs[k] = split_line(main, code->arr[i]);
+				k++;
+			}
 		}
 		i++;
 	}

@@ -28,6 +28,8 @@ t_bcode				*new_bcode(char oper_number, char arg_type[3], int *args)
 
 void				del_bcode(t_bcode **bcode)
 {
+	if (bcode == NULL || *bcode == NULL)
+		return ;
 	if ((*bcode)->next != NULL)
 		del_bcode((t_bcode **)&((*bcode)->next));
 	if ((*bcode)->oper_number != NULL)

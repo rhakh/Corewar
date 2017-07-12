@@ -269,6 +269,11 @@ CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/bcode.c
 CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/bcode.c.o: ../src/op.h
 
+CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/check_bot_params.c
+CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/check_bot_params.c.o: ../src/op.h
+
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/create_command.c
 CMakeFiles/Corewar.dir/src/create_command.c.o: ../src/main.h
@@ -299,10 +304,10 @@ CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/get_op_code.c
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/main.h
 CMakeFiles/Corewar.dir/src/get_op_code.c.o: ../src/op.h
 
-CMakeFiles/Corewar.dir/src/is_number.c.o: ../new_libft/srcs/libft.h
-CMakeFiles/Corewar.dir/src/is_number.c.o: ../src/is_number.c
-CMakeFiles/Corewar.dir/src/is_number.c.o: ../src/main.h
-CMakeFiles/Corewar.dir/src/is_number.c.o: ../src/op.h
+CMakeFiles/Corewar.dir/src/helpers.c.o: ../new_libft/srcs/libft.h
+CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/helpers.c
+CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/main.h
+CMakeFiles/Corewar.dir/src/helpers.c.o: ../src/op.h
 
 CMakeFiles/Corewar.dir/src/label_table.c.o: ../new_libft/srcs/libft.h
 CMakeFiles/Corewar.dir/src/label_table.c.o: ../src/label_table.c

@@ -349,6 +349,9 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/bcode.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/check_bot_params.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/create_command.c">
 			<Option target="Corewar"/>
 		</Unit>
@@ -367,7 +370,7 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/get_op_code.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/is_number.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/helpers.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src/label_table.c">

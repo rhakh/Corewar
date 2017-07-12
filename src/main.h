@@ -3,7 +3,11 @@
 
 #include "op.h"
 #include "../new_libft/srcs/libft.h"
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
+
+#define CORRECT_CHARS				"abcdefghijklmnopqrstuvwxyz_-+0123456789"
 
 typedef struct			s_data
 {
@@ -106,7 +110,7 @@ extern t_op    op_tab[17];//[17] =
 **	array_string.c
 */
 t_array_string	*new_array_string(size_t size);
-int				realloc_array_string(t_array_string **arr);
+static int		realloc_array_string(t_array_string **arr);
 void			del_array_string(t_array_string **arr);
 int 			add_str_to_array_string(t_array_string *arr, char *str);
 void 			print_array_string(t_array_string *arr);
@@ -115,12 +119,12 @@ void			print_string(t_array_string *arr);
 /*
 **	split_line.c
 */
-t_array_string	*split_line(char *code);
+t_array_string	*split_line(t_main *main, char *code);
 
 /*
 **	data_constructor.c
 */
-void		realloc_data(t_data **src);
+static void	realloc_data(t_data **src);
 void		del_all_data(t_data **data);
 void		del_data(t_data *data);
 t_data		*new_data(size_t size);
@@ -130,9 +134,10 @@ void		read_data(int fd, t_data **data);
 /*
 ** lex_analyze.c
 */
-t_array_string		**lex_analyze(t_data *code);
+t_array_string		**lex_analyze(t_main *main, t_data *code);
 void				print_lex(t_array_string **lex_strs);
 void				del_lex_strs(t_array_string ***str);
+int 				is_comment(char *str);
 
 /*
 ** syntax_analyze.c
@@ -214,5 +219,9 @@ void			del_linked_list(t_linked_list **head, void (* function_for_del_data)(void
 */
 void			write_bcode(char *src_name, t_main *main);
 
+/*
+** check_bot_params.c
+*/
+int 		check_bot_params(char *name, char *comment, char *str);
 
 #endif

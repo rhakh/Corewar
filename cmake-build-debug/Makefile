@@ -2499,6 +2499,33 @@ src/bcode.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/bcode.c.s
 .PHONY : src/bcode.c.s
 
+src/check_bot_params.o: src/check_bot_params.c.o
+
+.PHONY : src/check_bot_params.o
+
+# target to build an object file
+src/check_bot_params.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.o
+.PHONY : src/check_bot_params.c.o
+
+src/check_bot_params.i: src/check_bot_params.c.i
+
+.PHONY : src/check_bot_params.i
+
+# target to preprocess a source file
+src/check_bot_params.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.i
+.PHONY : src/check_bot_params.c.i
+
+src/check_bot_params.s: src/check_bot_params.c.s
+
+.PHONY : src/check_bot_params.s
+
+# target to generate assembly for a file
+src/check_bot_params.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/check_bot_params.c.s
+.PHONY : src/check_bot_params.c.s
+
 src/create_command.o: src/create_command.c.o
 
 .PHONY : src/create_command.o
@@ -2661,32 +2688,32 @@ src/get_op_code.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/get_op_code.c.s
 .PHONY : src/get_op_code.c.s
 
-src/is_number.o: src/is_number.c.o
+src/helpers.o: src/helpers.c.o
 
-.PHONY : src/is_number.o
+.PHONY : src/helpers.o
 
 # target to build an object file
-src/is_number.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/is_number.c.o
-.PHONY : src/is_number.c.o
+src/helpers.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.o
+.PHONY : src/helpers.c.o
 
-src/is_number.i: src/is_number.c.i
+src/helpers.i: src/helpers.c.i
 
-.PHONY : src/is_number.i
+.PHONY : src/helpers.i
 
 # target to preprocess a source file
-src/is_number.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/is_number.c.i
-.PHONY : src/is_number.c.i
+src/helpers.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.i
+.PHONY : src/helpers.c.i
 
-src/is_number.s: src/is_number.c.s
+src/helpers.s: src/helpers.c.s
 
-.PHONY : src/is_number.s
+.PHONY : src/helpers.s
 
 # target to generate assembly for a file
-src/is_number.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/is_number.c.s
-.PHONY : src/is_number.c.s
+src/helpers.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src/helpers.c.s
+.PHONY : src/helpers.c.s
 
 src/label_table.o: src/label_table.c.o
 
@@ -3204,6 +3231,9 @@ help:
 	@echo "... src/bcode.o"
 	@echo "... src/bcode.i"
 	@echo "... src/bcode.s"
+	@echo "... src/check_bot_params.o"
+	@echo "... src/check_bot_params.i"
+	@echo "... src/check_bot_params.s"
 	@echo "... src/create_command.o"
 	@echo "... src/create_command.i"
 	@echo "... src/create_command.s"
@@ -3222,9 +3252,9 @@ help:
 	@echo "... src/get_op_code.o"
 	@echo "... src/get_op_code.i"
 	@echo "... src/get_op_code.s"
-	@echo "... src/is_number.o"
-	@echo "... src/is_number.i"
-	@echo "... src/is_number.s"
+	@echo "... src/helpers.o"
+	@echo "... src/helpers.i"
+	@echo "... src/helpers.s"
 	@echo "... src/label_table.o"
 	@echo "... src/label_table.i"
 	@echo "... src/label_table.s"
