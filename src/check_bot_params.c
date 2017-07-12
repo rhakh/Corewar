@@ -27,13 +27,14 @@ int 	is_printable(int c)
 }
 
 /*
-** 0 KO, 1 OK
+** 0 KO, 2 name , 3 comment
 */
 int 		check_bot_params(char *name, char *comment, char *str)
 {
 	char	*tmp;
 	int 	max_len;
 	char 	*dst;
+	int 	ret;
 
 	tmp = str;
 	max_len = -1;
@@ -44,13 +45,15 @@ int 		check_bot_params(char *name, char *comment, char *str)
 	if (max_len == -1)
 		return (0);
 	(ft_strncmp(tmp, NAME_CMD_STRING, 5)) ? (dst = comment) : (dst = name);
+	(ft_strncmp(tmp, NAME_CMD_STRING, 5)) ? (ret = 3) : (ret = 2);
 	(ft_strncmp(tmp, NAME_CMD_STRING, 5)) ? (tmp += 8) : (tmp += 5);
 	while (is_white_space(*tmp))
 		tmp++;
 	if (*tmp != '"' || !ft_strchr(tmp + 1, '"')
 		|| (unsigned int)(ft_strchr(tmp + 1, '"') - (tmp + 1)) > max_len)
 		return (0);
+	ft_bzero(dst, (size_t )max_len);
 	ft_strncpy(dst, tmp + 1, (size_t)(ft_strchr(tmp + 1, '"') - (tmp + 1)));
-	tmp[(unsigned int)(ft_strchr(tmp + 1, '"') - (tmp + 1))] = '\0';
-	return (1);
+	dst[(unsigned int)(ft_strchr(tmp + 1, '"') - (tmp + 1))] = '\0';
+	return (ret);
 }

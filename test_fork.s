@@ -1,7 +1,15 @@
 .name "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
 .comment "just a basic living bot"
 
-# fork %785	#fork %785
+
+aff r1
+aff r1
+aff r1
+aff r1
+aff r1
+
+
+fork %785	#fork %785
 # fork %125	#fork %785
 # fork %512	#fork %785
 # fork %0		#fork %785

@@ -65,6 +65,8 @@ typedef struct			s_main
 	int 				pc;
 	char 				name[PROG_NAME_LENGTH];
 	char 				comment[COMMENT_LENGTH];
+	int 				name_exist;
+	int 				comm_exist;
 }						t_main;
 
 typedef struct 			s_op

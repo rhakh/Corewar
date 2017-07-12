@@ -14,23 +14,26 @@ t_array_string		**lex_analyze(t_main *main, t_data *code)
 	t_array_string	**lex_strs;
 	int 			i;
 	int 			k;
+	int 			ret;
 
 	k = 0;
-	i = 0;
+	i = -1;
 	if ((lex_strs = (t_array_string **)
 						malloc(sizeof(t_array_string *) * code->i)) == NULL)
 		return (NULL);
-	while (i < code->i)
+	while (++i < code->i)
 	{
 		if (!is_empty_line(code->arr[i]) && !is_comment(code->arr[i]))
 		{
-			if (!check_bot_params(main->name, main->comment, code->arr[i]))
+			ret = check_bot_params(main->name, main->comment, code->arr[i]);
+			(ret == 2) ? (main->name_exist = 1) : 0;
+			(ret == 3) ? (main->comm_exist = 1) : 0;
+			if (!ret)
 			{
 				lex_strs[k] = split_line(main, code->arr[i]);
 				k++;
 			}
 		}
-		i++;
 	}
 	lex_strs[k] = NULL; //todo here may be leak
 	return (lex_strs);
