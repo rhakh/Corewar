@@ -25,11 +25,6 @@ int 		main(int argc, char **argv)
 	int 	fd;
 	t_main	main;
 
-
-	argv[1] = "/nfs/2016/r/rhakh/Corewar/Tests/jumper.s";
-	argv[1] = "/nfs/2016/r/rhakh/Corewar/test_fork.s";
-
-
 	ft_bzero(&main, sizeof(t_main));
 	check_args(&fd, argc, argv);
 	main.code = new_data(30);
@@ -38,13 +33,6 @@ int 		main(int argc, char **argv)
 	syntax_analyze(&main);
 	if (main.errors == 0)
 		write_bcode(argv[1], &main);
-
-
-	print_lex(main.lex_strings);
-	print_label_table(main.table);
-	print_bcode(main.bcode);
-
-
 	del_bcode(&main.bcode);
 	if (main.list != NULL)
 		del_linked_list(&(main.list),
@@ -53,7 +41,6 @@ int 		main(int argc, char **argv)
 	del_lex_strs(&main.lex_strings);
 	del_all_data(&main.code);
 	close(fd);
-	while (1);
 	return (0);
 }
 

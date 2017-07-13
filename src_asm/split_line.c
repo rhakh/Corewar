@@ -29,6 +29,8 @@ static void			devider(char *code, t_strp *buff, t_array_string *arr)
 			return ;
 		else if (code[i] > 32)
 			put_char_to_strp(buff, code[i]);
+	if (buff->i > 0)
+		add_str_to_array_string(arr, ft_strdup(buff->str));
 }
 
 t_array_string		*split_line(char *code)
@@ -36,11 +38,9 @@ t_array_string		*split_line(char *code)
 	t_strp			*buff;
 	t_array_string	*arr;
 
-	if ((buff = new_strp(30)) == NULL || (arr = new_array_string(1)) == NULL)
+	if ((buff = new_strp(30)) == NULL || (arr = new_array_string(2)) == NULL)
 		return (NULL);
 	devider(code, buff, arr);
-	if (buff->i > 0)
-		add_str_to_array_string(arr, ft_strdup(buff->str));
 	del_strp(&buff);
 	return (arr);
 }
