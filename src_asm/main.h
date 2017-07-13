@@ -120,7 +120,7 @@ void			print_string(t_array_string *arr);
 /*
 **	split_line.c
 */
-t_array_string	*split_line(t_main *main, char *code);
+t_array_string	*split_line(char *code);
 
 /*
 **	data_constructor.c

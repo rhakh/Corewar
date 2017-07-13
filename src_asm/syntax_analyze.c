@@ -31,7 +31,7 @@ static void			build_bcode(t_main *main)
 	i = 0;
 	while (main->lex_strings[i] != NULL)
 	{
-		if (main->lex_strings[i]->i >= 2)
+	if (main->lex_strings[i]->i >= 2)
 		{
 			if (1 < main->lex_strings[i]->i &&
 					!ft_strcmp(main->lex_strings[i]->arr[1], ":")

@@ -30,7 +30,7 @@ t_array_string		**lex_analyze(t_main *main, t_data *code)
 			(ret == 3) ? (main->comm_exist = 1) : 0;
 			if (!ret)
 			{
-				lex_strs[k] = split_line(main, code->arr[i]);
+				lex_strs[k] = split_line(code->arr[i]);
 				k++;
 			}
 		}
@@ -60,7 +60,7 @@ void				del_lex_strs(t_array_string ***str)
 		return ;
 	while ((*str)[i] != NULL)
 	{
-		del_array_string(&(*str)[i]);
+		del_array_string((*str) + i);
 		i++;
 	}
 	free(*str);

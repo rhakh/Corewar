@@ -6,10 +6,11 @@ t_array_string	*new_array_string(size_t size)
 
 	if ((arr = (t_array_string *)malloc(sizeof(t_array_string))) == NULL)
 		return (NULL);
-	if ((arr->arr = (char **) malloc(sizeof(char *) * size)) == NULL)
+	if (arr == NULL || (arr->arr = (char **) malloc(sizeof(char *) * size)) == NULL)
 	{
 		free(arr);
-		return (NULL);
+		print_error("failed to allocate memory", NULL);
+		exit(2);
 	}
 	arr->i = 0;
 	ft_bzero(arr->arr, sizeof(char *) * size);
@@ -17,22 +18,31 @@ t_array_string	*new_array_string(size_t size)
 	return (arr);
 }
 
-static int			realloc_array_string(t_array_string **arr)
+static int			realloc_array_string(t_array_string *arr)
 {
 	char	**new;
 	int 	i;
 
 	i = 0;
-	if ((new = (char **)malloc(sizeof(char *) * (*arr)->size * 2)) == NULL)
-		return (0);
-	while (i < (*arr)->i)
+	if ((new = (char **)malloc(sizeof(char *) * arr->size * 2)) == NULL)
 	{
-		new[i] = (*arr)->arr[i];
+		print_error("failed to allocate memory", NULL);
+		exit(2);
+	}
+	ft_bzero(new, sizeof(char *) * arr->size * 2);
+	while (i < arr->i)
+	{
+		new[i] = arr->arr[i];
 		i++;
 	}
-	free((*arr)->arr);
-	(*arr)->arr = new;
-	(*arr)->size *= 2;
+	free(arr->arr);
+
+	arr->arr = new;
+	arr->size = arr->size * 2;
+
+//	print_array_string(*arr);
+//	ft_printf("size = %d\n", (*arr)->size);
+
 	return (1);
 }
 
@@ -57,12 +67,15 @@ void			del_array_string(t_array_string **arr)
 
 int 			add_str_to_array_string(t_array_string *arr, char *str)
 {
-	if ((arr)->i + 1 >= (int)(arr)->size)
-		realloc_array_string(&arr);
-	if ((arr) == NULL)
-		return (0);
-	(arr)->arr[(arr)->i] = str;
-	(arr)->i++;
+	if (arr->i + 1 >= (int)arr->size)
+		realloc_array_string(arr);
+	if (arr->arr == NULL)
+	{
+		print_error("failed to allocate memory", NULL);
+		exit(2);
+	}
+	arr->arr[arr->i] = str;
+	arr->i++;
 	return (1);
 }
 

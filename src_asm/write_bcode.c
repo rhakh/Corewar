@@ -62,7 +62,7 @@ static void 	write_header(int fd, t_main *main)
 static void		edit_file_name(char *file_name, char *src_name)
 {
 	ft_strcpy(file_name, src_name);
-	*(ft_strrchr(file_name, '.') + 1) = 'c';
+	*(ft_strrchr(file_name, '.') + 1) = 'r';
 	*(ft_strrchr(file_name, '.') + 2) = 'o';
 	*(ft_strrchr(file_name, '.') + 3) = 'r';
 	*(ft_strrchr(file_name, '.') + 4) = '\0';
