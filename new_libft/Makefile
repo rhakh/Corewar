@@ -97,6 +97,8 @@ SRC =   check_spec.c \
 		ft_printf.c \
 		ft_atoll.c \
 		ft_swap.c \
+		string.c \
+		linked_list.c \
 
 SRCDIR = ./srcs/
 OBJDIR = ./obj/

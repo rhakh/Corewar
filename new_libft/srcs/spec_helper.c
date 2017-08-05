@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_functions.h"
 
 long long				cast_num(t_spec *sp, va_list *ap)
 {

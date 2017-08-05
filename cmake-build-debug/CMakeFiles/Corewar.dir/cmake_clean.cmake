@@ -84,6 +84,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/new_libft/srcs/numb_to_char.c.o"
   "CMakeFiles/Corewar.dir/new_libft/srcs/spec_helper.c.o"
   "CMakeFiles/Corewar.dir/new_libft/srcs/str_capitalizer.c.o"
+  "CMakeFiles/Corewar.dir/new_libft/srcs/string.c.o"
   "CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.o"
   "CMakeFiles/Corewar.dir/src_asm/array_string.c.o"
   "CMakeFiles/Corewar.dir/src_asm/bcode.c.o"
@@ -104,6 +105,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src_asm/split_line.c.o"
   "CMakeFiles/Corewar.dir/src_asm/syntax_analyze.c.o"
   "CMakeFiles/Corewar.dir/src_asm/write_bcode.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/vm.c.o"
+  "CMakeFiles/Corewar.dir/new_libft/srcs/linked_list.c.o"
   "Corewar.pdb"
   "Corewar"
 )

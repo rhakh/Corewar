@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_functions.h"
 
 void			llpaste_in_str(long long num, int base, char *str, int *i)
 {

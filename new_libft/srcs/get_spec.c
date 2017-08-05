@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_functions.h"
 
 t_strp			*get_spec(t_spec *sp, va_list *ap)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_functions.h"
 
 t_strp			*alone_char(t_spec *spec, t_strp *tmp, t_strp *res)
 {

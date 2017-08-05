@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.6)
 project(Corewar)
 
 set(CMAKE_C_FLAGS -std=c99)
@@ -35,6 +35,8 @@ set(SOURCE_FILES
         new_libft/srcs/ft_memset.c
         new_libft/srcs/ft_power.c
         new_libft/srcs/ft_printf.c
+        new_libft/srcs/ft_printf.h
+        new_libft/srcs/ft_printf_functions.h
         new_libft/srcs/ft_putchar.c
         new_libft/srcs/ft_putchar_fd.c
         new_libft/srcs/ft_putendl.c
@@ -90,6 +92,8 @@ set(SOURCE_FILES
         new_libft/srcs/numb_to_char.c
         new_libft/srcs/spec_helper.c
         new_libft/srcs/str_capitalizer.c
+        new_libft/srcs/string.c
+        new_libft/srcs/string.h
         new_libft/srcs/strp_functions.c
         src_asm/array_string.c
         src_asm/bcode.c
@@ -111,6 +115,7 @@ set(SOURCE_FILES
         src_asm/put_label.c
         src_asm/split_line.c
         src_asm/syntax_analyze.c
-        src_asm/write_bcode.c)
+        src_asm/write_bcode.c
+        src_vm/vm.c new_libft/srcs/linked_list.c new_libft/srcs/linked_list.h)
 
 add_executable(Corewar ${SOURCE_FILES})

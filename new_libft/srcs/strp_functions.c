@@ -27,6 +27,10 @@ t_strp		*new_strp(size_t size)
 
 void		del_strp(t_strp **t)
 {
+	if (t && *t)
+	{
+
+	}
 	free((*t)->str);
 	(*t)->str = NULL;
 	free(*t);

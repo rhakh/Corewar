@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_functions.h"
 
 void					b_flag_with_min(t_spec *sp, t_strp *num, t_strp *field,
 										unsigned long long v)
