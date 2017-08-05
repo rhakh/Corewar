@@ -116,6 +116,6 @@ set(SOURCE_FILES
         src_asm/split_line.c
         src_asm/syntax_analyze.c
         src_asm/write_bcode.c
-        src_vm/vm.c new_libft/srcs/linked_list.c new_libft/srcs/linked_list.h)
+        src_vm/vm.c new_libft/srcs/linked_list.c new_libft/srcs/linked_list.h src_vm/vm.h)
 
 add_executable(Corewar ${SOURCE_FILES})
