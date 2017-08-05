@@ -52,7 +52,7 @@ int         main(int argc, char **argv)
 	ft_bzero(&data, sizeof(t_data));
 	//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
-	if (init_bots(&data))
+	if (init_bots(&data, argv))
 		return (1);
 	if (infinit_loop(&data))
 		return (1);

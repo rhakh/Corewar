@@ -6,7 +6,7 @@ static int 		calculate_label(t_main *main, char *label_name, int *arg)
 
 	label = find_label_by_name(main->table, label_name);
 	if (label == NULL)
-		linked_list_push_back(&main->list, new_put_label(label_name, arg, main->pc));
+		list_push_back(&main->list, new_put_label(label_name, arg, main->pc));
 	else
 		return (label->offset - main->pc);
 	return (0);

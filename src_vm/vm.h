@@ -1,6 +1,7 @@
 #ifndef VM_H
 # define VM_H
 
+# include <fcntl.h>
 # include "op.h"
 # include "../new_libft/srcs/libft.h"
 

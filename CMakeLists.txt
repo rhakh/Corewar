@@ -88,6 +88,8 @@ set(SOURCE_FILES
         new_libft/srcs/get_u_spec.c
         new_libft/srcs/get_x_spec.c
         new_libft/srcs/libft.h
+        new_libft/srcs/linked_list.c
+        new_libft/srcs/linked_list.h
         new_libft/srcs/new_spec.c
         new_libft/srcs/numb_to_char.c
         new_libft/srcs/spec_helper.c
@@ -95,27 +97,10 @@ set(SOURCE_FILES
         new_libft/srcs/string.c
         new_libft/srcs/string.h
         new_libft/srcs/strp_functions.c
-        src_asm/array_string.c
-        src_asm/bcode.c
-        src_asm/check_bot_params.c
-        src_asm/create_command.c
-        src_asm/data_constructor.c
-        src_asm/error_messenger.c
-        src_asm/get_arg.c
-        src_asm/get_args_type.c
-        src_asm/get_op_code.c
-        src_asm/helpers.c
-        src_asm/label_table.c
-        src_asm/lex_analyze.c
-        src_asm/linked_list.c
-        src_asm/main.c
-        src_asm/main.h
-        src_asm/op.c
-        src_asm/op.h
-        src_asm/put_label.c
-        src_asm/split_line.c
-        src_asm/syntax_analyze.c
-        src_asm/write_bcode.c
-        src_vm/vm.c new_libft/srcs/linked_list.c new_libft/srcs/linked_list.h src_vm/vm.h src_vm/bots_functions.c)
+        src_vm/bots_functions.c
+        src_vm/op.c
+        src_vm/op.h
+        src_vm/vm.c
+        src_vm/vm.h)
 
 add_executable(Corewar ${SOURCE_FILES})

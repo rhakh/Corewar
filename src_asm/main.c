@@ -23,23 +23,23 @@ static void	check_args(int *fd, int argc, char **argv)
 int 		main(int argc, char **argv)
 {
 	int 	fd;
-	t_main	main;
+	t_main	data;
 
-	ft_bzero(&main, sizeof(t_main));
+	ft_bzero(&data, sizeof(t_main));
 	check_args(&fd, argc, argv);
-	main.code = new_data(30);
-	read_data(fd, &(main.code));
-	main.lex_strings = lex_analyze(&main, main.code);
-	syntax_analyze(&main);
-	if (main.errors == 0)
-		write_bcode(argv[1], &main);
-	del_bcode(&main.bcode);
-	if (main.list != NULL)
-		del_linked_list(&(main.list),
-					((t_put_label *)main.list->data)->del_put_label);
-	del_label_table(&main.table);
-	del_lex_strs(&main.lex_strings);
-	del_all_data(&main.code);
+	data.code = new_data(30);
+	read_data(fd, &(data.code));
+	data.lex_strings = lex_analyze(&data, data.code);
+	syntax_analyze(&data);
+	if (data.errors == 0)
+		write_bcode(argv[1], &data);
+	del_bcode(&data.bcode);
+	if (data.list != NULL)
+		list_del(&(data.list),
+					((t_put_label *)data.list->data)->del_put_label);
+	del_label_table(&data.table);
+	del_lex_strs(&data.lex_strings);
+	del_all_data(&data.code);
 	close(fd);
 	return (0);
 }
