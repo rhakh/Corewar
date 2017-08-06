@@ -11,6 +11,8 @@ t_string			*string_new(size_t size)
 		free(res);
 		return (NULL);
 	}
+	res->size = size;
+	res->len = 0;
 	return (res);
 }
 
@@ -30,6 +32,7 @@ static int				string_realloc(t_string *res, size_t new_size)
 		if (res->str)
 			free(res->str);
 		res->str = new_str;
+		res->size = new_size;
 		return (0);
 	}
 	return (1);
@@ -47,12 +50,12 @@ int 					string_append(t_string *res, const char *str, size_t len)
 		if (res->len + len + 1 >= res->size)
 		{
 			new_size = 2 * res->size;
-			while (new_size > res->size + len)
+			while (new_size < res->size + len)
 				new_size *= 2;
 			if (string_realloc(res, new_size))
 				return (1);
 		}
-		ft_memcpy(res->str, str, len);
+		ft_memcpy(res->str + res->len, str, len);
 		res->len += len;
 		return (0);
 	}
@@ -71,7 +74,7 @@ int 					string_append_c(t_string *res, char c)
 		if (res->len + 2 >= res->size)
 		{
 			new_size = 2 * res->size;
-			while (new_size > res->size + 1)
+			while (new_size < res->size + 1)
 				new_size *= 2;
 			if (string_realloc(res, new_size))
 				return (1);

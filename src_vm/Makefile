@@ -20,7 +20,7 @@ OBJDIR = ../obj_vm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = #-Wall -Wextra -Werror
 
 all: obj $(NAME)
 

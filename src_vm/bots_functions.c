@@ -7,6 +7,8 @@ t_bot		*bot_new(int number, t_string *code)
 	if ((bot = (t_bot *)malloc(sizeof(t_bot))) == NULL)
 		return (NULL);
 	ft_bzero(bot, sizeof(t_bot));
+	bot->code = code;
+	bot->number = number;
 	return (bot);
 }
 
@@ -24,6 +26,23 @@ void		bot_del(t_bot **pbot)
 		if (bot->code)
 			string_del(&(bot->code));
 		*pbot = NULL;
+	}
+}
+
+void		print_bcode(const char *code, int len)
+{
+	int 	i;
+
+	i = 0;
+	if (code)
+	{
+		ft_printf("{yellow}BCode = {\n{eoc}");
+		while (i < len)
+		{
+			ft_printf("%0.2hhx ", code[i]);
+			i++;
+		}
+		ft_printf("\n{yellow}}{eoc}");
 	}
 }
 
@@ -57,13 +76,15 @@ int 		get_number_from_bcode(const unsigned char *code, int num_size)
 	unsigned char	*pnum;
 
 	num = 0;
-	pnum = &num + sizeof(int) - 1;
-	i = -1;
-	while (++i && i < num_size)
+	pnum = (unsigned char *)(&num);
+	i = 0;
+	code += sizeof(int) - 1;
+	while (i < num_size)
 	{
 		*pnum = *code;
-		code++;
-		pnum--;
+		code--;
+		pnum++;
+		i++;
 	}
 	return (num);
 }
@@ -80,7 +101,23 @@ int 		validate_magic_number(t_bot *bot)
 
 int 		validate_bot_size(t_bot *bot)
 {
+	int		size1;
+	int 	size2;
 
+	size1 = get_number_from_bcode((unsigned char *)bot->code->str + 4 + PROG_NAME_LENGTH + 4, sizeof(int));
+	size2 = (int)bot->code->len - sizeof(int) - PROG_NAME_LENGTH - 4 - sizeof(int) - COMMENT_LENGTH - sizeof(int);
+	if (size1 != size2)
+	{
+		ft_printf("{red}Error:{eoc} declared and actual size are not equal %d != %d\n", size1, size2);
+		return (1);
+	}
+	if (size1 > CHAMP_MAX_SIZE)
+	{
+		ft_printf("{red}Error:{eoc} champ size is too big, max size = %d\n", CHAMP_MAX_SIZE);
+		return (1);
+	}
+	bot->size = size1;
+	return (0);
 }
 
 /*
@@ -89,14 +126,19 @@ int 		validate_bot_size(t_bot *bot)
 int 		validate_bots(t_data *data)
 {
 	t_linked_list	*curr;
+	t_bot			*curr_bot;
 
 	curr = data->bots;
 	while (curr)
 	{
-		if (validate_magic_number(curr->data))
+		curr_bot = (t_bot *)curr->data;
+		if (validate_magic_number(curr_bot))
 			return (1);
-		if (validate_bot_size(curr->data))
+		if (validate_bot_size(curr_bot))
 			return (1);
+		curr_bot->name = ft_strndup(curr_bot->code->str + sizeof(int), PROG_NAME_LENGTH);
+		curr_bot->comment = ft_strndup(curr_bot->code->str + sizeof(int) + PROG_NAME_LENGTH + 4 + sizeof(int), COMMENT_LENGTH);
+		curr = curr->next;
 	}
 	return (0);
 }

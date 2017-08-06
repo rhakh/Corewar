@@ -31,3 +31,21 @@ char		*ft_strdup(const char *s1)
 	dest[i] = '\0';
 	return (dest);
 }
+
+char		*ft_strndup(const char *s1, size_t n)
+{
+	char	*dest;
+	size_t	i;
+
+	i = 0;
+	dest = (char *)malloc(n + 1);
+	if (dest == NULL)
+		return (dest);
+	while (i < n)
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
