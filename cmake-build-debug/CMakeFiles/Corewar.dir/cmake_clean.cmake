@@ -90,6 +90,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o"
   "CMakeFiles/Corewar.dir/src_vm/op.c.o"
   "CMakeFiles/Corewar.dir/src_vm/vm.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o"
   "Corewar.pdb"
   "Corewar"
 )

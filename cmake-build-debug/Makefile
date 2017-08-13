@@ -2526,6 +2526,33 @@ src_vm/bots_functions.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/bots_functions.c.s
 .PHONY : src_vm/bots_functions.c.s
 
+src_vm/ncurses_windows.o: src_vm/ncurses_windows.c.o
+
+.PHONY : src_vm/ncurses_windows.o
+
+# target to build an object file
+src_vm/ncurses_windows.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o
+.PHONY : src_vm/ncurses_windows.c.o
+
+src_vm/ncurses_windows.i: src_vm/ncurses_windows.c.i
+
+.PHONY : src_vm/ncurses_windows.i
+
+# target to preprocess a source file
+src_vm/ncurses_windows.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.i
+.PHONY : src_vm/ncurses_windows.c.i
+
+src_vm/ncurses_windows.s: src_vm/ncurses_windows.c.s
+
+.PHONY : src_vm/ncurses_windows.s
+
+# target to generate assembly for a file
+src_vm/ncurses_windows.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.s
+.PHONY : src_vm/ncurses_windows.c.s
+
 src_vm/op.o: src_vm/op.c.o
 
 .PHONY : src_vm/op.o
@@ -2856,6 +2883,9 @@ help:
 	@echo "... src_vm/bots_functions.o"
 	@echo "... src_vm/bots_functions.i"
 	@echo "... src_vm/bots_functions.s"
+	@echo "... src_vm/ncurses_windows.o"
+	@echo "... src_vm/ncurses_windows.i"
+	@echo "... src_vm/ncurses_windows.s"
 	@echo "... src_vm/op.o"
 	@echo "... src_vm/op.i"
 	@echo "... src_vm/op.s"

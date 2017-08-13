@@ -101,6 +101,6 @@ set(SOURCE_FILES
         src_vm/op.c
         src_vm/op.h
         src_vm/vm.c
-        src_vm/vm.h)
+        src_vm/vm.h src_vm/ncurses_windows.c)
 
 add_executable(Corewar ${SOURCE_FILES})

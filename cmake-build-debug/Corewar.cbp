@@ -364,6 +364,9 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/bots_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/op.c">
 			<Option target="Corewar"/>
 		</Unit>

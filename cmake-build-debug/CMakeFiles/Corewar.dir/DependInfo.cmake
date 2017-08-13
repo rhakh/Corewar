@@ -93,6 +93,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/r/rhakh/Corewar/new_libft/srcs/string.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/new_libft/srcs/string.c.o"
   "/nfs/2016/r/rhakh/Corewar/new_libft/srcs/strp_functions.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.o"
   "/nfs/2016/r/rhakh/Corewar/src_vm/bots_functions.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o"
+  "/nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o"
   "/nfs/2016/r/rhakh/Corewar/src_vm/op.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src_vm/op.c.o"
   "/nfs/2016/r/rhakh/Corewar/src_vm/vm.c" "/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles/Corewar.dir/src_vm/vm.c.o"
   )
