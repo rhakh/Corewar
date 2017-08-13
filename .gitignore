@@ -1,0 +1,6 @@
+*.o
+obj_vm/*
+obj_asm/*
+*.a
+*DS_Store
+Tests/._.DS_Store

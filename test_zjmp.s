@@ -7,6 +7,10 @@ zjmp %65
 zjmp %:li
 zjmp %:la
 
-li: live %1
+li:
+live %1
+la: live %2
+la:
+live %2
 
 

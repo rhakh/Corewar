@@ -16,6 +16,7 @@ SRC =   vm.c \
         bots_functions.c \
         init_ncurses.c \
         ncurses_windows.c \
+        op.c \
 
 SRCDIR = ./
 
