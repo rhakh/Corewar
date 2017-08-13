@@ -19,16 +19,36 @@ int 		listen_keybord(t_data *data)
 int 		execute_commands(t_data *data)
 {
 	//todo hakh
+	t_linked_list	*curr;
+	t_bot			*bot;
+	int 			min;
+
+	min = 2147483647;
+	curr = data->bots;
+	while (curr)
+	{
+		bot = curr->data;
+		if (min > bot->pause_time)
+			min = bot->pause_time;
+		curr = curr->next;
+	}
+	while ()
+	{
+
+	}
 	return (0);
 }
 
 /*
 ** 0 - ok, 1 - error
 */
-int 		infinit_loop(t_data *data)
+int 		 infinit_loop(t_data *data)
 {
 	//todo:hakh execute bots commands
 	//todo:bondar synchronized output using opengl
+	t_linked_list	*curr;
+	t_bot			*bot;
+
 	while (1)
 	{
 		if (listen_keybord(data))

@@ -13,6 +13,8 @@
 NAME = my_vm
 
 SRC =   vm.c \
+        bots_functions.c \
+        op.c \
 
 SRCDIR = ./
 
