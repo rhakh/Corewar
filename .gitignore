@@ -3,4 +3,7 @@ obj_vm/*
 obj_asm/*
 *.a
 *DS_Store
-Tests/._.DS_Store
+/cmake-build-debug/*
+new_libft/obj/
+test_st.cor
+test_st.ror

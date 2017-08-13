@@ -1,5 +1,9 @@
 #include "vm.h"
 
+int 			send_to_ncurses(int start, int len, t_bot *bot, t_data *data) {
+	move_to_byte();
+}
+
 WINDOW		*create_memory_win(void)
 {
 	WINDOW *memory_win;
@@ -53,17 +57,65 @@ void		display_memory(t_data *data, WINDOW *win)
 	int 	i;
 	int 	x;
 	int 	y;
+	t_bot   *cur_bot;
+	t_linked_list   *list;
 
 	i = 0;
+	list = data->bots;
+	cur_bot = (t_bot *)list->data;
 	while (i < MEM_SIZE)
 	{
 		if (i % ft_sqrt(MEM_SIZE) == 0){
 			getyx(win, y, x);
 			wmove(win, y + 1, 1);
 		}
-		wattron(win, COLOR_PAIR(i % 14));
-		wprintw(win, "%0.2hhx ", data->map[i]);
-		wattroff(win, COLOR_PAIR(i % 2));
+
+		if (cur_bot && i == cur_bot->pc)
+		{
+			int j = 0;
+			while (j < cur_bot->size)
+			{
+				wattron(win, COLOR_PAIR(cur_bot->number + 1));
+				wprintw(win, "%0.2hhx ", data->map[i]);
+				wattroff(win, COLOR_PAIR(cur_bot->number + 1));
+				j++;
+				i++;
+			}
+
+			list = list->next;
+			if (list)
+				cur_bot = list->data;
+			else
+				cur_bot = NULL;
+		}
+		else
+			wprintw(win, "%0.2hhx ", data->map[i]);
+
+//		if (i % CHAMP_MAX_SIZE > cur_bot->size) {
+//			wprintw(win, "%0.2hhx ", data->map[i]);
+//		} else {
+//			wattron(win, COLOR_PAIR(i / (CHAMP_MAX_SIZE - 1)));
+//			wprintw(win, "%0.2hhx ", data->map[i]);
+//			wattroff(win, COLOR_PAIR(i / (CHAMP_MAX_SIZE - 1)));
+//		}
+
+
+//		if (cur_bot == NULL || (i % (CHAMP_MAX_SIZE - 1)) > cur_bot->size) {
+//			wprintw(win, "%0.2hhx ", data->map[i]);
+//		} else {
+//			wattron(win, COLOR_PAIR(i / (CHAMP_MAX_SIZE - 1)));
+//			wprintw(win, "%0.2hhx ", data->map[i]);
+//			wattroff(win, COLOR_PAIR(i / (CHAMP_MAX_SIZE - 1)));
+//		}
+//		if (i % (CHAMP_MAX_SIZE - 1) == 0) {
+//			if (list->next == NULL)
+//			{
+//				cur_bot = NULL;
+//			} else{
+//				list = list->next;
+//				cur_bot = (t_bot *) list->data;
+//			}
+//		}
 		i++;
 	}
 	wrefresh(win);
@@ -80,13 +132,13 @@ void		ft_display_arena(t_data *data) {
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
 	create_stats_win();
-	move_to_byte(memory_win, 5);
-	move_to_byte(memory_win, 42);
-	move_to_byte(memory_win, 0);
-	move_to_byte(memory_win, 64);
-	move_to_byte(memory_win, 65);
-	move_to_byte(memory_win, 63);
-	move_to_byte(memory_win, 69);
+//	move_to_byte(memory_win, 5);
+//	move_to_byte(memory_win, 42);
+//	move_to_byte(memory_win, 0);
+//	move_to_byte(memory_win, 64);
+//	move_to_byte(memory_win, 65);
+//	move_to_byte(memory_win, 63);
+//	move_to_byte(memory_win, 69);
 	getch();
 	endwin();
 }
