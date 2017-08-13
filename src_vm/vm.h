@@ -51,10 +51,13 @@ extern t_op    			op_tab[17];
 t_bot			*bot_new(int number, t_string *code);
 void 			bot_del(t_bot **bot);
 
-int 		read_bot(t_string *code, char *file_name);
-int 		validate_bots(t_data *data);
-void		ft_display_arena(t_data *data);
-WINDOW		*create_newwin(int height, int width, int starty, int startx);
+// NCURSES
+void			move_to_byte(WINDOW *win, int byte);
+
+int 			read_bot(t_string *code, char *file_name);
+int 			validate_bots(t_data *data);
+void			ft_display_arena(t_data *data);
+WINDOW			*create_newwin(int height, int width, int starty, int startx);
 int 			read_bot(t_string *code, char *file_name);
 int 			validate_bots(t_data *data);
 void			print_bcode(const char *code, int len);
