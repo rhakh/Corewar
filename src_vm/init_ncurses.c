@@ -5,7 +5,7 @@ WINDOW		*create_memory_win(void)
 	WINDOW *memory_win;
 
 	refresh();
-	memory_win = create_newwin(MEM_SIZE / 64 + 2, 128 + 100 + 2, 2, 0);
+	memory_win = create_newwin(MEM_SIZE / 64 + 2, 128 + 64 + 2, 2, 0);
 //	wborder(memory_win, '.', '.', '.', '.', '.', '.', '.', '.');
 	return memory_win;
 }
@@ -39,16 +39,17 @@ void		ft_init_ncurses(void)
 void		display_memory(t_data *data, WINDOW *win)
 {
 	int 	i;
+	int 	x;
+	int 	y;
 
-	wmove(win, 1, 1);
-//	wprintw(win, "hello");
 	i = 0;
 	while (i < MEM_SIZE)
 	{
 		if (i % 64 == 0){
-			wprintw(win, "42\n");
+			getyx(win, y, x);
+			wmove(win, y + 1, 1);
 		}
-//		wprintw(win, "%0.2hhx ", data->map[i]);
+		wprintw(win, "%0.2hhx ", data->map[i]);
 		i++;
 	}
 	wrefresh(win);
