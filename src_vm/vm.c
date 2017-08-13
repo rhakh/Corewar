@@ -14,6 +14,112 @@ int 		listen_keybord(t_data *data)
 }
 
 /*
+** i from 1 to 3 must be
+*/
+char 		get_arg_type(char opcode, int i)
+{
+	char	arg_type;
+
+	arg_type = 0;
+	if (i == 1)
+		arg_type = (char)((opcode >> 4) & 0b00000011);
+	else if (i == 2)
+		arg_type = (char)((opcode >> 2) & 0b00000011);
+	else if (i == 3)
+		arg_type = (char)(opcode & 0b00000011);
+	return (arg_type);
+}
+
+int 		get_args(t_data *data, t_bot *bot, char command, char opcode, int args[3])
+{
+	char 	i;
+	char 	arg_type;
+	char 	offset;
+
+	i = 0;
+	while (i < op_tab[command - 1].n_arg)
+	{
+		arg_type = (char)((opcode >> (4 - ((i) ? (1 << i) : (0)))) & 0b00000011);
+		if (arg_type == REG_CODE && (offset = 1))
+		{
+			args[i] = get_number_from_bcode(data->map + bot->pc, 1);
+			if (args[i] > REG_NUMBER || args[i] < 1)
+				return (1);
+		}
+		else if (arg_type == DIR_CODE && op_tab[command - 1].dir_as_label && (offset = 2))
+			args[i] = get_number_from_bcode(data->map + bot->pc, 2);
+		else if (arg_type == DIR_CODE && (offset = 4))
+			args[i] = get_number_from_bcode(data->map + bot->pc, 4);
+		else if (arg_type == IND_CODE && (offset = 2))
+			args[i] = get_number_from_bcode(data->map + bot->pc, 2);
+		bot->pc += offset;
+		i++;
+	}
+	return (0);
+}
+
+int 		arithmetic_operation(t_bot *bot, char command, int args[3])
+{
+	if (command == 4)
+		bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]];
+	else
+		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
+	bot->pause_time = op_tab[command - 1].cycles_to_done;
+	return (0);
+}
+
+int 		logic_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
+{
+	int 	i;
+	int 	num[2];
+	char 	arg_type;
+
+	i = 0;
+	while (i < op_tab[command - 1].n_arg - 1)
+	{
+		arg_type = get_arg_type(opcode, i + 1);
+		if (arg_type == REG_CODE)
+			num[i] = bot->reg[args[i]];
+		else if (arg_type == DIR_CODE)
+			num[i] = bot->reg[args[i]];
+		else if (arg_type == IND_CODE)
+		{
+			num[i] = get_number_from_bcode(data->map + bot)
+		}
+	}
+}
+
+int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[3])
+{
+	if (command == 4 || command == 5)
+		arithmetic_operation(bot, command, args);
+	if (command == 6 || command == 7 || command == 8)
+		logic_operation(data, bot, command, opcode, args);
+	bot->pc++;
+	return (0);
+}
+
+int 		execute_command(t_data *data, t_bot *bot)
+{
+	char 			command;
+	char 			opcode;
+	int 	args[3];
+
+	opcode = 0;
+	command = data->map[bot->pc];
+	bot->pc++;
+	if (op_tab[command - 1].have_opcode)
+	{
+		opcode = data->map[bot->pc];
+		bot->pc++;
+	}
+	if (get_args(data, bot, command, opcode, args))
+		return (1);
+	if (run_command(data, bot, command, opcode, args))
+		return (1);
+}
+
+/*
 ** 0 - ok , 1 - error
 */
 int 		execute_commands(t_data *data)
@@ -32,9 +138,18 @@ int 		execute_commands(t_data *data)
 			min = bot->pause_time;
 		curr = curr->next;
 	}
-	while ()
+	curr = data->bots;
+	while (curr)
 	{
-
+		bot = curr->data;
+		if (min == bot->pause_time)
+		{
+			if (execute_command(data, bot))
+				return (1);
+		}
+		else
+			bot->pause_time -= min;
+		curr = curr->next;
 	}
 	return (0);
 }

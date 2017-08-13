@@ -52,11 +52,9 @@ $(NAME): $(OBJ)
 	gcc $(FLAGS) -o $(NAME) $(OBJ) ./new_libft/libft.a
 
 clean:
-	make -C ./new_libft clean
 	/bin/rm -rf $(OBJDIR)
 
 fclean: clean
-	make -C ./new_libft fclean
 	/bin/rm -f $(NAME)
 
 re: fclean all

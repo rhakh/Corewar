@@ -5,18 +5,13 @@
 # include "op.h"
 # include "../new_libft/srcs/libft.h"
 
-typedef struct		s_reg
-{
-	unsigned int	r : REG_SIZE * 8;
-}					t_reg;
-
 typedef struct		s_bot
 {
 	char 			*name;
 	char 			*comment;
 	int 			size;
 	int 			number;
-	t_reg			reg[REG_NUMBER + 1];
+	int				reg[REG_NUMBER + 1];
 	int 			carry;
 	int 			pc;
 	int 			pause_time;
@@ -52,11 +47,12 @@ typedef struct 			s_op
 
 extern t_op    			op_tab[17];
 
-t_bot		*bot_new(int number, t_string *code);
-void 		bot_del(t_bot **bot);
+t_bot			*bot_new(int number, t_string *code);
+void 			bot_del(t_bot **bot);
 
-int 		read_bot(t_string *code, char *file_name);
-int 		validate_bots(t_data *data);
-void		print_bcode(const char *code, int len);
+int 			read_bot(t_string *code, char *file_name);
+int 			validate_bots(t_data *data);
+void			print_bcode(const char *code, int len);
+int 			get_number_from_bcode(const unsigned char *code, int num_size);
 
 #endif
