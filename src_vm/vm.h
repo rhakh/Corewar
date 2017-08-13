@@ -59,5 +59,7 @@ int 			read_bot(t_string *code, char *file_name);
 int 			validate_bots(t_data *data);
 void			print_bcode(const char *code, int len);
 int 			get_number_from_bcode(const unsigned char *code, int num_size);
+int 			put_number_to_bcode(t_data *data, int num, int position);
+int 			send_to_ncurses(int start, int len, t_bot *bot, t_data *data);
 
 #endif
