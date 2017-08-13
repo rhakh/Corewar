@@ -6,13 +6,16 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/03/08 19:30:14 by rhakh            ###   ########.fr        #
+#    Updated: 2017/08/13 12:22:39 by sbondar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = my_vm
 
 SRC =   vm.c \
+        bots_functions.c \
+        init_ncurses.c \
+        ncurses_windows.c \
 
 SRCDIR = ./
 
@@ -32,7 +35,7 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a
+	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
 
 clean:
 	make -C ../new_libft clean

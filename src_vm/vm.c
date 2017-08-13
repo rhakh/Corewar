@@ -103,15 +103,15 @@ void		print_memory(t_data *data)
 {
 	int 	i;
 
-	i = 0;
-	ft_printf("{yellow}Memory dump:\n{eoc}");
-	while (i < MEM_SIZE)
-	{
-		if (i % 64 == 0)
-			ft_printf("\n");
-		ft_printf("%0.2hhx ", data->map[i]);
-		i++;
-	}
+		i = 0;
+		ft_printf("{yellow}Memory dump:\n{eoc}");
+		while (i < MEM_SIZE)
+		{
+			if (i % 64 == 0)
+				ft_printf("\n");
+			ft_printf("%0.2hhx ", data->map[i]);
+			i++;
+		}
 }
 
 int         main(int argc, char **argv)
@@ -127,7 +127,7 @@ int         main(int argc, char **argv)
 	if (init_bots(&data, argv, 1))
 		return (1);
 	load_bots_in_memory(&data);
-	print_memory(&data);
+	ft_display_arena(&data);
 	if (infinit_loop(&data))
 		return (1);
 	//todo: calculate winner

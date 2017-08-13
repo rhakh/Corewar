@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/nfs/2016/r/rhakh/Corewar/cmake-build-debug"/>
+				<Option working_dir="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/nfs/2016/r/rhakh/Corewar/cmake-build-debug"/>
+				<Option working_dir="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/nfs/2016/r/rhakh/Corewar/cmake-build-debug"/>
+				<Option working_dir="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Corewar">
-				<Option output="/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Corewar" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/nfs/2016/r/rhakh/Corewar/cmake-build-debug"/>
+				<Option output="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Corewar"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Corewar"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Corewar/fast">
-				<Option output="/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Corewar" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/nfs/2016/r/rhakh/Corewar/cmake-build-debug"/>
+				<Option output="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,308 +75,311 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Corewar/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/r/rhakh/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Corewar/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/nfs/2016/s/sbondar/projects/clang/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_colour.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/check_colour.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/check_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/check_spec_helper.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/check_spec_helper.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_atoi.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_atoi.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_atoll.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_atoll.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_bzero.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_bzero.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_factorial.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_factorial.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isalnum.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_isalnum.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isalpha.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_isalpha.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isascii.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_isascii.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isdigit.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_isdigit.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_isprint.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_isprint.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_itoa.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_itoa.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstadd.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstadd.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstdel.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstdel.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstdelone.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstdelone.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstiter.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstiter.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstmap.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstmap.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstnew.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstnew.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_lstrev.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_lstrev.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memalloc.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memalloc.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memccpy.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memccpy.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memchr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memchr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memcmp.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memcmp.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memcpy.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memcpy.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memdel.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memdel.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memdup.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memdup.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memmove.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memmove.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_memset.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_memset.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_power.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_power.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_printf.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_printf.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_printf.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_printf.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_printf_functions.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_printf_functions.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putchar.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putchar.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putchar_fd.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putchar_fd.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putendl.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putendl.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putendl_fd.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putendl_fd.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putnbr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putnbr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putnbr_fd.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putnbr_fd.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putstr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putstr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_putstr_fd.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_putstr_fd.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_sqrt.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_sqrt.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcat.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strcat.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strchr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strchr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strclr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strclr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcmp.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strcmp.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strcpy.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strcpy.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strdel.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strdel.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strdup.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strdup.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strequ.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strequ.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_striter.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_striter.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_striteri.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_striteri.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strjoin.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strjoin.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strlcat.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strlcat.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strlen.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strlen.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strmap.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strmap.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strmapi.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strmapi.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncat.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strncat.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncmp.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strncmp.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strncpy.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strncpy.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnequ.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strnequ.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnew.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strnew.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strnstr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strnstr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strrchr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strrchr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strsplit.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strsplit.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strstr.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strstr.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strsub.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strsub.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_strtrim.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_strtrim.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_swap.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_swap.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_tolower.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_tolower.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/ft_toupper.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/ft_toupper.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_b_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_b_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_c_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_c_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_d_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_d_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_ls_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_ls_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_next_line.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_next_line.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_o_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_o_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_p_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_p_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_result.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_result.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_s_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_s_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_u_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_u_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/get_x_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/get_x_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/libft.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/libft.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/linked_list.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/linked_list.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/linked_list.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/linked_list.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/new_spec.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/new_spec.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/numb_to_char.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/numb_to_char.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/spec_helper.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/spec_helper.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/str_capitalizer.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/str_capitalizer.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/string.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/string.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/string.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/string.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/strp_functions.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/new_libft/srcs/strp_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/bots_functions.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/bots_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/op.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/ncurses_windows.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/op.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/op.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/vm.c">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/op.h">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/vm.h">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/vm.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/CMakeLists.txt">
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/src_vm/vm.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/s/sbondar/projects/clang/Corewar/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
