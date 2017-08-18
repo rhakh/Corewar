@@ -1,9 +1,9 @@
 #ifndef VM_H
 # define VM_H
 
+# include "op.h"
 # include <fcntl.h>
 # include <ncurses.h>
-# include "op.h"
 # include "../new_libft/srcs/libft.h"
 
 typedef struct		s_bot
@@ -32,6 +32,10 @@ typedef struct		s_data
 	int 			bots_count;
 	int 			one_command_mode;
 	int 			pause;
+
+	size_t			dump;					// apalanic: dump value use if only  dump > 0
+	char			*players[MAX_PLAYERS + 1]; // apalanic: list of arguments -- needs free()
+	char 			visual;
 }					t_data;
 
 typedef struct 			s_op
@@ -48,13 +52,17 @@ typedef struct 			s_op
 
 extern t_op    			op_tab[17];
 
+# include "args_functions.h"
+# include "commands.h"
+# include "flags_parser.h"
+
 t_bot			*bot_new(int number, t_string *code);
 void 			bot_del(t_bot **bot);
 
-int 		read_bot(t_string *code, char *file_name);
-int 		validate_bots(t_data *data);
-void		ft_display_arena(t_data *data);
-WINDOW		*create_newwin(int height, int width, int starty, int startx);
+int 			read_bot(t_string *code, char *file_name);
+int 			validate_bots(t_data *data);
+void			ft_display_arena(t_data *data);
+WINDOW			*create_newwin(int height, int width, int starty, int startx);
 int 			read_bot(t_string *code, char *file_name);
 int 			validate_bots(t_data *data);
 void			print_bcode(const char *code, int len);

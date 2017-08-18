@@ -21,7 +21,6 @@ void	print(t_data *data)
 	{
 		ft_printf ("%s\n", data->players[i]);
 	}
-
 }
 
 //int		main(int argc, char **argv)
