@@ -1,9 +1,5 @@
 #include "vm.h"
 
-int 			send_to_ncurses(int start, int len, t_bot *bot, t_data *data) {
-	//move_to_byte();
-}
-
 void init_ncurses(void)
 {
 	initscr();
@@ -27,7 +23,8 @@ void init_ncurses(void)
 	init_pair(12, COLOR_WHITE, COLOR_BLACK);
 	init_pair(13, COLOR_BLACK, COLOR_GREEN);
 	init_pair(14, COLOR_GREEN, COLOR_BLACK);
-//	curs_set(FALSE);
+	timeout(100);
+	curs_set(FALSE);
 }
 
 void		nc_display_arena(t_data *data) {
@@ -43,75 +40,21 @@ void		nc_display_arena(t_data *data) {
 
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
+
 	stats_win = create_stats_win();
 	display_stats(data, stats_win);
+
 	debug_win = create_debug_win();
 	display_debug(data, debug_win);
+
 	data->memory_win = memory_win;
 	data->stats_win = stats_win;
 	data->debug_win = debug_win;
-
-	/* switch RUNNING / PAUSE */
-	int k=0; // del
-	// while (1)
-	// {
-	// 	int pause = wgetch(stats_win);
-
-	// 	if (pause == ' ')
-	// 	{
-	// 		if (data->pause == 0)
-	// 		{
-	// 			data->pause = 1;
-	// 		}
-	// 		else
-	// 		{
-
-	// 			data->pause = 0;
-	// 		}
-	// 		move_to_byte(memory_win, k++);
-	// 		display_stats(data, stats_win);
-	// 	}
-	// 	if (pause == 113)
-	// 	{
-	// 		endwin();
-	// 		return ;
-	// 	}
-	// }
-
-
-
-	// nodelay(stdscr, TRUE);
-//	timeout(1);
-//	// halfdelay(1);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
-//    printw("Press F2 to exit.\n");
-//	bool ex = false;
-//    while ( !ex )
-//    {
-//        int ch = getch();
-//
-//        switch ( ch )
-//        {
-//        case ERR:
-//            move_to_byte(memory_win, k++);
-//            break;
-//        case KEY_F(2): //Выходим из программы, если была нажата F2
-//            ex = true;
-//            break;
-//        default:  //Если всё нормально, выводим код нажатой клавиши
-//        	k++;
-//            break;
-//        }
-//
-//        refresh(); //Выводим на настоящий экран
-//
-//    }
-
-//    printw("Thank you. Good buy!");
-
-
 }
 
 void		nc_terminate(t_data *data) {
-	getch();
+	while(getch() != 'q') {
+		//ignore
+	}
 	endwin();
 }

@@ -57,7 +57,8 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	list = data->bots;
 	cur_bot = (t_bot *)list->data;
 	/* if data->pause == 0 then PAUSE, else RUNNING */
-	if (!data->pause)
+	data->pause = 1;
+	if (data->pause)
 	{
 		wattron(stats_win, COLOR_PAIR(10));
 		mvwprintw(stats_win, 1, 28, "*** PAUSE ***");

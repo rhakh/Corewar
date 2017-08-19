@@ -42,20 +42,44 @@ int 		 infinit_loop(t_data *data)
 	//todo:hakh execute bots commands
 	//todo:bondar synchronized output using ncurses
 
-	while (1)
+	bool winner;
+
+	winner = false;
+	data->one_command_mode = 1;
+	while (!winner)
 	{
-		if (listen_keybord(data))
-			return (1);
-		if (!data->pause || data->one_command_mode)
-		{
+		int pause = getch();
+		if (data->one_command_mode) {
+			data->one_command_mode = 0;
+			pause = ' ';
+			data->pause = 1;
+		}
+		while (pause == ' ') {
+			int cmd = getch();
+			if (cmd == ' '){
+				pause = 'q';
+				data->pause = 0;
+			}
+			else if (cmd == 'n') {
+				data->one_command_mode = 1;
+				break;
+			}
+		}
+
+
+		if (pause == 'n'){
+			data->one_command_mode = 1;
+		}
+		if (!data->pause || data->one_command_mode){
 			if (execute_commands(data))
 				return (1);
-			// print_memory(data);
 			//todo calculate cycles and winner
-			data->one_command_mode = 0;
 		}
-		break; //delete this
+		wrefresh(data->memory_win);
+		refresh();
+//		break; //delete this
 	}
+
 	return (0);
 }
 
@@ -104,7 +128,7 @@ void		load_bots_in_memory(t_data *data)
 	int 			r1_number = 2147483647;
 
 	i = 0;
-	bot_number = 0;
+	bot_number = 1;
 	period = MEM_SIZE / data->bots_count;
 	curr = data->bots;
 	while (curr)
@@ -128,10 +152,10 @@ int         main(int argc, char **argv)
 	ft_bzero(&data, sizeof(t_data));
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
-	// argv[0] = "../champs/jumper.cor";
+//	argv[0] = "../champs/jumper.cor";
 	//argv[0] = "../test_comment.ror";
 	//argv[0] = "../test_sti.cor";// argv[0] = "../champs/Survivor.cor";
-	// argv[0] = "../champs/Car.cor";
+	argv[0] = "../champs/Car.cor";
 	// argv[0] = "../champs/toto.cor";
 	// argv[0] = "../test_comment.ror";
 	if (argc == 1)
@@ -144,7 +168,8 @@ int         main(int argc, char **argv)
 		return (1);
 	}
 	nc_terminate(&data);
-	print_memory(&data);
+	//print_memory(&data);
+
 	//todo: calculate winner
 	//todo:hakh free bots code (t_string)
 }
