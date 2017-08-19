@@ -18,6 +18,8 @@ SRC =   vm.c \
         ncurses_windows.c \
         ncurses_move.c \
         op.c \
+        creator_win.c \
+        display_memory.c \
 
 SRCDIR = ./
 
