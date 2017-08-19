@@ -361,16 +361,46 @@
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/new_libft/srcs/strp_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/add_players.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/args_functions.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/args_functions.h">
+			<Option target="Corewar"/>
+		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/bots_functions.c">
 			<Option target="Corewar"/>
 		</Unit>
-		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c">
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/commands.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/commands.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/data.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/error_managment.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/flags_parser.c">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/flags_parser.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/ncurses_vm.h">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/op.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/op.h">
+			<Option target="Corewar"/>
+		</Unit>
+		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/usage.c">
 			<Option target="Corewar"/>
 		</Unit>
 		<Unit filename="/nfs/2016/r/rhakh/Corewar/src_vm/vm.c">

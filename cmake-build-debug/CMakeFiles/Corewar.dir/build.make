@@ -2241,28 +2241,148 @@ CMakeFiles/Corewar.dir/src_vm/vm.c.o.provides: CMakeFiles/Corewar.dir/src_vm/vm.
 CMakeFiles/Corewar.dir/src_vm/vm.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/vm.c.o
 
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o: CMakeFiles/Corewar.dir/flags.make
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o: ../src_vm/ncurses_windows.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c
+CMakeFiles/Corewar.dir/src_vm/commands.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/commands.c.o: ../src_vm/commands.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/Corewar.dir/src_vm/commands.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/commands.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/commands.c
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c > CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.i
+CMakeFiles/Corewar.dir/src_vm/commands.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/commands.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/commands.c > CMakeFiles/Corewar.dir/src_vm/commands.c.i
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/ncurses_windows.c -o CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.s
+CMakeFiles/Corewar.dir/src_vm/commands.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/commands.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/commands.c -o CMakeFiles/Corewar.dir/src_vm/commands.c.s
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.requires:
+CMakeFiles/Corewar.dir/src_vm/commands.c.o.requires:
 
-.PHONY : CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.requires
+.PHONY : CMakeFiles/Corewar.dir/src_vm/commands.c.o.requires
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.provides: CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.requires
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.provides.build
-.PHONY : CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.provides
+CMakeFiles/Corewar.dir/src_vm/commands.c.o.provides: CMakeFiles/Corewar.dir/src_vm/commands.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/commands.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/commands.c.o.provides
 
-CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o
+CMakeFiles/Corewar.dir/src_vm/commands.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/commands.c.o
+
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.o: ../src_vm/args_functions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/Corewar.dir/src_vm/args_functions.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/args_functions.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/args_functions.c
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/args_functions.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/args_functions.c > CMakeFiles/Corewar.dir/src_vm/args_functions.c.i
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/args_functions.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/args_functions.c -o CMakeFiles/Corewar.dir/src_vm/args_functions.c.s
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.requires:
+
+.PHONY : CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.requires
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.provides: CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.provides
+
+CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/args_functions.c.o
+
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o: ../src_vm/flags_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/flags_parser.c
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/flags_parser.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/flags_parser.c > CMakeFiles/Corewar.dir/src_vm/flags_parser.c.i
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/flags_parser.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/flags_parser.c -o CMakeFiles/Corewar.dir/src_vm/flags_parser.c.s
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.requires:
+
+.PHONY : CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.requires
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.provides: CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.provides
+
+CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o
+
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.o: ../src_vm/error_managment.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/Corewar.dir/src_vm/error_managment.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/error_managment.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/error_managment.c
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/error_managment.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/error_managment.c > CMakeFiles/Corewar.dir/src_vm/error_managment.c.i
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/error_managment.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/error_managment.c -o CMakeFiles/Corewar.dir/src_vm/error_managment.c.s
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.requires:
+
+.PHONY : CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.requires
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.provides: CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.provides
+
+CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/error_managment.c.o
+
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/add_players.c.o: ../src_vm/add_players.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/Corewar.dir/src_vm/add_players.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/add_players.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/add_players.c
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/add_players.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/add_players.c > CMakeFiles/Corewar.dir/src_vm/add_players.c.i
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/add_players.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/add_players.c -o CMakeFiles/Corewar.dir/src_vm/add_players.c.s
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.o.requires:
+
+.PHONY : CMakeFiles/Corewar.dir/src_vm/add_players.c.o.requires
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.o.provides: CMakeFiles/Corewar.dir/src_vm/add_players.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/add_players.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/add_players.c.o.provides
+
+CMakeFiles/Corewar.dir/src_vm/add_players.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/add_players.c.o
+
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.o: CMakeFiles/Corewar.dir/flags.make
+CMakeFiles/Corewar.dir/src_vm/usage.c.o: ../src_vm/usage.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/Corewar.dir/src_vm/usage.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Corewar.dir/src_vm/usage.c.o   -c /nfs/2016/r/rhakh/Corewar/src_vm/usage.c
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Corewar.dir/src_vm/usage.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /nfs/2016/r/rhakh/Corewar/src_vm/usage.c > CMakeFiles/Corewar.dir/src_vm/usage.c.i
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Corewar.dir/src_vm/usage.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /nfs/2016/r/rhakh/Corewar/src_vm/usage.c -o CMakeFiles/Corewar.dir/src_vm/usage.c.s
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.o.requires:
+
+.PHONY : CMakeFiles/Corewar.dir/src_vm/usage.c.o.requires
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.o.provides: CMakeFiles/Corewar.dir/src_vm/usage.c.o.requires
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/usage.c.o.provides.build
+.PHONY : CMakeFiles/Corewar.dir/src_vm/usage.c.o.provides
+
+CMakeFiles/Corewar.dir/src_vm/usage.c.o.provides.build: CMakeFiles/Corewar.dir/src_vm/usage.c.o
 
 
 # Object files for target Corewar
@@ -2358,7 +2478,12 @@ Corewar_OBJECTS = \
 "CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o" \
 "CMakeFiles/Corewar.dir/src_vm/op.c.o" \
 "CMakeFiles/Corewar.dir/src_vm/vm.c.o" \
-"CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o"
+"CMakeFiles/Corewar.dir/src_vm/commands.c.o" \
+"CMakeFiles/Corewar.dir/src_vm/args_functions.c.o" \
+"CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o" \
+"CMakeFiles/Corewar.dir/src_vm/error_managment.c.o" \
+"CMakeFiles/Corewar.dir/src_vm/add_players.c.o" \
+"CMakeFiles/Corewar.dir/src_vm/usage.c.o"
 
 # External object files for target Corewar
 Corewar_EXTERNAL_OBJECTS =
@@ -2454,10 +2579,15 @@ Corewar: CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.o
 Corewar: CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o
 Corewar: CMakeFiles/Corewar.dir/src_vm/op.c.o
 Corewar: CMakeFiles/Corewar.dir/src_vm/vm.c.o
-Corewar: CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/commands.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/args_functions.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/error_managment.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/add_players.c.o
+Corewar: CMakeFiles/Corewar.dir/src_vm/usage.c.o
 Corewar: CMakeFiles/Corewar.dir/build.make
 Corewar: CMakeFiles/Corewar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Linking C executable Corewar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/nfs/2016/r/rhakh/Corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Linking C executable Corewar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Corewar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2556,7 +2686,12 @@ CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/new_libft/srcs/strp_func
 CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o.requires
 CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/op.c.o.requires
 CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/vm.c.o.requires
-CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/commands.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/args_functions.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/error_managment.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/add_players.c.o.requires
+CMakeFiles/Corewar.dir/requires: CMakeFiles/Corewar.dir/src_vm/usage.c.o.requires
 
 .PHONY : CMakeFiles/Corewar.dir/requires
 

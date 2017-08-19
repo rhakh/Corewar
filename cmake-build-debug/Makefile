@@ -2499,6 +2499,60 @@ new_libft/srcs/strp_functions.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/new_libft/srcs/strp_functions.c.s
 .PHONY : new_libft/srcs/strp_functions.c.s
 
+src_vm/add_players.o: src_vm/add_players.c.o
+
+.PHONY : src_vm/add_players.o
+
+# target to build an object file
+src_vm/add_players.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/add_players.c.o
+.PHONY : src_vm/add_players.c.o
+
+src_vm/add_players.i: src_vm/add_players.c.i
+
+.PHONY : src_vm/add_players.i
+
+# target to preprocess a source file
+src_vm/add_players.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/add_players.c.i
+.PHONY : src_vm/add_players.c.i
+
+src_vm/add_players.s: src_vm/add_players.c.s
+
+.PHONY : src_vm/add_players.s
+
+# target to generate assembly for a file
+src_vm/add_players.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/add_players.c.s
+.PHONY : src_vm/add_players.c.s
+
+src_vm/args_functions.o: src_vm/args_functions.c.o
+
+.PHONY : src_vm/args_functions.o
+
+# target to build an object file
+src_vm/args_functions.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/args_functions.c.o
+.PHONY : src_vm/args_functions.c.o
+
+src_vm/args_functions.i: src_vm/args_functions.c.i
+
+.PHONY : src_vm/args_functions.i
+
+# target to preprocess a source file
+src_vm/args_functions.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/args_functions.c.i
+.PHONY : src_vm/args_functions.c.i
+
+src_vm/args_functions.s: src_vm/args_functions.c.s
+
+.PHONY : src_vm/args_functions.s
+
+# target to generate assembly for a file
+src_vm/args_functions.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/args_functions.c.s
+.PHONY : src_vm/args_functions.c.s
+
 src_vm/bots_functions.o: src_vm/bots_functions.c.o
 
 .PHONY : src_vm/bots_functions.o
@@ -2526,32 +2580,86 @@ src_vm/bots_functions.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/bots_functions.c.s
 .PHONY : src_vm/bots_functions.c.s
 
-src_vm/ncurses_windows.o: src_vm/ncurses_windows.c.o
+src_vm/commands.o: src_vm/commands.c.o
 
-.PHONY : src_vm/ncurses_windows.o
+.PHONY : src_vm/commands.o
 
 # target to build an object file
-src_vm/ncurses_windows.c.o:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o
-.PHONY : src_vm/ncurses_windows.c.o
+src_vm/commands.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/commands.c.o
+.PHONY : src_vm/commands.c.o
 
-src_vm/ncurses_windows.i: src_vm/ncurses_windows.c.i
+src_vm/commands.i: src_vm/commands.c.i
 
-.PHONY : src_vm/ncurses_windows.i
+.PHONY : src_vm/commands.i
 
 # target to preprocess a source file
-src_vm/ncurses_windows.c.i:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.i
-.PHONY : src_vm/ncurses_windows.c.i
+src_vm/commands.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/commands.c.i
+.PHONY : src_vm/commands.c.i
 
-src_vm/ncurses_windows.s: src_vm/ncurses_windows.c.s
+src_vm/commands.s: src_vm/commands.c.s
 
-.PHONY : src_vm/ncurses_windows.s
+.PHONY : src_vm/commands.s
 
 # target to generate assembly for a file
-src_vm/ncurses_windows.c.s:
-	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.s
-.PHONY : src_vm/ncurses_windows.c.s
+src_vm/commands.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/commands.c.s
+.PHONY : src_vm/commands.c.s
+
+src_vm/error_managment.o: src_vm/error_managment.c.o
+
+.PHONY : src_vm/error_managment.o
+
+# target to build an object file
+src_vm/error_managment.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/error_managment.c.o
+.PHONY : src_vm/error_managment.c.o
+
+src_vm/error_managment.i: src_vm/error_managment.c.i
+
+.PHONY : src_vm/error_managment.i
+
+# target to preprocess a source file
+src_vm/error_managment.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/error_managment.c.i
+.PHONY : src_vm/error_managment.c.i
+
+src_vm/error_managment.s: src_vm/error_managment.c.s
+
+.PHONY : src_vm/error_managment.s
+
+# target to generate assembly for a file
+src_vm/error_managment.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/error_managment.c.s
+.PHONY : src_vm/error_managment.c.s
+
+src_vm/flags_parser.o: src_vm/flags_parser.c.o
+
+.PHONY : src_vm/flags_parser.o
+
+# target to build an object file
+src_vm/flags_parser.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o
+.PHONY : src_vm/flags_parser.c.o
+
+src_vm/flags_parser.i: src_vm/flags_parser.c.i
+
+.PHONY : src_vm/flags_parser.i
+
+# target to preprocess a source file
+src_vm/flags_parser.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/flags_parser.c.i
+.PHONY : src_vm/flags_parser.c.i
+
+src_vm/flags_parser.s: src_vm/flags_parser.c.s
+
+.PHONY : src_vm/flags_parser.s
+
+# target to generate assembly for a file
+src_vm/flags_parser.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/flags_parser.c.s
+.PHONY : src_vm/flags_parser.c.s
 
 src_vm/op.o: src_vm/op.c.o
 
@@ -2579,6 +2687,33 @@ src_vm/op.s: src_vm/op.c.s
 src_vm/op.c.s:
 	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/op.c.s
 .PHONY : src_vm/op.c.s
+
+src_vm/usage.o: src_vm/usage.c.o
+
+.PHONY : src_vm/usage.o
+
+# target to build an object file
+src_vm/usage.c.o:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/usage.c.o
+.PHONY : src_vm/usage.c.o
+
+src_vm/usage.i: src_vm/usage.c.i
+
+.PHONY : src_vm/usage.i
+
+# target to preprocess a source file
+src_vm/usage.c.i:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/usage.c.i
+.PHONY : src_vm/usage.c.i
+
+src_vm/usage.s: src_vm/usage.c.s
+
+.PHONY : src_vm/usage.s
+
+# target to generate assembly for a file
+src_vm/usage.c.s:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/src_vm/usage.c.s
+.PHONY : src_vm/usage.c.s
 
 src_vm/vm.o: src_vm/vm.c.o
 
@@ -2880,15 +3015,30 @@ help:
 	@echo "... new_libft/srcs/strp_functions.o"
 	@echo "... new_libft/srcs/strp_functions.i"
 	@echo "... new_libft/srcs/strp_functions.s"
+	@echo "... src_vm/add_players.o"
+	@echo "... src_vm/add_players.i"
+	@echo "... src_vm/add_players.s"
+	@echo "... src_vm/args_functions.o"
+	@echo "... src_vm/args_functions.i"
+	@echo "... src_vm/args_functions.s"
 	@echo "... src_vm/bots_functions.o"
 	@echo "... src_vm/bots_functions.i"
 	@echo "... src_vm/bots_functions.s"
-	@echo "... src_vm/ncurses_windows.o"
-	@echo "... src_vm/ncurses_windows.i"
-	@echo "... src_vm/ncurses_windows.s"
+	@echo "... src_vm/commands.o"
+	@echo "... src_vm/commands.i"
+	@echo "... src_vm/commands.s"
+	@echo "... src_vm/error_managment.o"
+	@echo "... src_vm/error_managment.i"
+	@echo "... src_vm/error_managment.s"
+	@echo "... src_vm/flags_parser.o"
+	@echo "... src_vm/flags_parser.i"
+	@echo "... src_vm/flags_parser.s"
 	@echo "... src_vm/op.o"
 	@echo "... src_vm/op.i"
 	@echo "... src_vm/op.s"
+	@echo "... src_vm/usage.o"
+	@echo "... src_vm/usage.i"
+	@echo "... src_vm/usage.s"
 	@echo "... src_vm/vm.o"
 	@echo "... src_vm/vm.i"
 	@echo "... src_vm/vm.s"

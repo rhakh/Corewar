@@ -112,6 +112,7 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot = curr->data;
 		curr_bot->reg[1] = r1_number;
 		curr_bot->number = bot_number;
+		curr_bot->pc = i;
 		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;

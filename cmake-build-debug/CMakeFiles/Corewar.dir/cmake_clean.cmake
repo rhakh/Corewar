@@ -90,7 +90,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/Corewar.dir/src_vm/bots_functions.c.o"
   "CMakeFiles/Corewar.dir/src_vm/op.c.o"
   "CMakeFiles/Corewar.dir/src_vm/vm.c.o"
-  "CMakeFiles/Corewar.dir/src_vm/ncurses_windows.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/commands.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/args_functions.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/flags_parser.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/error_managment.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/add_players.c.o"
+  "CMakeFiles/Corewar.dir/src_vm/usage.c.o"
   "Corewar.pdb"
   "Corewar"
 )
