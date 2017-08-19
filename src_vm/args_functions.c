@@ -35,7 +35,10 @@ int 		get_args(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 		{
 			args[i] = get_number_from_bcode(map + offset, 1);
 			if (args[i] > REG_NUMBER || args[i] < 1)
+			{
+				ft_printf("{red}Wrong number of register{eoc}");
 				return (1);
+			}
 			offset += 1;
 		}
 		else if (arg_type == DIR_CODE && op_tab[command - 1].dir_as_label)

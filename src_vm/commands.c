@@ -25,7 +25,7 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 		else if (arg_type == DIR_CODE)
 			num[i] = bot->reg[args[i]];
 		else if (arg_type == IND_CODE)
-			num[i] = get_number_from_bcode(data->map + (bot->pc + ((args[i] + IDX_MOD) % IDX_MOD)), DIR_SIZE);
+			num[i] = get_number_from_bcode(data->map + (bot->pc + ((args[i]) % IDX_MOD)), DIR_SIZE);
 		i++;
 	}
 	(command == 6) ? (bot->reg[args[2]] = num[0] & num[1]) : 0;
@@ -37,9 +37,9 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	if (command == 3)
-		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + IDX_MOD) % IDX_MOD)));
+		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1]) % IDX_MOD)));
 	if (command == 11)
-		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2] + IDX_MOD) % IDX_MOD)));
+		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2]) % IDX_MOD)));
 //todo sbondar
 //	if (send_to_ncurses((bot->pc + ((args[1] + IDX_MOD) % IDX_MOD)), DIR_SIZE, bot, data))
 //		return (1);
@@ -50,12 +50,14 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	if (command == 2)
+	{
 		if (get_arg_type(opcode, 1) == DIR_CODE)
 			bot->reg[args[1]] = args[0];
 		else if (get_arg_type(opcode, 1) == IND_CODE)
-			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + ((args[0] + IDX_MOD) % IDX_MOD)), 4);
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + ((args[0]) % IDX_MOD)), 4);
 		else
 			return (1);
+	}
 	if (command == 10)
 	{
 
@@ -122,10 +124,11 @@ int 		execute_command(t_data *data, t_bot *bot)
 	char 			command;
 	char 			opcode;
 	int 			args[3];
-
+	int 			prev;
 	opcode = 0;
 	command = data->map[bot->pc];
 
+	prev = bot->pc;
 	bot->pc++;
 	if (op_tab[command - 1].have_opcode)
 	{
@@ -142,6 +145,9 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 	if (run_command(data, bot, command, opcode, args))
 		return (1);
+	//todo send past and current cursor pos
+	//todo ncurses move_curcor
+	//todo ncurses ncurses_move_cursor(bot, prev)
 	return (0);
 }
 

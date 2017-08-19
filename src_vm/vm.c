@@ -1,5 +1,24 @@
 #include "vm.h"
 
+void		print_memory(t_data *data)
+{
+	int 	i;
+
+	i = 0;
+	ft_printf("{yellow}Memory dump:\n{eoc}");
+	while (i < MEM_SIZE)
+	{
+		if (i % 64 == 0)
+			ft_printf("\n");
+		if (data->map[i] == 0)
+			ft_printf("%0.2hhx ", data->map[i]);
+		else
+			ft_printf("{green}%0.2hhx {eoc}", data->map[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
+
 /*
 ** 0 - ok , 1 - error
 */
@@ -31,10 +50,11 @@ int 		 infinit_loop(t_data *data)
 		{
 			if (execute_commands(data))
 				return (1);
+			print_memory(data);
 			//todo calculate cycles and winner
 			data->one_command_mode = 0;
 		}
-		break; //delete this
+		//break; //delete this
 	}
 	return (0);
 }
@@ -81,7 +101,7 @@ void		load_bots_in_memory(t_data *data)
 	int 			period;
 	int 			i;
 	int 			bot_number;
-	int 			curr_number = 2147483647;
+	int 			r1_number = 2147483647;
 
 	i = 0;
 	bot_number = 0;
@@ -90,32 +110,15 @@ void		load_bots_in_memory(t_data *data)
 	while (curr)
 	{
 		curr_bot = curr->data;
-		curr_bot->reg[1] = curr_number;
+		curr_bot->reg[1] = r1_number;
 		curr_bot->number = bot_number;
+		curr_bot->pc = i;
 		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
-		curr_number--;
+		r1_number--;
 		bot_number++;
 	}
-}
-
-void		print_memory(t_data *data)
-{
-	int 	i;
-
-		i = 0;
-		ft_printf("{yellow}Memory dump:\n{eoc}");
-		while (i < MEM_SIZE)
-		{
-			if (i % 64 == 0)
-				ft_printf("\n");
-			if (data->map[i] == 0)
-				ft_printf("%0.2hhx ", data->map[i]);
-			else
-				ft_printf("{green}%0.2hhx {eoc}", data->map[i]);
-			i++;
-		}
 }
 
 int         main(int argc, char **argv)
@@ -123,7 +126,7 @@ int         main(int argc, char **argv)
 	t_data	data;
 
 	ft_bzero(&data, sizeof(t_data));
-	//todo:palanich process arguments and return ordered array of bots names
+	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
 //	argv[0] = "../champs/jumper.cor";
 	//argv[0] = "../test_comment.ror";
