@@ -25,9 +25,9 @@ void	display_memory(t_data *data, WINDOW *win)
 			int j = -1;
 			while (++j < cur_bot->size)
 			{
-				wattron(win, COLOR_PAIR(cur_bot->number + 1));
+				wattron(win, COLOR_PAIR(cur_bot->number));
 				wprintw(win, "%0.2hhx ", data->map[i]);
-				wattroff(win, COLOR_PAIR(cur_bot->number + 1));
+				wattroff(win, COLOR_PAIR(cur_bot->number));
 				i++;
 				if (i % ft_sqrt(MEM_SIZE) == 0 && j + 1 != cur_bot->size) {
 					getyx(win, y, x);
@@ -39,8 +39,9 @@ void	display_memory(t_data *data, WINDOW *win)
 			!list ? cur_bot = NULL : 0;
 			i--;
 		}
-		else
+		else {
 			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
+		}
 	}
 	wrefresh(win);
 }

@@ -145,9 +145,8 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 	if (run_command(data, bot, command, opcode, args))
 		return (1);
-	//todo send past and current cursor pos
-	//todo ncurses move_curcor
 	//todo ncurses ncurses_move_cursor(bot, prev)
+	ncurses_move_cursor(data, bot, prev);
 	return (0);
 }
 

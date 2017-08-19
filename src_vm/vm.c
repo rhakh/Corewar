@@ -50,11 +50,11 @@ int 		 infinit_loop(t_data *data)
 		{
 			if (execute_commands(data))
 				return (1);
-			print_memory(data);
+			// print_memory(data);
 			//todo calculate cycles and winner
 			data->one_command_mode = 0;
 		}
-		//break; //delete this
+		break; //delete this
 	}
 	return (0);
 }
@@ -128,10 +128,10 @@ int         main(int argc, char **argv)
 	ft_bzero(&data, sizeof(t_data));
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
-//	argv[0] = "../champs/jumper.cor";
+	// argv[0] = "../champs/jumper.cor";
 	//argv[0] = "../test_comment.ror";
 	//argv[0] = "../test_sti.cor";// argv[0] = "../champs/Survivor.cor";
-	argv[0] = "../champs/Car.cor";
+	// argv[0] = "../champs/Car.cor";
 	// argv[0] = "../champs/toto.cor";
 	// argv[0] = "../test_comment.ror";
 	if (argc == 1)
@@ -139,11 +139,12 @@ int         main(int argc, char **argv)
 	parse_flags(&data, argc, argv);if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
-	ft_display_arena(&data);
+	nc_display_arena(&data);
 	if (infinit_loop(&data)){
 		return (1);
 	}
-	// print_memory(&data);
+	nc_terminate(&data);
+	print_memory(&data);
 	//todo: calculate winner
 	//todo:hakh free bots code (t_string)
 }
