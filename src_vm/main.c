@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wm.h"
+#include "vm.h"
 
 void	print(t_data *data)
 {
 //	ft_printf("dump:%d\n", data->dump);
 	int	i = -1;
-	ft_printf("bot count: %d\n", data->bot_cnt);
+	ft_printf("bot count: %d\n", data->bots_count);
 	while (++i < 4)
 	{
 		ft_printf ("%s\n", data->players[i]);
