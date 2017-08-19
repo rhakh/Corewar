@@ -18,6 +18,12 @@ SRC =   vm.c \
         ncurses_windows.c \
         ncurses_move.c \
         op.c \
+        args_functions.c \
+        commands.c \
+        add_players.c \
+        error_managment.c \
+        flags_parser.c \
+        usage.c \
         creator_win.c \
         display_memory.c \
 
