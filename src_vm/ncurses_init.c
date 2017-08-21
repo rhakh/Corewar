@@ -23,7 +23,7 @@ void init_ncurses(void)
 	init_pair(12, COLOR_WHITE, COLOR_BLACK);
 	init_pair(13, COLOR_BLACK, COLOR_GREEN);
 	init_pair(14, COLOR_GREEN, COLOR_BLACK);
-	timeout(100);
+	timeout(NCURSES_TIMEOUT);
 	curs_set(FALSE);
 }
 
@@ -38,9 +38,11 @@ void		nc_display_arena(t_data *data) {
 	attroff(A_BOLD);
 	refresh();
 
+	data->one_command_mode = 1;
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
 
+	data->pause = 1;
 	stats_win = create_stats_win();
 	display_stats(data, stats_win);
 

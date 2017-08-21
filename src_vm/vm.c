@@ -41,45 +41,48 @@ int 		 infinit_loop(t_data *data)
 {
 	//todo:hakh execute bots commands
 	//todo:bondar synchronized output using ncurses
-
-	bool winner;
+	bool	winner;
+	int		pause;
+	int 	cmd;
 
 	winner = false;
-	data->one_command_mode = 1;
 	while (!winner)
 	{
-		int pause = getch();
-		if (data->one_command_mode) {
+		pause = getch();
+		if (data->one_command_mode){
 			data->one_command_mode = 0;
 			pause = ' ';
 			data->pause = 1;
+			display_stats(data, data->stats_win);
+			refresh();
 		}
+		if (pause == ' ')
 		while (pause == ' ') {
-			int cmd = getch();
+			data->pause = 1;
+			display_stats(data, data->stats_win);
+			refresh();
+			cmd = getch();
 			if (cmd == ' '){
 				pause = 'q';
 				data->pause = 0;
+				display_stats(data, data->stats_win);
+				refresh();
 			}
 			else if (cmd == 'n') {
 				data->one_command_mode = 1;
 				break;
 			}
 		}
-
-
-		if (pause == 'n'){
-			data->one_command_mode = 1;
-		}
+		pause == 'n' ? data->one_command_mode = 1 : 0;
 		if (!data->pause || data->one_command_mode){
 			if (execute_commands(data))
 				return (1);
 			//todo calculate cycles and winner
 		}
+		display_stats(data, data->stats_win);
 		wrefresh(data->memory_win);
 		refresh();
-//		break; //delete this
 	}
-
 	return (0);
 }
 
@@ -137,7 +140,8 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->reg[1] = r1_number;
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
-		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
+		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4
+							 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
 		r1_number--;
@@ -155,12 +159,12 @@ int         main(int argc, char **argv)
 //	argv[0] = "../champs/jumper.cor";
 	//argv[0] = "../test_comment.ror";
 	//argv[0] = "../test_sti.cor";// argv[0] = "../champs/Survivor.cor";
-	argv[0] = "../champs/Car.cor";
 	// argv[0] = "../champs/toto.cor";
 	// argv[0] = "../test_comment.ror";
 	if (argc == 1)
 	usage();
-	parse_flags(&data, argc, argv);if (init_bots(&data, data.players, data.bots_count))
+	parse_flags(&data, argc, argv);
+	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
 	nc_display_arena(&data);
