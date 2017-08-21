@@ -65,7 +65,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	}
 	else
 		mvwprintw(stats_win, 1, 28, "** RUNNING **");
-	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Cycle:", /* count of cycles here */ 99999);
+	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Cycle:", /* count of cycles here */ data->cycles);
 	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Processes:", /* count of processes here*/ 88888);
 	wmove(stats_win, 10, 3);
 	n_bot = -1;
@@ -87,7 +87,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wmove(stats_win, y + 2, 3);
 	}
 	getyx(stats_win, y, x);
-	mvwprintw(stats_win, y + 2, 6, "Cycles to die: %4d", data->c_to_die);
+	mvwprintw(stats_win, y + 2, 6, "Cycles to die: %4d", data->cycles_to_die);
 	wrefresh(stats_win);
 }
 

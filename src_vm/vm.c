@@ -168,6 +168,7 @@ int         main(int argc, char **argv)
 	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
+	printf("retard alert\n");
 	nc_display_arena(&data);
 	if (infinit_loop(&data)){
 		return (1);
