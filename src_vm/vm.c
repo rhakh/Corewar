@@ -154,6 +154,7 @@ int         main(int argc, char **argv)
 	t_data	data;
 
 	ft_bzero(&data, sizeof(t_data));
+	data.cycles_to_die = CYCLE_TO_DIE;
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
 //	argv[0] = "../champs/jumper.cor";

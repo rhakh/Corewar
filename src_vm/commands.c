@@ -59,14 +59,14 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		else
 			return (1);
 	}
-	if (command == 10)
+	else if (command == 10)
 	{
 		if (get_arg_type(opcode, 1) == REG_CODE)
 			addr[0] = bot->reg[args[0]];
 		else if (get_arg_type(opcode, 1) == DIR_CODE)
 			addr[0] = args[0];
 		else if (get_arg_type(opcode, 1) == IND_CODE)
-			addr[0] = get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), 2);
+			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), 2));
 		else
 			return (1);
 
@@ -77,22 +77,41 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		else
 			return (1);
 
-		bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + ((addr[0] + addr[1]) % IDX_MOD)), 4);
+		bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1] % IDX_MOD)), 4);
 	}
-	if (command == 13)
+	else if (command == 13)
 	{
-
+		if (get_arg_type(opcode, 1) == DIR_CODE)
+			bot->reg[args[1]] = args[0];
+		else if (get_arg_type(opcode, 1 == IND_CODE))
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0]), 4);//todo test it, 4 replace to 2
 	}
-	if (command == 14)
+	else if (command == 14)
 	{
+		if (get_arg_type(opcode, 1) == REG_CODE)
+			addr[0] = bot->reg[args[0]];
+		else if (get_arg_type(opcode, 1) == DIR_CODE)
+			addr[0] = args[0];
+		else if (get_arg_type(opcode, 1) == IND_CODE)
+			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0])), 2));
+		else
+			return (1);
 
+		if (get_arg_type(opcode, 2) == REG_CODE)
+			addr[1] = bot->reg[args[1]];
+		else if (get_arg_type(opcode, 2) == DIR_CODE)
+			addr[1] = args[1];
+		else
+			return (1);
+
+		bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1])), 4);
 	}
 	return (0);
 }
 
 int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int args[3])
 {
-	//todo
+	
 	return (0);
 }
 
@@ -196,6 +215,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 	if (run_command(data, bot, command, opcode, args))
 		return (1);
 
+	bot->pause_time = op_tab[command - 1].cycles_to_done;
 	increase_pc(bot, command, opcode);
 	//todo send past and current cursor pos
 	//todo ncurses move_curcor
@@ -236,5 +256,6 @@ int 		execute_commands(t_data *data)
 			bot->pause_time -= min;
 		curr = curr->next;
 	}
+	data->cycles += min;
 	return (0);
 }

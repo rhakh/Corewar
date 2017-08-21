@@ -25,8 +25,9 @@ typedef struct		s_bot
 typedef struct		s_data
 {
 	unsigned char	map[MEM_SIZE];
-	int				bot_score[MAX_PLAYERS];
-	int				c_to_die;
+	int				bot_score[MAX_PLAYERS + 1];
+	int				cycles_to_die;
+	int 			cycles;
 	t_linked_list	*bots;
 	int				bots_count;
 	int				one_command_mode;
