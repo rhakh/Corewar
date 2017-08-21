@@ -15,6 +15,22 @@ t_bot		*bot_new(int number, t_string *code)
 	return (bot);
 }
 
+t_bot		*bot_copy(t_bot *src)
+{
+	t_bot	*dst;
+
+	if ((dst = bot_new(src->number, src->code)) == NULL)
+		return (NULL);
+	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
+	dst->pause_time = src->pause_time;
+	dst->pc = src->pc;
+	dst->carry = src->carry;
+	dst->comment = ft_strdup(src->comment);
+	dst->name = ft_strdup(src->name);
+	dst->size = src->size;
+	return (dst);
+}
+
 void		bot_del(t_bot **pbot)
 {
 	t_bot	*bot;

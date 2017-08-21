@@ -1,16 +1,9 @@
 .name "bot"
 .comment "just a basic living bot"
 
-
-#lrt: live %879
-
-#st r1, 45
-#st r2, :lr
-#st r3, :lrt
-#st r4, r3
-
-#lr: live %65
-
+sf: live %74274#live %12345356
+lldi -6, %6, r2
+st r2, 52
 
 live %1334356
 live %5685673
@@ -82,59 +75,52 @@ live %0958639
 live %1245243
 live %1242353
 
-live %1334356
-live %5685673
-live %1241245
-live %1045745
-live %5674059
-live %1346346
-live %0958639
-live %1245243
-live %1242353
+# live %1334356
+# live %5685673
+# live %1241245
+# live %1045745
+# live %5674059
+# live %1346346
+# live %0958639
+# live %1245243
+# live %1242353
 
-live %1334356
-live %5685673
-live %1241245
-live %1045745
-live %5674059
-live %1346346
-live %0958639
-live %1245243
-live %1242353
+# live %1334356
+# live %5685673
+# live %1241245
+# live %1045745
+# live %5674059
+# live %1346346
+# live %0958639
+# live %1245243
+# live %1242353
 
-live %1334356
-live %5685673
-live %1241245
-live %1045745
-live %5674059
-live %1346346
-live %0958639
-live %1245243
-live %1242353
+# live %1334356
+# live %5685673
+# live %1241245
+# live %1045745
+# live %5674059
+# live %1346346
+# live %0958639
+# live %1245243
+# live %1242353
 
-live %1334356
-live %5685673
-live %1241245
-live %1045745
-live %5674059
-live %1346346
-live %0958639
-live %1245243
-live %1242353
+# live %1334356
+# live %5685673
+# live %1241245
+# live %1045745
+# live %5674059
+# live %1346346
+# live %0958639
+# live %1245243
+# live %1242353
 
-live %1334356
-live %5685673
-live %1241245
-live %1045745
-live %5674059
-live %1346346
-live %0958639
-live %1245243
-live %1242353
-
-
-
-st r1, 482
-
-
-
+# live %1334356
+# live %5685673
+# live %1241245
+# live %1045745
+# live %5674059
+# live %1346346
+# live %0958639
+# live %1245243
+# live %1242353

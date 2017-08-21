@@ -51,23 +51,27 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 {
 	int 	addr[2];
 
-	if (command == 2)
+	if (command == 2 || command == 13)
 	{
 		if (get_arg_type(opcode, 1) == DIR_CODE)
 			bot->reg[args[1]] = args[0];
-		else if (get_arg_type(opcode, 1) == IND_CODE)
-			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), 4);
+		else if (command == 2 && (get_arg_type(opcode, 1) == IND_CODE))
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), DIR_SIZE);
+		else if (command == 13 && (get_arg_type(opcode, 1) == IND_CODE))
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0]), DIR_SIZE);
 		else
 			return (1);
 	}
-	else if (command == 10)
+	else if (command == 10 || command == 14)
 	{
 		if (get_arg_type(opcode, 1) == REG_CODE)
 			addr[0] = bot->reg[args[0]];
 		else if (get_arg_type(opcode, 1) == DIR_CODE)
 			addr[0] = args[0];
-		else if (get_arg_type(opcode, 1) == IND_CODE)
-			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), 2));
+		else if (command == 10 && (get_arg_type(opcode, 1) == IND_CODE))
+			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), IND_SIZE));
+		else if (command == 14 && (get_arg_type(opcode, 1) == IND_CODE))
+			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0])), IND_SIZE));
 		else
 			return (1);
 
@@ -78,59 +82,50 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		else
 			return (1);
 
-		bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1] % IDX_MOD)), 4);
-	}
-	else if (command == 13)
-	{
-		if (get_arg_type(opcode, 1) == DIR_CODE)
-			bot->reg[args[1]] = args[0];
-		else if (get_arg_type(opcode, 1 == IND_CODE))
-			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0]), 4);//todo test it, 4 replace to 2
-	}
-	else if (command == 14)
-	{
-		if (get_arg_type(opcode, 1) == REG_CODE)
-			addr[0] = bot->reg[args[0]];
-		else if (get_arg_type(opcode, 1) == DIR_CODE)
-			addr[0] = args[0];
-		else if (get_arg_type(opcode, 1) == IND_CODE)
-			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0])), 2));
+		if (command == 10)
+			bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1] % IDX_MOD)), DIR_SIZE);
 		else
-			return (1);
-
-		if (get_arg_type(opcode, 2) == REG_CODE)
-			addr[1] = bot->reg[args[1]];
-		else if (get_arg_type(opcode, 2) == DIR_CODE)
-			addr[1] = args[1];
-		else
-			return (1);
-
-		bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1])), 4);
+			bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1])), DIR_SIZE);
 	}
 	return (0);
 }
 
 int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int args[3])
 {
-	
+	t_bot	*child;
+
+	child = bot_copy(bot);
+	if (command == 12)
+		child->pc = ((bot->pc + (args[0] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE;
+	else if (command == 15)
+		child->pc = ((bot->pc + args[0]) + MEM_SIZE) % MEM_SIZE;
+	child->pause_time = op_tab[command - 1].cycles_to_done;
+	ft_bzero(bot->prev_curr_live, sizeof(int) * 2);
+	list_push_back(&(data->bots), child);
 	return (0);
 }
 
 int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	//todo
+	//todo send to ncurses
+	bot->prev_curr_live[0] = bot->prev_curr_live[1];
+	bot->prev_curr_live[1] = bot->pc;
+	//ncurses_live(bot);
+	//todocheck if it's wrong live number
 	return (0);
 }
 
 int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	//todo
+	if (bot->carry == 1)
+		bot->pc = ((bot->pc + (args[0] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE;
 	return (0);
 }
 
 int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	//todo
+	//todo send to ncurses bot, reg_number
+	//ncurses_aff(bot, args[0]); //args[0] - numberof register to display
 	return (0);
 }
 
@@ -138,19 +133,19 @@ int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[
 {
 	if (command == 4 || command == 5)
 		arithmetic_operations(bot, command, args);
-	if (command == 6 || command == 7 || command == 8)
+	else if (command == 6 || command == 7 || command == 8)
 		logic_operations(data, bot, command, opcode, args);
-	if (command == 3 || command == 11)
+	else if (command == 3 || command == 11)
 		st_operations(data, bot, command, opcode, args);
-	if (command == 2 || command == 10 || command == 13 || command == 14)
+	else if (command == 2 || command == 10 || command == 13 || command == 14)
 		ld_operations(data, bot, command, opcode, args);
-	if (command == 12 || command == 15)
+	else if (command == 12 || command == 15)
 		fork_operations(data, bot, command, opcode, args);
-	if (command == 1)
+	else if (command == 1)
 		live_operation(data, bot, command, opcode, args);
-	if (command == 9)
+	else if (command == 9)
 		zjmp_operation(data, bot, command, opcode, args);
-	if (command == 16)
+	else if (command == 16)
 		aff_operation(data, bot, command, opcode, args);
 	return (0);
 }
@@ -218,7 +213,6 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 	bot->pause_time = op_tab[command - 1].cycles_to_done;
 	increase_pc(bot, command, opcode);
-	ft_printf("{red}prev = %d crr %d\n{eoc}", prev, bot->pc);
 	//todo send past and current cursor pos
 	//todo ncurses move_curcor
 	//todo ncurses ncurses_move_cursor(bot, prev)

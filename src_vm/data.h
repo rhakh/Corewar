@@ -15,6 +15,7 @@ typedef struct		s_bot
 	int				pc;
 	int				pause_time;
 	t_string		*code;
+	int 			prev_curr_live[2];
 }					t_bot;
 
 /*
