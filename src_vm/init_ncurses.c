@@ -44,68 +44,71 @@ void		ft_display_arena(t_data *data) {
 	refresh();
 
 	memory_win = create_memory_win();
-	display_memory(data, memory_win);	
+	display_memory(data, memory_win);
 	stats_win = create_stats_win();
 	display_stats(data, stats_win);
 	debug_win = create_debug_win();
 	display_debug(data, debug_win);
-//	move_to_byte(memory_win, 5);
+
+	data->memory_win = memory_win;
+	data->stats_win = stats_win;
+	data->debug_win = debug_win;
 
 	/* switch RUNNING / PAUSE */
 	int k=0; // del
-	while (1)
-	{
-		int pause = wgetch(stats_win);
+	// while (1)
+	// {
+	// 	int pause = wgetch(stats_win);
 
-		if (pause == ' ')
-		{
-			if (data->pause == 0)
-			{
-				data->pause = 1;
-			}
-			else
-			{
+	// 	if (pause == ' ')
+	// 	{
+	// 		if (data->pause == 0)
+	// 		{
+	// 			data->pause = 1;
+	// 		}
+	// 		else
+	// 		{
 
-				data->pause = 0;
-			}
-			move_to_byte(memory_win, k++);
-			display_stats(data, stats_win);
-		}
-		if (pause == 113)
-		{
-			endwin();
-			return ;
-		}
-	}
+	// 			data->pause = 0;
+	// 		}
+	// 		move_to_byte(memory_win, k++);
+	// 		display_stats(data, stats_win);
+	// 	}
+	// 	if (pause == 113)
+	// 	{
+	// 		endwin();
+	// 		return ;
+	// 	}
+	// }
 
 
 
-// halfdelay(1);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
-//     printw("Press F2 to exit.\n");
-// 	bool ex = false;
-//     while ( !ex )
-//     {
-//         int ch = getch();
+	// nodelay(stdscr, TRUE);
+//	timeout(1);
+//	// halfdelay(1);         //Устанавливаем ограничение по времени ожидания getch() в 10 сек
+//    printw("Press F2 to exit.\n");
+//	bool ex = false;
+//    while ( !ex )
+//    {
+//        int ch = getch();
+//
+//        switch ( ch )
+//        {
+//        case ERR:
+//            move_to_byte(memory_win, k++);
+//            break;
+//        case KEY_F(2): //Выходим из программы, если была нажата F2
+//            ex = true;
+//            break;
+//        default:  //Если всё нормально, выводим код нажатой клавиши
+//        	k++;
+//            break;
+//        }
+//
+//        refresh(); //Выводим на настоящий экран
+//
+//    }
 
-//         switch ( ch )
-//         {
-//         case ERR:
-//             move_to_byte(memory_win, k++); 
-//             break;
-//         case KEY_F(2): //Выходим из программы, если была нажата F2
-//             ex = true;
-//             break;
-//         default:  //Если всё нормально, выводим код нажатой клавиши
-//         	k++;
-//             break;
-//         }
-
-//         refresh(); //Выводим на настоящий экран
-
-//     }
-
-//     printw("Thank you. Good buy!");
-
-	getch();
-	endwin();
+//	getch();
+//	endwin();
 }

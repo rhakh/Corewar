@@ -2,6 +2,7 @@
 #define DATA_H
 
 # include "op.h"
+# include "ncurses.h"
 # include "../new_libft/srcs/libft.h"
 
 typedef struct		s_bot
@@ -41,6 +42,10 @@ typedef struct		s_data
 	size_t			dump;
 	char			*players[MAX_PLAYERS + 1];
 	char			visual;
+	// ncurses windows
+	WINDOW *memory_win;
+	WINDOW *stats_win;
+	WINDOW *debug_win;
 }					t_data;
 
 typedef struct		s_op

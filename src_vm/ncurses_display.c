@@ -25,9 +25,9 @@ void	display_memory(t_data *data, WINDOW *win)
 			int j = -1;
 			while (++j < cur_bot->size)
 			{
-				wattron(win, COLOR_PAIR(cur_bot->number + 1));
+				wattron(win, COLOR_PAIR(cur_bot->number));
 				wprintw(win, "%0.2hhx ", data->map[i]);
-				wattroff(win, COLOR_PAIR(cur_bot->number + 1));
+				wattroff(win, COLOR_PAIR(cur_bot->number));
 				i++;
 				if (i % ft_sqrt(MEM_SIZE) == 0 && j + 1 != cur_bot->size) {
 					getyx(win, y, x);
@@ -39,8 +39,9 @@ void	display_memory(t_data *data, WINDOW *win)
 			!list ? cur_bot = NULL : 0;
 			i--;
 		}
-		else
+		else {
 			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
+		}
 	}
 	wrefresh(win);
 }
@@ -56,7 +57,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	list = data->bots;
 	cur_bot = (t_bot *)list->data;
 	/* if data->pause == 0 then PAUSE, else RUNNING */
-	if (!data->pause)
+	if (data->pause)
 	{
 		wattron(stats_win, COLOR_PAIR(10));
 		mvwprintw(stats_win, 1, 28, "*** PAUSE ***");
@@ -64,15 +65,15 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	}
 	else
 		mvwprintw(stats_win, 1, 28, "** RUNNING **");
-	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Cycle:", /* count of cycles here */ 99999);
+	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Cycle:", /* count of cycles here */ data->cycles);
 	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Processes:", /* count of processes here*/ 88888);
-	wmove(stats_win, 10, 2);
+	wmove(stats_win, 10, 3);
 	n_bot = -1;
 	while (++n_bot < data->bots_count)
 	{
 		wprintw(stats_win, "Player-%d: ", n_bot + 1);
 		wattron(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
-		wprintw(stats_win, "%.57s", cur_bot->name);
+		wprintw(stats_win, "%.55s", cur_bot->name);
 		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
 		getyx(stats_win, y, x);
 		wmove(stats_win, y + 1, 10);
@@ -86,7 +87,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wmove(stats_win, y + 2, 3);
 	}
 	getyx(stats_win, y, x);
-	mvwprintw(stats_win, y + 2, 6, "Cycles to die: %4d", data->c_to_die);
+	mvwprintw(stats_win, y + 2, 6, "Cycles to die: %4d", data->cycles_to_die);
 	wrefresh(stats_win);
 }
 

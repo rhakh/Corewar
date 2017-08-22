@@ -58,22 +58,48 @@ int 		 infinit_loop(t_data *data)
 {
 	//todo:hakh execute bots commands
 	//todo:bondar synchronized output using ncurses
+	int		pause;
+	int 	cmd;
 
 	while (data->cycles_to_die > 0)
 	{
-		if (listen_keybord(data))
-			return (1);
+		pause = getch();
+		if (data->one_command_mode){
+			data->one_command_mode = 0;
+			pause = ' ';
+			data->pause = 1;
+			display_stats(data, data->stats_win);
+			refresh();
+		}
+		if (pause == ' ')
+		while (pause == ' ') {
+			data->pause = 1;
+			display_stats(data, data->stats_win);
+			refresh();
+			cmd = getch();
+			if (cmd == ' '){
+				pause = 'q';
+				data->pause = 0;
+				display_stats(data, data->stats_win);
+				refresh();
+			}
+			else if (cmd == 'n') {
+				data->one_command_mode = 1;
+				break;
+			}
+		}
+		pause == 'n' ? data->one_command_mode = 1 : 0;
 		if (!data->pause || data->one_command_mode)
 		{
 			if (game_is_over(data))
 				return (0);
 			if (execute_commands(data))
 				return (1);
-			print_memory(data);
 			//todo calculate cycles and winner
-			data->one_command_mode = 0;
 		}
-		//break; //delete this
+		display_stats(data, data->stats_win);
+		wrefresh(data->memory_win);
+		refresh();
 	}
 	return (0);
 }
@@ -103,6 +129,7 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 			return (1);
 		}
 		bot->last_live = -1;
+		bot->is_dead = 0;
 		list_push_back(&(data->bots), bot);
 		i++;
 	}
@@ -133,7 +160,8 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->reg[1] = r1_number;
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
-		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
+		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4
+							 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
 		r1_number++;
@@ -147,18 +175,20 @@ int         main(int argc, char **argv)
 
 	ft_bzero(&data, sizeof(t_data));
 	data.cycles_to_die = CYCLE_TO_DIE;
+	data.cycles = 1;
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
 	if (argc == 1)
 	usage();
-	parse_flags(&data, argc, argv);if (init_bots(&data, data.players, data.bots_count))
+	parse_flags(&data, argc, argv);
+	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
-	//ft_display_arena(&data);
+	nc_display_arena(&data);
 	if (infinit_loop(&data))
 		return (1);
-//	calculate_winner();
-	 print_memory(&data);
+	nc_terminate(&data);
+	//print_memory(&data);
 	//todo: calculate winner
 	//todo:hakh free bots code (t_string)
 }

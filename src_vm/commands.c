@@ -38,13 +38,13 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
+	ft_printf("st arg1 = %d, arg2 = %d\n", args[0], args[1]);
 	if (command == 3)
 		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + (args[1] % IDX_MOD)));
 	if (command == 11)
 		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2]) % IDX_MOD)));
-//todo sbondar
-//	if (send_to_ncurses((bot->pc + ((args[1] + IDX_MOD) % IDX_MOD)), DIR_SIZE, bot, data))
-//		return (1);
+	if (ncurses_change_memory((bot->pc + ((args[1] + IDX_MOD) % IDX_MOD)), DIR_SIZE, bot, data))
+		return (1);
 //	maybe better to name this function like 'update_bytes_ncurses' or 'update_bytes_nc' ...
 	return (0);
 }
@@ -243,7 +243,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 	//todo send past and current cursor pos
 	//todo ncurses move_curcor
 	//todo ncurses ncurses_move_cursor(bot, prev)
-
+	ncurses_move_cursor(data, bot, prev);
 	return (0);
 }
 
@@ -267,6 +267,7 @@ int 		check_for_live_bots(t_data *data)
 	}
 	if (sum_live >= NBR_LIVE)
 		data->cycles_to_die -= CYCLE_DELTA;
+	return (0);
 }
 
 /*

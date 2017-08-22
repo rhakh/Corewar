@@ -111,6 +111,6 @@ set(SOURCE_FILES
         src_vm/flags_parser.h
         src_vm/error_managment.c
         src_vm/add_players.c
-        src_vm/usage.c src_vm/ncurses_vm.h src_vm/data.h)
+        src_vm/usage.c src_vm/ncurses_vm.h src_vm/data.h src_vm/ncurses_print.c)
 
 add_executable(Corewar ${SOURCE_FILES})
