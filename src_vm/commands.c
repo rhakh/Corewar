@@ -7,6 +7,7 @@ int 		arithmetic_operations(t_bot *bot, char command, int args[3])
 	else
 		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
 	bot->pause_time = op_tab[command - 1].cycles_to_done;
+	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
 
@@ -31,6 +32,7 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 	(command == 6) ? (bot->reg[args[2]] = num[0] & num[1]) : 0;
 	(command == 7) ? (bot->reg[args[2]] = num[0] | num[1]) : 0;
 	(command == 8) ? (bot->reg[args[2]] = num[0] ^ num[1]) : 0;
+	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
 
@@ -61,6 +63,7 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0]), DIR_SIZE);
 		else
 			return (1);
+		(bot->reg[args[1]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	}
 	else if (command == 10 || command == 14)
 	{
@@ -86,6 +89,7 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 			bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1] % IDX_MOD)), DIR_SIZE);
 		else
 			bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + (addr[0] + addr[1])), DIR_SIZE);
+		(bot->reg[args[2]] == 0 && command == 14) ? (bot->carry = 1) : (bot->carry = 0);
 	}
 	return (0);
 }
@@ -107,12 +111,35 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 
 int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	//todo send to ncurses
-	bot->prev_curr_live[0] = bot->prev_curr_live[1];
-	bot->prev_curr_live[1] = bot->pc;
-	//ncurses_live(bot);
-	//todocheck if it's wrong live number
-	return (0);
+	t_linked_list	*curr;
+	t_bot			*curr_bot;
+
+	curr = data->bots;
+	if (bot->number == args[0])
+	{
+		bot->prev_curr_live[0] = bot->prev_curr_live[1];
+		bot->prev_curr_live[1] = bot->pc;
+		bot->live_count++;
+		bot->last_live = data->cycles;
+		data->bots_live[bot->number]++;
+//		ncurses_live(bot);
+		return (0);
+	}
+	while (curr)
+	{
+		curr_bot = curr->data;
+		if (curr_bot->number == args[0])
+		{
+			curr_bot->prev_curr_live[0] = curr_bot->prev_curr_live[1];
+			curr_bot->prev_curr_live[1] = curr_bot->pc;
+			curr_bot->live_count++;
+			data->bots_live[curr_bot->number]++;
+//			ncurses_live(curr_bot);
+			return (0);
+		}
+		curr = curr->next;
+	}
+	return (1);
 }
 
 int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
@@ -220,38 +247,94 @@ int 		execute_command(t_data *data, t_bot *bot)
 	return (0);
 }
 
+int 		check_for_live_bots(t_data *data)
+{
+	t_linked_list	*curr;
+	t_bot			*bot;
+	int 			sum_live;
+
+	sum_live = 0;
+	curr = data->bots;
+	while (curr)
+	{
+		bot = curr->data;
+		sum_live += bot->live_count;
+		if (bot->live_count == 0)
+			bot->is_dead = 1;
+		else
+			bot->live_count = 0;
+		curr = curr->next;
+	}
+	if (sum_live >= NBR_LIVE)
+		data->cycles_to_die -= CYCLE_DELTA;
+}
+
 /*
 ** 0 - ok , 1 - error
 */
+//int 		execute_commands(t_data *data)
+//{
+//	//todo hakh
+//	t_linked_list	*curr;
+//	t_bot			*bot;
+//	int 			min;
+//
+//	min = 2147483647;
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (min > bot->pause_time)
+//			min = bot->pause_time;
+//		curr = curr->next;
+//	}
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (min == bot->pause_time)
+//		{
+//			if (execute_command(data, bot))
+//				return (1);
+//		}
+//		else
+//			bot->pause_time -= min;
+//		curr = curr->next;
+//	}
+//	data->cycles += min;
+//	return (0);
+//}
+
 int 		execute_commands(t_data *data)
 {
-	//todo hakh
 	t_linked_list	*curr;
 	t_bot			*bot;
-	int 			min;
 
-	min = 2147483647;
 	curr = data->bots;
 	while (curr)
 	{
 		bot = curr->data;
-		if (min > bot->pause_time)
-			min = bot->pause_time;
-		curr = curr->next;
-	}
-	curr = data->bots;
-	while (curr)
-	{
-		bot = curr->data;
-		if (min == bot->pause_time)
+		if (bot->is_dead == 0 && bot->pause_time == 0)
 		{
 			if (execute_command(data, bot))
 				return (1);
 		}
 		else
-			bot->pause_time -= min;
+			bot->pause_time -= 1;
+
+		if (data->cycles % CYCLE_TO_DIE == 0)
+		{
+			check_for_live_bots(data);
+			data->last_cycles_to_die = data->cycles_to_die;
+			data->max_checks++;
+		}
+		if (data->max_checks % MAX_CHECKS == 0)
+		{
+			if (data->last_cycles_to_die == data->cycles_to_die)
+				data->cycles_to_die -= CYCLE_DELTA;
+		}
 		curr = curr->next;
 	}
-	data->cycles += min;
+	data->cycles += 1;
 	return (0);
 }

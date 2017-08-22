@@ -34,6 +34,23 @@ int 		listen_keybord(t_data *data)
 	return (0);
 }
 
+int 		game_is_over(t_data *data)
+{
+	t_linked_list	*curr;
+	t_bot			*bot;
+
+	curr = data->bots;
+	while (curr)
+	{
+		bot = curr->data;
+		if (bot->is_dead == 0)
+			return (0);
+		curr = curr->next;
+	}
+	//ncurses_game_over();
+	return (1);
+}
+
 /*
 ** 0 - ok, 1 - error
 */
@@ -42,12 +59,14 @@ int 		 infinit_loop(t_data *data)
 	//todo:hakh execute bots commands
 	//todo:bondar synchronized output using ncurses
 
-	while (1)
+	while (data->cycles_to_die > 0)
 	{
 		if (listen_keybord(data))
 			return (1);
 		if (!data->pause || data->one_command_mode)
 		{
+			if (game_is_over(data))
+				return (0);
 			if (execute_commands(data))
 				return (1);
 			print_memory(data);
@@ -83,6 +102,7 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 			string_del(&curr);
 			return (1);
 		}
+		bot->last_live = -1;
 		list_push_back(&(data->bots), bot);
 		i++;
 	}
@@ -101,7 +121,7 @@ void		load_bots_in_memory(t_data *data)
 	int 			period;
 	int 			i;
 	int 			bot_number;
-	int 			r1_number = 2147483647;
+	int 			r1_number = 1;
 
 	i = 0;
 	bot_number = 1;
@@ -116,7 +136,7 @@ void		load_bots_in_memory(t_data *data)
 		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
-		r1_number--;
+		r1_number++;
 		bot_number++;
 	}
 }
@@ -135,9 +155,9 @@ int         main(int argc, char **argv)
 		return (1);
 	load_bots_in_memory(&data);
 	//ft_display_arena(&data);
-	if (infinit_loop(&data)){
+	if (infinit_loop(&data))
 		return (1);
-	}
+//	calculate_winner();
 	 print_memory(&data);
 	//todo: calculate winner
 	//todo:hakh free bots code (t_string)
