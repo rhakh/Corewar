@@ -3,7 +3,7 @@
 /*
 ** i from 1 to 3 must be
 */
-char 		get_arg_type(char opcode, int i)
+char 		get_arg_type(char command, char opcode, int i)
 {
 	char	arg_type;
 
@@ -15,6 +15,10 @@ char 		get_arg_type(char opcode, int i)
 		arg_type = (char)((opcode >> 4) & 0b00000011);
 	else if (i == 3)
 		arg_type = (char)((opcode >> 2) & 0b00000011);
+	if (command == 1)
+		arg_type = DIR_CODE;
+	else if (command == 9 || command == 12 || command == 15)
+		arg_type = IND_CODE;
 	return (arg_type);
 }
 
@@ -30,7 +34,7 @@ int 		get_args(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 	map = data->map + bot->pc;
 	while (i < op_tab[command - 1].n_arg)
 	{
-		arg_type = get_arg_type(opcode, i + 1);
+		arg_type = get_arg_type(command, opcode, i + 1);
 		if (arg_type == REG_CODE)
 		{
 			args[i] = get_number_from_bcode(map + offset, 1);
