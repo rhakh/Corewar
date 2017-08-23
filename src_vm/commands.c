@@ -43,10 +43,10 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	else
 		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2]) % IDX_MOD)));
 
-//	if (command == 3)
-//		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
-//	else
-//		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+	if (command == 3)
+		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+	else
+		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
 
 //	maybe better to name this function like 'update_bytes_ncurses' or 'update_bytes_nc' ...
 	return (0);
@@ -227,6 +227,11 @@ int 		execute_command(t_data *data, t_bot *bot)
 	prev = bot->pc;
 	if (command >= 1 && command <= 16)
 	{
+		if (bot->pause_time == - 1)
+		{
+			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
+			return (0);
+		}
 		prev = bot->pc;
 		bot->pc++;
 		if (op_tab[command - 1].have_opcode)
@@ -245,7 +250,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 		if (run_command(data, bot, command, opcode, args))
 			return (1);
 
-//		bot->pause_time = op_tab[command - 1].cycles_to_done;
+		bot->pause_time = -1;
 		(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
 	}
 	else
@@ -257,7 +262,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 	//todo ncurses move_curcor
 	//todo ncurses ncurses_move_cursor(bot, prev)
 
-//	ncurses_move_cursor(data, bot, prev);
+	ncurses_move_cursor(data, bot, prev);
 	return (0);
 }
 
@@ -332,7 +337,7 @@ int 		execute_commands(t_data *data)
 	while (curr)
 	{
 		bot = curr->data;
-		if (bot->is_dead == 0 && bot->pause_time == 0)
+		if (bot->is_dead == 0 && (bot->pause_time == 0 || bot->pause_time == -1))
 		{
 			if (execute_command(data, bot))
 				return (1);

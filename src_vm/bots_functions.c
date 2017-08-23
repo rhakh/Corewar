@@ -12,6 +12,7 @@ t_bot		*bot_new(int number, t_string *code)
 	ft_bzero(bot, sizeof(t_bot));
 	bot->code = code;
 	bot->number = number;
+	bot->pause_time = -1;
 	return (bot);
 }
 
