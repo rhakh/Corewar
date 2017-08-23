@@ -34,6 +34,7 @@ typedef struct		s_data
 	int				bots_live[MAX_PLAYERS + 1];
 	int				cycles_to_die;
 	int 			max_checks;
+	size_t 			processes;
 	int 			last_cycles_to_die;
 	int 			cycles;
 	t_linked_list	*bots;
