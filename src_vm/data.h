@@ -20,6 +20,7 @@ typedef struct		s_bot
 	int 			is_dead;
 	int				live_count;
 	int 			last_live;
+	int 			throw_live;
 }					t_bot;
 
 /*

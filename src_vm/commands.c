@@ -128,6 +128,8 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 //		ncurses_live(bot);
 		return (0);
 	}
+	else
+		bot->throw_live = 1;
 	while (curr)
 	{
 		curr_bot = curr->data;
@@ -267,10 +269,13 @@ int 		check_for_live_bots(t_data *data)
 	{
 		bot = curr->data;
 		sum_live += bot->live_count;
-		if (bot->live_count == 0)
+		if (bot->live_count == 0 && bot->throw_live == 0)
 			bot->is_dead = 1;
 		else
+		{
 			bot->live_count = 0;
+			bot->throw_live = 0;
+		}
 		curr = curr->next;
 	}
 	if (sum_live >= NBR_LIVE)

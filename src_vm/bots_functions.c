@@ -28,6 +28,7 @@ t_bot		*bot_copy(t_bot *src)
 	dst->comment = ft_strdup(src->comment);
 	dst->name = ft_strdup(src->name);
 	dst->size = src->size;
+	dst->throw_live = src->throw_live;
 	return (dst);
 }
 
