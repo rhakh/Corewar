@@ -109,6 +109,7 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 	child->pause_time = op_tab[command - 1].cycles_to_done;
 	ft_bzero(bot->prev_curr_live, sizeof(int) * 2);
 	list_push_back(&(data->bots), child);
+	data->processes++;
 	return (0);
 }
 
@@ -279,7 +280,10 @@ int 		check_for_live_bots(t_data *data)
 		bot = curr->data;
 		sum_live += bot->live_count;
 		if (bot->live_count == 0 && bot->throw_live == 0)
+		{
 			bot->is_dead = 1;
+			(data->processes > 0) ? (data->processes--) : 0;
+		}
 		else
 		{
 			bot->live_count = 0;
@@ -351,7 +355,7 @@ int 		execute_commands(t_data *data)
 			data->last_cycles_to_die = data->cycles_to_die;
 			data->max_checks++;
 		}
-		if (data->cycles > 0 && data->max_checks % MAX_CHECKS == 0)
+		if (data->max_checks > 0 && data->max_checks % MAX_CHECKS == 0)
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
 				data->cycles_to_die -= CYCLE_DELTA;

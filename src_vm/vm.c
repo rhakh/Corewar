@@ -181,6 +181,7 @@ int         main(int argc, char **argv)
 	if (argc == 1)
 	usage();
 	parse_flags(&data, argc, argv);
+	data.processes = (size_t )data.bots_count;
 	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
