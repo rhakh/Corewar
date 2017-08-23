@@ -22,14 +22,16 @@ void	display_memory(t_data *data, WINDOW *win)
 		if (cur_bot && i == cur_bot->pc)
 		{
 
-			int j = -1;
+			int j = 0;
+			// *print start cursor
+			print_byte(win, data->map[i], i, COLOR_PAIR(cur_bot->number) |
+											 A_REVERSE);
+			i++;
 			while (++j < cur_bot->size)
 			{
-				wattron(win, COLOR_PAIR(cur_bot->number));
-				wprintw(win, "%0.2hhx ", data->map[i]);
-				wattroff(win, COLOR_PAIR(cur_bot->number));
-				i++;
-				if (i % ft_sqrt(MEM_SIZE) == 0 && j + 1 != cur_bot->size) {
+				print_byte(win, data->map[i], i, COLOR_PAIR(cur_bot->number));
+				if (++i % ft_sqrt(MEM_SIZE) == 0 && j + 1 != cur_bot->size)
+				{
 					getyx(win, y, x);
 					wmove(win, y + 1, 1);
 				}
@@ -39,9 +41,8 @@ void	display_memory(t_data *data, WINDOW *win)
 			!list ? cur_bot = NULL : 0;
 			i--;
 		}
-		else {
+		else
 			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
-		}
 	}
 	wrefresh(win);
 }
