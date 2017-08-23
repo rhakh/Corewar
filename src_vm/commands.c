@@ -106,8 +106,8 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 		child->pc = ((bot->pc + (args[0] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE;
 	else if (command == 15)
 		child->pc = ((bot->pc + args[0]) + MEM_SIZE) % MEM_SIZE;
-	child->pause_time = op_tab[command - 1].cycles_to_done;
 	ft_bzero(bot->prev_curr_live, sizeof(int) * 2);
+	child->pause_time = -1;
 	list_push_back(&(data->bots), child);
 	data->processes++;
 	return (0);
@@ -119,6 +119,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	t_bot			*curr_bot;
 
 	curr = data->bots;
+	bot->throw_live = 1;
 	if (bot->number == args[0])
 	{
 		bot->prev_curr_live[0] = bot->prev_curr_live[1];
@@ -129,8 +130,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 //		ncurses_live(bot);
 		return (0);
 	}
-	else
-		bot->throw_live = 1;
 	while (curr)
 	{
 		curr_bot = curr->data;
@@ -150,7 +149,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	ft_printf("{red}offset = %d, pc = %d, arg1 = %d.{eoc}\n", ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE), bot->pc, args[0]);
 	if (bot->carry == 1)
 		bot->pc = ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE);
 	else
@@ -279,13 +277,15 @@ int 		check_for_live_bots(t_data *data)
 	{
 		bot = curr->data;
 		sum_live += bot->live_count;
-		if (bot->live_count == 0 && bot->throw_live == 0)
+		if (bot->throw_live == 0)
 		{
 			bot->is_dead = 1;
+			ft_printf("{red}lcount = %d, throw = %d{eoc} ", bot->live_count, bot->throw_live);
 			(data->processes > 0) ? (data->processes--) : 0;
 		}
 		else
 		{
+			ft_printf("{red}null{eoc}\n");
 			bot->live_count = 0;
 			bot->throw_live = 0;
 		}
@@ -349,13 +349,13 @@ int 		execute_commands(t_data *data)
 		else
 			bot->pause_time -= 1;
 
-		if (data->cycles > 0 && data->cycles % CYCLE_TO_DIE == 0)
+		if (data->cycles > 0 && (data->cycles % CYCLE_TO_DIE == 0))
 		{
 			check_for_live_bots(data);
 			data->last_cycles_to_die = data->cycles_to_die;
 			data->max_checks++;
 		}
-		if (data->max_checks > 0 && data->max_checks % MAX_CHECKS == 0)
+		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
 				data->cycles_to_die -= CYCLE_DELTA;
