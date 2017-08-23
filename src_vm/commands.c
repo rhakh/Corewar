@@ -43,10 +43,10 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	else
 		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2]) % IDX_MOD)));
 
-	if (command == 3)
-		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
-	else
-		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+//	if (command == 3)
+//		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+//	else
+//		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
 
 //	maybe better to name this function like 'update_bytes_ncurses' or 'update_bytes_nc' ...
 	return (0);
@@ -229,7 +229,8 @@ int 		execute_command(t_data *data, t_bot *bot)
 	{
 		prev = bot->pc;
 		bot->pc++;
-		if (op_tab[command - 1].have_opcode){
+		if (op_tab[command - 1].have_opcode)
+		{
 			opcode = data->map[bot->pc];
 			bot->pc++;
 		}
@@ -244,16 +245,19 @@ int 		execute_command(t_data *data, t_bot *bot)
 		if (run_command(data, bot, command, opcode, args))
 			return (1);
 
-		bot->pause_time = op_tab[command - 1].cycles_to_done;
+//		bot->pause_time = op_tab[command - 1].cycles_to_done;
 		(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
 	}
 	else
+	{
 		bot->pc = (bot->pc + 1) % MEM_SIZE;
+		bot->pause_time = 0;
+	}
 	//todo send past and current cursor pos
 	//todo ncurses move_curcor
 	//todo ncurses ncurses_move_cursor(bot, prev)
 
-	ncurses_move_cursor(data, bot, prev);
+//	ncurses_move_cursor(data, bot, prev);
 	return (0);
 }
 
@@ -336,13 +340,13 @@ int 		execute_commands(t_data *data)
 		else
 			bot->pause_time -= 1;
 
-		if (data->cycles % CYCLE_TO_DIE == 0)
+		if (data->cycles > 0 && data->cycles % CYCLE_TO_DIE == 0)
 		{
 			check_for_live_bots(data);
 			data->last_cycles_to_die = data->cycles_to_die;
 			data->max_checks++;
 		}
-		if (data->max_checks % MAX_CHECKS == 0)
+		if (data->cycles > 0 && data->max_checks % MAX_CHECKS == 0)
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
 				data->cycles_to_die -= CYCLE_DELTA;

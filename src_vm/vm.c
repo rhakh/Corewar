@@ -63,31 +63,31 @@ int 		 infinit_loop(t_data *data)
 
 	while (data->cycles_to_die > 0)
 	{
-		pause = getch();
-		if (data->one_command_mode){
-			data->one_command_mode = 0;
-			pause = ' ';
-			data->pause = 1;
-			display_stats(data, data->stats_win);
-			refresh();
-		}
-		if (pause == ' ')
-		while (pause == ' ') {
-			data->pause = 1;
-			display_stats(data, data->stats_win);
-			refresh();
-			cmd = getch();
-			if (cmd == ' '){
-				pause = 'q';
-				data->pause = 0;
-				display_stats(data, data->stats_win);
-				refresh();
-			}
-			else if (cmd == 'n') {
-				data->one_command_mode = 1;
-				break;
-			}
-		}
+//		pause = getch();
+//		if (data->one_command_mode){
+//			data->one_command_mode = 0;
+//			pause = ' ';
+//			data->pause = 1;
+//			display_stats(data, data->stats_win);
+//			refresh();
+//		}
+//		if (pause == ' ')
+//		while (pause == ' ') {
+//			data->pause = 1;
+//			display_stats(data, data->stats_win);
+//			refresh();
+//			cmd = getch();
+//			if (cmd == ' '){
+//				pause = 'q';
+//				data->pause = 0;
+//				display_stats(data, data->stats_win);
+//				refresh();
+//			}
+//			else if (cmd == 'n') {
+//				data->one_command_mode = 1;
+//				break;
+//			}
+//		}
 		pause == 'n' ? data->one_command_mode = 1 : 0;
 		if (!data->pause || data->one_command_mode)
 		{
@@ -97,9 +97,9 @@ int 		 infinit_loop(t_data *data)
 				return (1);
 			//todo calculate cycles and winner
 		}
-		display_stats(data, data->stats_win);
-		wrefresh(data->memory_win);
-		refresh();
+//		display_stats(data, data->stats_win);
+//		wrefresh(data->memory_win);
+//		refresh();
 	}
 	return (0);
 }
@@ -175,7 +175,7 @@ int         main(int argc, char **argv)
 
 	ft_bzero(&data, sizeof(t_data));
 	data.cycles_to_die = CYCLE_TO_DIE;
-	data.cycles = 1;
+	data.cycles = 0;
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
 	if (argc == 1)
@@ -184,10 +184,10 @@ int         main(int argc, char **argv)
 	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);
-	nc_display_arena(&data);
+//	nc_display_arena(&data);
 	if (infinit_loop(&data))
 		return (1);
-	nc_terminate(&data);
+//	nc_terminate(&data);
 	//print_memory(&data);
 	//todo: calculate winner
 	//todo:hakh free bots code (t_string)
