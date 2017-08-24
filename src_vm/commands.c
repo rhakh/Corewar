@@ -341,10 +341,60 @@ int 		check_for_live_bots(t_data *data)
 //	return (0);
 //}
 
+//int 		execute_commands(t_data *data)
+//{
+//	t_linked_list	*curr;
+//	t_bot			*bot;
+//
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (bot->is_dead == 0 && (bot->pause_time == 0 || bot->pause_time == -1))
+//		{
+//			if (execute_command(data, bot))
+//				return (1);
+//		}
+//		else
+//			bot->pause_time -= 1;
+//		curr = curr->next;
+//	}
+//
+//	if (data->cycles > 0 && (data->cycles % CYCLE_TO_DIE == 0))
+//	{
+//		check_for_live_bots(data);
+//		data->last_cycles_to_die = data->cycles_to_die;
+//		data->max_checks++;
+//	}
+//	if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+//	{
+//		if (data->last_cycles_to_die == data->cycles_to_die)
+//			data->cycles_to_die -= CYCLE_DELTA;
+//	}
+//
+//	data->cycles += 1;
+//	return (0);
+//}
+
+
 int 		execute_commands(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*bot;
+	int 			min;
+
+	min = 2147483647;
+	curr = data->bots;
+	while (curr)
+	{
+		bot = curr->data;
+		if (bot->pause_time > 0 && min > bot->pause_time)
+			min = bot->pause_time;
+		curr = curr->next;
+	}
+	(min == 2147483647) ? (min = 1) :0;
+	ft_printf("{red}min = %d.\n{eoc}", (data->cycles % data->cycles_to_die));
+	(min > (data->cycles % data->cycles_to_die) && (data->cycles > 0) && (min > 0)) ? (min = data->cycles % data->cycles_to_die) : 0;
 
 	curr = data->bots;
 	while (curr)
@@ -356,7 +406,7 @@ int 		execute_commands(t_data *data)
 				return (1);
 		}
 		else
-			bot->pause_time -= 1;
+			bot->pause_time -= min;
 		curr = curr->next;
 	}
 
@@ -372,6 +422,7 @@ int 		execute_commands(t_data *data)
 			data->cycles_to_die -= CYCLE_DELTA;
 	}
 
-	data->cycles += 1;
+	data->cycles += min;
 	return (0);
 }
+

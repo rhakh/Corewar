@@ -61,7 +61,7 @@ int 		 infinit_loop(t_data *data)
 	int		pause;
 	int 	cmd;
 
-	while (data->cycles_to_die > 0)
+	while (data->cycles_to_die > 0 && data->processes > 0)
 	{
 		timeout(data->ncurses_timeout);
 		pause = getch();
@@ -97,8 +97,6 @@ int 		 infinit_loop(t_data *data)
 		pause == 'n' ? data->one_command_mode = 1 : 0;
 		if (!data->pause || data->one_command_mode)
 		{
-			if (game_is_over(data))
-				return (0);
 			if (execute_commands(data))
 				return (1);
 			//todo calculate cycles and winner
@@ -185,7 +183,7 @@ int         main(int argc, char **argv)
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
 	if (argc == 1)
-	usage();
+		usage();
 	parse_flags(&data, argc, argv);
 	data.processes = (size_t)data.bots_count;
 	if (init_bots(&data, data.players, data.bots_count))
