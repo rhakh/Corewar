@@ -52,12 +52,14 @@ void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 		}
 		i--;
 	}
+	ft_snprintf(data->debug_strs[0], 61, "Player %d: reg[%d] = %d", bot->number, nb_reg, bot->reg[nb_reg]);
 	line = 3;
+	i = 0;
 	while (i < 12)
 	{
-		wattron(data->debug_win, COLOR_PAIR(bot->number) | A_REVERSE);
-		mvwprintw(data->debug_win, line++, 4, "%62s", data->debug_strs[i++]);
-		wattroff(data->debug_win, COLOR_PAIR(bot->number) | A_REVERSE);
+		wattron(data->debug_win, A_REVERSE);
+		mvwprintw(data->debug_win, line++, 4, " %s", data->debug_strs[i++]);
+		wattroff(data->debug_win, A_REVERSE);
 	}
 	wrefresh(data->debug_win);
 	refresh();
