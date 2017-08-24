@@ -66,8 +66,9 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	}
 	else
 		mvwprintw(stats_win, 1, 28, "** RUNNING **");
-	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Cycle:", /* count of cycles here */ data->cycles);
-	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Processes:", /* count of processes here*/ data->processes);
+	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Timeout:", data->ncurses_timeout);
+	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:",  data->cycles);
+	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
 	wmove(stats_win, 10, 3);
 	n_bot = -1;
 	while (++n_bot < data->bots_count)
@@ -77,8 +78,8 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wprintw(stats_win, "%.55s", cur_bot->name);
 		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
 		getyx(stats_win, y, x);
-		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot]);
-		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot]);
+		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot + 1]);
+		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot + 1]);
 
 		// for the next players
 		list = list->next;

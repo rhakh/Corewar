@@ -63,7 +63,13 @@ int 		 infinit_loop(t_data *data)
 
 	while (data->cycles_to_die > 0)
 	{
+		timeout(data->ncurses_timeout);
 		pause = getch();
+		if (pause == 'a' || pause == 's')
+		{
+			pause == 'a' ? data->ncurses_timeout-- : data->ncurses_timeout++;
+			data->ncurses_timeout < 0 ? data->ncurses_timeout = 0 : 0;
+		}
 		if (data->one_command_mode){
 			data->one_command_mode = 0;
 			pause = ' ';

@@ -48,6 +48,7 @@ typedef struct		s_data
 	WINDOW *memory_win;
 	WINDOW *stats_win;
 	WINDOW *debug_win;
+	int 			ncurses_timeout;
 }					t_data;
 
 typedef struct		s_op
