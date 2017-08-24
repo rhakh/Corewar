@@ -43,7 +43,7 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	else
 	{
 		if (get_arg_type(command, opcode, 2) == IND_CODE)
-			args[1] = get_number_from_bcode(data->map + (bot->pc + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, IND_SIZE);
+			args[1] = get_number_from_bcode(data->map + (bot->pc + 2 + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, IND_SIZE);
 		if (get_arg_type(command, opcode, 2) == REG_CODE)
 			args[1] = bot->reg[args[1]];
 		put_number_to_bcode(data, bot->reg[args[0]], ((bot->pc + ((args[1] + args[2]) % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
@@ -133,7 +133,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
-		data->bots_last_live[bot->number]++;
+		data->bots_last_live[bot->number] = data->cycles;
 //		ncurses_live(bot);
 		return (0);
 	}
@@ -146,7 +146,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			curr_bot->prev_curr_live[1] = curr_bot->pc;
 			curr_bot->live_count++;
 			data->bots_live[curr_bot->number]++;
-			data->bots_last_live[curr_bot->number]++;
+			data->bots_last_live[curr_bot->number] = data->cycles;
 //			ncurses_live(curr_bot);
 			return (0);
 		}
