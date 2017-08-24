@@ -6,7 +6,6 @@ int 		arithmetic_operations(t_bot *bot, char command, int args[3])
 		bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]];
 	else
 		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
-	bot->pause_time = op_tab[command - 1].cycles_to_done;
 	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
@@ -26,7 +25,7 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 		else if (arg_type == DIR_CODE)
 			num[i] = bot->reg[args[i]];
 		else if (arg_type == IND_CODE)
-			num[i] = get_number_from_bcode(data->map + (bot->pc + (args[i] % IDX_MOD)), DIR_SIZE);
+			num[i] = get_number_from_bcode(data->map + (bot->pc + (args[i] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, DIR_SIZE);
 		i++;
 	}
 	(command == 6) ? (bot->reg[args[2]] = num[0] & num[1]) : 0;
@@ -44,8 +43,16 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	{
 		if (get_arg_type(command, opcode, 2) == IND_CODE)
 			args[1] = get_number_from_bcode(data->map + (bot->pc + 2 + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, IND_SIZE);
-		if (get_arg_type(command, opcode, 2) == REG_CODE)
-			args[1] = bot->reg[args[1]];
+		else if (get_arg_type(command, opcode, 2) == REG_CODE)
+			args[1] = bot->reg[args[1]] % IDX_MOD;
+		else
+			args[1] = args[1] % IDX_MOD;
+
+		if (get_arg_type(command, opcode, 3) == REG_CODE)
+			args[2] = bot->reg[args[2]] % IDX_MOD;
+		else
+			args[2] = args[2] % IDX_MOD;
+
 		put_number_to_bcode(data, bot->reg[args[0]], ((bot->pc + ((args[1] + args[2]) % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
 	}
 
@@ -54,7 +61,6 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	else
 		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
 
-//	maybe better to name this function like 'update_bytes_ncurses' or 'update_bytes_nc' ...
 	return (0);
 }
 
@@ -67,9 +73,9 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		if (get_arg_type(command, opcode, 1) == DIR_CODE)
 			bot->reg[args[1]] = args[0];
 		else if (command == 2 && (get_arg_type(command, opcode, 1) == IND_CODE))
-			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), DIR_SIZE);
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, DIR_SIZE);
 		else if (command == 13 && (get_arg_type(command, opcode, 1) == IND_CODE))
-			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0]), DIR_SIZE);
+			bot->reg[args[1]] = get_number_from_bcode(data->map + (bot->pc + args[0] + MEM_SIZE) % MEM_SIZE, DIR_SIZE);
 		else
 			return (1);
 		(bot->reg[args[1]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
@@ -84,15 +90,11 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 			addr[0] = (get_number_from_bcode(data->map + (bot->pc + 2 + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, IND_SIZE)); //del 2
 		else if (command == 14 && (get_arg_type(command, opcode, 1) == IND_CODE))
 			addr[0] = (get_number_from_bcode(data->map + (bot->pc + 2 + (args[0]) + MEM_SIZE) % MEM_SIZE, IND_SIZE));
-		else
-			return (1);
 
 		if (get_arg_type(command, opcode, 2) == REG_CODE)
 			(command == 10) ? (addr[1] = bot->reg[args[1]] % IDX_MOD) : (addr[1] = bot->reg[args[1]]);
 		else if (get_arg_type(command, opcode, 2) == DIR_CODE)
 			addr[1] = args[1];
-		else
-			return (1);
 
 		if (command == 10)
 			bot->reg[args[2]] = get_number_from_bcode(data->map + (bot->pc + ((addr[0] + addr[1]) % IDX_MOD) + MEM_SIZE) % MEM_SIZE, DIR_SIZE);
@@ -134,7 +136,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
 		data->bots_last_live[bot->number] = data->cycles;
-//		ncurses_live(bot);
 		ncurses_live(data, bot); // ncurses print pointer
 		return (0);
 	}
@@ -148,8 +149,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			curr_bot->live_count++;
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;
-//			ncurses_live(curr_bot);
-			ncurses_live(data, bot);
+			ncurses_live(data, curr_bot);
 			return (0);
 		}
 		curr = curr->next;
@@ -169,7 +169,7 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	//todo send to ncurses bot, reg_number
-	//ncurses_aff(bot, args[0]); //args[0] - numberof register to display
+	//ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
 	return (0);
 }
 
@@ -301,7 +301,7 @@ int 		check_for_live_bots(t_data *data)
 		curr = curr->next;
 	}
 	if (sum_live >= NBR_LIVE)
-		data->cycles_to_die -= CYCLE_DELTA;
+		(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
 	return (0);
 }
 
