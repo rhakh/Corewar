@@ -294,6 +294,7 @@ int 		check_for_live_bots(t_data *data)
 		}
 		else
 		{
+			data->bots_live[bot->number] = 0;
 			bot->live_count = 0;
 			bot->throw_live = 0;
 		}
