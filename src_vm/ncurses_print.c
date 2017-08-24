@@ -17,12 +17,13 @@ void		ncurses_live(t_data *data, t_bot *bot)
 	int 	i;
 
 	i = 0;
-	while (i <= 4)
-	{
-		print_byte(data->memory_win, data->map[bot->prev_curr_live[0] + i],
-				   bot->prev_curr_live[0] + i, COLOR_PAIR(bot->number));
-		i++;
-	}
+	if (bot->prev_curr_live[0] != -1)
+		while (i <= 4)
+		{
+			print_byte(data->memory_win, data->map[bot->prev_curr_live[0] + i],
+					   bot->prev_curr_live[0] + i, COLOR_PAIR(bot->number));
+			i++;
+		}
 	i = 0;
 	while (i <= 4)
 	{
