@@ -237,9 +237,14 @@ int 		execute_command(t_data *data, t_bot *bot)
 	prev = bot->pc;
 	if (command >= 1 && command <= 16)
 	{
-		if (bot->pause_time == - 1)
+//		if (bot->pause_time == - 1)
+//		{
+//			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
+//			return (0);
+//		}
+		if (bot->pause_time == 0)
 		{
-			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
+			bot->pause_time = op_tab[command - 1].cycles_to_done;
 			return (0);
 		}
 		prev = bot->pc;
@@ -260,7 +265,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 		if (run_command(data, bot, command, opcode, args))
 			return (1);
 
-		bot->pause_time = -1;
+//		bot->pause_time = -1;
 		(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
 	}
 	else

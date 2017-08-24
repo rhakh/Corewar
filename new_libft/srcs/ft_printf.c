@@ -46,7 +46,7 @@ int			ft_printf(const char *format, ...)
 	return (res_len);
 }
 
-int			ft_snprintf(char **str, size_t n, const char *format, ...)
+int			ft_snprintf(char *str, size_t n, const char *format, ...)
 {
 	t_spec	*spec;
 	int		res_len;
@@ -59,7 +59,7 @@ int			ft_snprintf(char **str, size_t n, const char *format, ...)
 		return (-1);
 	va_start(ap, format);
 	res_str = get_result((char *)format, spec, &ap, res_str);
-	ft_memcpy(*str, res_str->str, (n <= res_str->i) ? (n) : (res_str->i));
+	ft_memcpy(str, res_str->str, (n <= res_str->i) ? (n) : (res_str->i));
 	res_len = (int)res_str->i;
 	del_strp(&res_str);
 	del_spec(spec);
