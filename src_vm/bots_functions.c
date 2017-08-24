@@ -13,6 +13,8 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = -1;
+	bot->prev_curr_live[0] = -1;
+	bot->prev_curr_live[1] = -1;
 	return (bot);
 }
 
@@ -30,6 +32,8 @@ t_bot		*bot_copy(t_bot *src)
 	dst->name = ft_strdup(src->name);
 	dst->size = src->size;
 	dst->throw_live = src->throw_live;
+	dst->prev_curr_live[0] = src->prev_curr_live[0];
+	dst->prev_curr_live[1] = src->prev_curr_live[1];
 	return (dst);
 }
 
