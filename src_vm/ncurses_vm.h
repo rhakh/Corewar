@@ -1,6 +1,6 @@
 #ifndef NCURSES_VM_H
 # define NCURSES_VM_H
-# define NCURSES_TIMEOUT 10
+# define NCURSES_TIMEOUT 0
 # include "vm.h"
 # include <ncurses.h>
 

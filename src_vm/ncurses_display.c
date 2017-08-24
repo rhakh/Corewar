@@ -88,10 +88,10 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wmove(stats_win, y + 2, 3);
 	}
 	getyx(stats_win, y, x);
-	mvwprintw(stats_win, y + 2, 6, "%13s: %4d", "CYCLES_TO_DIE", data->cycles_to_die);
-	mvwprintw(stats_win, y + 3, 6, "%13s: %4d", "CYCLE_DELTA", CYCLE_DELTA);
-	mvwprintw(stats_win, y + 4, 6, "%13s: %4d", "NBR_LIVE", NBR_LIVE);
-	mvwprintw(stats_win, y + 5, 6, "%13s: %4d", "MAX_CHECKS", MAX_CHECKS);
+	mvwprintw(stats_win, y + 2, 6, "%-13s: %4d", "CYCLES_TO_DIE", data->cycles_to_die);
+	mvwprintw(stats_win, y + 3, 6, "%-13s: %4d", "CYCLE_DELTA", CYCLE_DELTA);
+	mvwprintw(stats_win, y + 4, 6, "%-13s: %4d", "NBR_LIVE", NBR_LIVE);
+	mvwprintw(stats_win, y + 5, 6, "%-13s: %4d", "MAX_CHECKS", MAX_CHECKS);
 	wrefresh(stats_win);
 }
 
