@@ -78,7 +78,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
 		getyx(stats_win, y, x);
 		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot]);
-		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_live[n_bot]);
+		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot]);
 
 		// for the next players
 		list = list->next;
