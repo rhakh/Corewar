@@ -32,6 +32,7 @@ typedef struct		s_data
 	unsigned char	map[MEM_SIZE];
 	int				bots_last_live[MAX_PLAYERS + 1];
 	int				bots_live[MAX_PLAYERS + 1];
+	char 			debug_strs[12][62];
 	int				cycles_to_die;
 	int 			max_checks;
 	size_t 			processes;

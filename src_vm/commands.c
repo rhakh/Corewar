@@ -114,7 +114,8 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 		child->pc = ((bot->pc + (args[0] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE;
 	else if (command == 15)
 		child->pc = ((bot->pc + args[0]) + MEM_SIZE) % MEM_SIZE;
-	ft_bzero(bot->prev_curr_live, sizeof(int) * 2);
+	child->prev_curr_live[0] = -1;
+	child->prev_curr_live[1] = -1;
 	child->pause_time = -1;
 	list_push_back(&(data->bots), child);
 	data->processes++;
@@ -377,6 +378,7 @@ int 		execute_commands(t_data *data)
 }
 
 
+//#include <stdio.h>
 //int 		execute_commands(t_data *data)
 //{
 //	t_linked_list	*curr;
@@ -393,8 +395,14 @@ int 		execute_commands(t_data *data)
 //		curr = curr->next;
 //	}
 //	(min == 2147483647) ? (min = 1) :0;
-//	ft_printf("{red}min = |%d|\n{eoc}", (data->cycles % data->cycles_to_die));
 //	(min > (data->cycles % data->cycles_to_die) && (data->cycles > 0) && (min > 0)) ? (min = data->cycles % data->cycles_to_die) : 0;
+//	ft_printf("{red}min = |%d|\n{eoc}", (data->cycles % data->cycles_to_die));
+//
+//	FILE	*pfile;
+//
+//	pfile = fopen("test.txt", "a");
+//	fprintf(pfile, "min = %d, cycles = %d\n", min, data->cycles);
+//	fclose(pfile);
 //
 //	curr = data->bots;
 //	while (curr)
