@@ -39,9 +39,15 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	if (command == 3)
-		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + (args[1] % IDX_MOD)));
+		put_number_to_bcode(data, bot->reg[args[0]], ((bot->pc + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
 	else
-		put_number_to_bcode(data, bot->reg[args[0]], (bot->pc + ((args[1] + args[2]) % IDX_MOD)));
+	{
+		if (get_arg_type(command, opcode, 2) == IND_CODE)
+			args[1] = get_number_from_bcode(data->map + (bot->pc + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE, IND_SIZE);
+		if (get_arg_type(command, opcode, 2) == REG_CODE)
+			args[1] = bot->reg[args[1]];
+		put_number_to_bcode(data, bot->reg[args[0]], ((bot->pc + ((args[1] + args[2]) % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
+	}
 
 	if (command == 3)
 		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
@@ -75,9 +81,9 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		else if (get_arg_type(command, opcode, 1) == DIR_CODE)
 			addr[0] = args[0];
 		else if (command == 10 && (get_arg_type(command, opcode, 1) == IND_CODE))
-			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0] % IDX_MOD)), IND_SIZE));
+			addr[0] = (get_number_from_bcode(data->map + (bot->pc + 2 + (args[0] % IDX_MOD)), IND_SIZE)); //del 2
 		else if (command == 14 && (get_arg_type(command, opcode, 1) == IND_CODE))
-			addr[0] = (short)(get_number_from_bcode(data->map + (bot->pc + (args[0])), IND_SIZE));
+			addr[0] = (get_number_from_bcode(data->map + (bot->pc + 2 + (args[0])), IND_SIZE));
 		else
 			return (1);
 
@@ -127,6 +133,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
+		data->bots_last_live[bot->number]++;
 //		ncurses_live(bot);
 		return (0);
 	}
@@ -139,6 +146,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			curr_bot->prev_curr_live[1] = curr_bot->pc;
 			curr_bot->live_count++;
 			data->bots_live[curr_bot->number]++;
+			data->bots_last_live[curr_bot->number]++;
 //			ncurses_live(curr_bot);
 			return (0);
 		}
@@ -280,12 +288,10 @@ int 		check_for_live_bots(t_data *data)
 		if (bot->throw_live == 0)
 		{
 			bot->is_dead = 1;
-			ft_printf("{red}lcount = %d, throw = %d{eoc} ", bot->live_count, bot->throw_live);
 			(data->processes > 0) ? (data->processes--) : 0;
 		}
 		else
 		{
-			ft_printf("{red}null{eoc}\n");
 			bot->live_count = 0;
 			bot->throw_live = 0;
 		}
@@ -348,20 +354,21 @@ int 		execute_commands(t_data *data)
 		}
 		else
 			bot->pause_time -= 1;
-
-		if (data->cycles > 0 && (data->cycles % CYCLE_TO_DIE == 0))
-		{
-			check_for_live_bots(data);
-			data->last_cycles_to_die = data->cycles_to_die;
-			data->max_checks++;
-		}
-		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-		{
-			if (data->last_cycles_to_die == data->cycles_to_die)
-				data->cycles_to_die -= CYCLE_DELTA;
-		}
 		curr = curr->next;
 	}
+
+	if (data->cycles > 0 && (data->cycles % CYCLE_TO_DIE == 0))
+	{
+		check_for_live_bots(data);
+		data->last_cycles_to_die = data->cycles_to_die;
+		data->max_checks++;
+	}
+	if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+	{
+		if (data->last_cycles_to_die == data->cycles_to_die)
+			data->cycles_to_die -= CYCLE_DELTA;
+	}
+
 	data->cycles += 1;
 	return (0);
 }
