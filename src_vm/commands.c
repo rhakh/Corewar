@@ -135,6 +135,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		data->bots_live[bot->number]++;
 		data->bots_last_live[bot->number] = data->cycles;
 //		ncurses_live(bot);
+		ncurses_live(data, bot); // ncurses print pointer
 		return (0);
 	}
 	while (curr)
@@ -148,6 +149,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;
 //			ncurses_live(curr_bot);
+			ncurses_live(data, bot);
 			return (0);
 		}
 		curr = curr->next;

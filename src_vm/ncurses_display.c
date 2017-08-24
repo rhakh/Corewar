@@ -77,8 +77,8 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wprintw(stats_win, "%.55s", cur_bot->name);
 		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
 		getyx(stats_win, y, x);
-		wmove(stats_win, y + 1, 10);
-		wprintw(stats_win, "Score: %4d", data->bot_score[n_bot]);
+		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot]);
+		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot]);
 
 		// for the next players
 		list = list->next;
@@ -88,7 +88,10 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wmove(stats_win, y + 2, 3);
 	}
 	getyx(stats_win, y, x);
-	mvwprintw(stats_win, y + 2, 6, "Cycles to die: %4d", data->cycles_to_die);
+	mvwprintw(stats_win, y + 2, 6, "%-13s: %4d", "CYCLES_TO_DIE", data->cycles_to_die);
+	mvwprintw(stats_win, y + 3, 6, "%-13s: %4d", "CYCLE_DELTA", CYCLE_DELTA);
+	mvwprintw(stats_win, y + 4, 6, "%-13s: %4d", "NBR_LIVE", NBR_LIVE);
+	mvwprintw(stats_win, y + 5, 6, "%-13s: %4d", "MAX_CHECKS", MAX_CHECKS);
 	wrefresh(stats_win);
 }
 
