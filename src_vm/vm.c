@@ -34,23 +34,6 @@ int 		listen_keybord(t_data *data)
 	return (0);
 }
 
-int 		game_is_over(t_data *data)
-{
-	t_linked_list	*curr;
-	t_bot			*bot;
-
-	curr = data->bots;
-	while (curr)
-	{
-		bot = curr->data;
-		if (bot->is_dead == 0)
-			return (0);
-		curr = curr->next;
-	}
-	//ncurses_game_over();
-	return (1);
-}
-
 /*
 ** 0 - ok, 1 - error
 */
