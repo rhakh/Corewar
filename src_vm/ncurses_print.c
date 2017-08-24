@@ -38,12 +38,25 @@ void		ncurses_live(t_data *data, t_bot *bot)
 void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 {
 	int 	i;
+	int 	k;
+	int 	line;
 
-	i = 3;
-	while (i < 15)
+	i = 10;
+	while (i >= 0)
+	{
+		k = 0;
+		while (k < 61)
+		{
+			data->debug_strs[i + 1][k] = data->debug_strs[i][k];
+			k++;
+		}
+		i--;
+	}
+	line = 3;
+	while (i < 12)
 	{
 		wattron(data->debug_win, COLOR_PAIR(bot->number) | A_REVERSE);
-		mvwprintw(data->debug_win, i++, 4, "%62s", ".");
+		mvwprintw(data->debug_win, line++, 4, "%62s", data->debug_strs[i++]);
 		wattroff(data->debug_win, COLOR_PAIR(bot->number) | A_REVERSE);
 	}
 	wrefresh(data->debug_win);
