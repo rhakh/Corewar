@@ -77,12 +77,16 @@ int 		 infinit_loop(t_data *data)
 			display_stats(data, data->stats_win);
 			refresh();
 		}
-		if (pause == ' ')
 		while (pause == ' ') {
 			data->pause = 1;
 			display_stats(data, data->stats_win);
 			refresh();
 			cmd = getch();
+			if (cmd == 'a' || cmd == 's')
+			{
+				cmd == 'a' ? data->ncurses_timeout-- : data->ncurses_timeout++;
+				data->ncurses_timeout < 0 ? data->ncurses_timeout = 0 : 0;
+			}
 			if (cmd == ' '){
 				pause = 'q';
 				data->pause = 0;
