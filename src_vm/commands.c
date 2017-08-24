@@ -126,7 +126,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
-//		ncurses_live(bot);
+		ncurses_live(data, bot); // ncurses print pointer
 		return (0);
 	}
 	else
@@ -140,7 +140,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			curr_bot->prev_curr_live[1] = curr_bot->pc;
 			curr_bot->live_count++;
 			data->bots_live[curr_bot->number]++;
-//			ncurses_live(curr_bot);
+			ncurses_live(data, bot);
 			return (0);
 		}
 		curr = curr->next;
@@ -150,7 +150,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	ft_printf("{red}offset = %d, pc = %d, arg1 = %d.{eoc}\n", ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE), bot->pc, args[0]);
 	if (bot->carry == 1)
 		bot->pc = ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE);
 	else
