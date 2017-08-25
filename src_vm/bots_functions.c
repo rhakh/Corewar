@@ -13,6 +13,7 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = -1;
+	bot->prev_st = -1;
 	bot->prev_curr_live[0] = -1;
 	bot->prev_curr_live[1] = -1;
 	return (bot);
@@ -24,16 +25,20 @@ t_bot		*bot_copy(t_bot *src)
 
 	if ((dst = bot_new(src->number, src->code)) == NULL)
 		return (NULL);
-	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
-	dst->pause_time = src->pause_time;
-	dst->pc = src->pc;
-	dst->carry = src->carry;
 	dst->comment = ft_strdup(src->comment);
 	dst->name = ft_strdup(src->name);
-	dst->size = src->size;
-	dst->throw_live = src->throw_live;
+	dst->number = src->number;
+	dst->pc = src->pc;
+	dst->pause_time = src->pause_time;
 	dst->prev_curr_live[0] = src->prev_curr_live[0];
 	dst->prev_curr_live[1] = src->prev_curr_live[1];
+	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
+	dst->throw_live = src->throw_live;
+	dst->carry = src->carry;
+	dst->is_dead = src->is_dead;
+	dst->last_live = 0;
+	dst->live_count = 0;
+	dst->size = src->size;
 	return (dst);
 }
 
