@@ -28,7 +28,7 @@ void		ncurses_live(t_data *data, t_bot *bot)
 	while (i <= 4)
 	{
 		print_byte(data->memory_win, data->map[bot->prev_curr_live[1] + i],
-				   bot->prev_curr_live[1] + i, COLOR_PAIR(bot->number + 5));
+				   bot->prev_curr_live[1] + i, COLOR_PAIR(bot->number + 5) | A_BOLD);
 		i++;
 	}
 	wrefresh(data->memory_win);

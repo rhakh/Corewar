@@ -5,15 +5,25 @@
 #include <curses.h>
 #include "vm.h"
 
+/*
+ * len no need
+ */
 int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
 {
-	int i = 0;
+	int i;
 
-	while (i < len)
-	{
-		print_byte(data->memory_win, data->map[start + i], start + i, COLOR_PAIR(bot->number) | A_BOLD);
-		i++;
-	}
+	i = -1;
+//	if (bot->last_start != -1)
+//	{
+//		while (++i < len)
+//			print_byte(data->memory_win, data->map[bot->prev_st + i],
+//					   bot->prev_st + i, COLOR_PAIR(bot->number));
+//	}
+	i = -1;
+	while (++i < len)
+		print_byte(data->memory_win, data->map[start + i], start + i,
+				   COLOR_PAIR(bot->number) | A_BOLD);
+	
 	return (0);
 }
 
