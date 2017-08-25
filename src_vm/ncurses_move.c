@@ -16,12 +16,12 @@ int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
 	if (bot->prev_st != -1)
 	{
 		while (++i < len)
-			print_byte(data->memory_win, data->map[bot->prev_st + i],
-					   bot->prev_st + i, COLOR_PAIR(bot->number));
+			print_byte(data->memory_win, data->map[(bot->prev_st + i + MEM_SIZE) % MEM_SIZE],
+					   (bot->prev_st + i + MEM_SIZE) % MEM_SIZE, COLOR_PAIR(bot->number));
 	}
 	i = -1;
 	while (++i < len)
-		print_byte(data->memory_win, data->map[start + i], start + i,
+		print_byte(data->memory_win, data->map[(start + i + MEM_SIZE) % MEM_SIZE], (start + i + MEM_SIZE) % MEM_SIZE,
 				   COLOR_PAIR(bot->number) | A_BOLD);
 	bot->prev_st = start;
 	return (0);
