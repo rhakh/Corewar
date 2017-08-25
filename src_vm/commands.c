@@ -372,6 +372,7 @@ int 		execute_commands(t_data *data)
 			bot->pause_time -= 1;
 		curr = curr->next;
 	}
+	data->cycles += 1;
 
 
 	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
@@ -379,19 +380,17 @@ int 		execute_commands(t_data *data)
 		check_for_live_bots(data);
 		data->next_cycles_check = data->cycles + data->cycles_to_die;
 		data->max_checks++;
-	}
 
-	if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-	{
-		if (data->last_cycles_to_die == data->cycles_to_die)
+		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
 		{
-			data->cycles_to_die -= CYCLE_DELTA;
-			data->next_cycles_check = data->cycles + data->cycles_to_die;
+			if (data->last_cycles_to_die == data->cycles_to_die)
+			{
+				data->cycles_to_die -= CYCLE_DELTA;
+				data->next_cycles_check = data->cycles + data->cycles_to_die;
+			}
+			data->last_cycles_to_die = data->cycles_to_die;
 		}
-		data->last_cycles_to_die = data->cycles_to_die;
 	}
-
-	data->cycles += 1;
 
 	return (0);
 }
