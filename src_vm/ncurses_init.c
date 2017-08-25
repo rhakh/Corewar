@@ -26,7 +26,8 @@ void init_ncurses(void)
 	curs_set(FALSE);
 }
 
-void		nc_display_arena(t_data *data) {
+void		nc_display_arena(t_data *data)
+{
 	WINDOW *memory_win;
 	WINDOW *stats_win;
 	WINDOW *debug_win;
@@ -54,7 +55,8 @@ void		nc_display_arena(t_data *data) {
 	data->debug_win = debug_win;
 }
 
-void		nc_terminate(t_data *data) {
+void		nc_terminate(t_data *data)
+{
 	while(getch() != 'q') {
 		//ignore
 	}
