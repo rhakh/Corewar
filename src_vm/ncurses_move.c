@@ -19,9 +19,11 @@ int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
 
 /*
  * Applies move cursor effect.
+ * TODO: get atribute, then A_REVERSE
  */
 int 		ncurses_move_cursor(t_data *data, t_bot *bot, int prev)
 {
+//	wattr_get(data->memory_win, ***, ***, ***);
 	print_byte(data->memory_win, data->map[prev], prev, COLOR_PAIR(bot->number));
 	print_byte(data->memory_win, data->map[bot->pc], bot->pc, COLOR_PAIR(bot->number) | A_REVERSE);
 	return (0);
