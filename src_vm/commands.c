@@ -163,7 +163,7 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	if (bot->carry == 1)
 		bot->pc = ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE);
 	else
-		bot->pc += 1 + IND_CODE;
+		bot->pc += 1 + IND_SIZE;
 	return (0);
 }
 
@@ -176,23 +176,26 @@ int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int arg
 
 int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
+	int 	ret;
+
+	ret = 0;
 	if (command == 4 || command == 5)
-		arithmetic_operations(bot, command, args);
+		ret = arithmetic_operations(bot, command, args);
 	else if (command == 6 || command == 7 || command == 8)
-		logic_operations(data, bot, command, opcode, args);
+		ret = logic_operations(data, bot, command, opcode, args);
 	else if (command == 3 || command == 11)
-		st_operations(data, bot, command, opcode, args);
+		ret = st_operations(data, bot, command, opcode, args);
 	else if (command == 2 || command == 10 || command == 13 || command == 14)
-		ld_operations(data, bot, command, opcode, args);
+		ret = ld_operations(data, bot, command, opcode, args);
 	else if (command == 12 || command == 15)
-		fork_operations(data, bot, command, opcode, args);
+		ret = fork_operations(data, bot, command, opcode, args);
 	else if (command == 1)
-		live_operation(data, bot, command, opcode, args);
+		ret = live_operation(data, bot, command, opcode, args);
 	else if (command == 9)
-		zjmp_operation(data, bot, command, opcode, args);
+		ret = zjmp_operation(data, bot, command, opcode, args);
 	else if (command == 16)
-		aff_operation(data, bot, command, opcode, args);
-	return (0);
+		ret = aff_operation(data, bot, command, opcode, args);
+	return (ret);
 }
 
 int 		increase_pc(t_bot *bot, char command, char opcode)
@@ -218,6 +221,8 @@ int 		increase_pc(t_bot *bot, char command, char opcode)
 		}
 		else if (get_arg_type(command, opcode, i + 1) == IND_CODE)
 			offset += 2;
+		else
+			offset++;
 		i++;
 	}
 	(offset == 0) ? (offset = 1) : 0;
@@ -237,14 +242,9 @@ int 		execute_command(t_data *data, t_bot *bot)
 	prev = bot->pc;
 	if (command >= 1 && command <= 16)
 	{
-//		if (bot->pause_time == - 1)
-//		{
-//			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
-//			return (0);
-//		}
-		if (bot->pause_time == 0)
+		if (bot->pause_time == - 1)
 		{
-			bot->pause_time = op_tab[command - 1].cycles_to_done;
+			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
 			return (0);
 		}
 		prev = bot->pc;
@@ -256,16 +256,24 @@ int 		execute_command(t_data *data, t_bot *bot)
 		}
 
 		if (get_args(data, bot, command, opcode, args))
+		{
+			bot->pc++;
+			ncurses_move_cursor(data, bot, prev);
 			return (1);
+		}
 
 		bot->pc--;
 		if (op_tab[command - 1].have_opcode)
 			bot->pc--;
 
 		if (run_command(data, bot, command, opcode, args))
+		{
+			(command != 9) ? (increase_pc(bot, command, opcode)) : (bot->pc += 1 + IND_SIZE);
+			ncurses_move_cursor(data, bot, prev);
 			return (1);
+		}
 
-//		bot->pause_time = -1;
+		bot->pause_time = -1;
 		(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
 	}
 	else
@@ -296,6 +304,7 @@ int 		check_for_live_bots(t_data *data)
 		if (bot->throw_live == 0)
 		{
 			bot->is_dead = 1;
+			print_byte(data->memory_win, data->map[bot->pc], bot->pc, COLOR_PAIR(bot->number));
 			(data->processes > 0) ? (data->processes--) : 0;
 		}
 		else
@@ -359,7 +368,7 @@ int 		execute_commands(t_data *data)
 		if (bot->is_dead == 0 && (bot->pause_time == 0 || bot->pause_time == -1))
 		{
 			if (execute_command(data, bot))
-				return (1);
+				bot->pause_time = -1;
 		}
 		else
 			bot->pause_time -= 1;

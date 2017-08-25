@@ -25,7 +25,7 @@ t_bot		*bot_copy(t_bot *src)
 	if ((dst = bot_new(src->number, src->code)) == NULL)
 		return (NULL);
 	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
-	dst->pause_time = -1;
+	dst->pause_time = src->pause_time;
 	dst->pc = src->pc;
 	dst->carry = src->carry;
 	dst->comment = ft_strdup(src->comment);
