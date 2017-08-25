@@ -102,8 +102,8 @@ void		display_debug(t_data *data, WINDOW *debug_win)
 	int 	x;
 	int 	y;
 
-	wattron(debug_win, COLOR_PAIR(10));
+	wattron(debug_win, COLOR_PAIR(5) | A_REVERSE);
 	mvwprintw(debug_win, 1, 28, "DEBUG WIN");
-	wattroff(debug_win, COLOR_PAIR(10));
+	wattroff(debug_win, COLOR_PAIR(5) | A_REVERSE);
 	wrefresh(debug_win);
 }
