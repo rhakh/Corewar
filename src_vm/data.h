@@ -16,7 +16,7 @@ typedef struct		s_bot
 	int				pc;
 	int				pause_time;
 	t_string		*code;
-	int 			prev_curr_live[2];
+	int 			prev_live;
 	int 			prev_st;
 	int 			is_dead;
 	int				live_count;

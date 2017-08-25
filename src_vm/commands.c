@@ -114,8 +114,7 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 		child->pc = ((bot->pc + (args[0] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE;
 	else if (command == 15)
 		child->pc = ((bot->pc + args[0]) + MEM_SIZE) % MEM_SIZE;
-	child->prev_curr_live[0] = -1;
-	child->prev_curr_live[1] = -1;
+	child->prev_live = -1;
 	child->pause_time = -1;
 	list_push_back(&(data->bots), child);
 	data->processes++;
@@ -131,8 +130,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	bot->throw_live = 1;
 	if (bot->number == ABS(args[0]))
 	{
-		bot->prev_curr_live[0] = bot->prev_curr_live[1];
-		bot->prev_curr_live[1] = bot->pc;
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
@@ -145,8 +142,6 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		curr_bot = curr->data;
 		if (curr_bot->number == ABS(args[0]))
 		{
-			curr_bot->prev_curr_live[0] = curr_bot->prev_curr_live[1];
-			curr_bot->prev_curr_live[1] = curr_bot->pc;
 			curr_bot->live_count++;
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;

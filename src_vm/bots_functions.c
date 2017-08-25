@@ -14,8 +14,7 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->number = number;
 	bot->pause_time = -1;
 	bot->prev_st = -1;
-	bot->prev_curr_live[0] = -1;
-	bot->prev_curr_live[1] = -1;
+	bot->prev_live = -1;
 	return (bot);
 }
 
@@ -30,8 +29,7 @@ t_bot		*bot_copy(t_bot *src)
 	dst->number = src->number;
 	dst->pc = src->pc;
 	dst->pause_time = src->pause_time;
-	dst->prev_curr_live[0] = src->prev_curr_live[0];
-	dst->prev_curr_live[1] = src->prev_curr_live[1];
+	dst->prev_live = src->prev_live;
 	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
 	dst->throw_live = src->throw_live;
 	dst->carry = src->carry;
