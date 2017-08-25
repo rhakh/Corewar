@@ -143,6 +143,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		if (curr_bot->number == ABS(args[0]))
 		{
 			curr_bot->live_count++;
+			curr_bot->last_live = data->cycles;
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;
 			ncurses_live(data, curr_bot);
@@ -221,7 +222,7 @@ int 		increase_pc(t_bot *bot, char command, char opcode)
 		i++;
 	}
 	(offset == 0) ? (offset = 1) : 0;
-	bot->pc += offset;
+	bot->pc = (bot->pc + offset) % MEM_SIZE;
 	return (0);
 }
 
@@ -252,7 +253,8 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 		if (get_args(data, bot, command, opcode, args))
 		{
-			bot->pc++;
+			bot->pause_time = -1;
+			bot->pc = (bot->pc + 1) % MEM_SIZE;
 			ncurses_move_cursor(data, bot, prev);
 			return (1);
 		}
@@ -263,6 +265,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 		if (run_command(data, bot, command, opcode, args))
 		{
+			bot->pause_time = -1;
 			(command != 9) ? (increase_pc(bot, command, opcode)) : (bot->pc += 1 + IND_SIZE);
 			ncurses_move_cursor(data, bot, prev);
 			return (1);
@@ -289,19 +292,32 @@ int 		check_for_live_bots(t_data *data)
 	t_linked_list	*curr;
 	t_bot			*bot;
 	int 			sum_live;
-	static int		c = 0;
+	static int		c = 0, e = 1;
 
-	ft_printf("{red}l = %d n = %d | {eoc}", c, c = data->cycles);
+
+	FILE *pfile = NULL;
+
+	pfile = fopen("test.txt", "a");
+	fprintf(pfile, "l = %d n = %d el = %d en = %d\n", c, c = data->cycles, e, ++e);
+
 
 	sum_live = 0;
 	curr = data->bots;
 	while (curr)
 	{
+
 		bot = curr->data;
 		sum_live += bot->live_count;
-		if (bot->throw_live == 0)
+//		if (bot->throw_live == 0)
+		if (bot->last_live > 0 && ((data->cycles - bot->last_live) > data->cycles_to_die) && bot->is_dead == 0)
 		{
 			bot->is_dead = 1;
+
+
+
+			fprintf(pfile, "cyc = %d, las_l = %d, cy_t_d =%d - = %d \n", data->cycles, bot->last_live, data->cycles_to_die, (data->cycles - bot->last_live));
+
+
 			print_byte(data->memory_win, data->map[bot->pc], bot->pc, COLOR_PAIR(bot->number));
 			(data->processes > 0) ? (data->processes--) : 0;
 		}
@@ -313,6 +329,8 @@ int 		check_for_live_bots(t_data *data)
 		}
 		curr = curr->next;
 	}
+	if (pfile)
+		fclose(pfile);
 	if (sum_live >= NBR_LIVE)
 		(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
 	return (0);
@@ -372,8 +390,6 @@ int 		execute_commands(t_data *data)
 			bot->pause_time -= 1;
 		curr = curr->next;
 	}
-	data->cycles += 1;
-
 
 	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
 	{
@@ -391,6 +407,8 @@ int 		execute_commands(t_data *data)
 			data->last_cycles_to_die = data->cycles_to_die;
 		}
 	}
+
+	data->cycles += 1;
 
 	return (0);
 }
