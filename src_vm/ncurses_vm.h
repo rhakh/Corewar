@@ -27,6 +27,7 @@ void			display_stats(t_data *data, WINDOW *stats_win);
 void			display_debug(t_data *data, WINDOW *debug_win);int 			read_bot(t_string *code, char *file_name);
 int 			validate_bots(t_data *data);
 void			ncurses_live(t_data *data, t_bot *bot);
+void 			ncurses_aff(t_data *data, t_bot *bot, int nb_reg);
 
 
 #endif

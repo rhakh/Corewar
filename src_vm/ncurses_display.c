@@ -42,7 +42,8 @@ void	display_memory(t_data *data, WINDOW *win)
 			i--;
 		}
 		else
-			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
+			print_byte(win, data->map[i], i, COLOR_PAIR(12));
+//			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
 	}
 	wrefresh(win);
 }
@@ -104,9 +105,5 @@ void		display_debug(t_data *data, WINDOW *debug_win)
 	wattron(debug_win, COLOR_PAIR(10));
 	mvwprintw(debug_win, 1, 28, "DEBUG WIN");
 	wattroff(debug_win, COLOR_PAIR(10));
-
-	getyx(debug_win, y, x);
-	mvwprintw(debug_win, y + 2, 10, "try ./corewar -hui_znaet_chto to use debug options");
-
 	wrefresh(debug_win);
 }

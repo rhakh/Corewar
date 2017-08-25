@@ -170,7 +170,7 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	//todo send to ncurses bot, reg_number
-	//ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
+	ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
 	return (0);
 }
 
