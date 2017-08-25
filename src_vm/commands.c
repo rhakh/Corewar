@@ -129,7 +129,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 	curr = data->bots;
 	bot->throw_live = 1;
-	if (bot->number == args[0])
+	if (bot->number == ABS(args[0]))
 	{
 		bot->prev_curr_live[0] = bot->prev_curr_live[1];
 		bot->prev_curr_live[1] = bot->pc;
@@ -143,7 +143,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	while (curr)
 	{
 		curr_bot = curr->data;
-		if (curr_bot->number == args[0])
+		if (curr_bot->number == ABS(args[0]))
 		{
 			curr_bot->prev_curr_live[0] = curr_bot->prev_curr_live[1];
 			curr_bot->prev_curr_live[1] = curr_bot->pc;
@@ -294,6 +294,9 @@ int 		check_for_live_bots(t_data *data)
 	t_linked_list	*curr;
 	t_bot			*bot;
 	int 			sum_live;
+	static int		c = 0;
+
+	ft_printf("{red}l = %d n = %d | {eoc}", c, c = data->cycles);
 
 	sum_live = 0;
 	curr = data->bots;
@@ -375,19 +378,26 @@ int 		execute_commands(t_data *data)
 		curr = curr->next;
 	}
 
-	if (data->cycles > 0 && (data->cycles % CYCLE_TO_DIE == 0))
+
+	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
 	{
 		check_for_live_bots(data);
-		data->last_cycles_to_die = data->cycles_to_die;
+		data->next_cycles_check = data->cycles + data->cycles_to_die;
 		data->max_checks++;
 	}
+
 	if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
 	{
 		if (data->last_cycles_to_die == data->cycles_to_die)
+		{
 			data->cycles_to_die -= CYCLE_DELTA;
+			data->next_cycles_check = data->cycles + data->cycles_to_die;
+		}
+		data->last_cycles_to_die = data->cycles_to_die;
 	}
 
 	data->cycles += 1;
+
 	return (0);
 }
 

@@ -17,6 +17,7 @@ typedef struct		s_bot
 	int				pause_time;
 	t_string		*code;
 	int 			prev_curr_live[2];
+	int 			prev_st;
 	int 			is_dead;
 	int				live_count;
 	int 			last_live;
@@ -34,7 +35,9 @@ typedef struct		s_data
 	int				bots_live[MAX_PLAYERS + 1];
 	char 			debug_strs[12][62];
 	int				cycles_to_die;
+	int				next_cycles_check;
 	int 			max_checks;
+	int 			last_max_checks;
 	size_t 			processes;
 	int 			last_cycles_to_die;
 	int 			cycles;

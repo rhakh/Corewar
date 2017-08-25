@@ -166,6 +166,7 @@ int         main(int argc, char **argv)
 
 	ft_bzero(&data, sizeof(t_data));
 	data.cycles_to_die = CYCLE_TO_DIE;
+	data.next_cycles_check = CYCLE_TO_DIE;
 	data.cycles = 0;
 	////done//todo:palanich process arguments and return ordered array of bots names
 	//todo:hakh
