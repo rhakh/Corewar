@@ -20,15 +20,19 @@ void		ncurses_live(t_data *data, t_bot *bot)
 	if (bot->prev_live != -1)
 		while (i <= 4)
 		{
-			print_byte(data->memory_win, data->map[bot->prev_live + i],
-					   bot->prev_live + i, COLOR_PAIR(bot->number));
+			print_byte(data->memory_win, data->map[(bot->prev_live + i +
+													MEM_SIZE) % MEM_SIZE ],
+					   (bot->prev_live + i + MEM_SIZE) % MEM_SIZE,
+					   COLOR_PAIR(bot->number));
 			i++;
 		}
 	i = 0;
 	while (i <= 4)
 	{
-		print_byte(data->memory_win, data->map[bot->pc + i],
-				   bot->pc + i, COLOR_PAIR(bot->number + 5) | A_BOLD);
+		print_byte(data->memory_win, data->map[(bot->pc + i + MEM_SIZE) %
+											   MEM_SIZE],
+				   (bot->pc + i + MEM_SIZE) % MEM_SIZE,
+				   COLOR_PAIR(bot->number + 5) | A_BOLD);
 		i++;
 	}
 	bot->prev_live = bot->pc;
