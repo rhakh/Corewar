@@ -15,6 +15,7 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->pause_time = -1;
 	bot->prev_st = -1;
 	bot->prev_live = -1;
+	bot->prev_attr = -1;
 	return (bot);
 }
 

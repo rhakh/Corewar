@@ -3,6 +3,7 @@
 //
 
 #include <curses.h>
+#include <ncurses.h>
 #include "vm.h"
 
 /*
@@ -33,9 +34,26 @@ int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
  */
 int 		ncurses_move_cursor(t_data *data, t_bot *bot, int prev)
 {
-//	wattr_get(data->memory_win, ***, ***, ***);
-	// print_byte(data->memory_win, data->map[prev], prev, COLOR_PAIR(bot->number));
-	// print_byte(data->memory_win, data->map[bot->pc], bot->pc, COLOR_PAIR(bot->number) | A_REVERSE);
+	chtype character;
+	int 	x;
+	int 	y;
+
+	move_to_byte(data->memory_win, bot->pc);
+
+	getyx(data->memory_win, y, x);
+	character = mvwinch(data->memory_win, y, x);
+	if (character & A_REVERSE)
+	{
+		character = character ^ A_REVERSE;
+	}
+	if (!(character & COLOR_PAIR(bot->number + 5)))
+	{
+		bot->prev_attr == -1 ? 0 :
+		print_byte(data->memory_win, data->map[prev], prev, bot->prev_attr);
+		print_byte(data->memory_win, data->map[bot->pc], bot->pc, character |
+																  A_REVERSE);
+		bot->prev_attr = character;
+	}
 	return (0);
 }
 

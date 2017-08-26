@@ -121,6 +121,7 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 		}
 		bot->last_live = -1;
 		bot->is_dead = 0;
+		bot->prev_attr = -1;
 		list_push_back(&(data->bots), bot);
 		i++;
 	}

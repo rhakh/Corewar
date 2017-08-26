@@ -22,6 +22,7 @@ typedef struct		s_bot
 	int				live_count;
 	int 			last_live;
 	int 			throw_live;
+	chtype 			prev_attr;
 }					t_bot;
 
 /*
