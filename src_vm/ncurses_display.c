@@ -111,9 +111,9 @@ void		display_winner(t_data *data, t_bot *bot)
 {
 	wattron(data->stats_win, COLOR_PAIR(bot->number));
 	mvwprintw(data->stats_win, 45, 10, "The winner is");
-	wattron(data->stats_win, A_REVERSE);
+	wattron(data->stats_win, COLOR_PAIR(bot->number + 5) | A_BOLD );
 	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
-	wattroff(data->stats_win, COLOR_PAIR(bot->number) | A_REVERSE);
+	wattroff(data->stats_win, COLOR_PAIR(bot->number) | COLOR_PAIR(bot->number + 5));
 
 	wrefresh(data->stats_win);
 	refresh();

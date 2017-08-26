@@ -289,9 +289,7 @@ int 		check_for_live_bots(t_data *data)
 	t_linked_list	*curr;
 	t_bot			*bot;
 	int 			sum_live;
-	static int		c = 0;
-
-	ft_printf("{red}l = %d n = %d | {eoc}", c, c = data->cycles);
+	static int		c;
 
 	sum_live = 0;
 	curr = data->bots;
@@ -302,7 +300,6 @@ int 		check_for_live_bots(t_data *data)
 		if (bot->throw_live == 0)
 		{
 			bot->is_dead = 1;
-			print_byte(data->memory_win, data->map[bot->pc], bot->pc, COLOR_PAIR(bot->number));
 			(data->processes > 0) ? (data->processes--) : 0;
 		}
 		else
