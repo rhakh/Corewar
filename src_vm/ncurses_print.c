@@ -18,7 +18,7 @@ void		ncurses_live(t_data *data, t_bot *bot)
 
 	i = 0;
 	if (bot->prev_live != -1)
-		while (i <= 4)
+		while (i <= 0)
 		{
 			print_byte(data->memory_win, data->map[(bot->prev_live + i +
 													MEM_SIZE) % MEM_SIZE ],
@@ -27,7 +27,7 @@ void		ncurses_live(t_data *data, t_bot *bot)
 			i++;
 		}
 	i = 0;
-	while (i <= 4)
+	while (i <= 0)
 	{
 		print_byte(data->memory_win, data->map[(bot->pc + i + MEM_SIZE) %
 											   MEM_SIZE],

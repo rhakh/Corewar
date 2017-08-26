@@ -57,6 +57,30 @@ void		nc_display_arena(t_data *data)
 
 void		nc_terminate(t_data *data)
 {
+	t_bot	*bot;
+	int 	i;
+	int  	nb;
+	int 	l_live_bigest;
+	t_linked_list   *list;
+
+	i = 0;
+	l_live_bigest = data->bots_last_live[0];
+	nb = 1;
+	while (++i <= data->bots_count)
+		if (data->bots_last_live[i] > l_live_bigest)
+		{
+			l_live_bigest = data->bots_last_live[i];
+			nb = i;
+		}
+	list = data->bots;
+	bot = (t_bot *)list->data;
+	while (nb != bot->number)
+	{
+		list = list->next;
+		list ? bot = list->data : 0;
+		!list ? bot = NULL : 0;
+	}
+	display_winner(data, bot);
 	while(getch() != 'q') {
 		//ignore
 	}
