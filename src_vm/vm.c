@@ -151,8 +151,8 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->reg[1] = r1_number;
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
-		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4
-							 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
+		curr_bot->start = i;
+		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4	 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
 		r1_number++;
@@ -178,6 +178,9 @@ int         main(int argc, char **argv)
 		return (1);
 	load_bots_in_memory(&data);
 	nc_display_arena(&data);
+
+	first_pause(&data);
+
 	if (infinit_loop(&data))
 		return (1);
 	nc_terminate(&data);

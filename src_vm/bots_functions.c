@@ -12,7 +12,7 @@ t_bot		*bot_new(int number, t_string *code)
 	ft_bzero(bot, sizeof(t_bot));
 	bot->code = code;
 	bot->number = number;
-	bot->pause_time = -1;
+	bot->pause_time = 0;
 	bot->prev_st = -1;
 	bot->prev_live = -1;
 	return (bot);
@@ -37,6 +37,7 @@ t_bot		*bot_copy(t_bot *src)
 	dst->last_live = 0;
 	dst->live_count = 0;
 	dst->size = src->size;
+	dst->start = src->start;
 	return (dst);
 }
 
