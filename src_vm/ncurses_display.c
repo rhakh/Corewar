@@ -43,7 +43,6 @@ void	display_memory(t_data *data, WINDOW *win)
 		}
 		else
 			print_byte(win, data->map[i], i, COLOR_PAIR(12));
-//			wprintw(win, "%0.2hhx ", data->map[i]); // *print grey 00
 	}
 	wrefresh(win);
 }
