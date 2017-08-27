@@ -11,5 +11,6 @@
 # include <limits.h>
 
 int					ft_printf(const char *format, ...);
+int					ft_snprintf(char *str, size_t n, const char *format, ...);
 
 #endif

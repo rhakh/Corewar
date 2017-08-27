@@ -5,11 +5,41 @@ t_bot		*bot_new(int number, t_string *code)
 	t_bot	*bot;
 
 	if ((bot = (t_bot *)malloc(sizeof(t_bot))) == NULL)
+	{
+		ft_printf("Can't allocate memory");
 		return (NULL);
+	}
 	ft_bzero(bot, sizeof(t_bot));
 	bot->code = code;
 	bot->number = number;
+	bot->pause_time = 0;
+	bot->prev_st = -1;
+	bot->prev_live = -1;
+	bot->prev_attr = -1;
 	return (bot);
+}
+
+t_bot		*bot_copy(t_bot *src)
+{
+	t_bot	*dst;
+
+	if ((dst = bot_new(src->number, src->code)) == NULL)
+		return (NULL);
+	dst->comment = ft_strdup(src->comment);
+	dst->name = ft_strdup(src->name);
+	dst->number = src->number;
+	dst->pc = src->pc;
+	dst->pause_time = src->pause_time;
+	dst->prev_live = src->prev_live;
+	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
+	dst->throw_live = src->throw_live;
+	dst->carry = src->carry;
+	dst->is_dead = src->is_dead;
+	dst->last_live = 0;
+	dst->live_count = 0;
+	dst->size = src->size;
+	dst->start = src->start;
+	return (dst);
 }
 
 void		bot_del(t_bot **pbot)
@@ -64,8 +94,12 @@ int 		read_bot(t_string *code, char *file_name)
 		if (len == 0)
 			return (0);
 		else
+		{
+			ft_printf("Read error\n");
 			return (1);
+		}
 	}
+	ft_printf("Can't open file '%s'\n", file_name);
 	return (1);
 }
 
@@ -86,7 +120,7 @@ int 		get_number_from_bcode(const unsigned char *code, int num_size)
 		pnum++;
 		i++;
 	}
-	return (num);
+	return ((num_size == 2) ? ((short)num) : (num));
 }
 
 int 		put_number_to_bcode(t_data *data, int num, int position)
@@ -99,7 +133,7 @@ int 		put_number_to_bcode(t_data *data, int num, int position)
 	position += 3;
 	while (i < DIR_SIZE)
 	{
-		*(data->map + (position % MEM_SIZE)) = *pnum;
+		*(data->map + ((position + MEM_SIZE) % MEM_SIZE)) = *pnum;
 		i++;
 		pnum++;
 		position--;
@@ -114,10 +148,11 @@ int 		validate_magic_number(t_bot *bot)
 	mag_num = get_number_from_bcode((const unsigned char *)bot->code->str, sizeof(int));
 	if (mag_num == COREWAR_EXEC_MAGIC)
 		return (0);
+	ft_printf("Incorrect magic number\n");
 	return (1);
 }
 
-int 		validate_bot_size(t_bot *bot)
+int 			validate_bot_size(t_bot *bot)
 {
 	int		size1;
 	int 	size2;

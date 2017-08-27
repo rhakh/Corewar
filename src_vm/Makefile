@@ -14,10 +14,20 @@ NAME = my_vm
 
 SRC =   vm.c \
         bots_functions.c \
-        init_ncurses.c \
-        ncurses_windows.c \
-        ncurses_move.c \
         op.c \
+        args_functions.c \
+        commands.c \
+        add_players.c \
+        error_managment.c \
+        flags_parser.c \
+        usage.c \
+        ncurses_creator_win.c \
+        ncurses_windows.c \
+        ncurses_display.c \
+        ncurses_move.c \
+        ncurses_print.c \
+        ncurses_init.c \
+        ncurses_infinit_cycle.c \
 
 SRCDIR = ./
 
@@ -40,11 +50,9 @@ $(NAME): $(OBJ)
 	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
 
 clean:
-	make -C ../new_libft clean
 	/bin/rm -rf $(OBJDIR)
 
 fclean: clean
-	make -C ../new_libft fclean
 	/bin/rm -f $(NAME)
 
 re: fclean all

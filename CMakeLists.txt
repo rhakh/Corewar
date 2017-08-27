@@ -101,6 +101,16 @@ set(SOURCE_FILES
         src_vm/op.c
         src_vm/op.h
         src_vm/vm.c
-        src_vm/vm.h src_vm/ncurses_windows.c)
+        src_vm/vm.h
+        #src_vm/ncurses_windows.c
+        src_vm/commands.c
+        src_vm/commands.h
+        src_vm/args_functions.c
+        src_vm/args_functions.h
+        src_vm/flags_parser.c
+        src_vm/flags_parser.h
+        src_vm/error_managment.c
+        src_vm/add_players.c
+        src_vm/usage.c src_vm/ncurses_vm.h src_vm/data.h src_vm/ncurses_print.c)
 
 add_executable(Corewar ${SOURCE_FILES})

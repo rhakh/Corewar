@@ -5,11 +5,13 @@
 
 
 
-l: live %348
-live %2345
-ld :l, r1
+# l: live %348
+# live %2345
+# ld :l, r1
 
 
+ld %-1, r2
+zjmp %200
 
 
 

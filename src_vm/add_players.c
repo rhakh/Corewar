@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "wm.h"
+#include "flags_parser.h"
 
 static void	save_bot_filename(t_data *data, int *i, char **argv, int k)
 {
@@ -42,7 +42,7 @@ void		add_wn(t_data *data, int *i, char **argv, int argc)
 
 	j = -1;
 	k = 0;
-	
+
 	while ((*i) < argc)
 	{
 		(!ft_strcmp("-n", argv[*i])) ? ((*i)++) : exit_error(data, 21);
@@ -54,8 +54,8 @@ void		add_wn(t_data *data, int *i, char **argv, int argc)
 		if (tmp > 4 || tmp < 1)
 			exit_error(data, 21);
 		save_bot_filename(data, i, argv, tmp);
-		data->bot_cnt++;
-		if (data->bot_cnt > MAX_PLAYERS)
+		data->bots_count++;
+		if (data->bots_count > MAX_PLAYERS)
 			exit_error(data, 8);
 		(*i)++;
 	}
@@ -73,8 +73,8 @@ void		add_player(t_data *data, int *i, char **argv, int argc)
 		if (ft_strncmp(".cor", &argv[*i][len - 4], 4))
 			exit_error(data, 16);
 		data->players[k++] = ft_strdup(argv[*i]);
-		data->bot_cnt++;
-		if (data->bot_cnt > MAX_PLAYERS)
+		data->bots_count++;
+		if (data->bots_count > MAX_PLAYERS)
 			exit_error(data, 8);
 		(*i)++;
 	}

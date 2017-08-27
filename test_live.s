@@ -30,9 +30,47 @@
 # ld %:link, r1
 # ld r1, %65
 
-live2: live %65
-live %:live1
-live1: live %65
-live %:live2
+# live2: live %65
+# live %:live1
+# live1: live %65
+# live %:live2
 
 
+
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+
+
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+# xor r2, r2, r2
+
+st r1, 6
+live %0
+st r1, 6
+live %0
+st r1, 6
+live %0
+st r1, 6
+live %0
+st r1, 6
+live %0
+fork %-50
+xor r2, r2, r2
+zjmp %-58
