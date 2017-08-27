@@ -354,6 +354,7 @@ int 		check_for_live_bots(t_data *data)
 		{
 			bot->is_dead = 1;
 			(data->processes > 0) ? (data->processes--) : 0;
+			ncurses_kill_bot_cursor(data, bot->pc);
 		}
 		else
 		{
@@ -386,76 +387,10 @@ int 		first_pause(t_data *data)
 /*
 ** 0 - ok , 1 - error
 */
-//int 		execute_commands(t_data *data)
-//{
-//	t_linked_list	*curr;
-//	t_bot			*bot;
-//
-//	curr = data->bots;
-//	while (curr)
-//	{
-//		bot = curr->data;
-//		if (bot->is_dead == 0 && bot->pause_time < 0)
-//		{
-//			if (execute_command(data, bot))
-//				bot->pause_time = 0;
-//			else
-//				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
-//		}
-//		else
-//			bot->pause_time -= 1;
-//		curr = curr->next;
-//	}
-//
-//	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
-//	{
-//		check_for_live_bots(data);
-//		data->next_cycles_check = data->cycles + data->cycles_to_die;
-//		data->max_checks++;
-//		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-//		{
-//			if (data->last_cycles_to_die == data->cycles_to_die)
-//			{
-//				data->cycles_to_die -= CYCLE_DELTA;
-//				data->next_cycles_check = data->cycles + data->cycles_to_die;
-//			}
-//			data->last_cycles_to_die = data->cycles_to_die;
-//		}
-//	}
-//
-//	data->cycles += 1;
-//
-//	return (0);
-//}
-
 int 		execute_commands(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*bot;
-	int 			min;
-
-	FILE *p;
-
-	p = fopen("test.txt", "a");
-
-
-	min = data->next_cycles_check - data->cycles;
-	fprintf(p, "min from - %d\n", min);
-	(min <= 0) ? (min = 1) : 0;
-	curr = data->bots;
-	while (curr)
-	{
-		bot = curr->data;
-		if (!bot->is_dead)
-			fprintf(p, "pause = %d\n", bot->pause_time);
-		if ((!bot->is_dead) && (bot->pause_time > 0) && (min > bot->pause_time))
-			min = bot->pause_time;
-		curr = curr->next;
-	}
-
-
-	fprintf(p, "min = %d, n = %d, c = %d\n", min, data->next_cycles_check, data->cycles);
-	fclose(p);
 
 	curr = data->bots;
 	while (curr)
@@ -469,7 +404,7 @@ int 		execute_commands(t_data *data)
 				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
 		}
 		else
-			bot->pause_time -= min;
+			bot->pause_time -= 1;
 		curr = curr->next;
 	}
 
@@ -478,7 +413,6 @@ int 		execute_commands(t_data *data)
 		check_for_live_bots(data);
 		data->next_cycles_check = data->cycles + data->cycles_to_die;
 		data->max_checks++;
-
 		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
@@ -490,9 +424,76 @@ int 		execute_commands(t_data *data)
 		}
 	}
 
-	data->cycles += min;
+	data->cycles += 1;
 
 	return (0);
 }
+//
+//int 		execute_commands(t_data *data)
+//{
+//	t_linked_list	*curr;
+//	t_bot			*bot;
+//	int 			min;
+//
+//	FILE *p;
+//
+//	p = fopen("test.txt", "a");
+//
+//
+//	min = data->next_cycles_check - data->cycles;
+//	fprintf(p, "min from - %d\n", min);
+//	(min <= 0) ? (min = 1) : 0;
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (!bot->is_dead)
+//			fprintf(p, "pause = %d\n", bot->pause_time);
+//		if ((!bot->is_dead) && (bot->pause_time > 0) && (min > bot->pause_time))
+//			min = bot->pause_time;
+//		curr = curr->next;
+//	}
+//
+//
+//	fprintf(p, "min = %d, n = %d, c = %d\n", min, data->next_cycles_check, data->cycles);
+//	fclose(p);
+//
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (bot->is_dead == 0 && bot->pause_time < 0)
+//		{
+//			if (execute_command(data, bot))
+//				bot->pause_time = 0;
+//			else
+//				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+//		}
+//		else
+//			bot->pause_time -= min;
+//		curr = curr->next;
+//	}
+//
+//	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
+//	{
+//		check_for_live_bots(data);
+//		data->next_cycles_check = data->cycles + data->cycles_to_die;
+//		data->max_checks++;
+//
+//		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+//		{
+//			if (data->last_cycles_to_die == data->cycles_to_die)
+//			{
+//				data->cycles_to_die -= CYCLE_DELTA;
+//				data->next_cycles_check = data->cycles + data->cycles_to_die;
+//			}
+//			data->last_cycles_to_die = data->cycles_to_die;
+//		}
+//	}
+//
+//	data->cycles += min;
+//
+//	return (0);
+//}
 
 

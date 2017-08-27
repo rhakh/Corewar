@@ -46,6 +46,7 @@ int 		ncurses_move_cursor(t_data *data, t_bot *bot, int prev)
 	character = mvwinch(data->memory_win, y, x);
 	if (character & A_REVERSE)
 		character = character ^ A_REVERSE;
+	if (bot->prev_attr)
 	bot->prev_attr == -1 ? 0 :
 	print_byte(data->memory_win, data->map[prev], prev, bot->prev_attr);
 	print_byte(data->memory_win, data->map[bot->pc], bot->pc, character |
