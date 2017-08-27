@@ -4,7 +4,7 @@ void		ncurses_speed(t_data *data, char key)
 {
 	if (data->ncurses_timeout == 0)
 		data->ncurses_timeout = 1;
-	key == 'a' ? (data->ncurses_timeout /= 2) :
+	key == 's' ? (data->ncurses_timeout /= 2) :
 	(data->ncurses_timeout *= 2);
 	data->ncurses_timeout < 0 ? data->ncurses_timeout = 0 : 0;
 	data->ncurses_timeout > 1024 ? data->ncurses_timeout = 1024 : 0;

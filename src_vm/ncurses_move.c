@@ -32,7 +32,7 @@ int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
 }
 
 /*
- * Applies move cursor effect.
+ * Applies move cursor effect. VERY PERFECT ATVICHAY
  */
 int 		ncurses_move_cursor(t_data *data, t_bot *bot, int prev)
 {

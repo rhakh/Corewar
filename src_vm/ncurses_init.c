@@ -19,9 +19,9 @@ void init_ncurses(void)
 	init_pair(8, COLOR_WHITE, COLOR_CYAN);
 	init_pair(9, COLOR_WHITE, COLOR_RED);
 	init_pair(10, COLOR_BLACK, COLOR_RED);
-	init_pair(11, COLOR_BLACK, COLOR_GREEN);
+	init_pair(11, COLOR_BLACK, COLOR_BLACK);
 	init_pair(12, COLOR_WHITE, COLOR_BLACK);
-	init_pair(13, COLOR_BLACK, COLOR_GREEN);
+	init_pair(13, COLOR_GREEN, COLOR_GREEN);
 	init_pair(14, COLOR_GREEN, COLOR_BLACK);
 	curs_set(FALSE);
 }
@@ -39,7 +39,7 @@ void		nc_display_arena(t_data *data)
 	refresh();
 
 	data->one_command_mode = 1;
-	data->ncurses_timeout = 10;
+	data->ncurses_timeout = 16;
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
 

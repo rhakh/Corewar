@@ -66,7 +66,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	}
 	else
 		mvwprintw(stats_win, 1, 28, "** RUNNING **");
-	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Timeout:", data->ncurses_timeout);
+	ncurses_speed_display(data);
 	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:",  data->cycles);
 	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
 	wmove(stats_win, 10, 3);
@@ -119,3 +119,45 @@ void		display_winner(t_data *data, t_bot *bot)
 	refresh();
 }
 
+void		ncurses_speed_display(t_data *data)
+{
+	int 	speed;
+	int 	i;
+
+	speed = ncurses_convert_speed(data);
+	mvwprintw(data->stats_win, 6, 3, "%s", "Speed: |");
+	i = 1;
+	while (speed-- > 0)
+	{
+		wattron(data->stats_win, COLOR_PAIR(13));
+		wprintw(data->stats_win, "%s", "*");
+		wattroff(data->stats_win, COLOR_PAIR(13));
+		i++;
+	}
+	while (i++ <= 12)
+	{
+		wattron(data->stats_win, COLOR_PAIR(11));
+		wprintw(data->stats_win, "%s", "*");
+		wattroff(data->stats_win, COLOR_PAIR(11));
+	}
+	wprintw(data->stats_win, "|");
+}
+
+int 	ncurses_convert_speed(t_data *data)
+{
+	int		speed;
+
+	data->ncurses_timeout == 0 ? speed = 12 : 0;
+	data->ncurses_timeout == 1 ? speed = 11 : 0;
+	data->ncurses_timeout == 2 ? speed = 10 : 0;
+	data->ncurses_timeout == 4 ? speed = 9 : 0;
+	data->ncurses_timeout == 8 ? speed = 8 : 0;
+	data->ncurses_timeout == 16 ? speed = 7 : 0;
+	data->ncurses_timeout == 32 ? speed = 6 : 0;
+	data->ncurses_timeout == 64 ? speed = 5 : 0;
+	data->ncurses_timeout == 128 ? speed = 4 : 0;
+	data->ncurses_timeout == 256 ? speed = 3 : 0;
+	data->ncurses_timeout == 512 ? speed = 2 : 0;
+	data->ncurses_timeout == 1024 ? speed = 1 : 0;
+	return (speed);
+}
