@@ -90,10 +90,10 @@ void		ncurses_print_header(void)
 {
 	printw("%100s" ,"COREWAR");
 	printw("%120s", "Type space - ");
-	attron(COLOR_PAIR(4));
-	printw("Pause ");
-	attroff(COLOR_PAIR(4));
-	printw("\\ ");
+	attron(COLOR_PAIR(9));
+	printw("Pause");
+	attroff(COLOR_PAIR(9));
+	printw(" \\ ");
 	attron(COLOR_PAIR(5));
 	printw("Play\n");
 	attroff(COLOR_PAIR(5));
