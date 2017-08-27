@@ -34,12 +34,12 @@ void		nc_display_arena(t_data *data)
 
 	init_ncurses();
 	attron(A_BOLD);
-	printw("CORE_WAR\nMemory dump: %5d %240s\n", 55555, "Type q to exit");
+	ncurses_print_header();
 	attroff(A_BOLD);
 	refresh();
 
 	data->one_command_mode = 1;
-	data->ncurses_timeout = 16;
+	data->ncurses_timeout = 64;
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
 
@@ -81,8 +81,34 @@ void		nc_terminate(t_data *data)
 		!list ? bot = NULL : 0;
 	}
 	display_winner(data, bot);
-	while(getch() != 'q') {
-		//ignore
-	}
+	while (getch() != 'q')
+		;
 	endwin();
+}
+
+void		ncurses_print_header(void)
+{
+	printw("%100s" ,"COREWAR");
+	printw("%120s", "Type space - ");
+	attron(COLOR_PAIR(4));
+	printw("Pause ");
+	attroff(COLOR_PAIR(4));
+	printw("\\ ");
+	attron(COLOR_PAIR(5));
+	printw("Play\n");
+	attroff(COLOR_PAIR(5));
+	printw("%s", "Made by ");
+	attron(COLOR_PAIR(1));
+	printw("rhakh ");
+	attroff(COLOR_PAIR(1));
+	attron(COLOR_PAIR(2));
+	printw("dtelega ");
+	attroff(COLOR_PAIR(2));
+	attron(COLOR_PAIR(3));
+	printw("sbondar ");
+	attroff(COLOR_PAIR(3));
+	attron(COLOR_PAIR(4));
+	printw("apalanic ");
+	attroff(COLOR_PAIR(4));
+	printw("%187s", "Type N - next cycle");
 }

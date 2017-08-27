@@ -114,6 +114,7 @@ void		display_winner(t_data *data, t_bot *bot)
 	wattron(data->stats_win, COLOR_PAIR(bot->number + 5) | A_BOLD );
 	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
 	wattroff(data->stats_win, COLOR_PAIR(bot->number) | COLOR_PAIR(bot->number + 5));
+	mvwprintw(data->stats_win, 47, 25, "Type q to exit");
 
 	wrefresh(data->stats_win);
 	refresh();
@@ -141,6 +142,10 @@ void		ncurses_speed_display(t_data *data)
 		wattroff(data->stats_win, COLOR_PAIR(11));
 	}
 	wprintw(data->stats_win, "|");
+	wattron(data->stats_win, COLOR_PAIR(12));
+	wprintw(data->stats_win, "%5sA<->S to control", " ");
+	wattroff(data->stats_win, COLOR_PAIR(12));
+
 }
 
 int 	ncurses_convert_speed(t_data *data)
