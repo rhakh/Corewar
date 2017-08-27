@@ -41,7 +41,6 @@ int 		ncurses_move_cursor(t_data *data, t_bot *bot, int prev)
 	int 	y;
 
 	move_to_byte(data->memory_win, bot->pc);
-
 	getyx(data->memory_win, y, x);
 	character = mvwinch(data->memory_win, y, x);
 	if (character & A_REVERSE)

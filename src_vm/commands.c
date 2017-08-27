@@ -320,7 +320,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 
 		if (run_command(data, bot, command, opcode, args))
 		{
-			(command != 9) ? (increase_pc(bot, command, opcode)) : (bot->pc += 1 + IND_SIZE);
+			(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
 			ncurses_move_cursor(data, bot, prev);
 			return (1);
 		}
@@ -378,7 +378,10 @@ int 		first_pause(t_data *data)
 	while (curr)
 	{
 		bot = curr->data;
-		bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+		if (((data->map[bot->pc] - 1) >= 1) && ((data->map[bot->pc] - 1) <= 16))
+			bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+		else
+			bot->pause_time = 0;
 		curr = curr->next;
 	}
 	return (0);
@@ -396,12 +399,14 @@ int 		execute_commands(t_data *data)
 	while (curr)
 	{
 		bot = curr->data;
-		if (bot->is_dead == 0 && bot->pause_time < 0)
+		if (bot->is_dead == 0 && bot->pause_time <= 0)
 		{
 			if (execute_command(data, bot))
 				bot->pause_time = 0;
+			else if ((data->map[bot->pc] - 1 <= 16) && (data->map[bot->pc] - 1 >= 1))
+				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done - 1;
 			else
-				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+				bot->pause_time = 0;
 		}
 		else
 			bot->pause_time -= 1;
@@ -495,5 +500,3 @@ int 		execute_commands(t_data *data)
 //
 //	return (0);
 //}
-
-
