@@ -59,3 +59,16 @@ void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 	wrefresh(data->debug_win);
 	refresh();
 }
+
+void		ncurses_kill_bot_cursor(t_data *data, int position)
+{
+	chtype character;
+	int 	x;
+	int 	y;
+
+	move_to_byte(data->memory_win, position);
+
+	getyx(data->memory_win, y, x);
+	character = mvwinch(data->memory_win, y, x);
+	print_byte(data->memory_win, data->map[position], position, character | A_REVERSE);
+}

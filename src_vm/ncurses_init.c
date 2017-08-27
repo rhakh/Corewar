@@ -39,7 +39,7 @@ void		nc_display_arena(t_data *data)
 	refresh();
 
 	data->one_command_mode = 1;
-	data->ncurses_timeout = 5;
+	data->ncurses_timeout = 10;
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
 

@@ -22,10 +22,37 @@ void		print_memory(t_data *data)
 /*
 ** 0 - ok, 1 - error
 */
+//int 		 infinit_loop(t_data *data)
+//{
+//	int		pause;
+//
+//	while (data->cycles_to_die > 0 && data->processes > 0)
+//	{
+//		timeout(data->ncurses_timeout);
+//		pause = getch();
+//		if (pause == 'a' || pause == 's')
+//			ncurses_speed(data, pause);
+//		if (data->one_command_mode)
+//			pause = ncurses_one_cm_mode(data, pause);
+//		while (pause == ' ')
+//			pause = ncurses_global_cycle(data, pause);
+//		pause == 'n' ? data->one_command_mode = 1 : 0;
+//		if ((!data->pause || data->one_command_mode) && execute_commands(data))
+//				return (1);
+//		display_stats(data, data->stats_win);
+//		wrefresh(data->memory_win);
+//		refresh();
+//	}
+//	return (0);
+//}
+
 int 		 infinit_loop(t_data *data)
 {
 	int		pause;
+	int 	next_command;
 
+	next_command = data->pause_time - 1;
+	ft_printf("{red}dp = %d, nc = %d{eoc} | ", data->pause_time, next_command);
 	while (data->cycles_to_die > 0 && data->processes > 0)
 	{
 		timeout(data->ncurses_timeout);
@@ -37,14 +64,47 @@ int 		 infinit_loop(t_data *data)
 		while (pause == ' ')
 			pause = ncurses_global_cycle(data, pause);
 		pause == 'n' ? data->one_command_mode = 1 : 0;
-		if ((!data->pause || data->one_command_mode) && execute_commands(data))
-				return (1);
+
+
+		if ((!data->pause || data->one_command_mode))
+		{
+			ft_printf("{red}dp = %d, nc = %d{eoc} | ", data->pause_time, next_command);
+			if (next_command <= 0)
+			{
+				if (execute_commands(data))
+					return (1);
+				next_command = data->pause_time;
+			}
+
+			if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
+			{
+				check_for_live_bots(data);
+				data->next_cycles_check = data->cycles + data->cycles_to_die;
+				data->max_checks++;
+				if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+				{
+					if (data->last_cycles_to_die == data->cycles_to_die)
+					{
+						data->cycles_to_die -= CYCLE_DELTA;
+						data->next_cycles_check = data->cycles + data->cycles_to_die;
+					}
+					data->last_cycles_to_die = data->cycles_to_die;
+				}
+			}
+
+			next_command--;
+			data->cycles++;
+		}
+
+
+
 		display_stats(data, data->stats_win);
 		wrefresh(data->memory_win);
 		refresh();
 	}
 	return (0);
 }
+
 
 /*
 ** 0 - ok, 1 - error
@@ -70,7 +130,7 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 			string_del(&curr);
 			return (1);
 		}
-		bot->last_live = -1;
+		bot->last_live = 0;
 		bot->is_dead = 0;
 		bot->prev_attr = -1;
 		list_push_back(&(data->bots), bot);
@@ -130,9 +190,7 @@ int         main(int argc, char **argv)
 		return (1);
 	load_bots_in_memory(&data);
 	nc_display_arena(&data);
-
 	first_pause(&data);
-
 	if (infinit_loop(&data))
 		return (1);
 	nc_terminate(&data);

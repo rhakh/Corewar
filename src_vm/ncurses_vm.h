@@ -34,6 +34,7 @@ void			ncurses_speed(t_data *data, char key);
 char			ncurses_one_cm_mode(t_data *data, char pause);
 char 			ncurses_cycle_pause(t_data *data, char pause);
 char 			ncurses_global_cycle(t_data *data, char pause);
+void			ncurses_kill_bot_cursor(t_data *data, int position);
 
 
 #endif

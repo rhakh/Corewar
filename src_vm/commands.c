@@ -226,67 +226,6 @@ int 		increase_pc(t_bot *bot, char command, char opcode)
 	return (0);
 }
 
-//int 		execute_command(t_data *data, t_bot *bot)
-//{
-//	char 			command;
-//	char 			opcode;
-//	int 			args[3];
-//	int 			prev;
-//
-//	opcode = 0;
-//	command = data->map[bot->pc];
-//	prev = bot->pc;
-//	if (command >= 1 && command <= 16)
-//	{
-//		if (bot->pause_time == - 1)
-//		{
-//			bot->pause_time = op_tab[command - 1].cycles_to_done - 2;
-//			return (0);
-//		}
-//		prev = bot->pc;
-//		bot->pc++;
-//		if (op_tab[command - 1].have_opcode)
-//		{
-//			opcode = data->map[bot->pc];
-//			bot->pc++;
-//		}
-//
-//		if (get_args(data, bot, command, opcode, args))
-//		{
-//			bot->pause_time = -1;
-//			bot->pc = (bot->pc + 1) % MEM_SIZE;
-//			ncurses_move_cursor(data, bot, prev);
-//			return (1);
-//		}
-//
-//		bot->pc--;
-//		if (op_tab[command - 1].have_opcode)
-//			bot->pc--;
-//
-//		if (run_command(data, bot, command, opcode, args))
-//		{
-//			bot->pause_time = -1;
-//			(command != 9) ? (increase_pc(bot, command, opcode)) : (bot->pc += 1 + IND_SIZE);
-//			ncurses_move_cursor(data, bot, prev);
-//			return (1);
-//		}
-//
-//		bot->pause_time = -1;
-//		(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
-//	}
-//	else
-//	{
-//		bot->pc = (bot->pc + 1) % MEM_SIZE;
-//		bot->pause_time = 0;
-//	}
-//	//todo send past and current cursor pos
-//	//todo ncurses move_curcor
-//	//todo ncurses ncurses_move_cursor(bot, prev)
-//
-//	ncurses_move_cursor(data, bot, prev);
-//	return (0);
-//}
-
 int 		execute_command(t_data *data, t_bot *bot)
 {
 	char 			command;
@@ -354,6 +293,7 @@ int 		check_for_live_bots(t_data *data)
 		{
 			bot->is_dead = 1;
 			(data->processes > 0) ? (data->processes--) : 0;
+			ncurses_kill_bot_cursor(data, bot->pc);
 		}
 		else
 		{
@@ -374,13 +314,15 @@ int 		first_pause(t_data *data)
 	t_bot			*bot;
 
 	curr = data->bots;
+	data->pause_time = 2147483647;
 	while (curr)
 	{
 		bot = curr->data;
-		if (((data->map[bot->pc] - 1) >= 1) && ((data->map[bot->pc] - 1) <= 16))
+		if (((data->map[bot->pc]) >= 1) && ((data->map[bot->pc]) <= 16))
 			bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
 		else
 			bot->pause_time = 0;
+		(data->pause_time > bot->pause_time) ? (data->pause_time = bot->pause_time) : 0;
 		curr = curr->next;
 	}
 	return (0);
@@ -389,46 +331,82 @@ int 		first_pause(t_data *data)
 /*
 ** 0 - ok , 1 - error
 */
+//int 		execute_commands(t_data *data)
+//{
+//	t_linked_list	*curr;
+//	t_bot			*bot;
+//
+//	curr = data->bots;
+//	while (curr)
+//	{
+//		bot = curr->data;
+//		if (bot->is_dead == 0 && bot->pause_time <= 0)
+//		{
+//			if (execute_command(data, bot))
+//				bot->pause_time = 0;
+//			else if (((data->map[bot->pc] - 1) <= 16) && ((data->map[bot->pc] - 1) >= 1))
+//				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done - 1;
+//			else
+//				bot->pause_time = 0;
+//		}
+//		else
+//			bot->pause_time -= 1;
+//		curr = curr->next;
+//	}
+//
+//	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
+//	{
+//		check_for_live_bots(data);
+//		data->next_cycles_check = data->cycles + data->cycles_to_die;
+//		data->max_checks++;
+//		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+//		{
+//			if (data->last_cycles_to_die == data->cycles_to_die)
+//			{
+//				data->cycles_to_die -= CYCLE_DELTA;
+//				data->next_cycles_check = data->cycles + data->cycles_to_die;
+//			}
+//			data->last_cycles_to_die = data->cycles_to_die;
+//		}
+//	}
+//
+//	data->cycles += 1;
+//
+//	return (0);
+//}
+
+
 int 		execute_commands(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*bot;
+	int 			min;
 
 	curr = data->bots;
+	bot = curr->data;
+	min = 2147483647;
 	while (curr)
 	{
 		bot = curr->data;
-		if (bot->is_dead == 0 && bot->pause_time <= 0)
+		bot->pause_time -= data->pause_time;
+		if ((bot->is_dead == 0) && (bot->pause_time <= 0))
 		{
 			if (execute_command(data, bot))
 				bot->pause_time = 0;
-			else if ((data->map[bot->pc] - 1 <= 16) && (data->map[bot->pc] - 1 >= 1))
-				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done - 1;
+
+			if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
+			{
+				ft_printf("min = %d, com = %hhx\n", min, data->map[bot->pc]);
+				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+			}
 			else
 				bot->pause_time = 0;
+			(min > (bot->pause_time)) ? (min = bot->pause_time) : 0;
 		}
-		else
-			bot->pause_time -= 1;
 		curr = curr->next;
 	}
-
-	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
-	{
-		check_for_live_bots(data);
-		data->next_cycles_check = data->cycles + data->cycles_to_die;
-		data->max_checks++;
-		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-		{
-			if (data->last_cycles_to_die == data->cycles_to_die)
-			{
-				data->cycles_to_die -= CYCLE_DELTA;
-				data->next_cycles_check = data->cycles + data->cycles_to_die;
-			}
-			data->last_cycles_to_die = data->cycles_to_die;
-		}
-	}
-
-	data->cycles += 1;
-
+	data->pause_time = min;
 	return (0);
 }
+
+

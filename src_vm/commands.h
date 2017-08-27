@@ -10,6 +10,7 @@ int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		execute_command(t_data *data, t_bot *bot);
 int 		execute_commands(t_data *data);
+int 		check_for_live_bots(t_data *data);
 
 
 int 		first_pause(t_data *data);

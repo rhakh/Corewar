@@ -50,6 +50,8 @@ typedef struct		s_data
 	size_t			dump;
 	char			*players[MAX_PLAYERS + 1];
 	char			visual;
+
+	int 			pause_time;
 	// ncurses windows
 	WINDOW *memory_win;
 	WINDOW *stats_win;
