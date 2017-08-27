@@ -74,9 +74,9 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	while (++n_bot < data->bots_count)
 	{
 		wprintw(stats_win, "Player-%d: ", n_bot + 1);
-		wattron(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
+		wattron(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 		wprintw(stats_win, "%.55s", cur_bot->name);
-		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
+		wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 		getyx(stats_win, y, x);
 		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot + 1]);
 		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot + 1]);
@@ -113,9 +113,9 @@ void		display_winner(t_data *data, t_bot *bot)
 	mvwprintw(data->stats_win, 45, 10, "The winner is");
 	wattron(data->stats_win, COLOR_PAIR(bot->number + 5) | A_BOLD );
 	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
-	wattroff(data->stats_win, COLOR_PAIR(bot->number) | COLOR_PAIR(bot->number + 5));
+	wattroff(data->stats_win, COLOR_PAIR(bot->number) |
+			COLOR_PAIR(bot->number + 5));
 	mvwprintw(data->stats_win, 47, 25, "Type q to exit");
-
 	wrefresh(data->stats_win);
 	refresh();
 }
@@ -143,7 +143,7 @@ void		ncurses_speed_display(t_data *data)
 	}
 	wprintw(data->stats_win, "|");
 	wattron(data->stats_win, COLOR_PAIR(12));
-	wprintw(data->stats_win, "%5sA<->S to control", " ");
+	wprintw(data->stats_win, "%5sA<->S - decrease<->increase", " ");
 	wattroff(data->stats_win, COLOR_PAIR(12));
 
 }
