@@ -27,6 +27,7 @@ SRC =   vm.c \
         ncurses_move.c \
         ncurses_print.c \
         ncurses_init.c \
+        ncurses_infinit_cycle.c \
 
 SRCDIR = ./
 
