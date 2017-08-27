@@ -12,4 +12,7 @@ int 		execute_command(t_data *data, t_bot *bot);
 int 		execute_commands(t_data *data);
 
 
+int 		first_pause(t_data *data);
+
+
 #endif

@@ -14,6 +14,7 @@ typedef struct		s_bot
 	int				reg[REG_NUMBER + 1];
 	int				carry;
 	int				pc;
+	int 			start;
 	int				pause_time;
 	t_string		*code;
 	int 			prev_live;

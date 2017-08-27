@@ -30,6 +30,10 @@ int 			validate_bots(t_data *data);
 void			ncurses_live(t_data *data, t_bot *bot);
 void 			ncurses_aff(t_data *data, t_bot *bot, int nb_reg);
 void			display_winner(t_data *data, t_bot *bot);
+void			ncurses_speed(t_data *data, char key);
+char			ncurses_one_cm_mode(t_data *data, char pause);
+char 			ncurses_cycle_pause(t_data *data, char pause);
+char 			ncurses_global_cycle(t_data *data, char pause);
 
 
 #endif
