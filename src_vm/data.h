@@ -2,7 +2,7 @@
 #define DATA_H
 
 # include "op.h"
-# include "ncurses.h"
+# include <ncurses.h>
 # include "../new_libft/srcs/libft.h"
 
 typedef struct		s_bot

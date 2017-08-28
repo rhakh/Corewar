@@ -117,6 +117,7 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 	child->prev_live = -1;
 	child->pause_time = 0;
 	list_push_back(&(data->bots), child);
+	ncurses_move_cursor(data, child, child->pc);
 	data->processes++;
 	return (0);
 }
@@ -151,7 +152,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		}
 		curr = curr->next;
 	}
-	return (1);
+	return (0);
 }
 
 int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
@@ -375,7 +376,6 @@ int 		first_pause(t_data *data)
 //	return (0);
 //}
 
-
 int 		execute_commands(t_data *data)
 {
 	t_linked_list	*curr;
@@ -383,26 +383,29 @@ int 		execute_commands(t_data *data)
 	int 			min;
 
 	curr = data->bots;
-	bot = curr->data;
 	min = 2147483647;
 	while (curr)
 	{
 		bot = curr->data;
-		bot->pause_time -= data->pause_time;
-		if ((bot->is_dead == 0) && (bot->pause_time <= 0))
+		if ((bot->is_dead == 0) && ((bot->pause_time - data->pause_time) <= 0) && (bot->pause_time != 0))
 		{
 			if (execute_command(data, bot))
 				bot->pause_time = 0;
-
-			if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
-			{
-				ft_printf("min = %d, com = %hhx\n", min, data->map[bot->pc]);
+			else if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
 				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
-			}
 			else
 				bot->pause_time = 0;
-			(min > (bot->pause_time)) ? (min = bot->pause_time) : 0;
 		}
+		else if ((bot->is_dead == 0) && (bot->pause_time == 0))
+		{
+			if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
+				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+			else
+				bot->pause_time = 0;
+		}
+		else if (bot->is_dead == 0)
+			bot->pause_time -= data->pause_time;
+		(min > bot->pause_time && !bot->is_dead) ? (min = bot->pause_time) : 0;
 		curr = curr->next;
 	}
 	data->pause_time = min;

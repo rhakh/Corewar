@@ -52,7 +52,6 @@ int 		 infinit_loop(t_data *data)
 	int 	next_command;
 
 	next_command = data->pause_time - 1;
-	ft_printf("{red}dp = %d, nc = %d{eoc} | ", data->pause_time, next_command);
 	while (data->cycles_to_die > 0 && data->processes > 0)
 	{
 		timeout(data->ncurses_timeout);
@@ -68,12 +67,13 @@ int 		 infinit_loop(t_data *data)
 
 		if ((!data->pause || data->one_command_mode))
 		{
-			ft_printf("{red}dp = %d, nc = %d{eoc} | ", data->pause_time, next_command);
 			if (next_command <= 0)
 			{
 				if (execute_commands(data))
 					return (1);
+				(data->pause_time == 0) ? (data->pause_time = 1) : 0;
 				next_command = data->pause_time;
+
 			}
 
 			if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
