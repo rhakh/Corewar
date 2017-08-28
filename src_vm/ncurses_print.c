@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ncurses_print.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/28 20:39:49 by dtelega           #+#    #+#             */
+/*   Updated: 2017/08/28 20:39:59 by dtelega          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vm.h"
-//
-// Created by Dmytro Telega on 8/19/17.
-//
 
 void		print_byte(WINDOW *win, char byte, int position, int attr)
 {
@@ -72,3 +81,4 @@ void		ncurses_kill_bot_cursor(t_data *data, int position)
 	print_byte(data->memory_win, data->map[position], position, ch ^ A_REVERSE);
 	wrefresh(data->memory_win);
 }
+

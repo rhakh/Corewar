@@ -35,8 +35,12 @@ char			ncurses_one_cm_mode(t_data *data, char pause);
 char 			ncurses_cycle_pause(t_data *data, char pause);
 char 			ncurses_global_cycle(t_data *data, char pause);
 void			ncurses_kill_bot_cursor(t_data *data, int position);
-void			ncurses_speed_display(t_data *data);
+void			display_curr_speed_cycles(t_data *data, WINDOW *stats_win);
 int 			ncurses_convert_speed(t_data *data);
 void			ncurses_print_header(void);
+int 			ncurses_print_bot_memory(t_data *data, t_bot *cur_bot, int i, WINDOW *w);
+void			ncurses_new_line(WINDOW *win);
+void			display_players(t_data *data, WINDOW *stats_win, t_bot *cur_bot, int n_bot);
+void			display_defines(t_data *data, WINDOW *stats_win);
 
 #endif

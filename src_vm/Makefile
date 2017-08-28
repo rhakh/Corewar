@@ -23,11 +23,14 @@ SRC =   vm.c \
         usage.c \
         ncurses_creator_win.c \
         ncurses_windows.c \
-        ncurses_display.c \
+        ncurses_display_memory.c \
+        ncurses_display_stats.c \
+        ncurses_display_debug.c \
         ncurses_move.c \
         ncurses_print.c \
         ncurses_init.c \
         ncurses_infinit_cycle.c \
+        ncurses_display_winner.c \
 
 SRCDIR = ./
 
