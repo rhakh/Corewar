@@ -61,11 +61,11 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	if (data->pause)
 	{
 		wattron(stats_win, COLOR_PAIR(9) | A_BOLD);
-		mvwprintw(stats_win, 1, 28, "*** PAUSED ***");
+		mvwprintw(stats_win, 1, 25, "*** PAUSED ***");
 		wattroff(stats_win, COLOR_PAIR(9) | A_BOLD);
 	}
 	else
-		mvwprintw(stats_win, 1, 28, "*** RUNNING **");
+		mvwprintw(stats_win, 1, 25, "*** RUNNING **");
 	ncurses_speed_display(data);
 	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:",  data->cycles);
 	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
