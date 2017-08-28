@@ -67,16 +67,8 @@ int 		 infinit_loop(t_data *data)
 
 		if ((!data->pause || data->one_command_mode))
 		{
-			if (next_command <= 0)
-			{
-				if (execute_commands(data))
-					return (1);
-				(data->pause_time == 0) ? (data->pause_time = 1) : 0;
-				next_command = data->pause_time;
 
-			}
-
-			if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
+			if (data->cycles == data->next_cycles_check)
 			{
 				check_for_live_bots(data);
 				data->next_cycles_check = data->cycles + data->cycles_to_die;
@@ -92,11 +84,19 @@ int 		 infinit_loop(t_data *data)
 				}
 			}
 
+			if (next_command <= 0)
+			{
+				if (execute_commands(data))
+					return (1);
+				next_command = data->pause_time;
+			}
+
+
+
 			next_command--;
 			data->cycles++;
+
 		}
-
-
 
 		display_stats(data, data->stats_win);
 		wrefresh(data->memory_win);

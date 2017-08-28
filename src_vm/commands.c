@@ -160,7 +160,7 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	if (bot->carry == 1)
 		bot->pc = ((bot->pc + (args[0] % IDX_MOD) + MEM_SIZE) % MEM_SIZE);
 	else
-		bot->pc += 1 + IND_SIZE;
+		bot->pc = (bot->pc + 1 + IND_SIZE) % MEM_SIZE;
 	return (0);
 }
 
@@ -290,7 +290,8 @@ int 		check_for_live_bots(t_data *data)
 
 		bot = curr->data;
 		sum_live += bot->live_count;
-		if (bot->last_live > 0 && ((data->cycles - bot->last_live) > data->cycles_to_die) && bot->is_dead == 0)
+//		ft_printf("{red}bot ll = %d, (c - ll) = %d, ctd = %d, isd = %d.{eoc}\n", bot->last_live, data->cycles - bot->last_live, data->cycles_to_die, bot->is_dead);
+		if (((data->cycles - bot->last_live) >= data->cycles_to_die) && bot->is_dead == 0)
 		{
 			bot->is_dead = 1;
 			(data->processes > 0) ? (data->processes--) : 0;
@@ -390,25 +391,25 @@ int 		execute_commands(t_data *data)
 		if ((bot->is_dead == 0) && ((bot->pause_time - data->pause_time) <= 0) && (bot->pause_time != 0))
 		{
 			if (execute_command(data, bot))
-				bot->pause_time = 0;
+				bot->pause_time = 1;
 			else if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
 				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
 			else
-				bot->pause_time = 0;
+				bot->pause_time = 1;
 		}
 		else if ((bot->is_dead == 0) && (bot->pause_time == 0))
 		{
 			if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
 				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
 			else
-				bot->pause_time = 0;
+				bot->pause_time = 1;
 		}
 		else if (bot->is_dead == 0)
 			bot->pause_time -= data->pause_time;
 		(min > bot->pause_time && !bot->is_dead) ? (min = bot->pause_time) : 0;
 		curr = curr->next;
 	}
-	data->pause_time = min;
+	(min == 0) ? (data->pause_time = 1) : (data->pause_time = min);
 	return (0);
 }
 

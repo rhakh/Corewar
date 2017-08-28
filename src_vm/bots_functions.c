@@ -13,6 +13,8 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = 0;
+	bot->last_live = 0;
+	bot->live_count = 0;
 	bot->prev_st = -1;
 	bot->prev_live = -1;
 	bot->prev_attr = -1;

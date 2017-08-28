@@ -62,13 +62,13 @@ void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 
 void		ncurses_kill_bot_cursor(t_data *data, int position)
 {
-	chtype character;
+	chtype 	ch;
 	int 	x;
 	int 	y;
 
 	move_to_byte(data->memory_win, position);
-
 	getyx(data->memory_win, y, x);
-	character = mvwinch(data->memory_win, y, x);
-	print_byte(data->memory_win, data->map[position], position, character | A_REVERSE);
+	ch = mvwinch(data->memory_win, y, x);
+	print_byte(data->memory_win, data->map[position], position, ch ^ A_REVERSE);
+	wrefresh(data->memory_win);
 }

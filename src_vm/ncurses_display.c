@@ -60,13 +60,13 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	/* if data->pause == 0 then PAUSE, else RUNNING */
 	if (data->pause)
 	{
-		wattron(stats_win, COLOR_PAIR(10));
-		mvwprintw(stats_win, 1, 28, "*** PAUSE ***");
-		wattroff(stats_win, COLOR_PAIR(10));
+		wattron(stats_win, COLOR_PAIR(9) | A_BOLD);
+		mvwprintw(stats_win, 1, 25, "*** PAUSED ***");
+		wattroff(stats_win, COLOR_PAIR(9) | A_BOLD);
 	}
 	else
-		mvwprintw(stats_win, 1, 28, "** RUNNING **");
-	mvwprintw(stats_win, 6, 3, "%-10s %6d", "Timeout:", data->ncurses_timeout);
+		mvwprintw(stats_win, 1, 25, "*** RUNNING **");
+	ncurses_speed_display(data);
 	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:",  data->cycles);
 	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
 	wmove(stats_win, 10, 3);
@@ -74,9 +74,9 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	while (++n_bot < data->bots_count)
 	{
 		wprintw(stats_win, "Player-%d: ", n_bot + 1);
-		wattron(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
+		wattron(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 		wprintw(stats_win, "%.55s", cur_bot->name);
-		wattroff(stats_win, COLOR_PAIR(n_bot + 1) | A_REVERSE);
+		wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 		getyx(stats_win, y, x);
 		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot + 1]);
 		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot + 1]);
@@ -113,9 +113,56 @@ void		display_winner(t_data *data, t_bot *bot)
 	mvwprintw(data->stats_win, 45, 10, "The winner is");
 	wattron(data->stats_win, COLOR_PAIR(bot->number + 5) | A_BOLD );
 	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
-	wattroff(data->stats_win, COLOR_PAIR(bot->number) | COLOR_PAIR(bot->number + 5));
-
+	wattroff(data->stats_win, COLOR_PAIR(bot->number) |
+			COLOR_PAIR(bot->number + 5));
+	mvwprintw(data->stats_win, 47, 25, "Type q to exit");
 	wrefresh(data->stats_win);
 	refresh();
 }
 
+void		ncurses_speed_display(t_data *data)
+{
+	int 	speed;
+	int 	i;
+
+	speed = ncurses_convert_speed(data);
+	mvwprintw(data->stats_win, 6, 3, "%s", "Speed: |");
+	i = 1;
+	while (speed-- > 0)
+	{
+		wattron(data->stats_win, COLOR_PAIR(13));
+		wprintw(data->stats_win, "%s", "*");
+		wattroff(data->stats_win, COLOR_PAIR(13));
+		i++;
+	}
+	while (i++ <= 12)
+	{
+		wattron(data->stats_win, COLOR_PAIR(11));
+		wprintw(data->stats_win, "%s", "*");
+		wattroff(data->stats_win, COLOR_PAIR(11));
+	}
+	wprintw(data->stats_win, "|");
+	wattron(data->stats_win, COLOR_PAIR(12));
+	wprintw(data->stats_win, "%5sA<->S - decrease<->increase", " ");
+	wattroff(data->stats_win, COLOR_PAIR(12));
+
+}
+
+int 	ncurses_convert_speed(t_data *data)
+{
+	int		speed;
+
+	data->ncurses_timeout == 0 ? speed = 12 : 0;
+	data->ncurses_timeout == 1 ? speed = 11 : 0;
+	data->ncurses_timeout == 2 ? speed = 10 : 0;
+	data->ncurses_timeout == 4 ? speed = 9 : 0;
+	data->ncurses_timeout == 8 ? speed = 8 : 0;
+	data->ncurses_timeout == 16 ? speed = 7 : 0;
+	data->ncurses_timeout == 32 ? speed = 6 : 0;
+	data->ncurses_timeout == 64 ? speed = 5 : 0;
+	data->ncurses_timeout == 128 ? speed = 4 : 0;
+	data->ncurses_timeout == 256 ? speed = 3 : 0;
+	data->ncurses_timeout == 512 ? speed = 2 : 0;
+	data->ncurses_timeout == 1024 ? speed = 1 : 0;
+	return (speed);
+}
