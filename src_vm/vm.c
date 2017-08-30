@@ -117,9 +117,9 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 	t_string	*curr;
 	t_bot		*bot;
 
-	i = 0;
+	i = 1;
 	ret = 0;
-	while (i < MAX_PLAYERS && i < num)
+	while (i < (MAX_PLAYERS + 1) && i < (num + 1))
 	{
 		curr = string_new(30);
 		(read_bot(curr, argv[i])) ? (ret = 1) : 0;
@@ -184,8 +184,10 @@ int         main(int argc, char **argv)
 	//todo:hakh
 	if (argc == 1)
 		usage();
-	parse_flags(&data, argc, argv);
+	if (parse_flags(&data, argc, argv))
+		return (1);
 	data.processes = (size_t)data.bots_count;
+	ft_printf("%d\n", data.bots_count);
 	if (init_bots(&data, data.players, data.bots_count))
 		return (1);
 	load_bots_in_memory(&data);

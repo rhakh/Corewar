@@ -45,29 +45,100 @@ static void	print_parse(t_data *data)
 	}
 }
 
+//int				parse_flags(t_data *data, int argc, char **argv)
+//{
+//	int			i;
+//
+//	i = 1;
+//	if (!ft_strcmp("-h", argv[i]) || !ft_strcmp("--help", argv[i]))
+//	{
+//		usage();
+//		return (1);
+//	}
+//	if (!ft_strcmp("-dump", argv[i]))
+//		save_dump(data, argv[i + 1], &i, argc);
+//	else if (!ft_strcmp("-v", argv[i]))
+//    {
+//        data->visual = 1;
+//        i++;
+//    }
+//    if (!ft_strcmp("-n", argv[i]))
+//		add_wn(data, &i, argv, argc);
+//	else
+//		add_player(data, &i, argv, argc);
+//	if (data->bots_count > MAX_PLAYERS)
+//		exit_error(data, 8);
+//	print_parse(data);
+//	return (0);
+//}
+
 int				parse_flags(t_data *data, int argc, char **argv)
 {
-	int			i;
+	int 	i;
+	int 	j;
+	char 	*p;
 
 	i = 1;
-	if (!ft_strcmp("-h", argv[i]) || !ft_strcmp("--help", argv[i]))
+	while (i < argc)
 	{
-		usage();
-		return (1);
+		if (!ft_strcmp("-h", argv[i]) || !ft_strcmp("--help", argv[i]))
+		{
+			usage();
+			return (1);
+		}
+		else if (!ft_strcmp("-dump", argv[i]))
+		{
+			data->dump = (size_t)ft_atoi(argv[i + 1]);
+			i++;
+		}
+		else if (!ft_strcmp("-v", argv[i]))
+			data->visual = 1;
+		else if (!ft_strcmp("-n", argv[i]))
+		{
+			if (ft_atoi(argv[i + 1]) >= 1 && ft_atoi(argv[i + 1]) <= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[i + 1])] == NULL)
+			{
+				data->players[ft_atoi(argv[i + 1])] = argv[i + 2];
+				i += 2;
+			}
+			else
+			{
+				ft_printf("{red}Wrong number of player or player not empty{eoc}\n");
+				return (1);
+			}
+			data->bots_count++;
+		}
+		else
+		{
+			j = 0;
+			while (++j < (MAX_PLAYERS + 1))
+				if (data->players[j] == NULL)
+				{
+					data->players[j] = argv[i];
+					break ;
+				}
+			if (j == (MAX_PLAYERS + 1))
+			{
+				ft_printf("{red}Too much players{eoc}\n");
+				return (1);
+			}
+			data->bots_count++;
+		}
+		i++;
 	}
-	if (!ft_strcmp("-dump", argv[i]))
-		save_dump(data, argv[i + 1], &i, argc);
-	else if (!ft_strcmp("-v", argv[i]))
-    {
-        data->visual = 1;
-        i++;
-    }
-    if (!ft_strcmp("-n", argv[i]))
-		add_wn(data, &i, argv, argc);
-	else
-		add_player(data, &i, argv, argc);
-	if (data->bots_count > MAX_PLAYERS)
-		exit_error(data, 8);
-	print_parse(data);
+	i = 1;
+	while (i < (MAX_PLAYERS + 1))
+	{
+		p = 0;
+		(data->players[i]) ? (p = ft_strrchr(data->players[i], '.')) : 0;
+		if (p)
+		{
+			if (p[1] != 'c' || p[2] != 'o' || p[3] != 'r' || p[4] != '\0')
+			{
+				ft_printf("{red}Wrong player name '%s'{eoc}\n", data->players[i]);
+				return (1);
+			}
+		}
+		i++;
+	}
 	return (0);
 }

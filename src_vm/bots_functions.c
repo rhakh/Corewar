@@ -101,7 +101,7 @@ int 		read_bot(t_string *code, char *file_name)
 			return (1);
 		}
 	}
-	ft_printf("Can't open file '%s'\n", file_name);
+	ft_printf("{red}Can't open file '%s'{eoc}\n", file_name);
 	return (1);
 }
 
