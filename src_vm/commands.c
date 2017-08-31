@@ -57,9 +57,9 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 	}
 
 	if (command == 3)
-		ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+		(data->visual) ? (ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
 	else
-		ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data);
+		(data->visual) ? (ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
 
 	return (0);
 }
@@ -116,8 +116,9 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 		child->pc = ((bot->pc + args[0]) + MEM_SIZE) % MEM_SIZE;
 	child->prev_live = -1;
 	child->pause_time = 0;
-	list_push_back(&(data->bots), child);
-	ncurses_move_cursor(data, child, child->pc);
+//	list_push_back(&(data->bots), child); //add tail to the linked list to increase speed
+	data->bots_tail = list_append_to_tail(&(data->bots_tail), child);
+	(data->visual) ? (ncurses_move_cursor(data, child, child->pc)) : 0;
 	data->processes++;
 	return (0);
 }
@@ -129,25 +130,25 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 	curr = data->bots;
 	bot->throw_live = 1;
-	if (bot->number == ABS(args[0]))
+	if (bot->number == args[0])
 	{
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
 		data->bots_last_live[bot->number] = data->cycles;
-		ncurses_live(data, bot); // ncurses print pointer
+		(data->visual) ? (ncurses_live(data, bot)) : (ft_printf("A process shows that player #%d (%s) is alive\n", bot->number, bot->name)); // ncurses print pointer
 		return (0);
 	}
 	while (curr)
 	{
 		curr_bot = curr->data;
-		if (curr_bot->number == ABS(args[0]))
+		if (curr_bot->number == args[0])
 		{
 			curr_bot->live_count++;
 			curr_bot->last_live = data->cycles;
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;
-			ncurses_live(data, curr_bot);
+			(data->visual) ? (ncurses_live(data, curr_bot)) : (ft_printf("A process shows that player #%d (%s) is alive\n", curr_bot->number, curr_bot->name));
 			return (0);
 		}
 		curr = curr->next;
@@ -166,8 +167,13 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
-	//todo send to ncurses bot, reg_number
-	ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
+	if (data->visual)
+		ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
+	else
+		ft_printf("Player %d: reg[%d] = %d '%c'\n",
+				  bot->number, args[0], bot->reg[args[0]],
+				  (bot->reg[args[0]] >= 32 && bot->reg[args[0]] <= 126) ?
+				  (bot->reg[args[0]]) : (32));
 	return (0);
 }
 
@@ -250,7 +256,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 		if (get_args(data, bot, command, opcode, args))
 		{
 			bot->pc = (bot->pc + 1) % MEM_SIZE;
-			ncurses_move_cursor(data, bot, prev);
+			(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
 			return (1);
 		}
 
@@ -261,7 +267,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 		if (run_command(data, bot, command, opcode, args))
 		{
 			(command != 9) ? (increase_pc(bot, command, opcode)) : 0;
-			ncurses_move_cursor(data, bot, prev);
+			(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
 			return (1);
 		}
 
@@ -270,10 +276,10 @@ int 		execute_command(t_data *data, t_bot *bot)
 	else
 	{
 		bot->pc = (bot->pc + 1) % MEM_SIZE;
-		ncurses_move_cursor(data, bot, prev);
+		(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
 		return (1);
 	}
-	ncurses_move_cursor(data, bot, prev);
+	(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
 	return (0);
 }
 
@@ -287,15 +293,13 @@ int 		check_for_live_bots(t_data *data)
 	curr = data->bots;
 	while (curr)
 	{
-
 		bot = curr->data;
 		sum_live += bot->live_count;
-//		ft_printf("{red}bot ll = %d, (c - ll) = %d, ctd = %d, isd = %d.{eoc}\n", bot->last_live, data->cycles - bot->last_live, data->cycles_to_die, bot->is_dead);
-		if (((data->cycles - bot->last_live) >= data->cycles_to_die) && bot->is_dead == 0)
+		if (!bot->throw_live && ((data->cycles - bot->last_live) >= data->cycles_to_die) && !bot->is_dead)
 		{
 			bot->is_dead = 1;
 			(data->processes > 0) ? (data->processes--) : 0;
-			ncurses_kill_bot_cursor(data, bot->pc);
+			(data->visual) ? (ncurses_kill_bot_cursor(data, bot->pc)) : 0;
 		}
 		else
 		{
@@ -333,50 +337,6 @@ int 		first_pause(t_data *data)
 /*
 ** 0 - ok , 1 - error
 */
-//int 		execute_commands(t_data *data)
-//{
-//	t_linked_list	*curr;
-//	t_bot			*bot;
-//
-//	curr = data->bots;
-//	while (curr)
-//	{
-//		bot = curr->data;
-//		if (bot->is_dead == 0 && bot->pause_time <= 0)
-//		{
-//			if (execute_command(data, bot))
-//				bot->pause_time = 0;
-//			else if (((data->map[bot->pc] - 1) <= 16) && ((data->map[bot->pc] - 1) >= 1))
-//				bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done - 1;
-//			else
-//				bot->pause_time = 0;
-//		}
-//		else
-//			bot->pause_time -= 1;
-//		curr = curr->next;
-//	}
-//
-//	if (data->cycles > 0 && (data->cycles == data->next_cycles_check))
-//	{
-//		check_for_live_bots(data);
-//		data->next_cycles_check = data->cycles + data->cycles_to_die;
-//		data->max_checks++;
-//		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-//		{
-//			if (data->last_cycles_to_die == data->cycles_to_die)
-//			{
-//				data->cycles_to_die -= CYCLE_DELTA;
-//				data->next_cycles_check = data->cycles + data->cycles_to_die;
-//			}
-//			data->last_cycles_to_die = data->cycles_to_die;
-//		}
-//	}
-//
-//	data->cycles += 1;
-//
-//	return (0);
-//}
-
 int 		execute_commands(t_data *data)
 {
 	t_linked_list	*curr;

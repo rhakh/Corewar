@@ -12,65 +12,26 @@
 
 #include "flags_parser.h"
 
-void			save_dump(t_data *data, char *num, int *i, int argc)
+void	usage(char **argv)
 {
-	int			tmp;
-	int			j;
+//	ft_putstr_fd("\t** --------------------USAGE--------------------\n\
+//\t** ./corewar [-h || --help] to view this massege\n \
+//\t** Example: ./corewar -v -n 3 player.cor\n \
+//\t** GUI: ./corewar -v [player1.cor player2.cor...]\n \
+//\t** Default player numbers: 1, 2, 3, 4 [This numbers only for -n\n \
+//\t** Change player number: -n -[number] player.cor\n \
+//\t** Dump: ./corewar -dump 50 [Players] -> it will print the memory after \
+//50 cycles\n", 2);
 
-	j = -1;
-	if ((*i + 3) > argc)
-		exit_error(data, 11);
-	(*i)++;
-	while (num[++j] != '\0')
-		if (!ft_isdigit(num[j]))
-			exit_error(data, 14);
-	if (ft_strlen(num) > 4)
-		exit_error(data, 12);
-	tmp = ft_atoi(num);
-	if (tmp > CYCLE_TO_DIE)
-		exit_error(data, 19);
-	else
-		data->dump = (size_t)tmp;
-	(*i)++;
+	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
+					  "\t%s [-n <number 1 .. 4> player.cor] [-v] "
+					  "[-dump <number>] player.cor\n"
+					  "\t-h - --help - print this message\n"
+					  "\t-v - for enable visual mode\n"
+					  "\t-n - to set different player number\n"
+					  "\t-dump - print dump of memory at some cycle, to stdout\n", argv[0]);
+	exit(1);
 }
-
-static void	print_parse(t_data *data)
-{
-//	ft_printf("dump:%d\n", data->dump);
-	int	i = -1;
-	ft_printf("bot count: %d\n", data->bots_count);
-	while (++i < 4)
-	{
-		ft_printf ("%s\n", data->players[i]);
-	}
-}
-
-//int				parse_flags(t_data *data, int argc, char **argv)
-//{
-//	int			i;
-//
-//	i = 1;
-//	if (!ft_strcmp("-h", argv[i]) || !ft_strcmp("--help", argv[i]))
-//	{
-//		usage();
-//		return (1);
-//	}
-//	if (!ft_strcmp("-dump", argv[i]))
-//		save_dump(data, argv[i + 1], &i, argc);
-//	else if (!ft_strcmp("-v", argv[i]))
-//    {
-//        data->visual = 1;
-//        i++;
-//    }
-//    if (!ft_strcmp("-n", argv[i]))
-//		add_wn(data, &i, argv, argc);
-//	else
-//		add_player(data, &i, argv, argc);
-//	if (data->bots_count > MAX_PLAYERS)
-//		exit_error(data, 8);
-//	print_parse(data);
-//	return (0);
-//}
 
 int				parse_flags(t_data *data, int argc, char **argv)
 {
@@ -83,7 +44,7 @@ int				parse_flags(t_data *data, int argc, char **argv)
 	{
 		if (!ft_strcmp("-h", argv[i]) || !ft_strcmp("--help", argv[i]))
 		{
-			usage();
+			usage(argv);
 			return (1);
 		}
 		else if (!ft_strcmp("-dump", argv[i]))
@@ -126,7 +87,7 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		i++;
 	}
 	i = 1;
-	while (i < (MAX_PLAYERS + 1))
+	while (i < (MAX_PLAYERS + 1) && i < (data->bots_count + 1))
 	{
 		p = 0;
 		(data->players[i]) ? (p = ft_strrchr(data->players[i], '.')) : 0;
@@ -137,6 +98,11 @@ int				parse_flags(t_data *data, int argc, char **argv)
 				ft_printf("{red}Wrong player name '%s'{eoc}\n", data->players[i]);
 				return (1);
 			}
+		}
+		else
+		{
+			ft_printf("{red}Empty slot for player # %d\n{eoc}", i);
+			return (1);
 		}
 		i++;
 	}

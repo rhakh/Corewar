@@ -4,9 +4,7 @@
 #include "vm.h"
 
 void		exit_error(t_data *data, int error_code);
-void		usage(void);
-void		add_wn(t_data *data, int *i, char **argv, int argc);
-void		add_player(t_data *data, int *i, char **argv, int argc);
+void		usage(char **argv);
 int			parse_flags(t_data *data, int argc, char **argv);
 
 #endif

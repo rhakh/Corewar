@@ -10,10 +10,9 @@ t_linked_list			*list_new()
 	return (new);
 }
 
-void			list_push_back(t_linked_list **head, void *data)
+t_linked_list			*list_push_back(t_linked_list **head, void *data)
 {
 	t_linked_list		*curr;
-	t_linked_list		*ptr;
 
 	if (head != NULL)
 	{
@@ -23,8 +22,8 @@ void			list_push_back(t_linked_list **head, void *data)
 			while (curr->next != NULL)
 				curr = curr->next;
 			curr->next = list_new();
-			ptr = curr->next;
-			ptr->data = data;
+			curr = curr->next;
+			curr->data = data;
 		}
 		else
 		{
@@ -32,12 +31,43 @@ void			list_push_back(t_linked_list **head, void *data)
 			curr->data = data;
 			*head = curr;
 		}
+		return (curr);
 	}
+	return (NULL);
 }
 
-void			list_print(t_linked_list *curr, void (* function_for_print)(void *))
+t_linked_list			*list_append_to_tail(t_linked_list **tail, void *data)
 {
-	void		*label;
+	t_linked_list		*node;
+
+	if (tail)
+	{
+		node = *tail;
+		if (node)
+		{
+			if (node->next)
+			{
+				ft_printf("{red}Node isn't end of list\n{eoc}");
+				return (NULL);
+			}
+			node->next = list_new();
+			node = node->next;
+			node->data = data;
+		}
+		else
+		{
+			node = list_new();
+			node->data = data;
+			*tail = node;
+		}
+		return (node);
+	}
+	return (NULL);
+}
+
+void					list_print(t_linked_list *curr, void (* function_for_print)(void *))
+{
+	void				*label;
 
 	while (curr != NULL)
 	{
@@ -51,10 +81,10 @@ void			list_print(t_linked_list *curr, void (* function_for_print)(void *))
 	}
 }
 
-void			list_del(t_linked_list **head, void (* function_for_del_data)(void *))
+void					list_del(t_linked_list **head, void (* function_for_del_data)(void *))
 {
-	t_linked_list	*curr;
-	t_linked_list	*next;
+	t_linked_list		*curr;
+	t_linked_list		*next;
 
 	if (head != NULL)
 		curr = *head;

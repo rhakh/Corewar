@@ -50,8 +50,12 @@ void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 		}
 		i--;
 	}
-	ft_snprintf(data->debug_strs[0], 61, "Player %d: reg[%d] = %d '%c'",
+	if ((char)bot->reg[nb_reg] >= 32 && (char)bot->reg[nb_reg] <= 126)
+		ft_snprintf(data->debug_strs[0], 61, "Player %d: reg[%d] = %d '%c'",
 				bot->number, nb_reg, bot->reg[nb_reg], (char)bot->reg[nb_reg]);
+	else
+		ft_snprintf(data->debug_strs[0], 61, "Player %d: reg[%d] = %d",
+					bot->number, nb_reg, bot->reg[nb_reg]);
 	line = 3;
 	i = 0;
 	while (i < 12)

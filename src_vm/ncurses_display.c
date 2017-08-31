@@ -67,8 +67,8 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 	else
 		mvwprintw(stats_win, 1, 25, "*** RUNNING **");
 	ncurses_speed_display(data);
-	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:",  data->cycles);
-	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
+	mvwprintw(stats_win, 7, 3, "%-10s %-11d", "Cycle:",  data->cycles);
+	mvwprintw(stats_win, 8, 3, "%-10s %-11d", "Processes:", data->processes);
 	wmove(stats_win, 10, 3);
 	n_bot = -1;
 	while (++n_bot < data->bots_count)
@@ -78,8 +78,8 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		wprintw(stats_win, "%.55s", cur_bot->name);
 		wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 		getyx(stats_win, y, x);
-		mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d", data->bots_live[n_bot + 1]);
-		mvwprintw(stats_win, y + 2, 10, "Last live             : %4d", data->bots_last_live[n_bot + 1]);
+		mvwprintw(stats_win, y + 1, 10, "Live in current period: %-11d", data->bots_live[n_bot + 1]);
+		mvwprintw(stats_win, y + 2, 10, "Last live             : %-11d", data->bots_last_live[n_bot + 1]);
 
 		// for the next players
 		list = list->next;
@@ -118,6 +118,7 @@ void		display_winner(t_data *data, t_bot *bot)
 	mvwprintw(data->stats_win, 47, 25, "Type q to exit");
 	wrefresh(data->stats_win);
 	refresh();
+	(data->visual) ? 0 : (ft_printf("{green}The winner is '%s'\n{eoc}", bot->name));
 }
 
 void		ncurses_speed_display(t_data *data)
