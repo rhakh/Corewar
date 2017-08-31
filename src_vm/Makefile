@@ -20,7 +20,6 @@ SRC =   vm.c \
         add_players.c \
         error_managment.c \
         flags_parser.c \
-        usage.c \
         ncurses_creator_win.c \
         ncurses_windows.c \
         ncurses_display_memory.c \

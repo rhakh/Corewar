@@ -13,6 +13,8 @@ t_bot		*bot_new(int number, t_string *code)
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = 0;
+	bot->last_live = 0;
+	bot->live_count = 0;
 	bot->prev_st = -1;
 	bot->prev_live = -1;
 	bot->prev_attr = -1;
@@ -99,7 +101,7 @@ int 		read_bot(t_string *code, char *file_name)
 			return (1);
 		}
 	}
-	ft_printf("Can't open file '%s'\n", file_name);
+	ft_printf("{red}Can't open file '%s'{eoc}\n", file_name);
 	return (1);
 }
 

@@ -16,6 +16,7 @@
 # include <SDL.h>
 # include "vm.h"
 # define MUS_WINNER "mus.wav"
+# define MUS_BEEP "crow.wav"
 
 typedef struct	s_audio_data
 {
@@ -25,6 +26,6 @@ typedef struct	s_audio_data
 
 void			audio_callback(void* user_data, Uint8* stream,
 							int stream_length);
-int     		sdl_winner();
+int     		sdl_winner(char *file_name);
 
 #endif

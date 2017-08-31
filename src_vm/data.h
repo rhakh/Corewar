@@ -2,8 +2,14 @@
 #define DATA_H
 
 # include "op.h"
-# include "ncurses.h"
+# include <ncurses.h>
 # include "../new_libft/srcs/libft.h"
+
+# define PL4		"\x1b[31m"
+# define PL1		"\x1b[34m"
+# define PL2	"\x1b[35m"
+# define PL3		"\x1b[36m"
+# define EOCP		"\x1b[0m"
 
 typedef struct		s_bot
 {
@@ -44,12 +50,15 @@ typedef struct		s_data
 	int 			last_cycles_to_die;
 	int 			cycles;
 	t_linked_list	*bots;
+	t_linked_list	*bots_tail;
 	int				bots_count;
 	int				one_command_mode;
 	int				pause;
-	size_t			dump;
+	int				dump;
 	char			*players[MAX_PLAYERS + 1];
 	char			visual;
+
+	int 			pause_time;
 	// ncurses windows
 	WINDOW *memory_win;
 	WINDOW *stats_win;

@@ -32,7 +32,7 @@ void    audioCallback(void* userData, Uint8* stream, int streamLength)
     audio->length -= length;
 }
 
-int     sdl_winner()
+int     sdl_sound(char *mus_file)
 {
     SDL_Init(SDL_INIT_AUDIO);
 
@@ -40,7 +40,7 @@ int     sdl_winner()
     Uint8*          wav_start;
     Uint32          wav_length;
 
-    if(SDL_LoadWAV(MUS_WINNER, &wav_spec, &wav_start, &wav_length) == NULL)
+    if(SDL_LoadWAV(mus_file, &wav_spec, &wav_start, &wav_length) == NULL)
     {
 		printf("Error1\n");
     }

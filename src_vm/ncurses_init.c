@@ -86,7 +86,7 @@ void		nc_terminate(t_data *data)
 		!list ? bot = NULL : 0;
 	}
 	display_winner(data, bot);
-	sdl_winner();
+	sdl_sound(MUS_WINNER);
 	while (getch() != 'q')
 		;
 	endwin();

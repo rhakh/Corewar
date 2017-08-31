@@ -42,6 +42,7 @@ char		ncurses_cycle_pause(t_data *data, char pause)
 	data->pause = 0;
 	display_stats(data, data->stats_win);
 	refresh();
+	sdl_sound(MUS_BEEP);
 	return ('q');
 }
 
