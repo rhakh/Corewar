@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 20:25:47 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/28 20:32:35 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/08/29 19:17:17 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void		nc_terminate(t_data *data)
 		!list ? bot = NULL : 0;
 	}
 	display_winner(data, bot);
+	sdl_winner();
 	while (getch() != 'q')
 		;
 	endwin();

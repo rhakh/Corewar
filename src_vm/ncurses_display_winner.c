@@ -20,7 +20,7 @@ void		display_winner(t_data *data, t_bot *bot)
 	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
 	wattroff(data->stats_win, COLOR_PAIR(bot->number) |
 			COLOR_PAIR(bot->number + 5));
-	mvwprintw(data->stats_win, 47, 25, "Type q to exit");
+	mvwprintw(data->stats_win, 47, 25, "Type ctrl+C to exit");
 	wrefresh(data->stats_win);
 	refresh();
 }

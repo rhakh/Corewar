@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ncurses_windows.c                                  :+:      :+:    :+:   */
+/*   sdl_vm.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/29 16:08:31 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/29 16:09:36 by dtelega          ###   ########.fr       */
+/*   Created: 2017/08/31 18:05:58 by dtelega           #+#    #+#             */
+/*   Updated: 2017/08/31 18:06:59 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vm.h"
+#ifndef SDL_VM_H
+# define SDL_VM_H
 
-WINDOW		*create_newwin(int height, int width, int starty, int startx)
+# include <SDL.h>
+# include "vm.h"
+# define MUS_WINNER "mus.wav"
+
+typedef struct	s_audio_data
 {
-	WINDOW		*local_win;
-	char		border;
+	Uint8*	position;
+	Uint32	length;
+}				t_audio_data;
 
-	border = 0;
-	local_win = newwin(height, width, starty, startx);
-	box(local_win, border, border);
-	wrefresh(local_win);
-	return (local_win);
-}
+void			audio_callback(void* user_data, Uint8* stream,
+							int stream_length);
+int     		sdl_winner();
+
+#endif
