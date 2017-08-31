@@ -136,12 +136,31 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 		data->bots_tail = list_push_back(&(data->bots), bot);
 		i++;
 	}
-	if (validate_bots(data))
+	if (validate_bots(data) || data->bots_count == 0)
 	{
 		list_del(&(data->bots), bot_del);
+		(data->bots_count == 0) ? (ft_printf("{red}Bots count = 0\n{eoc}")) : 0;
 		return (1);
 	}
 	return (0);
+}
+
+void		calculate_winner(t_data *data)
+{
+	int 	i;
+	int 	nb;
+	int 	max;
+
+	i = 1;
+	nb = 1;
+	max = data->bots_last_live[1];
+	while (++i <= data->bots_count)
+		if (data->bots_last_live[i] > max)
+		{
+			max = data->bots_last_live[i];
+			nb = i;
+		}
+
 }
 
 void		load_bots_in_memory(t_data *data)
@@ -195,6 +214,6 @@ int         main(int argc, char **argv)
 	first_pause(&data);
 	if (infinit_loop(&data))
 		return (1);
-	(data.visual) ? (nc_terminate(&data)) :0;
+	(data.visual) ? (nc_terminate(&data)) : (calculate_winner(&data));
 	return (0);
 }
