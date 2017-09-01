@@ -25,11 +25,16 @@ void	usage(char **argv)
 
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
 		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
-		"[-dump <number>] player.cor\n"
+		"[-dump <number>] [-debug <number>] player.cor\n"
 		"\t-h - --help - print this message\n"
 		"\t-v - for enable visual mode\n"
 		"\t-n - to set different player number\n"
-		"\t-dump - print dump of memory at some cycle, to stdout\n", argv[0]);
+		"\t-dump - print dump of memory at some cycle, to stdout\n"
+		"\t-debug - debug level\n"
+		"\t\t - 0 : show only winner\n"
+		"\t\t- 1 : show lives\n"
+		"\t\t- 2 : show cycles\n"
+		"\t\t- 4 : show operations and their arguments\n", argv[0]);
 	exit(1);
 }
 
@@ -70,6 +75,17 @@ int				parse_flags(t_data *data, int argc, char **argv)
 				return (1);
 			}
 			data->bots_count++;
+		}
+		else if (!ft_strcmp("-debug", argv[i]))
+		{
+			if ((i + 1 < argc))
+				data->debug_level = atoi(argv[i + 1]);
+			else
+			{
+				ft_printf("{red}-debug option required number{eoc}\n");
+				return (1);
+			}
+			i++;
 		}
 		else
 		{

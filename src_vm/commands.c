@@ -136,10 +136,13 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
 		data->bots_last_live[bot->number] = data->cycles;
-		(data->visual) ? (ncurses_live(data, bot)) : (ft_printf("A process shows that player %d (%s) is alive\n", bot->number, bot->name)); // ncurses print pointer
+		if (data->visual)
+			ncurses_live(data, bot);
+		else
+			(data->debug_level - LIVE_LEVEL > 0) ? (ft_printf("%sA process shows that player %d (%s) is alive\n"EOCP, bot->color, bot->number, data->bots_names[bot->number])) : 0;
 		return (0);
 	}
-	while (curr)
+	while (curr && args[0] >= 1 && args[0] <= MAX_PLAYERS + 1)
 	{
 		curr_bot = curr->data;
 		if (curr_bot->number == args[0])
@@ -148,7 +151,10 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 			curr_bot->last_live = data->cycles;
 			data->bots_live[curr_bot->number]++;
 			data->bots_last_live[curr_bot->number] = data->cycles;
-			(data->visual) ? (ncurses_live(data, curr_bot)) : (ft_printf("A process shows that player %d (%s) is alive\n", curr_bot->number, curr_bot->name));
+			if (data->visual)
+				ncurses_live(data, curr_bot);
+			else
+				(data->debug_level - LIVE_LEVEL > 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", curr_bot->number, data->bots_names[curr_bot->number])) : 0;
 			return (0);
 		}
 		curr = curr->next;

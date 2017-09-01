@@ -215,5 +215,6 @@ int         main(int argc, char **argv)
 	if (infinit_loop(&data))
 		return (1);
 	(data.visual) ? (nc_terminate(&data)) : (calculate_winner(&data));
+//	list_del(&(data.bots), bot_del);
 	return (0);
 }

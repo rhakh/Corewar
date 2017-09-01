@@ -7,14 +7,21 @@
 
 # define PL4		"\x1b[31m"
 # define PL1		"\x1b[34m"
-# define PL2	"\x1b[35m"
+# define PL2		"\x1b[35m"
 # define PL3		"\x1b[36m"
 # define EOCP		"\x1b[0m"
+
+# define ZERO_LEVEL 0
+# define LIVE_LEVEL 1
+# define CYCLE_LEVEL 2
+# define OP_LEVEL 4
+
 
 typedef struct		s_bot
 {
 	char			*name;
 	char			*comment;
+	char 			*color;
 	int				size;
 	int				number;
 	int				reg[REG_NUMBER + 1];
@@ -41,7 +48,9 @@ typedef struct		s_data
 	unsigned char	map[MEM_SIZE];
 	int				bots_last_live[MAX_PLAYERS + 1];
 	int				bots_live[MAX_PLAYERS + 1];
+	char			bots_names[MAX_PLAYERS + 1][PROG_NAME_LENGTH + 1];
 	char 			debug_strs[12][62];
+	int 			debug_level;
 	int				cycles_to_die;
 	int				next_cycles_check;
 	int 			max_checks;
