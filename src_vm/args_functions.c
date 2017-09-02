@@ -9,13 +9,13 @@ char 		get_arg_type(char command, char opcode, int i)
 
 	//		arg_type = (char)((opcode >> (4 - ((i) ? (1 << i) : (0)))) & 0b00000011);
 	arg_type = 0;
-	if (i == 1)
-		arg_type = (char)((opcode >> 6) & 0b00000011);
-	else if (i == 2)
-		arg_type = (char)((opcode >> 4) & 0b00000011);
-	else if (i == 3)
-		arg_type = (char)((opcode >> 2) & 0b00000011);
-//	arg_type = (char)((opcode >> (2 * i)) & (0b00000011));
+//	if (i == 1)
+//		arg_type = (char)((opcode >> 6) & 0b00000011);
+//	else if (i == 2)
+//		arg_type = (char)((opcode >> 4) & 0b00000011);
+//	else if (i == 3)
+//		arg_type = (char)((opcode >> 2) & 0b00000011);
+	arg_type = (char)((opcode >> (6 - (2 * (i - 1)))) & (0b00000011));
 	if (command == 1)
 		arg_type = DIR_CODE;
 	else if (command == 9 || command == 12 || command == 15)
@@ -23,6 +23,33 @@ char 		get_arg_type(char command, char opcode, int i)
 	if (arg_type != DIR_CODE && arg_type != IND_CODE && arg_type != REG_CODE)
 		return (-1);
 	return (arg_type);
+}
+
+int 		check_opcode(char command, char opcode)
+{
+	unsigned char	byte_pair;
+	int 			i;
+
+	i = 0;
+	byte_pair = 0;
+	while (i < op_tab[command - 1].n_arg)
+	{
+		byte_pair = (unsigned char)((opcode >> (6 - (2 * i))) & 0b00000011);
+//		if (i == 0)
+//			byte_pair = (unsigned char)((opcode >> 6) & 0b00000011);
+//		else if (i == 1)
+//			byte_pair = (unsigned char)((opcode >> 4) & 0b00000011);
+//		else if (i == 2)
+//			byte_pair = (unsigned char)((opcode >> 2) & 0b00000011);
+
+		(byte_pair == REG_CODE) ? (byte_pair = T_REG) : 0;
+		(byte_pair == DIR_CODE) ? (byte_pair = T_DIR) : 0;
+		(byte_pair == IND_CODE) ? (byte_pair = T_IND) : 0;
+		if (!(byte_pair & op_tab[command - 1].type_arg[i]))
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 int 		get_args(t_data *data, t_bot *bot, char command, char opcode, int args[3])

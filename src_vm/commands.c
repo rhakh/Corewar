@@ -1,12 +1,13 @@
 #include "commands.h"
 
-int 		arithmetic_operations(t_bot *bot, char command, int args[3])
+int 		arithmetic_operations(t_bot *bot, char command, char opcode, int args[3])
 {
 	if (command == 4)
-		bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]];
+		(/*args[2] >= 1 && args[2] <= 16*/1) ? (bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]]) : 0;
 	else
-		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
-	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
+		(/*args[2] >= 1 && args[2] <= 16*/1) ? (bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]]) : 0;
+	if (/*args[2] >= 1 && args[2] <= 16*/ 1)
+		(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
 
@@ -31,7 +32,8 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 	(command == 6) ? (bot->reg[args[2]] = num[0] & num[1]) : 0;
 	(command == 7) ? (bot->reg[args[2]] = num[0] | num[1]) : 0;
 	(command == 8) ? (bot->reg[args[2]] = num[0] ^ num[1]) : 0;
-	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
+	if (args[2] >= 1 && args[2] <= 16)
+		(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
 
@@ -130,29 +132,42 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 
 	curr = data->bots;
 	bot->throw_live = 1;
-	if (bot->number == args[0])
+	if (bot->r1_number == args[0])
 	{
 		bot->live_count++;
 		bot->last_live = data->cycles;
 		data->bots_live[bot->number]++;
 		data->bots_last_live[bot->number] = data->cycles;
-		(data->visual) ? (ncurses_live(data, bot)) : (ft_printf("A process shows that player #%d (%s) is alive\n", bot->number, bot->name)); // ncurses print pointer
+		if (data->visual)
+			ncurses_live(data, bot);
+		else
+			(data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("%sA process shows that player %d (%s) is alive\n"EOCP, bot->color, bot->number, data->bots_names[bot->number])) : 0;
 		return (0);
 	}
-	while (curr)
+	else if (ABS(args[0]) >= 1 && ABS(args[0]) <= MAX_PLAYERS + 1)
 	{
-		curr_bot = curr->data;
-		if (curr_bot->number == args[0])
-		{
-			curr_bot->live_count++;
-			curr_bot->last_live = data->cycles;
-			data->bots_live[curr_bot->number]++;
-			data->bots_last_live[curr_bot->number] = data->cycles;
-			(data->visual) ? (ncurses_live(data, curr_bot)) : (ft_printf("A process shows that player #%d (%s) is alive\n", curr_bot->number, curr_bot->name));
-			return (0);
-		}
-		curr = curr->next;
+		data->bots_live[ABS(args[0])]++;
+		data->bots_last_live[ABS(args[0])] = data->cycles;
+		if (data->visual == 0)
+			(data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", ABS(args[0]), data->bots_names[ABS(args[0])])) : 0;
 	}
+//	while (curr)
+//	{
+//		curr_bot = curr->data;
+//		if (curr_bot->r1_number == args[0] && curr_bot->is_dead == 0)
+//		{
+//			curr_bot->live_count++;
+//			curr_bot->last_live = data->cycles;
+//			data->bots_live[curr_bot->number]++;
+//			data->bots_last_live[curr_bot->number] = data->cycles;
+//			if (data->visual)
+//				ncurses_live(data, curr_bot);
+//			else
+//				(data->debug_level - LIVE_LEVEL > 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", curr_bot->number, data->bots_names[curr_bot->number])) : 0;
+//			return (0);
+//		}
+//		curr = curr->next;
+//	}
 	return (0);
 }
 
@@ -168,7 +183,7 @@ int 		zjmp_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 int 		aff_operation(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
 	if (data->visual)
-		ncurses_aff(data, bot, args[0]); //args[0] - numberof register to display
+		ncurses_aff(data, bot, args[0]); //args[0] - number of register to display
 	else
 		ft_printf("Player %d: reg[%d] = %d '%c'\n",
 				  bot->number, args[0], bot->reg[args[0]],
@@ -183,7 +198,7 @@ int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[
 
 	ret = 0;
 	if (command == 4 || command == 5)
-		ret = arithmetic_operations(bot, command, args);
+		ret = arithmetic_operations(bot, command, opcode, args);
 	else if (command == 6 || command == 7 || command == 8)
 		ret = logic_operations(data, bot, command, opcode, args);
 	else if (command == 3 || command == 11)
@@ -252,6 +267,11 @@ int 		execute_command(t_data *data, t_bot *bot)
 		{
 			opcode = data->map[bot->pc];
 			bot->pc++;
+			if (check_opcode(command, opcode))
+			{
+				(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
+				return (1);
+			}
 		}
 		if (get_args(data, bot, command, opcode, args))
 		{

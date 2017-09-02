@@ -73,7 +73,7 @@ void		nc_terminate(t_data *data)
 	t_linked_list	*list;
 
 	i = 0;
-	l_live_bigest = data->bots_last_live[0];
+	l_live_bigest = data->bots_last_live[1];
 	nb = 1;
 	while (++i <= data->bots_count)
 		if (data->bots_last_live[i] >= l_live_bigest && (nb = i))

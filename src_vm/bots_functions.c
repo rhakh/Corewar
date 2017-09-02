@@ -10,6 +10,10 @@ t_bot		*bot_new(int number, t_string *code)
 		return (NULL);
 	}
 	ft_bzero(bot, sizeof(t_bot));
+	bot->color = PL4;
+	(number == 2) ? (bot->color = PL1) : 0;
+	(number == 3) ? (bot->color = PL2) : 0;
+	(number == 4) ? (bot->color = PL3) : 0;
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = 0;
@@ -25,11 +29,13 @@ t_bot		*bot_copy(t_bot *src)
 {
 	t_bot	*dst;
 
-	if ((dst = bot_new(src->number, src->code)) == NULL)
+	if ((dst = bot_new(src->number, NULL)) == NULL)
 		return (NULL);
 	dst->comment = ft_strdup(src->comment);
 	dst->name = ft_strdup(src->name);
 	dst->number = src->number;
+	dst->r1_number = src->r1_number;
+	dst->color = src->color;
 	dst->pc = src->pc;
 	dst->pause_time = src->pause_time;
 	dst->prev_live = src->prev_live;
@@ -37,7 +43,7 @@ t_bot		*bot_copy(t_bot *src)
 	dst->throw_live = src->throw_live;
 	dst->carry = src->carry;
 	dst->is_dead = src->is_dead;
-	dst->last_live = 0;
+	dst->last_live = src->last_live;
 	dst->live_count = 0;
 	dst->size = src->size;
 	dst->start = src->start;
@@ -57,6 +63,7 @@ void		bot_del(t_bot **pbot)
 			free(bot->comment);
 		if (bot->code)
 			string_del(&(bot->code));
+		free(bot);
 		*pbot = NULL;
 	}
 }
@@ -182,7 +189,9 @@ int 		validate_bots(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*curr_bot;
+	int				i;
 
+	i = 1;
 	curr = data->bots;
 	while (curr)
 	{
@@ -193,6 +202,8 @@ int 		validate_bots(t_data *data)
 			return (1);
 		curr_bot->name = ft_strndup(curr_bot->code->str + sizeof(int), PROG_NAME_LENGTH);
 		curr_bot->comment = ft_strndup(curr_bot->code->str + sizeof(int) + PROG_NAME_LENGTH + 4 + sizeof(int), COMMENT_LENGTH);
+		ft_memcpy(data->bots_names[i], curr_bot->name, ft_strlen(curr_bot->name));
+		i++;
 		curr = curr->next;
 	}
 	return (0);

@@ -24,12 +24,17 @@ void	usage(char **argv)
 //50 cycles\n", 2);
 
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
-					  "\t%s [-n <number 1 .. 4> player.cor] [-v] "
-					  "[-dump <number>] player.cor\n"
-					  "\t-h - --help - print this message\n"
-					  "\t-v - for enable visual mode\n"
-					  "\t-n - to set different player number\n"
-					  "\t-dump - print dump of memory at some cycle, to stdout\n", argv[0]);
+		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
+		"[-dump <number>] [-debug <number>] player.cor\n"
+		"\t-h - --help - print this message\n"
+		"\t-v - for enable visual mode\n"
+		"\t-n - to set different player number\n"
+		"\t-dump - print dump of memory at some cycle, to stdout\n"
+		"\t-debug - debug level\n"
+		"\t\t- 0 : show only winner (default)\n"
+		"\t\t- 1 : show lives\n"
+		"\t\t- 2 : show cycles\n"
+		"\t\t- 4 : show operations and their arguments\n", argv[0]);
 	exit(1);
 }
 
@@ -49,14 +54,17 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		}
 		else if (!ft_strcmp("-dump", argv[i]))
 		{
-			data->dump = (size_t)ft_atoi(argv[i + 1]);
+			if (i + 1 < argc)
+				data->dump = ft_atoi(argv[i + 1]);
+			else
+				ft_printf("{red}Dump is empty\n{eoc}");
 			i++;
 		}
 		else if (!ft_strcmp("-v", argv[i]))
 			data->visual = 1;
 		else if (!ft_strcmp("-n", argv[i]))
 		{
-			if (ft_atoi(argv[i + 1]) >= 1 && ft_atoi(argv[i + 1]) <= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[i + 1])] == NULL)
+			if ((i + 2 < argc) && ft_atoi(argv[i + 1]) >= 1 && ft_atoi(argv[i + 1]) <= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[i + 1])] == NULL)
 			{
 				data->players[ft_atoi(argv[i + 1])] = argv[i + 2];
 				i += 2;
@@ -67,6 +75,17 @@ int				parse_flags(t_data *data, int argc, char **argv)
 				return (1);
 			}
 			data->bots_count++;
+		}
+		else if (!ft_strcmp("-debug", argv[i]))
+		{
+			if (i + 1 < argc)
+				data->debug_level = atoi(argv[i + 1]);
+			else
+			{
+				ft_printf("{red}-debug option required number{eoc}\n");
+				return (1);
+			}
+			i++;
 		}
 		else
 		{
