@@ -36,6 +36,7 @@ void		init_ncurses(void)
 	init_pair(13, COLOR_GREEN, COLOR_GREEN);
 	init_pair(14, COLOR_GREEN, COLOR_BLACK);
 	curs_set(FALSE);
+	SDL_Init(SDL_INIT_AUDIO);
 }
 
 void		nc_display_arena(t_data *data)
@@ -86,10 +87,10 @@ void		nc_terminate(t_data *data)
 		!list ? bot = NULL : 0;
 	}
 	display_winner(data, bot);
-	sdl_sound(MUS_WINNER);
 	while (getch() != 'q')
 		;
 	endwin();
+	SDL_Quit();
 }
 
 void		ncurses_print_header(void)

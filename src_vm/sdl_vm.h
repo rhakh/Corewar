@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:05:58 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/31 18:06:59 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/02 13:20:09 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 # include <SDL.h>
 # include "vm.h"
-# define MUS_WINNER "mus.wav"
-# define MUS_BEEP "crow.wav"
+# define MUS_WINNER "sounds/mus.wav"
+# define MUS_BEEP "sounds/crow.wav"
+# define MUS_SPEED "sounds/speed.wav"
 
 typedef struct	s_audio_data
 {
-	Uint8*	position;
-	Uint32	length;
+	Uint8		*position;
+	Uint32		length;
 }				t_audio_data;
 
-void			audio_callback(void* user_data, Uint8* stream,
+void			audio_callback(void *user_data, Uint8 *stream,
 							int stream_length);
-int     		sdl_winner(char *file_name);
-
+int				sdl_sound(char *file_name);
 #endif

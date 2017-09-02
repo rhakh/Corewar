@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "vm.h"
+#include "sdl_vm.h"
 
 void		ncurses_speed(t_data *data, char key)
 {
@@ -23,8 +24,12 @@ void		ncurses_speed(t_data *data, char key)
 		else
 			data->ncurses_timeout *= 2;
 	}
-	data->ncurses_timeout < 0 ? data->ncurses_timeout = 0 : 0;
-	data->ncurses_timeout > 1024 ? data->ncurses_timeout = 1024 : 0;
+	if (data->ncurses_timeout > 0 && data->ncurses_timeout <= 1024)
+		sdl_sound(MUS_SPEED);
+	else if (data->ncurses_timeout < 0)
+		data->ncurses_timeout = 0;
+	else if (data->ncurses_timeout > 1024)
+		data->ncurses_timeout = 1024;
 }
 
 char		ncurses_one_cm_mode(t_data *data, char pause)
