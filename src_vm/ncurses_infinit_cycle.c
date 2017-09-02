@@ -15,6 +15,8 @@
 
 void		ncurses_speed(t_data *data, char key)
 {
+	if (data->ncurses_timeout > 0 && data->ncurses_timeout < 1024)
+		sdl_sound(MUS_SPEED);
 	if (key == 's')
 		data->ncurses_timeout /= 2;
 	else
@@ -24,9 +26,7 @@ void		ncurses_speed(t_data *data, char key)
 		else
 			data->ncurses_timeout *= 2;
 	}
-	if (data->ncurses_timeout > 0 && data->ncurses_timeout <= 1024)
-		sdl_sound(MUS_SPEED);
-	else if (data->ncurses_timeout < 0)
+	if (data->ncurses_timeout < 0)
 		data->ncurses_timeout = 0;
 	else if (data->ncurses_timeout > 1024)
 		data->ncurses_timeout = 1024;

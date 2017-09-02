@@ -52,9 +52,9 @@ void		display_players(t_data *data, WINDOW *stats_win, t_bot *cur_bot,
 	wprintw(stats_win, "%.55s", cur_bot->name);
 	wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
 	getyx(stats_win, y, x);
-	mvwprintw(stats_win, y + 1, 10, "Live in current period: %4d",
+	mvwprintw(stats_win, y + 1, 10, "Live in current period: %7d",
 			data->bots_live[n_bot + 1]);
-	mvwprintw(stats_win, y + 2, 10, "Last live             : %4d",
+	mvwprintw(stats_win, y + 2, 10, "Last live             : %7d",
 			data->bots_last_live[n_bot + 1]);
 	getyx(stats_win, y, x);
 	wmove(stats_win, y + 2, 3);
@@ -99,8 +99,8 @@ void		display_curr_speed_cycles(t_data *data, WINDOW *stats_win)
 	wattron(data->stats_win, COLOR_PAIR(12));
 	wprintw(data->stats_win, "%5sA<->S - decrease<->increase", " ");
 	wattroff(data->stats_win, COLOR_PAIR(12));
-	mvwprintw(stats_win, 7, 3, "%-10s %6d", "Cycle:", data->cycles);
-	mvwprintw(stats_win, 8, 3, "%-10s %6d", "Processes:", data->processes);
+	mvwprintw(stats_win, 7, 3, "%-10s %10d", "Cycle:", data->cycles);
+	mvwprintw(stats_win, 8, 3, "%-10s %10d", "Processes:", data->processes);
 }
 
 int			ncurses_convert_speed(t_data *data)
