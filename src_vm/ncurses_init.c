@@ -76,7 +76,7 @@ void		nc_terminate(t_data *data)
 	l_live_bigest = data->bots_last_live[0];
 	nb = 1;
 	while (++i <= data->bots_count)
-		if (data->bots_last_live[i] > l_live_bigest && (nb = i))
+		if (data->bots_last_live[i] >= l_live_bigest && (nb = i))
 			l_live_bigest = data->bots_last_live[i];
 	list = data->bots;
 	bot = (t_bot *)list->data;
