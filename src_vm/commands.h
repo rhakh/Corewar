@@ -3,7 +3,7 @@
 
 #include "vm.h"
 
-int 		arithmetic_operations(t_bot *bot, char command, int args[3]);
+int 		arithmetic_operations(t_bot *bot, char command, char opcode, int args[3]);
 int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);

@@ -31,7 +31,7 @@ void	usage(char **argv)
 		"\t-n - to set different player number\n"
 		"\t-dump - print dump of memory at some cycle, to stdout\n"
 		"\t-debug - debug level\n"
-		"\t\t - 0 : show only winner\n"
+		"\t\t- 0 : show only winner (default)\n"
 		"\t\t- 1 : show lives\n"
 		"\t\t- 2 : show cycles\n"
 		"\t\t- 4 : show operations and their arguments\n", argv[0]);
@@ -78,7 +78,7 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		}
 		else if (!ft_strcmp("-debug", argv[i]))
 		{
-			if ((i + 1 < argc))
+			if (i + 1 < argc)
 				data->debug_level = atoi(argv[i + 1]);
 			else
 			{

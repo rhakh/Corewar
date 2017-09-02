@@ -150,6 +150,8 @@ void		calculate_winner(t_data *data)
 	int 	i;
 	int 	nb;
 	int 	max;
+	t_linked_list	*curr;
+	t_bot			*bot;
 
 	i = 1;
 	nb = 1;
@@ -160,7 +162,17 @@ void		calculate_winner(t_data *data)
 			max = data->bots_last_live[i];
 			nb = i;
 		}
-
+	curr = data->bots;
+	while (curr)
+	{
+		bot = curr->data;
+		if (bot->number == nb && bot->name)
+		{
+			ft_printf("%sPlayer %d (%s) won\n"EOCP, bot->color, bot->number, bot->name);
+			return ;
+		}
+		curr = curr->next;
+	}
 }
 
 void		load_bots_in_memory(t_data *data)
@@ -170,7 +182,7 @@ void		load_bots_in_memory(t_data *data)
 	int 			period;
 	int 			i;
 	int 			bot_number;
-	int 			r1_number = 1;
+	int 			r1_number = -1;
 
 	i = 0;
 	bot_number = 1;
@@ -180,13 +192,14 @@ void		load_bots_in_memory(t_data *data)
 	{
 		curr_bot = curr->data;
 		curr_bot->reg[1] = r1_number;
+		curr_bot->r1_number = r1_number;
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
 		curr_bot->start = i;
 		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4	 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
-		r1_number++;
+		r1_number--;
 		bot_number++;
 	}
 }
@@ -208,13 +221,19 @@ int         main(int argc, char **argv)
 		return (1);
 	data.processes = (size_t)data.bots_count;
 	if (init_bots(&data, data.players, data.bots_count))
+	{
+		list_del(&(data.bots), bot_del);
 		return (1);
+	}
 	load_bots_in_memory(&data);
 	(data.visual) ? (nc_display_arena(&data)) : 0;
 	first_pause(&data);
 	if (infinit_loop(&data))
+	{
+		list_del(&(data.bots), bot_del);
 		return (1);
+	}
 	(data.visual) ? (nc_terminate(&data)) : (calculate_winner(&data));
-//	list_del(&(data.bots), bot_del);
+	list_del(&(data.bots), bot_del);
 	return (0);
 }
