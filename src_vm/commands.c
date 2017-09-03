@@ -120,7 +120,7 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 //	list_push_back(&(data->bots), child); //add tail to the linked list to increase speed
 	data->bots_tail = list_append_to_tail(&(data->bots_tail), child);
 	(data->visual) ? (ncurses_move_cursor(data, child, child->pc)) : 0;
-	data->processes++;
+	data->processes[bot->number]++;
 	return (0);
 }
 
@@ -298,8 +298,10 @@ int 		check_for_live_bots(t_data *data)
 		if (!bot->throw_live && ((data->cycles - bot->last_live) >= data->cycles_to_die) && !bot->is_dead)
 		{
 			bot->is_dead = 1;
-			(data->processes > 0) ? (data->processes--) : 0;
+			(data->processes[bot->number] > 0) ? (data->processes[bot->number]--) : 0;
 			(data->visual) ? (ncurses_kill_bot_cursor(data, bot->pc)) : 0;
+//			if (data->processes[bot->number] == 0)
+//				(data->visual) ? (sdl_sound(MUS_DEAD)) : 0;
 		}
 		else
 		{

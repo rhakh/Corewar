@@ -68,7 +68,7 @@ void		display_stats(t_data *data, WINDOW *stats_win)
 		mvwprintw(stats_win, 1, 25, "*** RUNNING **");
 	ncurses_speed_display(data);
 	mvwprintw(stats_win, 7, 3, "%-10s %-11d", "Cycle:",  data->cycles);
-	mvwprintw(stats_win, 8, 3, "%-10s %-11d", "Processes:", data->processes);
+	mvwprintw(stats_win, 8, 3, "%-10s %-11d", "Processes:", summ_processes(data));
 	wmove(stats_win, 10, 3);
 	n_bot = -1;
 	while (++n_bot < data->bots_count)
