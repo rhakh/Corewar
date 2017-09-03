@@ -56,7 +56,7 @@ typedef struct		s_data
 	int				next_cycles_check;
 	int 			max_checks;
 	int 			last_max_checks;
-	size_t 			processes;
+	size_t 			processes[MAX_PLAYERS + 1];
 	int 			last_cycles_to_die;
 	int 			cycles;
 	t_linked_list	*bots;

@@ -3,11 +3,10 @@
 int 		arithmetic_operations(t_bot *bot, char command, char opcode, int args[3])
 {
 	if (command == 4)
-		(/*args[2] >= 1 && args[2] <= 16*/1) ? (bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]]) : 0;
+		bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]];
 	else
-		(/*args[2] >= 1 && args[2] <= 16*/1) ? (bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]]) : 0;
-	if (/*args[2] >= 1 && args[2] <= 16*/ 1)
-		(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
+		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
+	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	return (0);
 }
 
@@ -121,7 +120,7 @@ int 		fork_operations(t_data *data, t_bot * bot, char command, char opcode, int 
 //	list_push_back(&(data->bots), child); //add tail to the linked list to increase speed
 	data->bots_tail = list_append_to_tail(&(data->bots_tail), child);
 	(data->visual) ? (ncurses_move_cursor(data, child, child->pc)) : 0;
-	data->processes++;
+	data->processes[bot->number]++;
 	return (0);
 }
 
@@ -148,26 +147,7 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 	{
 		data->bots_live[ABS(args[0])]++;
 		data->bots_last_live[ABS(args[0])] = data->cycles;
-		if (data->visual == 0)
-			(data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", ABS(args[0]), data->bots_names[ABS(args[0])])) : 0;
 	}
-//	while (curr)
-//	{
-//		curr_bot = curr->data;
-//		if (curr_bot->r1_number == args[0] && curr_bot->is_dead == 0)
-//		{
-//			curr_bot->live_count++;
-//			curr_bot->last_live = data->cycles;
-//			data->bots_live[curr_bot->number]++;
-//			data->bots_last_live[curr_bot->number] = data->cycles;
-//			if (data->visual)
-//				ncurses_live(data, curr_bot);
-//			else
-//				(data->debug_level - LIVE_LEVEL > 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", curr_bot->number, data->bots_names[curr_bot->number])) : 0;
-//			return (0);
-//		}
-//		curr = curr->next;
-//	}
 	return (0);
 }
 
@@ -317,8 +297,10 @@ int 		check_for_live_bots(t_data *data)
 		if (!bot->throw_live && ((data->cycles - bot->last_live) >= data->cycles_to_die) && !bot->is_dead)
 		{
 			bot->is_dead = 1;
-			(data->processes > 0) ? (data->processes--) : 0;
+			(data->processes[bot->number] > 0) ? (data->processes[bot->number]--) : 0;
 			(data->visual) ? (ncurses_kill_bot_cursor(data, bot->pc)) : 0;
+//			if (data->processes[bot->number] == 0)
+//				(data->visual) ? (sdl_sound(MUS_DEAD)) : 0;
 		}
 		else
 		{

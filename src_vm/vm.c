@@ -40,6 +40,18 @@ int			print_dump(t_data *data)
 	return (0);
 }
 
+int	summ_processes(t_data *data)
+{
+	int 	i;
+	int 	res;
+
+	i = 0;
+	res = 0;
+	while (++i < MAX_PLAYERS + 1)
+		res += data->processes[i];
+	return (res);
+}
+
 /*
 ** 0 - ok, 1 - error
 */
@@ -49,7 +61,7 @@ int 		 infinit_loop(t_data *data)
 	int 	next_command;
 
 	next_command = data->pause_time - 1;
-	while (data->cycles_to_die > 0 && data->processes > 0)
+	while (data->cycles_to_die > 0 && summ_processes(data) > 0)
 	{
 		if (data->visual)
 		{
@@ -197,6 +209,7 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
 		curr_bot->start = i;
+		data->processes[curr_bot->number]++;
 		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4	 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
@@ -220,7 +233,6 @@ int         main(int argc, char **argv)
 		usage(argv);
 	if (parse_flags(&data, argc, argv))
 		return (1);
-	data.processes = (size_t)data.bots_count;
 	if (init_bots(&data, data.players, data.bots_count))
 	{
 		list_del(&(data.bots), bot_del);
