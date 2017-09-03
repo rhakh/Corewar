@@ -6,7 +6,7 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/09/02 16:15:58 by rhakh            ###   ########.fr        #
+#    Updated: 2017/09/03 13:42:36 by rhakh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC =   vm.c \
         ncurses_init.c \
         ncurses_infinit_cycle.c \
         ncurses_display_winner.c \
-        sdl.c
+        sdl.c \
 
 SRCDIR = ./
 
@@ -38,7 +38,7 @@ OBJDIR = ../obj_vm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-FLAGS = -I ~/Library/Frameworks/Versions/Current/Headers/ #-Wall -Wextra -Werror
+FLAGS = -I SDL2.framework/Versions/A/Headers #-Wall -Wextra -Werror
 
 all: obj $(NAME)
 
@@ -50,7 +50,7 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Versions/Current/Headers/ -F/Library/Frameworks -framework SDL2
+	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I SDL2.framework/Versions/A/Headers -F. -framework SDL2
 
 clean:
 	/bin/rm -rf $(OBJDIR)
