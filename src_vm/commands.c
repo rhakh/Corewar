@@ -300,7 +300,7 @@ int 		check_for_live_bots(t_data *data)
 			(data->processes[bot->number] > 0) ? (data->processes[bot->number]--) : 0;
 			(data->visual) ? (ncurses_kill_bot_cursor(data, bot->pc)) : 0;
 			if (data->processes[bot->number] == 0)
-				(data->visual) ? (sdl_sound(MUS_DEAD)) : 0;
+				(data->visual && !data->mute) ? (sdl_sound(MUS_DEAD)) : 0;
 		}
 		else
 		{

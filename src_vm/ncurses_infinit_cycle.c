@@ -16,7 +16,7 @@
 void		ncurses_speed(t_data *data, char key)
 {
 	if (data->ncurses_timeout > 0 && data->ncurses_timeout < 1024)
-		sdl_sound(MUS_SPEED);
+		(!data->mute) ? (sdl_sound(MUS_SPEED)) : 0;
 	if (key == 's')
 		data->ncurses_timeout /= 2;
 	else
@@ -47,7 +47,7 @@ char		ncurses_cycle_pause(t_data *data, char pause)
 	data->pause = 0;
 	display_stats(data, data->stats_win);
 	refresh();
-	sdl_sound(MUS_BEEP);
+	(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
 	return ('q');
 }
 

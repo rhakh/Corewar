@@ -52,6 +52,7 @@ typedef struct		s_data
 	char			bots_names[MAX_PLAYERS + 1][PROG_NAME_LENGTH + 1];
 	char 			debug_strs[12][62];
 	int 			debug_level;
+	int 			mute;
 	int				cycles_to_die;
 	int				next_cycles_check;
 	int 			max_checks;

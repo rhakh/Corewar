@@ -71,9 +71,12 @@ int 		 infinit_loop(t_data *data)
 				ncurses_speed(data, pause);
 			if (data->one_command_mode)
 				pause = ncurses_one_cm_mode(data, pause);
-			if ((pause == ' ' || pause == 'p') && !sdl_sound(MUS_BEEP))
+			if ((pause == ' ' || pause == 'p') /*&& !sdl_sound(MUS_BEEP)*/)
+			{
+				(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
 				while (pause == ' ' || pause == 'p')
-				pause = ncurses_global_cycle(data, pause);
+					pause = ncurses_global_cycle(data, pause);
+			}
 			(pause == 'n') ? (data->one_command_mode = 1) : 0;
 		}
 

@@ -18,7 +18,7 @@
 # define MUS_WINNER "sounds/mus.wav"
 # define MUS_BEEP "sounds/crow.wav"
 # define MUS_SPEED "sounds/crow.wav"
-# define MUS_DEAD "sound/dead.wav"
+# define MUS_DEAD "sounds/dead.wav"
 
 typedef struct	s_audio_data
 {

@@ -62,6 +62,8 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		}
 		else if (!ft_strcmp("-v", argv[i]))
 			data->visual = 1;
+		else if (!ft_strcmp("-m", argv[i]))
+			data->mute = 1;
 		else if (!ft_strcmp("-n", argv[i]))
 		{
 			if ((i + 2 < argc) && ft_atoi(argv[i + 1]) >= 1 && ft_atoi(argv[i + 1]) <= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[i + 1])] == NULL)
