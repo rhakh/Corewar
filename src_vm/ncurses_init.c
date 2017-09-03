@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ncurses_init.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/28 20:25:47 by dtelega           #+#    #+#             */
+/*   Updated: 2017/08/29 19:17:17 by dtelega          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vm.h"
 
-void init_ncurses(void)
+void		init_ncurses(void)
 {
 	initscr();
 	noecho();
@@ -24,32 +36,29 @@ void init_ncurses(void)
 	init_pair(13, COLOR_GREEN, COLOR_GREEN);
 	init_pair(14, COLOR_GREEN, COLOR_BLACK);
 	curs_set(FALSE);
+	SDL_Init(SDL_INIT_AUDIO);
 }
 
 void		nc_display_arena(t_data *data)
 {
-	WINDOW *memory_win;
-	WINDOW *stats_win;
-	WINDOW *debug_win;
+	WINDOW		*memory_win;
+	WINDOW		*stats_win;
+	WINDOW		*debug_win;
 
 	init_ncurses();
 	attron(A_BOLD);
 	ncurses_print_header();
 	attroff(A_BOLD);
 	refresh();
-
 	data->one_command_mode = 1;
 	data->ncurses_timeout = 64;
 	memory_win = create_memory_win();
 	display_memory(data, memory_win);
-
 	data->pause = 1;
 	stats_win = create_stats_win();
 	display_stats(data, stats_win);
-
 	debug_win = create_debug_win();
 	display_debug(data, debug_win);
-
 	data->memory_win = memory_win;
 	data->stats_win = stats_win;
 	data->debug_win = debug_win;
@@ -57,21 +66,18 @@ void		nc_display_arena(t_data *data)
 
 void		nc_terminate(t_data *data)
 {
-	t_bot	*bot;
-	int 	i;
-	int  	nb;
-	int 	l_live_bigest;
-	t_linked_list   *list;
+	t_bot			*bot;
+	int				i;
+	int				nb;
+	int				l_live_bigest;
+	t_linked_list	*list;
 
 	i = 0;
 	l_live_bigest = data->bots_last_live[1];
 	nb = 1;
 	while (++i <= data->bots_count)
-		if (data->bots_last_live[i] > l_live_bigest)
-		{
+		if (data->bots_last_live[i] >= l_live_bigest && (nb = i))
 			l_live_bigest = data->bots_last_live[i];
-			nb = i;
-		}
 	list = data->bots;
 	bot = (t_bot *)list->data;
 	while (nb != bot->number)
@@ -84,11 +90,12 @@ void		nc_terminate(t_data *data)
 	while (getch() != 'q')
 		;
 	endwin();
+	SDL_Quit();
 }
 
 void		ncurses_print_header(void)
 {
-	printw("%100s" ,"COREWAR");
+	printw("%100s", "COREWAR");
 	printw("%120s", "Type space - ");
 	attron(COLOR_PAIR(9));
 	printw("Pause");

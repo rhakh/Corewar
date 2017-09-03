@@ -238,6 +238,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 	opcode = 0;
 	command = data->map[bot->pc];
 	prev = bot->pc;
+
 	if (command >= 1 && command <= 16)
 	{
 		prev = bot->pc;
@@ -252,14 +253,12 @@ int 		execute_command(t_data *data, t_bot *bot)
 				return (1);
 			}
 		}
-
 		if (get_args(data, bot, command, opcode, args))
 		{
 			bot->pc = (bot->pc + 1) % MEM_SIZE;
 			(data->visual) ? (ncurses_move_cursor(data, bot, prev)) : 0;
 			return (1);
 		}
-
 		bot->pc--;
 		if (op_tab[command - 1].have_opcode)
 			bot->pc--;

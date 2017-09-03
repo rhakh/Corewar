@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ncurses_print.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/28 20:39:49 by dtelega           #+#    #+#             */
+/*   Updated: 2017/08/29 16:04:32 by dtelega          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vm.h"
-//
-// Created by Dmytro Telega on 8/19/17.
-//
 
 void		print_byte(WINDOW *win, char byte, int position, int attr)
 {
@@ -17,27 +26,28 @@ void		ncurses_live(t_data *data, t_bot *bot)
 	int		i;
 
 	i = 0;
-	if (bot->prev_live != -1){
+	if (bot->prev_live != -1)
+	{
 		while (++i < 5)
 			print_byte(data->memory_win, data->map[(bot->prev_live + i +
-													MEM_SIZE) % MEM_SIZE ],
-					   (bot->prev_live + i + + MEM_SIZE) % MEM_SIZE,
-					   COLOR_PAIR(bot->number));
+													MEM_SIZE) % MEM_SIZE],
+					(bot->prev_live + i + MEM_SIZE) % MEM_SIZE,
+					COLOR_PAIR(bot->number));
 	}
 	i = 0;
 	while (++i < 5)
 		print_byte(data->memory_win, data->map[(bot->pc + i + MEM_SIZE) %
-											   MEM_SIZE], (bot->pc + i +
-														   MEM_SIZE) % MEM_SIZE,
-				   COLOR_PAIR(bot->number + 5) | A_BOLD);
+											MEM_SIZE], (bot->pc + i +
+														MEM_SIZE) % MEM_SIZE,
+				COLOR_PAIR(bot->number + 5) | A_BOLD);
 	bot->prev_live = bot->pc;
 }
 
-void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
+void		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 {
-	int 	i;
-	int 	k;
-	int 	line;
+	int		i;
+	int		k;
+	int		line;
 
 	i = 10;
 	while (i >= 0)
@@ -66,9 +76,9 @@ void 		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 
 void		ncurses_kill_bot_cursor(t_data *data, int position)
 {
-	chtype 	ch;
-	int 	x;
-	int 	y;
+	chtype	ch;
+	int		x;
+	int		y;
 
 	move_to_byte(data->memory_win, position);
 	getyx(data->memory_win, y, x);

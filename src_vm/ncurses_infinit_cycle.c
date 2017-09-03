@@ -1,7 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ncurses_infinit_cycle.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/08/28 20:24:57 by dtelega           #+#    #+#             */
+/*   Updated: 2017/08/28 20:24:58 by dtelega          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vm.h"
+#include "sdl_vm.h"
 
 void		ncurses_speed(t_data *data, char key)
 {
+	if (data->ncurses_timeout > 0 && data->ncurses_timeout < 1024)
+		sdl_sound(MUS_SPEED);
 	if (key == 's')
 		data->ncurses_timeout /= 2;
 	else
@@ -11,8 +26,10 @@ void		ncurses_speed(t_data *data, char key)
 		else
 			data->ncurses_timeout *= 2;
 	}
-	data->ncurses_timeout < 0 ? data->ncurses_timeout = 0 : 0;
-	data->ncurses_timeout > 1024 ? data->ncurses_timeout = 1024 : 0;
+	if (data->ncurses_timeout < 0)
+		data->ncurses_timeout = 0;
+	else if (data->ncurses_timeout > 1024)
+		data->ncurses_timeout = 1024;
 }
 
 char		ncurses_one_cm_mode(t_data *data, char pause)
@@ -25,17 +42,18 @@ char		ncurses_one_cm_mode(t_data *data, char pause)
 	return (pause);
 }
 
-char 		ncurses_cycle_pause(t_data *data, char pause)
+char		ncurses_cycle_pause(t_data *data, char pause)
 {
 	data->pause = 0;
 	display_stats(data, data->stats_win);
 	refresh();
+	sdl_sound(MUS_BEEP);
 	return ('q');
 }
 
-char 		ncurses_global_cycle(t_data *data, char pause)
+char		ncurses_global_cycle(t_data *data, char pause)
 {
-	char 	cmd;
+	char	cmd;
 
 	data->pause = 1;
 	display_stats(data, data->stats_win);
