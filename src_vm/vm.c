@@ -47,7 +47,7 @@ int	summ_processes(t_data *data)
 
 	i = 0;
 	res = 0;
-	while (++i < MAX_PLAYERS + 1)
+	while (++i <= data->bots_count)
 		res += data->processes[i];
 	return (res);
 }
