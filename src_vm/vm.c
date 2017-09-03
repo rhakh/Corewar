@@ -47,7 +47,7 @@ int	summ_processes(t_data *data)
 
 	i = 0;
 	res = 0;
-	while (++i < MAX_PLAYERS + 1)
+	while (++i < data->bots_count + 1)
 		res += data->processes[i];
 	return (res);
 }
@@ -71,8 +71,8 @@ int 		 infinit_loop(t_data *data)
 				ncurses_speed(data, pause);
 			if (data->one_command_mode)
 				pause = ncurses_one_cm_mode(data, pause);
-			if ((pause == ' ' || pause == 'p')&& !sdl_sound(MUS_BEEP))
-				while (pause == ' ')
+			if ((pause == ' ' || pause == 'p') && !sdl_sound(MUS_BEEP))
+				while (pause == ' ' || pause == 'p')
 				pause = ncurses_global_cycle(data, pause);
 			(pause == 'n') ? (data->one_command_mode = 1) : 0;
 		}
