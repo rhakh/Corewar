@@ -10,10 +10,6 @@ t_bot		*bot_new(int number, t_string *code)
 		return (NULL);
 	}
 	ft_bzero(bot, sizeof(t_bot));
-	bot->color = PL4;
-	(number == 2) ? (bot->color = PL1) : 0;
-	(number == 3) ? (bot->color = PL2) : 0;
-	(number == 4) ? (bot->color = PL3) : 0;
 	bot->code = code;
 	bot->number = number;
 	bot->pause_time = 0;
@@ -35,7 +31,6 @@ t_bot		*bot_copy(t_bot *src)
 	dst->name = ft_strdup(src->name);
 	dst->number = src->number;
 	dst->r1_number = src->r1_number;
-	dst->color = src->color;
 	dst->pc = src->pc;
 	dst->pause_time = src->pause_time;
 	dst->prev_live = src->prev_live;

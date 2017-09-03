@@ -23,5 +23,5 @@ void		display_winner(t_data *data, t_bot *bot)
 	mvwprintw(data->stats_win, 47, 25, "Type ctrl+C to exit");
 	wrefresh(data->stats_win);
 	refresh();
-	sdl_sound(MUS_WINNER);
+	(!data->mute) ? (sdl_sound(MUS_WINNER)) : 0;
 }

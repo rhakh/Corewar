@@ -3,7 +3,12 @@
 
 #include "vm.h"
 
-int 		arithmetic_operations(t_bot *bot, char command, char opcode, int args[3]);
+# define ZERO_LEVEL 0
+# define LIVE_LEVEL 1
+# define CYCLE_LEVEL 2
+# define OP_LEVEL 4
+
+int 		arithmetic_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);
 int 		ld_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3]);

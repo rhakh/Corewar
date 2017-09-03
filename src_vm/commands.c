@@ -1,12 +1,26 @@
 #include "commands.h"
 
-int 		arithmetic_operations(t_bot *bot, char command, char opcode, int args[3])
+int 		arithmetic_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
+	int 	i;
+
+	i = -1;
 	if (command == 4)
 		bot->reg[args[2]] = bot->reg[args[0]] + bot->reg[args[1]];
 	else
 		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
 	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
+	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
+	{
+		ft_printf("command: %s\n", op_tab[command - 1].name);
+		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
+		ft_printf("\tcode: ");
+		while (++i < command_size(command, opcode))
+			ft_printf("%02hhx ", data->map[bot->pc + i]);
+		ft_printf("\n");
+		ft_printf("r%d = r%d %s r%d\n", args[2], args[0], (command == 4) ? "+" : "-", args[1]);
+		ft_printf("%d = %d %s %d\n", bot->reg[args[2]], bot->reg[args[0]], (command == 4) ? "+" : "-", bot->reg[args[1]]);
+	}
 	return (0);
 }
 
@@ -33,11 +47,25 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 	(command == 8) ? (bot->reg[args[2]] = num[0] ^ num[1]) : 0;
 	if (args[2] >= 1 && args[2] <= 16)
 		(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
+	i = 0;
+	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
+	{
+		ft_printf("command: %s\n", op_tab[command - 1].name);
+		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
+		ft_printf("\tcode: ");
+		while (++i < command_size(command, opcode))
+			ft_printf("%02hhx ", data->map[bot->pc + i]);
+		ft_printf("\n");
+		ft_printf("r%d = %d %s %d; r%d = %d\n", args[2], num[0], op_tab[command - 1].name, num[1], args[2], bot->reg[args[2]]);
+	}
 	return (0);
 }
 
 int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int args[3])
 {
+	int 	i;
+
+	i = 0;
 	if (command == 3)
 		put_number_to_bcode(data, bot->reg[args[0]], ((bot->pc + (args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
 	else
@@ -61,6 +89,17 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		(data->visual) ? (ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
 	else
 		(data->visual) ? (ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
+
+	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
+	{
+		ft_printf("command: %s\n", op_tab[command - 1].name);
+		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
+		ft_printf("\tcode: ");
+		while (++i < command_size(command, opcode))
+			ft_printf("%02hhx ", data->map[bot->pc + i]);
+		ft_printf("\n");
+//		ft_printf("r%d = %d; offset = %04x\n", )
+	}
 
 	return (0);
 }
@@ -140,10 +179,10 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		if (data->visual)
 			ncurses_live(data, bot);
 		else
-			(data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("%sA process shows that player %d (%s) is alive\n"EOCP, bot->color, bot->number, data->bots_names[bot->number])) : 0;
+			(data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("A process shows that player %d (%s) is alive\n", bot->number, data->bots_names[bot->number])) : 0;
 		return (0);
 	}
-	else if (ABS(args[0]) >= 1 && ABS(args[0]) <= MAX_PLAYERS + 1)
+	else if (ABS(args[0]) >= 1 && ABS(args[0]) <= MAX_PLAYERS + 1 && args[0] < 0)
 	{
 		data->bots_live[ABS(args[0])]++;
 		data->bots_last_live[ABS(args[0])] = data->cycles;
@@ -178,7 +217,7 @@ int 		run_command(t_data *data, t_bot *bot, char command, char opcode, int args[
 
 	ret = 0;
 	if (command == 4 || command == 5)
-		ret = arithmetic_operations(bot, command, opcode, args);
+		ret = arithmetic_operations(data, bot, command, opcode, args);
 	else if (command == 6 || command == 7 || command == 8)
 		ret = logic_operations(data, bot, command, opcode, args);
 	else if (command == 3 || command == 11)
@@ -226,6 +265,36 @@ int 		increase_pc(t_bot *bot, char command, char opcode)
 	(offset == 0) ? (offset = 1) : 0;
 	bot->pc = (bot->pc + offset) % MEM_SIZE;
 	return (0);
+}
+
+int 		command_size(char command, char opcode)
+{
+	int 	offset;
+	int 	i;
+
+	i = 0;
+	offset = 0;
+	offset++;
+	if (op_tab[command - 1].have_opcode)
+		offset++;
+	while (i < op_tab[command - 1].n_arg)
+	{
+		if (get_arg_type(command, opcode, i + 1) == REG_CODE)
+			offset++;
+		else if (get_arg_type(command, opcode, i + 1) == DIR_CODE)
+		{
+			if (op_tab[command - 1].dir_as_label)
+				offset += 2;
+			else
+				offset += 4;
+		}
+		else if (get_arg_type(command, opcode, i + 1) == IND_CODE)
+			offset += 2;
+		else
+			offset++;
+		i++;
+	}
+	return (offset);
 }
 
 int 		execute_command(t_data *data, t_bot *bot)
@@ -301,6 +370,7 @@ int 		check_for_live_bots(t_data *data)
 			(data->visual) ? (ncurses_kill_bot_cursor(data, bot->pc)) : 0;
 			if (data->processes[bot->number] == 0)
 				(data->visual && !data->mute) ? (sdl_sound(MUS_DEAD)) : 0;
+			(!data->visual && data->debug_level - LIVE_LEVEL >= 0) ? (ft_printf("Player %d (%s) is dead\n", bot->number, data->bots_names[bot->number])) : 0;
 		}
 		else
 		{

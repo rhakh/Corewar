@@ -20,5 +20,6 @@ void			print_bcode(const char *code, int len);
 int				get_number_from_bcode(const unsigned char *code, int num_size);
 int				put_number_to_bcode(t_data *data, int num, int position);
 int				summ_processes(t_data *data);
+int 			command_size(char command, char opcode);
 
 #endif
