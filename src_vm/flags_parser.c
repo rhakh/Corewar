@@ -29,6 +29,7 @@ void	usage(char **argv)
 		"\t-h - --help - print this message\n"
 		"\t-v - for enable visual mode\n"
 		"\t-n - to set different player number\n"
+		"\t-m - mute\n"
 		"\t-dump - print dump of memory at some cycle, to stdout\n"
 		"\t-debug - debug level\n"
 		"\t\t- 0 : show only winner (default)\n"

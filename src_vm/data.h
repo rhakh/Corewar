@@ -5,23 +5,10 @@
 # include <ncurses.h>
 # include "../new_libft/srcs/libft.h"
 
-# define PL1		"\x1b[34m"
-# define PL2		"\x1b[35m"
-# define PL3		"\x1b[36m"
-# define PL4		"\x1b[31m"
-# define EOCP		"\x1b[0m"
-
-# define ZERO_LEVEL 0
-# define LIVE_LEVEL 1
-# define CYCLE_LEVEL 2
-# define OP_LEVEL 4
-
-
 typedef struct		s_bot
 {
 	char			*name;
 	char			*comment;
-	char 			*color;
 	int				size;
 	int 			r1_number;
 	int				number;

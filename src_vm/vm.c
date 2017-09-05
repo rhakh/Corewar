@@ -82,6 +82,8 @@ int 		 infinit_loop(t_data *data)
 
 		if (!data->pause || data->one_command_mode)
 		{
+			(!data->visual && data->debug_level - CYCLE_LEVEL >= 0) ? (ft_printf("Cycle = %d\n", data->cycles)) : 0;
+
 			if (data->dump == data->cycles && !data->visual)
 				print_dump(data);
 
@@ -99,6 +101,7 @@ int 		 infinit_loop(t_data *data)
 					}
 					data->last_cycles_to_die = data->cycles_to_die;
 				}
+				(!data->visual && data->debug_level - CYCLE_LEVEL >= 0) ? (ft_printf("Cycles to die = %d\n", data->cycles_to_die)) : 0;
 			}
 
 			if (next_command <= 0)
@@ -184,7 +187,7 @@ void		calculate_winner(t_data *data)
 		bot = curr->data;
 		if (bot->number == nb && bot->name)
 		{
-			ft_printf("%sPlayer %d (%s) won\n"EOCP, bot->color, bot->number, bot->name);
+			ft_printf("Player %d (%s) won\n", bot->number, bot->name);
 			return ;
 		}
 		curr = curr->next;
