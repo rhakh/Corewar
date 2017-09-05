@@ -48,9 +48,18 @@ void		display_players(t_data *data, WINDOW *stats_win, t_bot *cur_bot,
 	int		y;
 
 	wprintw(stats_win, "Player-%d: ", n_bot + 1);
-	wattron(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
-	wprintw(stats_win, "%.55s", cur_bot->name);
-	wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
+	if (!cur_bot->is_dead)
+	{
+		wattron(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
+		wprintw(stats_win, "%.55s", cur_bot->name);
+		wattroff(stats_win, COLOR_PAIR(cur_bot->number + 5) | A_BOLD);
+	}
+	else if (cur_bot->is_dead)
+	{
+		wattron(stats_win, COLOR_PAIR(cur_bot->number) | A_REVERSE);
+		wprintw(stats_win, "%.55s", cur_bot->name);
+		wattroff(stats_win, COLOR_PAIR(cur_bot->number) | A_REVERSE);
+	}
 	getyx(stats_win, y, x);
 	mvwprintw(stats_win, y + 1, 10, "Live in current period: %7d",
 			data->bots_live[n_bot + 1]);
