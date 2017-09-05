@@ -40,7 +40,7 @@ int			print_dump(t_data *data)
 	return (0);
 }
 
-int	summ_processes(t_data *data)
+int	sum_processes(t_data *data)
 {
 	int 	i;
 	int 	res;
@@ -61,7 +61,7 @@ int 		 infinit_loop(t_data *data)
 	int 	next_command;
 
 	next_command = data->pause_time - 1;
-	while (data->cycles_to_die > 0 && summ_processes(data) > 0)
+	while (data->cycles_to_die > 0 && sum_processes(data) > 0)
 	{
 		if (data->visual)
 		{

@@ -109,7 +109,7 @@ void		display_curr_speed_cycles(t_data *data, WINDOW *stats_win)
 	wprintw(data->stats_win, "%5sA<->S - decrease<->increase", " ");
 	wattroff(data->stats_win, COLOR_PAIR(12));
 	mvwprintw(stats_win, 7, 3, "%-10s %10d", "Cycle:", data->cycles);
-	mvwprintw(stats_win, 8, 3, "%-10s %10d", "Processes:", summ_processes(data));
+	mvwprintw(stats_win, 8, 3, "%-10s %10d", "Processes:", sum_processes(data));
 }
 
 int			ncurses_convert_speed(t_data *data)

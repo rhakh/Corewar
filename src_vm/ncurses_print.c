@@ -52,12 +52,9 @@ void		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 	i = 10;
 	while (i >= 0)
 	{
-		k = 0;
-		while (k < 61)
-		{
+		k = -1;
+		while (++k < 61)
 			data->debug_strs[i + 1][k] = data->debug_strs[i][k];
-			k++;
-		}
 		i--;
 	}
 	if ((char)bot->reg[nb_reg] >= 32 && (char)bot->reg[nb_reg] <= 126)
