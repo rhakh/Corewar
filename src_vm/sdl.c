@@ -48,7 +48,7 @@ int		sdl_sound(char *mus_file)
 		return (1);
 	SDL_PauseAudioDevice(audio_device, 0);
 	while (audio.length > 0)
-		SDL_Delay(100);
+		SDL_Delay(60);
 	SDL_CloseAudioDevice(audio_device);
 	SDL_FreeWAV(wav_start);
 	return (0);
