@@ -13,6 +13,11 @@
 #ifndef NCURSES_VM_H
 # define NCURSES_VM_H
 
+# define NC_PAUSE_1 ' '
+# define NC_PAUSE_2 'p'
+# define NC_ONE_COMM_MOD 'n'
+# define NC_SPEED_UP 's'
+# define NC_SPEED_DOWN 'a'
 # include "vm.h"
 # include <ncurses.h>
 

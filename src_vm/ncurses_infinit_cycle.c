@@ -17,7 +17,7 @@ void		ncurses_speed(t_data *data, char key)
 {
 	if (data->ncurses_timeout > 0 && data->ncurses_timeout < 1024)
 		(!data->mute) ? (sdl_sound(MUS_SPEED)) : 0;
-	if (key == 's')
+	if (key == NC_SPEED_UP)
 		data->ncurses_timeout /= 2;
 	else
 	{
@@ -35,7 +35,7 @@ void		ncurses_speed(t_data *data, char key)
 char		ncurses_one_cm_mode(t_data *data, char pause)
 {
 	data->one_command_mode = 0;
-	pause = ' ';
+	pause = NC_PAUSE_1;
 	data->pause = 1;
 	display_stats(data, data->stats_win);
 	refresh();
@@ -59,11 +59,11 @@ char		ncurses_global_cycle(t_data *data, char pause)
 	display_stats(data, data->stats_win);
 	refresh();
 	cmd = getch();
-	if (cmd == 'a' || cmd == 's')
+	if (cmd == NC_SPEED_UP || cmd == NC_SPEED_DOWN)
 		ncurses_speed(data, cmd);
-	if (cmd == ' ')
+	if (cmd == NC_PAUSE_1 || cmd == NC_PAUSE_2)
 		pause = ncurses_cycle_pause(data, pause);
-	else if (cmd == 'n' && (data->one_command_mode = 1))
-		return ('n');
+	else if (cmd == NC_ONE_COMM_MOD && (data->one_command_mode = 1))
+		return (NC_ONE_COMM_MOD);
 	return (pause);
 }

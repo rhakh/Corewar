@@ -67,17 +67,17 @@ int 		 infinit_loop(t_data *data)
 		{
 			timeout(data->ncurses_timeout);
 			pause = getch();
-			if (pause == 'a' || pause == 's')
+			if (pause == NC_SPEED_DOWN || pause == NC_SPEED_UP)
 				ncurses_speed(data, pause);
 			if (data->one_command_mode)
 				pause = ncurses_one_cm_mode(data, pause);
-			if ((pause == ' ' || pause == 'p') /*&& !sdl_sound(MUS_BEEP)*/)
+			if ((pause == NC_PAUSE_1 || pause == NC_PAUSE_2))
 			{
 				(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
-				while (pause == ' ' || pause == 'p')
+				while (pause == NC_PAUSE_1 || pause == NC_PAUSE_2)
 					pause = ncurses_global_cycle(data, pause);
 			}
-			(pause == 'n') ? (data->one_command_mode = 1) : 0;
+			(pause == NC_ONE_COMM_MOD) ? (data->one_command_mode = 1) : 0;
 		}
 
 		if (!data->pause || data->one_command_mode)
