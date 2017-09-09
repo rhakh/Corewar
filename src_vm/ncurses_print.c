@@ -21,6 +21,10 @@ void		print_byte(WINDOW *win, char byte, int position, int attr)
 	wprintw(win, " ");
 }
 
+/*
+** print 4 inverse colored byte
+*/
+
 void		ncurses_live(t_data *data, t_bot *bot)
 {
 	int		i;
@@ -42,6 +46,10 @@ void		ncurses_live(t_data *data, t_bot *bot)
 				COLOR_PAIR(bot->number + 5) | A_BOLD);
 	bot->prev_live = bot->pc;
 }
+
+/*
+** for debug window
+*/
 
 void		ncurses_aff(t_data *data, t_bot *bot, int nb_reg)
 {

@@ -21,14 +21,28 @@
 int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
 {
 	int		i;
+	int		x;
+	int 	y;
 
 	i = -1;
 	if (bot->prev_st != -1)
 	{
 		while (++i < len)
+		{
+			move_to_byte(data->memory_win, (bot->prev_st + i + MEM_SIZE)
+										   % MEM_SIZE);
+			if ((mvwinch(data->memory_win, y, x) & A_BOLD) &&
+					(mvwinch(data->memory_win, y, x) & COLOR_PAIR(bot->number)))
+			{
+				bot->prev_attr = COLOR_PAIR(bot->number);
+				
+			}
 			print_byte(data->memory_win, data->map[(bot->prev_st + i + MEM_SIZE)
-												% MEM_SIZE], (bot->prev_st +
-					i + MEM_SIZE) % MEM_SIZE, COLOR_PAIR(bot->number));
+												   % MEM_SIZE], (bot->prev_st +
+																 i + MEM_SIZE) %
+																MEM_SIZE,
+					   COLOR_PAIR(bot->number));
+		}
 	}
 	i = -1;
 	while (++i < len)
