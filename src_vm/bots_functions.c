@@ -27,13 +27,13 @@ t_bot		*bot_copy(t_bot *src)
 
 	if ((dst = bot_new(src->number, NULL)) == NULL)
 		return (NULL);
-	dst->comment = ft_strdup(src->comment);
-	dst->name = ft_strdup(src->name);
 	dst->number = src->number;
 	dst->r1_number = src->r1_number;
 	dst->pc = src->pc;
 	dst->pause_time = src->pause_time;
 	dst->prev_live = src->prev_live;
+	dst->prev_st = src->prev_st;
+	dst->prev_attr = src->prev_attr;
 	ft_memcpy(dst->reg, src->reg, (REG_NUMBER + 1) * sizeof(int));
 	dst->throw_live = src->throw_live;
 	dst->carry = src->carry;

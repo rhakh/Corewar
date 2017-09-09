@@ -10,17 +10,6 @@ int 		arithmetic_operations(t_data *data, t_bot *bot, char command, char opcode,
 	else
 		bot->reg[args[2]] = bot->reg[args[0]] - bot->reg[args[1]];
 	(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
-	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
-	{
-		ft_printf("command: %s\n", op_tab[command - 1].name);
-		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
-		ft_printf("\tcode: ");
-		while (++i < command_size(command, opcode))
-			ft_printf("%02hhx ", data->map[bot->pc + i]);
-		ft_printf("\n");
-		ft_printf("r%d = r%d %s r%d\n", args[2], args[0], (command == 4) ? "+" : "-", args[1]);
-		ft_printf("%d = %d %s %d\n", bot->reg[args[2]], bot->reg[args[0]], (command == 4) ? "+" : "-", bot->reg[args[1]]);
-	}
 	return (0);
 }
 
@@ -48,16 +37,6 @@ int 		logic_operations(t_data *data, t_bot *bot, char command, char opcode, int 
 	if (args[2] >= 1 && args[2] <= 16)
 		(bot->reg[args[2]] == 0) ? (bot->carry = 1) : (bot->carry = 0);
 	i = 0;
-	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
-	{
-		ft_printf("command: %s\n", op_tab[command - 1].name);
-		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
-		ft_printf("\tcode: ");
-		while (++i < command_size(command, opcode))
-			ft_printf("%02hhx ", data->map[bot->pc + i]);
-		ft_printf("\n");
-		ft_printf("r%d = %d %s %d; r%d = %d\n", args[2], num[0], op_tab[command - 1].name, num[1], args[2], bot->reg[args[2]]);
-	}
 	return (0);
 }
 
@@ -89,18 +68,6 @@ int 		st_operations(t_data *data, t_bot *bot, char command, char opcode, int arg
 		(data->visual) ? (ncurses_change_memory(((bot->pc + (args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
 	else
 		(data->visual) ? (ncurses_change_memory(((bot->pc + ((args[1] + args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE, DIR_SIZE, bot, data)) : 0;
-
-	if (!data->visual && data->debug_level - OP_LEVEL >= 0)
-	{
-		ft_printf("command: %s\n", op_tab[command - 1].name);
-		ft_printf("\tpc = %d, map[pc] = %02hhx\n", bot->pc, data->map[bot->pc]);
-		ft_printf("\tcode: ");
-		while (++i < command_size(command, opcode))
-			ft_printf("%02hhx ", data->map[bot->pc + i]);
-		ft_printf("\n");
-//		ft_printf("r%d = %d; offset = %04x\n", )
-	}
-
 	return (0);
 }
 
@@ -187,6 +154,8 @@ int 		live_operation(t_data *data, t_bot *bot, char command, char opcode, int ar
 		data->bots_live[ABS(args[0])]++;
 		data->bots_last_live[ABS(args[0])] = data->cycles;
 	}
+	else
+		data->bots_live[0]++;
 	return (0);
 }
 
@@ -357,7 +326,7 @@ int 		check_for_live_bots(t_data *data)
 	t_bot			*bot;
 	int 			sum_live;
 
-	sum_live = 0;
+	sum_live = data->bots_live[0];
 	curr = data->bots;
 	while (curr)
 	{
@@ -382,6 +351,7 @@ int 		check_for_live_bots(t_data *data)
 	}
 	if (sum_live >= NBR_LIVE)
 		(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
+	data->bots_live[0] = 0;
 	return (0);
 }
 
