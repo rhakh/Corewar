@@ -16,10 +16,8 @@ t_bot			*bot_copy(t_bot *src);
 void 			bot_del(t_bot **bot);
 int 			read_bot(t_string *code, char *file_name);
 int 			validate_bots(t_data *data);
-void			print_bcode(const char *code, int len);
 int				get_number_from_bcode(const unsigned char *code, int num_size);
 int				put_number_to_bcode(t_data *data, int num, int position);
 int				sum_processes(t_data *data);
-int 			command_size(char command, char opcode);
 
 #endif

@@ -1,25 +1,5 @@
 #include "vm.h"
 
-void		print_memory(t_data *data)
-{
-	int 	i;
-
-	i = 0;
-	ft_printf("{yellow}Memory dump:\n{eoc}");
-	while (i < MEM_SIZE)
-	{
-		if (i % 64 == 0)
-			ft_printf("\n");
-		if (data->map[i] == 0)
-			ft_printf("%0.2hhx ", data->map[i]);
-		else
-			ft_printf("{green}%0.2hhx {eoc}", data->map[i]);
-		i++;
-	}
-	ft_printf("\n");
-}
-
-
 int			print_dump(t_data *data)
 {
 	int 	i;
@@ -82,8 +62,6 @@ int 		 infinit_loop(t_data *data)
 
 		if (!data->pause || data->one_command_mode)
 		{
-			(!data->visual && data->debug_level - CYCLE_LEVEL >= 0) ? (ft_printf("Cycle = %d\n", data->cycles)) : 0;
-
 			if (data->dump == data->cycles && !data->visual)
 				print_dump(data);
 
@@ -101,7 +79,6 @@ int 		 infinit_loop(t_data *data)
 					}
 					data->last_cycles_to_die = data->cycles_to_die;
 				}
-				(!data->visual && data->debug_level - CYCLE_LEVEL >= 0) ? (ft_printf("Cycles to die = %d\n", data->cycles_to_die)) : 0;
 			}
 
 			if (next_command <= 0)
@@ -216,7 +193,7 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->pc = i;
 		curr_bot->start = i;
 		data->processes[curr_bot->number]++;
-		ft_memcpy(data->map + i, curr_bot->code->str + 4 + PROG_NAME_LENGTH + 4	 + 4 + COMMENT_LENGTH + 4, (size_t )curr_bot->size);
+		ft_memcpy(data->map + i, curr_bot->code->str + 16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
 		r1_number--;
