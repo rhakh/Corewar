@@ -63,23 +63,6 @@ void		bot_del(t_bot **pbot)
 	}
 }
 
-void		print_bcode(const char *code, int len)
-{
-	int 	i;
-
-	i = 0;
-	if (code)
-	{
-		ft_printf("{yellow}BCode = {\n{eoc}");
-		while (i < len)
-		{
-			ft_printf("%0.2hhx ", code[i]);
-			i++;
-		}
-		ft_printf("\n{yellow}}{eoc}");
-	}
-}
-
 int 		read_bot(t_string *code, char *file_name)
 {
 	int		fd;

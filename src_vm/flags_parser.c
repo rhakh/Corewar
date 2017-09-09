@@ -33,9 +33,7 @@ void	usage(char **argv)
 		"\t-dump - print dump of memory at some cycle, to stdout\n"
 		"\t-debug - debug level\n"
 		"\t\t- 0 : show only winner (default)\n"
-		"\t\t- 1 : show lives\n"
-		"\t\t- 2 : show cycles\n"
-		"\t\t- 4 : show operations and their arguments\n", argv[0]);
+		"\t\t- 1 : show lives\n", argv[0]);
 	exit(1);
 }
 
