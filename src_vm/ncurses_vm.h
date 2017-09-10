@@ -31,8 +31,7 @@ void			display_debug(t_data *data, WINDOW *debug_win);
 int				ncurses_move_cursor(t_data *data, t_bot *bot, int prev);
 void			nc_display_arena(t_data *data);
 void			nc_terminate(t_data *data);
-int				ncurses_change_memory(int start, int len, t_bot *bot,
-									t_data *data);
+int				ncurses_change_memory(int start, t_bot *bot, t_data *data);
 void			print_byte(WINDOW *win, char byte, int position, int attr);
 WINDOW			*create_memory_win(void);
 WINDOW			*create_stats_win(void);
@@ -60,5 +59,6 @@ void			ncurses_new_line(WINDOW *win);
 void			display_players(t_data *data, WINDOW *stats_win, t_bot *cur_bot,
 								int n_bot);
 void			display_defines(t_data *data, WINDOW *stats_win);
+void			ncurses_visual(t_data *data);
 
 #endif

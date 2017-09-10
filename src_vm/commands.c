@@ -46,7 +46,7 @@ int 		st_command(t_data *data, t_bot *bot)
 			(bot->args[1] % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
 	(data->visual) ? (ncurses_change_memory(((bot->pc +
 			(bot->args[1] % IDX_MOD)) + MEM_SIZE) % MEM_SIZE,
-											DIR_SIZE, bot, data)) : 0;
+											bot, data)) : 0;
 	return (0);
 }
 
@@ -69,7 +69,7 @@ int 		sti_command(t_data *data, t_bot *bot)
 			((bot->args[1] + bot->args[2]) % IDX_MOD) + MEM_SIZE) % MEM_SIZE));
 	(data->visual) ? (ncurses_change_memory(((bot->pc +
 			((bot->args[1] + bot->args[2]) % IDX_MOD)) + MEM_SIZE) % MEM_SIZE,
-											DIR_SIZE, bot, data)) : 0;
+											bot, data)) : 0;
 	return (0);
 }
 

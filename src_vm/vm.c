@@ -32,6 +32,36 @@ int	sum_processes(t_data *data)
 	return (res);
 }
 
+int		process_bots_commands(t_data *data, int next_command)
+{
+	if (data->dump == data->cycles && !data->visual)
+		print_dump(data);
+	if (data->cycles == data->next_cycles_check)
+	{
+		check_for_live_bots(data);
+		data->next_cycles_check = data->cycles + data->cycles_to_die;
+		data->max_checks++;
+		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+		{
+			if (data->last_cycles_to_die == data->cycles_to_die)
+			{
+				(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
+				data->next_cycles_check = data->cycles + data->cycles_to_die;
+			}
+			data->last_cycles_to_die = data->cycles_to_die;
+		}
+	}
+	if (next_command <= 0)
+	{
+		if (execute_commands(data))
+			return (1);
+		next_command = data->pause_time;
+	}
+	next_command--;
+	data->cycles++;
+	return (next_command);
+}
+
 /*
 ** 0 - ok, 1 - error
 */
@@ -44,51 +74,9 @@ int 		 infinit_loop(t_data *data)
 	while (data->cycles_to_die > 0 && sum_processes(data) > 0)
 	{
 		if (data->visual)
-		{
-			timeout(data->ncurses_timeout);
-			pause = getch();
-			if (pause == NC_SPEED_DOWN || pause == NC_SPEED_UP)
-				ncurses_speed(data, pause);
-			if (data->one_command_mode)
-				pause = ncurses_one_cm_mode(data, pause);
-			if ((pause == NC_PAUSE_1 || pause == NC_PAUSE_2))
-			{
-				(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
-				while (pause == NC_PAUSE_1 || pause == NC_PAUSE_2)
-					pause = ncurses_global_cycle(data, pause);
-			}
-			(pause == NC_ONE_COMM_MOD) ? (data->one_command_mode = 1) : 0;
-		}
-
+			ncurses_visual(data);
 		if (!data->pause || data->one_command_mode)
-		{
-			if (data->dump == data->cycles && !data->visual)
-				print_dump(data);
-			if (data->cycles == data->next_cycles_check)
-			{
-				check_for_live_bots(data);
-				data->next_cycles_check = data->cycles + data->cycles_to_die;
-				data->max_checks++;
-				if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
-				{
-					if (data->last_cycles_to_die == data->cycles_to_die)
-					{
-						(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
-						data->next_cycles_check = data->cycles + data->cycles_to_die;
-					}
-					data->last_cycles_to_die = data->cycles_to_die;
-				}
-			}
-			if (next_command <= 0)
-			{
-				if (execute_commands(data))
-					return (1);
-				next_command = data->pause_time;
-			}
-			next_command--;
-			data->cycles++;
-		}
-
+			next_command = process_bots_commands(data, next_command);
 		if (data->visual)
 		{
 			display_stats(data, data->stats_win);
