@@ -14,15 +14,6 @@
 
 void	usage(char **argv)
 {
-//	ft_putstr_fd("\t** --------------------USAGE--------------------\n\
-//\t** ./corewar [-h || --help] to view this massege\n \
-//\t** Example: ./corewar -v -n 3 player.cor\n \
-//\t** GUI: ./corewar -v [player1.cor player2.cor...]\n \
-//\t** Default player numbers: 1, 2, 3, 4 [This numbers only for -n\n \
-//\t** Change player number: -n -[number] player.cor\n \
-//\t** Dump: ./corewar -dump 50 [Players] -> it will print the memory after \
-//50 cycles\n", 2);
-
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
 		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
 		"[-dump <number>] [-debug <number>] player.cor\n"
@@ -37,6 +28,7 @@ void	usage(char **argv)
 	exit(1);
 }
 
+//todo apalanic norm this func
 int				parse_flags(t_data *data, int argc, char **argv)
 {
 	int 	i;

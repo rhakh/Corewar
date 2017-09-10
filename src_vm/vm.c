@@ -64,7 +64,6 @@ int 		 infinit_loop(t_data *data)
 		{
 			if (data->dump == data->cycles && !data->visual)
 				print_dump(data);
-
 			if (data->cycles == data->next_cycles_check)
 			{
 				check_for_live_bots(data);
@@ -80,14 +79,12 @@ int 		 infinit_loop(t_data *data)
 					data->last_cycles_to_die = data->cycles_to_die;
 				}
 			}
-
 			if (next_command <= 0)
 			{
 				if (execute_commands(data))
 					return (1);
 				next_command = data->pause_time;
 			}
-
 			next_command--;
 			data->cycles++;
 		}
