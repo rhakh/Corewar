@@ -2,7 +2,7 @@
 
 int			print_dump(t_data *data)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	ft_printf("{yellow}Memory dump:\n{eoc}");
@@ -20,10 +20,10 @@ int			print_dump(t_data *data)
 	return (0);
 }
 
-int	sum_processes(t_data *data)
+int			sum_processes(t_data *data)
 {
-	int 	i;
-	int 	res;
+	int		i;
+	int		res;
 
 	i = 0;
 	res = 0;
@@ -32,7 +32,7 @@ int	sum_processes(t_data *data)
 	return (res);
 }
 
-int		process_bots_commands(t_data *data, int next_command)
+int			process_bots_commands(t_data *data, int next_command)
 {
 	if (data->dump == data->cycles && !data->visual)
 		print_dump(data);
@@ -45,7 +45,9 @@ int		process_bots_commands(t_data *data, int next_command)
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
 			{
-				(data->cycles_to_die - CYCLE_DELTA > 0) ? (data->cycles_to_die -= CYCLE_DELTA) : (data->cycles_to_die = 0);
+				(data->cycles_to_die - CYCLE_DELTA > 0) ?
+					(data->cycles_to_die -= CYCLE_DELTA) :
+					(data->cycles_to_die = 0);
 				data->next_cycles_check = data->cycles + data->cycles_to_die;
 			}
 			data->last_cycles_to_die = data->cycles_to_die;
@@ -57,18 +59,18 @@ int		process_bots_commands(t_data *data, int next_command)
 			return (1);
 		next_command = data->pause_time;
 	}
-	next_command--;
 	data->cycles++;
-	return (next_command);
+	return (next_command - 1);
 }
 
 /*
 ** 0 - ok, 1 - error
 */
-int 		 infinit_loop(t_data *data)
+
+int		 	infinit_loop(t_data *data)
 {
 	int		pause;
-	int 	next_command;
+	int		next_command;
 
 	next_command = data->pause_time - 1;
 	while (data->cycles_to_die > 0 && sum_processes(data) > 0)
@@ -186,7 +188,7 @@ void		load_bots_in_memory(t_data *data)
 	}
 }
 
-int         main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_data	data;
 
