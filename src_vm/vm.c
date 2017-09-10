@@ -100,6 +100,14 @@ int 		 infinit_loop(t_data *data)
 }
 
 
+static void dummy_norm(t_bot *bot, t_data *data)
+{
+	bot->last_live = 0;
+	bot->is_dead = 0;
+	bot->prev_attr = -1;
+	data->bots_tail = list_push_back(&(data->bots), bot);
+}
+
 /*
 ** 0 - ok, 1 - error
 */
@@ -119,19 +127,14 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 		(bot = bot_new(i + 1, curr)) ? 0 : (ret = 1);
 		if (ret)
 		{
-			list_del(&(data->bots), bot_del);
 			string_del(&curr);
 			return (1);
 		}
-		bot->last_live = 0;
-		bot->is_dead = 0;
-		bot->prev_attr = -1;
-		data->bots_tail = list_push_back(&(data->bots), bot);
+		dummy_norm(bot, data);
 		i++;
 	}
 	if (validate_bots(data) || data->bots_count == 0)
 	{
-		list_del(&(data->bots), bot_del);
 		(data->bots_count == 0) ? (ft_printf("{red}Bots count = 0\n{eoc}")) : 0;
 		return (1);
 	}
@@ -175,7 +178,6 @@ void		load_bots_in_memory(t_data *data)
 	int 			period;
 	int 			i;
 	int 			bot_number;
-	int 			r1_number = -1;
 
 	i = 0;
 	bot_number = 1;
@@ -184,31 +186,36 @@ void		load_bots_in_memory(t_data *data)
 	while (curr)
 	{
 		curr_bot = curr->data;
-		curr_bot->reg[1] = r1_number;
-		curr_bot->r1_number = r1_number;
+		curr_bot->reg[1] = -1 * bot_number;
+		curr_bot->r1_number = -1 * bot_number;
 		curr_bot->number = bot_number;
 		curr_bot->pc = i;
 		curr_bot->start = i;
 		data->processes[curr_bot->number]++;
-		ft_memcpy(data->map + i, curr_bot->code->str + 16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t )curr_bot->size);
+		ft_memcpy(data->map + i, curr_bot->code->str +
+			16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t )curr_bot->size);
 		i += period;
 		curr = curr->next;
-		r1_number--;
 		bot_number++;
 	}
+}
+
+static void	initialization_vm(t_data *data)
+{
+	ft_bzero(&data, sizeof(t_data));
+	data->cycles_to_die = CYCLE_TO_DIE;
+	data->next_cycles_check = CYCLE_TO_DIE;
+	data->dump = -1;
+	data->one_command_mode = 1;
+	data->pause = 0;
+	data->cycles = 0;
 }
 
 int         main(int argc, char **argv)
 {
 	t_data	data;
 
-	ft_bzero(&data, sizeof(t_data));
-	data.cycles_to_die = CYCLE_TO_DIE;
-	data.next_cycles_check = CYCLE_TO_DIE;
-	data.dump = -1;
-	data.one_command_mode = 1;
-	data.pause = 0;
-	data.cycles = 0;
+	initialization_vm(&data);
 	if (argc == 1)
 		usage(argv);
 	if (parse_flags(&data, argc, argv))
