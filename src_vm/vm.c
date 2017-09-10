@@ -202,7 +202,7 @@ void		load_bots_in_memory(t_data *data)
 
 static void	initialization_vm(t_data *data)
 {
-	ft_bzero(&data, sizeof(t_data));
+	ft_bzero(data, sizeof(t_data));
 	data->cycles_to_die = CYCLE_TO_DIE;
 	data->next_cycles_check = CYCLE_TO_DIE;
 	data->dump = -1;
@@ -222,7 +222,7 @@ int         main(int argc, char **argv)
 		return (1);
 	if (init_bots(&data, data.players, data.bots_count))
 	{
-		list_del(&(data.bots), bot_del);
+		bots_list_del(&(data.bots));
 		return (1);
 	}
 	load_bots_in_memory(&data);
@@ -230,10 +230,10 @@ int         main(int argc, char **argv)
 	first_pause(&data);
 	if (infinit_loop(&data))
 	{
-		list_del(&(data.bots), bot_del);
+		bots_list_del(&(data.bots));
 		return (1);
 	}
 	(data.visual) ? (nc_terminate(&data)) : (calculate_winner(&data));
-	list_del(&(data.bots), bot_del);
+	bots_list_del(&(data.bots));
 	return (0);
 }

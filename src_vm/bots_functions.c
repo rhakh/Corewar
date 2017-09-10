@@ -63,6 +63,34 @@ void		bot_del(t_bot **pbot)
 	}
 }
 
+void		bots_list_del(t_linked_list **head)
+{
+	t_linked_list		*curr;
+	t_linked_list		*next;
+
+	if (head != NULL)
+		curr = *head;
+	else
+		return ;
+	if (curr != NULL)
+	{
+		next = curr;
+		while (next != NULL)
+		{
+			if (curr != NULL)
+			{
+				next = curr->next;
+				bot_del((t_bot **)&(curr->data));
+				curr->data = NULL;
+				curr->next = NULL;
+				free(curr);
+				curr = next;
+			}
+		}
+		*head = NULL;
+	}
+}
+
 int 		read_bot(t_string *code, char *file_name)
 {
 	int		fd;

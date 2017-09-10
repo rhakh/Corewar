@@ -6,7 +6,7 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/09/03 13:42:36 by rhakh            ###   ########.fr        #
+#    Updated: 2017/09/10 18:56:57 by rhakh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,6 @@ SRC =   vm.c \
         op.c \
         args_functions.c \
         commands.c \
-        add_players.c \
-        error_managment.c \
         flags_parser.c \
         ncurses_creator_win.c \
         ncurses_windows.c \
