@@ -129,8 +129,6 @@ void 		ldi_lldi_commands(t_data *data, t_bot *bot)
 
 int 		ld_operations(t_data *data, t_bot *bot)
 {
-
-
 	if (bot->command == 2 || bot->command == 13)
 	{
 		ld_lld_commands(data, bot);
@@ -381,6 +379,14 @@ int 		first_pause(t_data *data)
 	return (0);
 }
 
+static void	set_bot_pause_time(t_data *data, t_bot *bot)
+{
+	if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
+		bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+	else
+		bot->pause_time = 1;
+}
+
 /*
 ** 0 - ok , 1 - error
 */
@@ -401,25 +407,11 @@ int 		execute_commands(t_data *data)
 				((bot->pause_time - data->pause_time) <= 0) &&
 				(bot->pause_time != 0))
 			{
-				if (execute_command(data, bot))
-				{
-					if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
-						bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
-					else
-						bot->pause_time = 1;
-				}
-				else if (data->map[bot->pc] <= 16 && data->map[bot->pc] >= 1)
-					bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
-				else
-					bot->pause_time = 1;
+				execute_command(data, bot);
+				set_bot_pause_time(data, bot);
 			}
 			else if (!bot->is_dead && (bot->pause_time == 0))
-			{
-				if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
-					bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
-				else
-					bot->pause_time = 1;
-			}
+				set_bot_pause_time(data, bot);
 			else if (!bot->is_dead)
 				bot->pause_time -= data->pause_time;
 		}

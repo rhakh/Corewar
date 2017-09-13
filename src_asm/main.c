@@ -12,8 +12,8 @@ static void	check_args(int *fd, int argc, char **argv)
 		ft_printf("{red}Error:{eoc} can't open file '%s'.\n", argv[1]);
 		exit(1);
 	}
-	if (	(*(ft_strrchr(argv[1], '.') + 1) != 's')
-		||	(*(ft_strrchr(argv[1], '.') + 2) != '\0')	)
+	if (!ft_strchr(argv[1], '.') || (*(ft_strrchr(argv[1], '.') + 1) != 's') ||
+			(*(ft_strrchr(argv[1], '.') + 2) != '\0'))
 	{
 		ft_printf("{red}Error:{eoc} wrong file '%s'.\n", argv[1]);
 		exit(1);
