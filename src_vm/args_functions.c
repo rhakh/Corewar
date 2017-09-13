@@ -3,7 +3,8 @@
 /*
 ** i from 1 to 3 must be, -1 - error
 */
-char 		get_arg_type(char command, char opcode, int i)
+
+char		get_arg_type(char command, char opcode, int i)
 {
 	char	arg_type;
 
@@ -17,10 +18,10 @@ char 		get_arg_type(char command, char opcode, int i)
 	return (arg_type);
 }
 
-int 		check_opcode(char command, char opcode)
+int			check_opcode(char command, char opcode)
 {
 	unsigned char	byte_pair;
-	int 			i;
+	int				i;
 
 	i = 0;
 	while (i < op_tab[command - 1].n_arg)
@@ -36,12 +37,12 @@ int 		check_opcode(char command, char opcode)
 	return (0);
 }
 
-int 		get_args(t_data *data, t_bot *bot)
+int			get_args(t_data *data, t_bot *bot)
 {
-	char 			i;
-	char 			arg_type;
-	char 			offset;
-	unsigned char 	*map;
+	char			i;
+	char			arg_type;
+	char			offset;
+	unsigned char	*map;
 
 	i = 0;
 	offset = 0;

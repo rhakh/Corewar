@@ -6,13 +6,13 @@
 /*   By: apalanic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/06 10:24:09 by apalanic          #+#    #+#             */
-/*   Updated: 2017/08/06 10:24:11 by apalanic         ###   ########.fr       */
+/*   Updated: 2017/09/13 18:57:36 by dtelega          ###   ########.fr       */
 /*                                                                            */
-/* ***************************************** ********************************* */
+/* ************************************************************************** */
 
 #include "flags_parser.h"
 
-void	usage(char **argv)
+void			usage(char **argv)
 {
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
 		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
@@ -28,7 +28,7 @@ void	usage(char **argv)
 	exit(1);
 }
 
-static int 		add_new_player(t_data *data, int *i, int *j, char **argv)
+static int		add_new_player(t_data *data, int *i, int *j, char **argv)
 {
 	*j = 0;
 	while (++(*j) < (MAX_PLAYERS + 1))
@@ -46,10 +46,10 @@ static int 		add_new_player(t_data *data, int *i, int *j, char **argv)
 	return (0);
 }
 
-static int 		check_players_file_name(t_data *data)
+static int		check_players_file_name(t_data *data)
 {
-	int 		i;
-	char 		*p;
+	int			i;
+	char		*p;
 
 	i = 1;
 	while (i < (MAX_PLAYERS + 1) && i < (data->bots_count + 1))
@@ -60,7 +60,8 @@ static int 		check_players_file_name(t_data *data)
 		{
 			if (p[1] != 'c' || p[2] != 'o' || p[3] != 'r' || p[4] != '\0')
 			{
-				ft_printf("{red}Wrong player name '%s'{eoc}\n", data->players[i]);
+				ft_printf("{red}Wrong player name '%s'{eoc}\n",
+						data->players[i]);
 				return (1);
 			}
 		}
@@ -74,9 +75,10 @@ static int 		check_players_file_name(t_data *data)
 	return (0);
 }
 
-static int 		add_n_player(t_data *data, int *i, int argc, char **argv)
+static int		add_n_player(t_data *data, int *i, int argc, char **argv)
 {
-	if ((*i + 2 < argc) && ft_atoi(argv[*i + 1]) >= 1 && ft_atoi(argv[*i + 1]) <= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[*i + 1])] == NULL)
+	if ((*i + 2 < argc) && ft_atoi(argv[*i + 1]) >= 1 && ft_atoi(argv[*i + 1])
+		<= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[*i + 1])] == NULL)
 	{
 		data->players[ft_atoi(argv[*i + 1])] = argv[*i + 2];
 		(*i) += 2;
@@ -91,10 +93,11 @@ static int 		add_n_player(t_data *data, int *i, int argc, char **argv)
 }
 
 //todo apalanic norm this func
+
 int				parse_flags(t_data *data, int argc, char **argv)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < argc)
@@ -120,8 +123,10 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		else if (!ft_strcmp("-m", argv[i]))
 			data->mute = 1;
 		else if (!ft_strcmp("-n", argv[i]))
+		{
 			if (add_n_player(data, &i, argc, argv))
 				return (1);
+		}
 		else if (!ft_strcmp("-debug", argv[i]))
 		{
 			if (i + 1 < argc)
