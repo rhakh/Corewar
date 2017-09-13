@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 20:24:57 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/28 20:24:58 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/13 20:17:43 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ void		ncurses_visual(t_data *data)
 		ncurses_speed(data, pause);
 	if (data->one_command_mode)
 		pause = ncurses_one_cm_mode(data, pause);
-	if ((pause == NC_PAUSE_1 || pause == NC_PAUSE_2)){
+	if ((pause == NC_PAUSE_1 || pause == NC_PAUSE_2))
+	{
 		(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
 		while (pause == NC_PAUSE_1 || pause == NC_PAUSE_2)
 			pause = ncurses_global_cycle(data, pause);
