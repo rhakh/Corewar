@@ -10,10 +10,11 @@ void			del_put_label(t_put_label **put_label)
 	}
 }
 
+
 void			print_put_label(t_put_label *label)
 {
 	ft_printf("label_name = %s, &arg = %p, *arg = %d, curr_pc = %d",
-			label->name, label->arg, *label->arg, label->curr_pc);
+			  label->name, label->arg, *label->arg, label->curr_pc);
 }
 
 t_put_label		*new_put_label(char *name_label, int *arg, int curr_pc)
@@ -29,3 +30,4 @@ t_put_label		*new_put_label(char *name_label, int *arg, int curr_pc)
 	new->curr_pc = curr_pc;
 	return (new);
 }
+

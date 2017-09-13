@@ -1,6 +1,6 @@
 #include "main.h"
 
-int					is_comment(char *str)
+int 				is_comment(char *str)
 {
 	while (*str <= 32 && *str != 0)
 		str++;
@@ -12,9 +12,9 @@ int					is_comment(char *str)
 t_array_string		**lex_analyze(t_main *main, t_data *code)
 {
 	t_array_string	**lex_strs;
-	int				i;
-	int				k;
-	int				ret;
+	int 			i;
+	int 			k;
+	int 			ret;
 
 	k = 0;
 	i = -1;
@@ -22,6 +22,7 @@ t_array_string		**lex_analyze(t_main *main, t_data *code)
 						malloc(sizeof(t_array_string *) * code->i)) == NULL)
 		return (NULL);
 	while (++i < code->i)
+	{
 		if (!is_empty_line(code->arr[i]) && !is_comment(code->arr[i]))
 		{
 			ret = check_bot_params(main->name, main->comment, code->arr[i]);
@@ -33,13 +34,14 @@ t_array_string		**lex_analyze(t_main *main, t_data *code)
 				k++;
 			}
 		}
+	}
 	lex_strs[k] = NULL; //todo here may be leak
 	return (lex_strs);
 }
 
 void				print_lex(t_array_string **lex_strs)
 {
-	int		i;
+	int 			i;
 
 	i = 0;
 	while (lex_strs[i] != NULL)
@@ -51,7 +53,7 @@ void				print_lex(t_array_string **lex_strs)
 
 void				del_lex_strs(t_array_string ***str)
 {
-	int		i;
+	int 			i;
 
 	i = 0;
 	if (*str == NULL)

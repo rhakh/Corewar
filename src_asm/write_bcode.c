@@ -2,7 +2,7 @@
 
 static void		write_one_arg(int fd, unsigned int arg, int i)
 {
-	char	a;
+	char 	a;
 
 	while (i >= 0)
 	{
@@ -14,7 +14,7 @@ static void		write_one_arg(int fd, unsigned int arg, int i)
 
 static void		write_args(int fd, t_bcode *curr)
 {
-	int		i;
+	int 		i;
 
 	i = 0;
 	while (curr->arg_type[i] != 0)
@@ -46,9 +46,9 @@ static void		write_to_file(int fd, t_main *main)
 	}
 }
 
-static void		write_header(int fd, t_main *main)
+static void 	write_header(int fd, t_main *main)
 {
-	int		zero;
+	int 		zero;
 
 	zero = 0;
 	write_one_arg(fd, COREWAR_EXEC_MAGIC, 24);
@@ -82,7 +82,7 @@ void			write_bcode(char *src_name, t_main *main)
 		return ;
 	edit_file_name(file_name, src_name);
 	fd = open(file_name, O_RDWR | O_CREAT |
-			O_TRUNC, S_IRWXU | S_IRGRP | S_IROTH);
+						 O_TRUNC, S_IRWXU | S_IRGRP | S_IROTH);
 	if (fd == -1)
 	{
 		ft_printf("{red}Error:{eoc} can't create file.");
