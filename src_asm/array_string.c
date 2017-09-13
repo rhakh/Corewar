@@ -1,12 +1,13 @@
 #include "main.h"
 
-t_array_string	*new_array_string(size_t size)
+t_array_string		*new_array_string(size_t size)
 {
 	t_array_string	*arr;
 
 	if ((arr = (t_array_string *)malloc(sizeof(t_array_string))) == NULL)
 		return (NULL);
-	if (arr == NULL || (arr->arr = (char **) malloc(sizeof(char *) * size + 1)) == NULL)
+	if (arr == NULL || (arr->arr = (char **)malloc(sizeof(char *) *
+												size + 1)) == NULL)
 	{
 		free(arr);
 		print_error("failed to allocate memory", NULL);
@@ -21,7 +22,7 @@ t_array_string	*new_array_string(size_t size)
 static int			realloc_array_string(t_array_string *arr)
 {
 	char	**new;
-	int 	i;
+	int		i;
 
 	i = 0;
 	if ((new = (char **)malloc(sizeof(char *) * arr->size * 2)) == NULL)
@@ -41,7 +42,7 @@ static int			realloc_array_string(t_array_string *arr)
 	return (1);
 }
 
-void			del_array_string(t_array_string **arr)
+void				del_array_string(t_array_string **arr)
 {
 	int		i;
 
@@ -60,7 +61,7 @@ void			del_array_string(t_array_string **arr)
 	}
 }
 
-int 			add_str_to_array_string(t_array_string *arr, char *str)
+int					add_str_to_array_string(t_array_string *arr, char *str)
 {
 	if (arr->i + 1 >= (int)arr->size)
 		realloc_array_string(arr);
@@ -74,9 +75,9 @@ int 			add_str_to_array_string(t_array_string *arr, char *str)
 	return (1);
 }
 
-void 			print_array_string(t_array_string *arr)
+void				print_array_string(t_array_string *arr)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (arr != NULL)
@@ -95,9 +96,9 @@ void 			print_array_string(t_array_string *arr)
 		ft_printf("Array_string = NULL\n");
 }
 
-void			print_string(t_array_string *arr)
+void				print_string(t_array_string *arr)
 {
-	int 		i;
+	int		i;
 
 	i = 0;
 	if (arr != NULL)

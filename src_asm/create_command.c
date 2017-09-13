@@ -1,6 +1,7 @@
 #include "main.h"
 
-static void		build_args(t_main *main, t_array_string *lex_str, int *args, int i)
+static void		build_args(t_main *main, t_array_string *lex_str,
+						int *args, int i)
 {
 	args[0] = get_arg(main, lex_str, &i, args + 0);
 	i += 2;
@@ -11,9 +12,9 @@ static void		build_args(t_main *main, t_array_string *lex_str, int *args, int i)
 		args[2] = get_arg(main, lex_str, &i, args + 2);
 }
 
-static int 		find_command_by_name(char *name)
+static int		find_command_by_name(char *name)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	while (op_tab[i].name != 0)
@@ -27,9 +28,10 @@ static int 		find_command_by_name(char *name)
 	return (-1);
 }
 
-static void  		inc_pc(t_main *main, char op[3], int n_command)
+static void		inc_pc(t_main *main, char op[3], int n_command)
 {
-	int 	i;
+	int		i;
+
 	i = 0;
 	main->pc++;
 	if (op_tab[n_command].have_opcode)
@@ -48,10 +50,10 @@ static void  		inc_pc(t_main *main, char op[3], int n_command)
 	}
 }
 
-static int 		is_error_args(t_main *main,
-						 t_array_string *lex_str, char op[3], int n_command)
+static int		is_error_args(t_main *main,
+							t_array_string *lex_str, char op[3], int n_command)
 {
-	int 	i;
+	int		i;
 
 	if (n_command == -1)
 	{
@@ -73,21 +75,21 @@ static int 		is_error_args(t_main *main,
 	return (0);
 }
 
-void		create_command(t_main *main, t_array_string *lex_str)
+void			create_command(t_main *main, t_array_string *lex_str)
 {
-	int 	i;
-	int 	*args;
-	int 	n_command;
-	char    arg_type[3];
-	int     ret;
+	int		i;
+	int		*args;
+	int		n_command;
+	char	arg_type[3];
+	int		ret;
 
 	i = 0;
 	if ((args = (int *)malloc(sizeof(int) * 3)) == NULL)
 		return ;
 	ft_bzero(arg_type, sizeof(char) * 3);
 	ft_bzero(args, sizeof(int) * 3);
-	if (lex_str->i >= 1 && !ft_strcmp(lex_str->arr[1], ":")
-		&& !is_command(lex_str->arr[0]))
+	if (lex_str->i >= 1 && !ft_strcmp(lex_str->arr[1], ":") &&
+		!is_command(lex_str->arr[0]))
 		i = 2;
 	if (i >= lex_str->i)
 	{
@@ -103,7 +105,6 @@ void		create_command(t_main *main, t_array_string *lex_str)
 		return ;
 	}
 	build_args(main, lex_str, args, i + 1);
-	add_bcode(&main->bcode,
-			  new_bcode(op_tab[n_command].command_number, arg_type, args));
+	add_bcode(&main->bcode, new_bcode(op_tab[n_command].command_number, arg_type, args));
 	inc_pc(main, arg_type, n_command);
 }

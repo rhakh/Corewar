@@ -18,7 +18,7 @@ static void		realloc_data(t_data **src)
 	*src = dst;
 }
 
-void		del_all_data(t_data **data)
+void			del_all_data(t_data **data)
 {
 	int		i;
 
@@ -32,7 +32,7 @@ void		del_all_data(t_data **data)
 	*data = NULL;
 }
 
-void		del_data(t_data *data)
+void			del_data(t_data *data)
 {
 	data->i = 0;
 	data->size = 0;
@@ -40,7 +40,7 @@ void		del_data(t_data *data)
 	free(data);
 }
 
-t_data		*new_data(size_t size)
+t_data			*new_data(size_t size)
 {
 	t_data	*data;
 
@@ -57,7 +57,7 @@ t_data		*new_data(size_t size)
 	return (data);
 }
 
-void		print_data(t_data *data)
+void			print_data(t_data *data)
 {
 	int		i;
 
@@ -69,7 +69,7 @@ void		print_data(t_data *data)
 	}
 }
 
-void		read_data(int fd, t_data **data)
+void			read_data(int fd, t_data **data)
 {
 	char	*tmp;
 
