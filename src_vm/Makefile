@@ -17,8 +17,6 @@ SRC =   vm.c \
         op.c \
         args_functions.c \
         commands.c \
-        add_players.c \
-        error_managment.c \
         flags_parser.c \
         ncurses_creator_win.c \
         ncurses_windows.c \

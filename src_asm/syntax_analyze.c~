@@ -17,7 +17,7 @@ static void			correct_labels(t_main *main)
 				*put_label->arg = curr_label->offset - put_label->curr_pc;
 			else
 				print_syntax_error_label(" can't find link with this name ",
-										put_label->name, main);
+										 put_label->name, main);
 		}
 		curr = curr->next;
 	}
@@ -25,13 +25,13 @@ static void			correct_labels(t_main *main)
 
 static void			build_bcode(t_main *main)
 {
-	int				i;
+	int 			i;
 	t_label_table	*link;
 
 	i = 0;
 	while (main->lex_strings[i] != NULL)
 	{
-		if (main->lex_strings[i]->i >= 2)
+	if (main->lex_strings[i]->i >= 2)
 		{
 			if (1 < main->lex_strings[i]->i &&
 					!ft_strcmp(main->lex_strings[i]->arr[1], ":")
@@ -45,7 +45,7 @@ static void			build_bcode(t_main *main)
 		}
 		else
 			print_syntax_error(" wrong command or label: ",
-							main->lex_strings[i], main);
+							   main->lex_strings[i], main);
 		i++;
 	}
 }
