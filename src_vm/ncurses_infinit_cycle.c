@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 20:24:57 by dtelega           #+#    #+#             */
-/*   Updated: 2017/09/13 20:17:43 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/13 20:19:41 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char		ncurses_global_cycle(t_data *data, char pause)
 
 void		ncurses_visual(t_data *data)
 {
-	int pause;
+	int		pause;
 
 	timeout(data->ncurses_timeout);
 	pause = getch();
