@@ -39,8 +39,7 @@ int				process_bots_commands(t_data *data, int next_command)
 	{
 		check_for_live_bots(data);
 		data->next_cycles_check = data->cycles + data->cycles_to_die;
-		data->max_checks++;
-		if (data->max_checks > 0 && (data->max_checks % MAX_CHECKS == 0))
+		if ((data->max_checks++ > 0) && (data->max_checks % MAX_CHECKS == 0))
 		{
 			if (data->last_cycles_to_die == data->cycles_to_die)
 			{
@@ -54,7 +53,7 @@ int				process_bots_commands(t_data *data, int next_command)
 	}
 	if (next_command <= 0)
 	{
-		if (execute_commands(data))
+		if (execute_commands(data, 2147483647))
 			return (1);
 		next_command = data->pause_time;
 	}
@@ -107,11 +106,10 @@ int				init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 	t_string	*curr;
 	t_bot		*bot;
 
-	i = 1;
+	i = 0;
 	ret = 0;
-	while (i < (MAX_PLAYERS + 1) && i < (num + 1))
+	while (++i < (MAX_PLAYERS + 1) && i < (num + 1) && (curr = string_new(30)))
 	{
-		curr = string_new(30);
 		(read_bot(curr, argv[i])) ? (ret = 1) : 0;
 		(bot = bot_new(i + 1, curr)) ? 0 :
 			(ret = 1);
@@ -121,7 +119,6 @@ int				init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 			return (1);
 		}
 		dummy_norm(bot, data);
-		i++;
 	}
 	if (validate_bots(data) || data->bots_count == 0)
 	{
@@ -149,10 +146,9 @@ void			calculate_winner(t_data *data)
 			nb = i;
 		}
 	curr = data->bots;
-	while (curr)
+	while (curr && (bot = curr->data))
 	{
-		bot = curr->data;
-		if (bot->number == nb && bot->name)
+		if (bot && bot->number == nb && bot->name)
 		{
 			ft_printf("Player %d (%s) won\n", bot->number, bot->name);
 			return ;
