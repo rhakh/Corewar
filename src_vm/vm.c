@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vm.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/16 16:45:54 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/16 16:45:55 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vm.h"
 
 int				print_dump(t_data *data)
@@ -78,7 +90,7 @@ int				main(int argc, char **argv)
 
 	initialization_vm(&data);
 	if (argc == 1)
-		usage(argv);
+		usage(argv, 1);
 	if (parse_flags(&data, argc, argv))
 		return (1);
 	if (init_bots(&data, data.players, data.bots_count))
