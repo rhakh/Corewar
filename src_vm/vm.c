@@ -66,7 +66,7 @@ int			process_bots_commands(t_data *data, int next_command)
 ** 0 - ok, 1 - error
 */
 
-int		 	infinit_loop(t_data *data)
+int			infinit_loop(t_data *data)
 {
 	int		pause;
 	int		next_command;
@@ -88,7 +88,6 @@ int		 	infinit_loop(t_data *data)
 	return (0);
 }
 
-
 static void dummy_norm(t_bot *bot, t_data *data)
 {
 	bot->last_live = 0;
@@ -100,10 +99,11 @@ static void dummy_norm(t_bot *bot, t_data *data)
 /*
 ** 0 - ok, 1 - error
 */
-int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
+
+int			init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 {
-	int 		i;
-	int 		ret;
+	int			i;
+	int			ret;
 	t_string	*curr;
 	t_bot		*bot;
 
@@ -113,7 +113,8 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 	{
 		curr = string_new(30);
 		(read_bot(curr, argv[i])) ? (ret = 1) : 0;
-		(bot = bot_new(i + 1, curr)) ? 0 : (ret = 1);
+		(bot = bot_new(i + 1, curr)) ? 0 :
+			(ret = 1);
 		if (ret)
 		{
 			string_del(&curr);
@@ -132,9 +133,9 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 
 void		calculate_winner(t_data *data)
 {
-	int 	i;
-	int 	nb;
-	int 	max;
+	int				i;
+	int				nb;
+	int				max;
 	t_linked_list	*curr;
 	t_bot			*bot;
 
@@ -164,9 +165,9 @@ void		load_bots_in_memory(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*curr_bot;
-	int 			period;
-	int 			i;
-	int 			bot_number;
+	int				period;
+	int				i;
+	int				bot_number;
 
 	i = 0;
 	bot_number = 1;
@@ -182,7 +183,7 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->start = i;
 		data->processes[curr_bot->number]++;
 		ft_memcpy(data->map + i, curr_bot->code->str +
-			16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t )curr_bot->size);
+			16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t)curr_bot->size);
 		i += period;
 		curr = curr->next;
 		bot_number++;
