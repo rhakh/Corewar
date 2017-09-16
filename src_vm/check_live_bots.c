@@ -24,7 +24,7 @@ static void		code_in_loop(t_bot *bot, t_data *data)
 	}
 }
 
-int 		check_for_live_bots(t_data *data)
+int				check_for_live_bots(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*bot;
