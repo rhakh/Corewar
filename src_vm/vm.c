@@ -1,6 +1,6 @@
 #include "vm.h"
 
-int			print_dump(t_data *data)
+int				print_dump(t_data *data)
 {
 	int		i;
 
@@ -20,7 +20,7 @@ int			print_dump(t_data *data)
 	return (0);
 }
 
-int			sum_processes(t_data *data)
+int				sum_processes(t_data *data)
 {
 	int		i;
 	int		res;
@@ -32,7 +32,7 @@ int			sum_processes(t_data *data)
 	return (res);
 }
 
-int			process_bots_commands(t_data *data, int next_command)
+int				process_bots_commands(t_data *data, int next_command)
 {
 	(data->dump == data->cycles && !data->visual) ? (print_dump(data)) : 0;
 	if (data->cycles == data->next_cycles_check)
@@ -66,7 +66,7 @@ int			process_bots_commands(t_data *data, int next_command)
 ** 0 - ok, 1 - error
 */
 
-int		 	infinit_loop(t_data *data)
+int				infinit_loop(t_data *data)
 {
 	int		pause;
 	int		next_command;
@@ -88,8 +88,7 @@ int		 	infinit_loop(t_data *data)
 	return (0);
 }
 
-
-static void dummy_norm(t_bot *bot, t_data *data)
+static void		dummy_norm(t_bot *bot, t_data *data)
 {
 	bot->last_live = 0;
 	bot->is_dead = 0;
@@ -100,10 +99,11 @@ static void dummy_norm(t_bot *bot, t_data *data)
 /*
 ** 0 - ok, 1 - error
 */
-int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
+
+int				init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 {
-	int 		i;
-	int 		ret;
+	int			i;
+	int			ret;
 	t_string	*curr;
 	t_bot		*bot;
 
@@ -113,7 +113,8 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 	{
 		curr = string_new(30);
 		(read_bot(curr, argv[i])) ? (ret = 1) : 0;
-		(bot = bot_new(i + 1, curr)) ? 0 : (ret = 1);
+		(bot = bot_new(i + 1, curr)) ? 0 :
+			(ret = 1);
 		if (ret)
 		{
 			string_del(&curr);
@@ -130,11 +131,11 @@ int 		init_bots(t_data *data, char *argv[MAX_PLAYERS + 1], int num)
 	return (0);
 }
 
-void		calculate_winner(t_data *data)
+void			calculate_winner(t_data *data)
 {
-	int 	i;
-	int 	nb;
-	int 	max;
+	int				i;
+	int				nb;
+	int				max;
 	t_linked_list	*curr;
 	t_bot			*bot;
 
@@ -160,13 +161,13 @@ void		calculate_winner(t_data *data)
 	}
 }
 
-void		load_bots_in_memory(t_data *data)
+void			load_bots_in_memory(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*curr_bot;
-	int 			period;
-	int 			i;
-	int 			bot_number;
+	int				period;
+	int				i;
+	int				bot_number;
 
 	i = 0;
 	bot_number = 1;
@@ -182,14 +183,14 @@ void		load_bots_in_memory(t_data *data)
 		curr_bot->start = i;
 		data->processes[curr_bot->number]++;
 		ft_memcpy(data->map + i, curr_bot->code->str +
-			16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t )curr_bot->size);
+			16 + PROG_NAME_LENGTH + COMMENT_LENGTH, (size_t)curr_bot->size);
 		i += period;
 		curr = curr->next;
 		bot_number++;
 	}
 }
 
-static void	initialization_vm(t_data *data)
+static void		initialization_vm(t_data *data)
 {
 	ft_bzero(data, sizeof(t_data));
 	data->cycles_to_die = CYCLE_TO_DIE;
@@ -200,7 +201,7 @@ static void	initialization_vm(t_data *data)
 	data->cycles = 0;
 }
 
-int			main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	t_data	data;
 

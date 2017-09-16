@@ -6,13 +6,13 @@
 /*   By: apalanic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/06 10:24:09 by apalanic          #+#    #+#             */
-/*   Updated: 2017/09/13 18:57:36 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/16 13:40:01 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "flags_parser.h"
 
-int			usage(char **argv)
+int				usage(char **argv)
 {
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
 		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
@@ -30,7 +30,7 @@ int			usage(char **argv)
 
 static int		add_new_player(t_data *data, int *i, char **argv)
 {
-	int 		j;
+	int		j;
 
 	j = 0;
 	while (++j < (MAX_PLAYERS + 1))
@@ -59,14 +59,10 @@ static int		check_players_file_name(t_data *data)
 		p = 0;
 		ft_printf("%s\n", data->players[i]);
 		(data->players[i]) ? (p = ft_strrchr(data->players[i], '.')) : 0;
-		if (p)
+		if (p && (p[1] != 'c' || p[2] != 'o' || p[3] != 'r' || p[4] != '\0'))
 		{
-			if (p[1] != 'c' || p[2] != 'o' || p[3] != 'r' || p[4] != '\0')
-			{
-				ft_printf("{red}Wrong player name '%s'{eoc}\n",
-						data->players[i]);
-				return (1);
-			}
+			ft_printf("{red}Wrong player name '%s'{eoc}\n", data->players[i]);
+			return (1);
 		}
 		else
 		{
@@ -95,7 +91,7 @@ static int		add_n_player(t_data *data, int *i, int argc, char **argv)
 	return (0);
 }
 
-int			first_part_while(char **argv, int *i, int argc, t_data *data)
+int				first_part_while(char **argv, int *i, int argc, t_data *data)
 {
 	if ((!ft_strcmp("-h", argv[*i]) || !ft_strcmp("--help", argv[*i])) &&
 			(usage(argv)))
@@ -124,7 +120,7 @@ int			first_part_while(char **argv, int *i, int argc, t_data *data)
 	return (2);
 }
 
-int 		second_part_while(char **argv, int *i, int argc, t_data *data)
+int				second_part_while(char **argv, int *i, int argc, t_data *data)
 {
 	if (!ft_strcmp("-n", argv[*i]))
 	{
@@ -153,7 +149,7 @@ int 		second_part_while(char **argv, int *i, int argc, t_data *data)
 int				parse_flags(t_data *data, int argc, char **argv)
 {
 	int		i;
-	int 	ret;
+	int		ret;
 
 	i = 1;
 	while (i < argc)
@@ -168,5 +164,5 @@ int				parse_flags(t_data *data, int argc, char **argv)
 		}
 		i++;
 	}
-	return  (check_players_file_name(data));
+	return (check_players_file_name(data));
 }
