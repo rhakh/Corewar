@@ -24,13 +24,13 @@ int			check_opcode(char command, char opcode)
 	int				i;
 
 	i = 0;
-	while (i < op_tab[command - 1].n_arg)
+	while (i < g_tab[command - 1].n_arg)
 	{
 		byte_pair = (unsigned char)((opcode >> (6 - (2 * i))) & 0b00000011);
 		(byte_pair == REG_CODE) ? (byte_pair = T_REG) : 0;
 		(byte_pair == DIR_CODE) ? (byte_pair = T_DIR) : 0;
 		(byte_pair == IND_CODE) ? (byte_pair = T_IND) : 0;
-		if (!(byte_pair & op_tab[command - 1].type_arg[i]))
+		if (!(byte_pair & g_tab[command - 1].type_arg[i]))
 			return (1);
 		i++;
 	}
@@ -47,7 +47,7 @@ int			get_args(t_data *data, t_bot *bot)
 	i = 0;
 	offset = 0;
 	map = data->map + bot->pc;
-	while (i < op_tab[bot->command - 1].n_arg)
+	while (i < g_tab[bot->command - 1].n_arg)
 	{
 		arg_type = get_arg_type(bot->command, bot->opcode, i + 1);
 		if (arg_type == REG_CODE)
@@ -57,7 +57,7 @@ int			get_args(t_data *data, t_bot *bot)
 				return (1);
 			offset += 1;
 		}
-		else if (arg_type == DIR_CODE && op_tab[bot->command - 1].dir_as_label)
+		else if (arg_type == DIR_CODE && g_tab[bot->command - 1].dir_as_label)
 		{
 			bot->args[i] = get_number_from_bcode(map + offset, IND_SIZE);
 			offset += IND_SIZE;

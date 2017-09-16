@@ -19,7 +19,7 @@ int 		logic_operations(t_data *data, t_bot *bot)
 	char 	arg_type;
 
 	i = 0;
-	while (i < op_tab[bot->command - 1].n_arg - 1)
+	while (i < g_tab[bot->command - 1].n_arg - 1)
 	{
 		arg_type = get_arg_type(bot->command, bot->opcode, i + 1);
 		if (arg_type == REG_CODE)
@@ -243,15 +243,15 @@ int 		increase_pc(t_bot *bot, char command, char opcode)
 	i = 0;
 	offset = 0;
 	offset++;
-	if (op_tab[command - 1].have_opcode)
+	if (g_tab[command - 1].have_opcode)
 		offset++;
-	while (i < op_tab[command - 1].n_arg)
+	while (i < g_tab[command - 1].n_arg)
 	{
 		if (get_arg_type(command, opcode, i + 1) == REG_CODE)
 			offset++;
 		else if (get_arg_type(command, opcode, i + 1) == DIR_CODE)
 		{
-			if (op_tab[command - 1].dir_as_label)
+			if (g_tab[command - 1].dir_as_label)
 				offset += 2;
 			else
 				offset += 4;
@@ -279,7 +279,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 	{
 		prev = bot->pc;
 		bot->pc = (bot->pc + 1) % MEM_SIZE;
-		if (op_tab[bot->command - 1].have_opcode)
+		if (g_tab[bot->command - 1].have_opcode)
 		{
 			bot->opcode = data->map[bot->pc];
 			bot->pc = (bot->pc + 1) % MEM_SIZE;
@@ -296,7 +296,7 @@ int 		execute_command(t_data *data, t_bot *bot)
 			return (1);
 		}
 		bot->pc--;
-		if (op_tab[bot->command - 1].have_opcode)
+		if (g_tab[bot->command - 1].have_opcode)
 			bot->pc--;
 		if (run_command(data, bot))
 		{
@@ -369,7 +369,7 @@ int 		first_pause(t_data *data)
 	{
 		bot = curr->data;
 		if (((data->map[bot->pc]) >= 1) && ((data->map[bot->pc]) <= 16))
-			bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+			bot->pause_time = g_tab[data->map[bot->pc] - 1].cycles_to_done;
 		else
 			bot->pause_time = 0;
 		(data->pause_time > bot->pause_time) ?
@@ -382,7 +382,7 @@ int 		first_pause(t_data *data)
 static void	set_bot_pause_time(t_data *data, t_bot *bot)
 {
 	if (((data->map[bot->pc]) <= 16) && ((data->map[bot->pc]) >= 1))
-		bot->pause_time = op_tab[data->map[bot->pc] - 1].cycles_to_done;
+		bot->pause_time = g_tab[data->map[bot->pc] - 1].cycles_to_done;
 	else
 		bot->pause_time = 1;
 }
