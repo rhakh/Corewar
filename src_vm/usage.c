@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   usage.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/16 16:45:39 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/16 16:45:40 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "usage.h"
 
-int				usage(char **argv)
+int				usage(char **argv, int close_prog)
 {
 	ft_printf("{yellow}\t\t\t\t\tUsage:{eoc}\n"
 		"\t%s [-n <number 1 .. 4> player.cor] [-v] "
@@ -13,6 +25,8 @@ int				usage(char **argv)
 		"\t-debug - debug level\n"
 		"\t\t- 0 : show only winner (default)\n"
 		"\t\t- 1 : show lives\n", argv[0]);
+	if (close_prog)
+		exit(0);
 	return (1);
 }
 
