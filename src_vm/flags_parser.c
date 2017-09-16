@@ -52,7 +52,7 @@ static int		add_n_player(t_data *data, int *i, int argc, char **argv)
 int				first_part_while(char **argv, int *i, int argc, t_data *data)
 {
 	if ((!ft_strcmp("-h", argv[*i]) || !ft_strcmp("--help", argv[*i])) &&
-			(usage(argv)))
+			(usage(argv, 0)))
 		return (1);
 	else if (!ft_strcmp("-dump", argv[*i]))
 	{
