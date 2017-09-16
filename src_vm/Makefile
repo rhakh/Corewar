@@ -12,23 +12,24 @@
 
 NAME = my_vm
 
-SRC =   vm.c \
+SRC =   args_functions.c \
         bots_functions.c \
-        op.c \
-        args_functions.c \
         commands.c \
         flags_parser.c \
         ncurses_creator_win.c \
-        ncurses_windows.c \
+        ncurses_display_debug.c \
         ncurses_display_memory.c \
         ncurses_display_stats.c \
-        ncurses_display_debug.c \
+        ncurses_display_winner.c \
+        ncurses_infinit_cycle.c \
+        ncurses_init.c \
         ncurses_move.c \
         ncurses_print.c \
-        ncurses_init.c \
-        ncurses_infinit_cycle.c \
-        ncurses_display_winner.c \
+        ncurses_windows.c \
+        op.c \
         sdl.c \
+        vm.c \
+
 
 SRCDIR = ./
 
