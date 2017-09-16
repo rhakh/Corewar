@@ -14,6 +14,7 @@ NAME = my_vm
 
 SRC =   args_functions.c \
         bots_functions.c \
+        check_live_bots.c \
         commands.c \
         flags_parser.c \
         ncurses_creator_win.c \

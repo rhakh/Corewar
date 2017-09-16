@@ -34,12 +34,14 @@ void				print_label_table(t_label_table *table)
 	ft_printf("{red}LABEL TABLE{eoc}\n");
 	while (curr != NULL)
 	{
-		ft_printf("{yellow}link: %s, offset: %d{eoc}\n", curr->link, curr->offset);
+		ft_printf("{yellow}link: %s, offset: %d{eoc}\n", curr->link,
+				curr->offset);
 		curr = curr->next;
 	}
 }
 
-void				add_label_to_table(t_label_table **table, t_label_table *label)
+void				add_label_to_table(t_label_table **table,
+									t_label_table *label)
 {
 	t_label_table	*curr;
 

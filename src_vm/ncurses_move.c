@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 20:33:28 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/28 20:39:10 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/10 17:18:35 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,27 @@
 #include <ncurses.h>
 #include "vm.h"
 
-/*
-** len no need
-*/
-
-int			ncurses_change_memory(int start, int len, t_bot *bot, t_data *data)
+int			ncurses_change_memory(int start, t_bot *bot, t_data *data)
 {
 	int		i;
 	int		x;
-	int 	y;
+	int		y;
 
 	i = -1;
 	if (bot->prev_st != -1)
-	{
-		while (++i < len)
+		while (++i < 4)
 		{
 			move_to_byte(data->memory_win, (bot->prev_st + i + MEM_SIZE)
-										   % MEM_SIZE);
+						% MEM_SIZE);
 			if ((mvwinch(data->memory_win, y, x) & A_BOLD) &&
-					(mvwinch(data->memory_win, y, x) & COLOR_PAIR(bot->number)))
-			{
+				(mvwinch(data->memory_win, y, x) & COLOR_PAIR(bot->number)))
 				bot->prev_attr = COLOR_PAIR(bot->number);
-				
-			}
 			print_byte(data->memory_win, data->map[(bot->prev_st + i + MEM_SIZE)
-												   % MEM_SIZE], (bot->prev_st +
-																 i + MEM_SIZE) %
-																MEM_SIZE,
-					   COLOR_PAIR(bot->number));
+						% MEM_SIZE], (bot->prev_st + i + MEM_SIZE) % MEM_SIZE,
+					COLOR_PAIR(bot->number));
 		}
-	}
 	i = -1;
-	while (++i < len)
+	while (++i < 4)
 		print_byte(data->memory_win, data->map[(start + i + MEM_SIZE) %
 											MEM_SIZE], (start + i + MEM_SIZE)
 				% MEM_SIZE, COLOR_PAIR(bot->number) | A_BOLD);

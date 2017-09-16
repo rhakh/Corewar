@@ -10,6 +10,7 @@
 # include "flags_parser.h"
 # include "ncurses_vm.h"
 # include "sdl_vm.h"
+# include "check_live_bots.h"
 
 t_bot			*bot_new(int number, t_string *code);
 t_bot			*bot_copy(t_bot *src);

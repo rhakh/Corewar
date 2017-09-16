@@ -6,7 +6,7 @@
 /*   By: dtelega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/28 20:24:57 by dtelega           #+#    #+#             */
-/*   Updated: 2017/08/28 20:24:58 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/13 20:19:41 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,23 @@ char		ncurses_global_cycle(t_data *data, char pause)
 	else if (cmd == NC_ONE_COMM_MOD && (data->one_command_mode = 1))
 		return (NC_ONE_COMM_MOD);
 	return (pause);
+}
+
+void		ncurses_visual(t_data *data)
+{
+	int		pause;
+
+	timeout(data->ncurses_timeout);
+	pause = getch();
+	if (pause == NC_SPEED_DOWN || pause == NC_SPEED_UP)
+		ncurses_speed(data, pause);
+	if (data->one_command_mode)
+		pause = ncurses_one_cm_mode(data, pause);
+	if ((pause == NC_PAUSE_1 || pause == NC_PAUSE_2))
+	{
+		(!data->mute) ? (sdl_sound(MUS_BEEP)) : 0;
+		while (pause == NC_PAUSE_1 || pause == NC_PAUSE_2)
+			pause = ncurses_global_cycle(data, pause);
+	}
+	(pause == NC_ONE_COMM_MOD) ? (data->one_command_mode = 1) : 0;
 }

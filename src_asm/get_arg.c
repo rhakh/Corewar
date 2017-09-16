@@ -1,6 +1,6 @@
 #include "main.h"
 
-static int 		calculate_label(t_main *main, char *label_name, int *arg)
+static int		calculate_label(t_main *main, char *label_name, int *arg)
 {
 	t_label_table	*label;
 
@@ -12,7 +12,7 @@ static int 		calculate_label(t_main *main, char *label_name, int *arg)
 	return (0);
 }
 
-int 		get_arg(t_main *main, t_array_string *lex_str, int *i, int *arg)
+int				get_arg(t_main *main, t_array_string *lex_str, int *i, int *arg)
 {
 	if (is_number(lex_str->arr[*i]))
 		return (ft_atoi(lex_str->arr[*i]));

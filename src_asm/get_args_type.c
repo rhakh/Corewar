@@ -1,6 +1,7 @@
 #include "main.h"
 
-static int	 		link_or_dir_opc(t_array_string *lex_str, char arg_type[3], int *i, int arg_nbr)
+static int		link_or_dir_opc(t_array_string *lex_str, char arg_type[3],
+								int *i, int arg_nbr)
 {
 	(*i)++;
 	if (*i >= lex_str->i)
@@ -28,8 +29,8 @@ static int	 		link_or_dir_opc(t_array_string *lex_str, char arg_type[3], int *i,
 	return (1);
 }
 
-static int 		determinant(t_array_string *lex_str, char arg_type[3],
-							  int arg_nbr, int *i)
+static int		determinant(t_array_string *lex_str, char arg_type[3],
+							int arg_nbr, int *i)
 {
 	if (*i < lex_str->i && is_number(lex_str->arr[*i]))
 		arg_type[arg_nbr - 1] = T_IND;
@@ -58,7 +59,8 @@ static int 		determinant(t_array_string *lex_str, char arg_type[3],
 	return (1);
 }
 
-int				get_args_type(t_array_string *lex_str, char arg_type[3], int i, int arg_nbr)
+int				get_args_type(t_array_string *lex_str, char arg_type[3],
+							int i, int arg_nbr)
 {
 	if (arg_nbr > 3 || i >= lex_str->i)
 	{

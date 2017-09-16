@@ -51,10 +51,12 @@ void				print_bcode(t_bcode *bcode)
 
 	curr = bcode;
 	ft_printf("{red}BYTE CODE{eoc}\n");
-	ft_printf("{yellow}%s %s %8s %8s %8s{eoc}\n", "OPN", "OC", "ARG1", "ARG2", "ARG3");
+	ft_printf("{yellow}%s %s %8s %8s %8s{eoc}\n",
+			"OPN", "OC", "ARG1", "ARG2", "ARG3");
 	while (curr != NULL)
 	{
-		ft_printf("{yellow}%hh3x %hh2x %8x %8x %8x{eoc}\n", *curr->oper_number, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
+		ft_printf("{yellow}%hh3x %hh2x %8x %8x %8x{eoc}\n", *curr->oper_number,
+				*curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
 		curr = curr->next;
 	}
 	ft_printf("\n");

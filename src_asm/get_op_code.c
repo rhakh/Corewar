@@ -1,9 +1,9 @@
 #include "main.h"
 
-char 		get_op_code(char arg_type[3])
+char		get_op_code(char arg_type[3])
 {
-	char 	op;
-	int 	i;
+	char	op;
+	int		i;
 
 	i = 0;
 	op = 0;
