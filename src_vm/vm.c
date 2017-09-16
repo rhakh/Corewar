@@ -34,8 +34,7 @@ int			sum_processes(t_data *data)
 
 int			process_bots_commands(t_data *data, int next_command)
 {
-	if (data->dump == data->cycles && !data->visual)
-		print_dump(data);
+	(data->dump == data->cycles && !data->visual) ? (print_dump(data)) : 0;
 	if (data->cycles == data->next_cycles_check)
 	{
 		check_for_live_bots(data);
