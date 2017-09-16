@@ -6,7 +6,7 @@
 /*   By: apalanic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/06 10:24:09 by apalanic          #+#    #+#             */
-/*   Updated: 2017/09/16 15:05:20 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/16 13:40:01 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int		check_players_file_name(t_data *data)
 			if (p[1] != 'c' || p[2] != 'o' || p[3] != 'r' || p[4] != '\0')
 			{
 				ft_printf("{red}Wrong player name '%s'{eoc}\n",
-						data->players[i]);
+						  data->players[i]);
 				return (1);
 			}
 		}
