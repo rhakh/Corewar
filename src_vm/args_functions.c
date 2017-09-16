@@ -46,7 +46,7 @@ static int	stupid_norms(int *i, t_bot *bot, int *o, t_data *d)
 			return (1);
 	}
 	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == DIR_CODE &&
-			op_tab[bot->command - 1].dir_as_label)
+			g_tab[bot->command - 1].dir_as_label)
 	{
 		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, IND_SIZE);
 		*o += IND_SIZE;
