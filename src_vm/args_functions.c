@@ -37,42 +37,45 @@ int			check_opcode(char command, char opcode)
 	return (0);
 }
 
+static int	stupid_norms(int *i, t_bot *bot, int *o, t_data *d)
+{
+	if (get_arg_type(bot->command, bot->opcode, *i + 1) == REG_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, 1);
+		if ((*o += 1) && (bot->args[*i] > REG_NUMBER || bot->args[*i] < 1))
+			return (1);
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == DIR_CODE &&
+			op_tab[bot->command - 1].dir_as_label)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, IND_SIZE);
+		*o += IND_SIZE;
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == DIR_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, DIR_SIZE);
+		*o += DIR_SIZE;
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == IND_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, IND_SIZE);
+		*o += IND_SIZE;
+	}
+	else
+		return (1);
+	return (0);
+}
+
 int			get_args(t_data *data, t_bot *bot)
 {
-	char			i;
-	char			arg_type;
-	char			offset;
-	unsigned char	*map;
+	int				i;
+	int				offset;
 
 	i = 0;
 	offset = 0;
-	map = data->map + bot->pc;
 	while (i < op_tab[bot->command - 1].n_arg)
 	{
-		arg_type = get_arg_type(bot->command, bot->opcode, i + 1);
-		if (arg_type == REG_CODE)
-		{
-			bot->args[i] = get_number_from_bcode(map + offset, 1);
-			if (bot->args[i] > REG_NUMBER || bot->args[i] < 1)
-				return (1);
-			offset += 1;
-		}
-		else if (arg_type == DIR_CODE && op_tab[bot->command - 1].dir_as_label)
-		{
-			bot->args[i] = get_number_from_bcode(map + offset, IND_SIZE);
-			offset += IND_SIZE;
-		}
-		else if (arg_type == DIR_CODE)
-		{
-			bot->args[i] = get_number_from_bcode(map + offset, DIR_SIZE);
-			offset += DIR_SIZE;
-		}
-		else if (arg_type == IND_CODE)
-		{
-			bot->args[i] = get_number_from_bcode(map + offset, IND_SIZE);
-			offset += IND_SIZE;
-		}
-		else
+		if (stupid_norms(&i, bot, &offset, data))
 			return (1);
 		i++;
 	}
