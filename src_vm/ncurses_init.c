@@ -41,10 +41,6 @@ void		init_ncurses(void)
 
 void		nc_display_arena(t_data *data)
 {
-	WINDOW		*memory_win;
-	WINDOW		*stats_win;
-	WINDOW		*debug_win;
-
 	init_ncurses();
 	attron(A_BOLD);
 	ncurses_print_header();
@@ -52,16 +48,13 @@ void		nc_display_arena(t_data *data)
 	refresh();
 	data->one_command_mode = 1;
 	data->ncurses_timeout = 64;
-	memory_win = create_memory_win();
-	display_memory(data, memory_win);
+	data->memory_win = create_memory_win();
+	display_memory(data, data->memory_win);
 	data->pause = 1;
-	stats_win = create_stats_win();
-	display_stats(data, stats_win);
-	debug_win = create_debug_win();
-	display_debug(data, debug_win);
-	data->memory_win = memory_win;
-	data->stats_win = stats_win;
-	data->debug_win = debug_win;
+	data->stats_win = create_stats_win();
+	data->debug_win = create_debug_win();
+	display_stats(data, data->stats_win);
+	display_debug(data, data->debug_win);
 }
 
 void		nc_terminate(t_data *data)
