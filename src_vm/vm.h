@@ -14,10 +14,10 @@
 
 t_bot			*bot_new(int number, t_string *code);
 t_bot			*bot_copy(t_bot *src);
-void 			bot_del(t_bot **bot);
+void			bot_del(t_bot **bot);
 void			bots_list_del(t_linked_list **head);
-int 			read_bot(t_string *code, char *file_name);
-int 			validate_bots(t_data *data);
+int				read_bot(t_string *code, char *file_name);
+int				validate_bots(t_data *data);
 int				get_number_from_bcode(const unsigned char *code, int num_size);
 int				put_number_to_bcode(t_data *data, int num, int position);
 int				sum_processes(t_data *data);

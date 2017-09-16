@@ -6,7 +6,7 @@
 /*   By: apalanic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/06 10:24:09 by apalanic          #+#    #+#             */
-/*   Updated: 2017/09/13 18:57:36 by dtelega          ###   ########.fr       */
+/*   Updated: 2017/09/16 13:29:32 by dtelega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int			usage(char **argv)
 
 static int		add_new_player(t_data *data, int *i, char **argv)
 {
-	int 		j;
+	int		j;
 
 	j = 0;
 	while (++j < (MAX_PLAYERS + 1))
