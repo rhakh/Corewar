@@ -13,10 +13,14 @@
 NAME = my_vm
 
 SRC =   args_functions.c \
+        bcode_functions.c \
         bots_functions.c \
         check_live_bots.c \
+        commands_manager.c \
         commands.c \
         flags_parser.c \
+        initialization.c \
+        ld_functions.c \
         ncurses_creator_win.c \
         ncurses_display_debug.c \
         ncurses_display_memory.c \
@@ -28,7 +32,12 @@ SRC =   args_functions.c \
         ncurses_print.c \
         ncurses_windows.c \
         op.c \
+        pause_time.c \
+        pc_adder.c \
         sdl.c \
+        st_functions.c \
+        usage.c \
+        validate_bots.c \
         vm.c \
 
 
@@ -38,7 +47,7 @@ OBJDIR = ../obj_vm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-FLAGS = -I ~/Library/Frameworks/Headers #-Wall -Wextra -Werror
+FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
 
 all: obj $(NAME)
 

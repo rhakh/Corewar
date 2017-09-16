@@ -1,3 +1,8 @@
-#include "vm.h"
+#ifndef CHECK_LIVE_BOTS_H
+# define CHECK_LIVE_BOTS_H
 
-int 		check_for_live_bots(t_data *data);
+# include "vm.h"
+
+int		check_for_live_bots(t_data *data);
+
+#endif

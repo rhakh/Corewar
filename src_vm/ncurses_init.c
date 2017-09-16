@@ -54,7 +54,7 @@ void		nc_display_arena(t_data *data)
 	data->stats_win = create_stats_win();
 	data->debug_win = create_debug_win();
 	display_stats(data, data->stats_win);
-	display_debug(data, data->debug_win);
+	display_debug(data->debug_win);
 }
 
 void		nc_terminate(t_data *data)
