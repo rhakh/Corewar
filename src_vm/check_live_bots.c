@@ -1,6 +1,6 @@
 #include "check_live_bots.h"
 
-static void		code_in_loop(t_linked_list *curr, t_bot *bot, t_data *data)
+static void		code_in_loop(t_bot *bot, t_data *data)
 {
 	if (!bot->throw_live &&
 		((data->cycles - bot->last_live) >= data->cycles_to_die) &&
@@ -24,7 +24,7 @@ static void		code_in_loop(t_linked_list *curr, t_bot *bot, t_data *data)
 	}
 }
 
-int				check_for_live_bots(t_data *data)
+int 		check_for_live_bots(t_data *data)
 {
 	t_linked_list	*curr;
 	t_bot			*bot;
@@ -36,7 +36,7 @@ int				check_for_live_bots(t_data *data)
 	{
 		bot = curr->data;
 		sum_live += bot->live_count;
-		code_in_loop(curr, bot, data);
+		code_in_loop(bot, data);
 		curr = curr->next;
 	}
 	if (sum_live >= NBR_LIVE)

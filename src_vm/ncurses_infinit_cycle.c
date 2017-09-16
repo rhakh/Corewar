@@ -42,7 +42,7 @@ char		ncurses_one_cm_mode(t_data *data, char pause)
 	return (pause);
 }
 
-char		ncurses_cycle_pause(t_data *data, char pause)
+char		ncurses_cycle_pause(t_data *data)
 {
 	data->pause = 0;
 	display_stats(data, data->stats_win);
@@ -62,7 +62,7 @@ char		ncurses_global_cycle(t_data *data, char pause)
 	if (cmd == NC_SPEED_UP || cmd == NC_SPEED_DOWN)
 		ncurses_speed(data, cmd);
 	if (cmd == NC_PAUSE_1 || cmd == NC_PAUSE_2)
-		pause = ncurses_cycle_pause(data, pause);
+		pause = ncurses_cycle_pause(data);
 	else if (cmd == NC_ONE_COMM_MOD && (data->one_command_mode = 1))
 		return (NC_ONE_COMM_MOD);
 	return (pause);
