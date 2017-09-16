@@ -24,13 +24,13 @@ int			check_opcode(char command, char opcode)
 	int				i;
 
 	i = 0;
-	while (i < op_tab[command - 1].n_arg)
+	while (i < g_tab[command - 1].n_arg)
 	{
 		byte_pair = (unsigned char)((opcode >> (6 - (2 * i))) & 0b00000011);
 		(byte_pair == REG_CODE) ? (byte_pair = T_REG) : 0;
 		(byte_pair == DIR_CODE) ? (byte_pair = T_DIR) : 0;
 		(byte_pair == IND_CODE) ? (byte_pair = T_IND) : 0;
-		if (!(byte_pair & op_tab[command - 1].type_arg[i]))
+		if (!(byte_pair & g_tab[command - 1].type_arg[i]))
 			return (1);
 		i++;
 	}
@@ -73,7 +73,7 @@ int			get_args(t_data *data, t_bot *bot)
 
 	i = 0;
 	offset = 0;
-	while (i < op_tab[bot->command - 1].n_arg)
+	while (i < g_tab[bot->command - 1].n_arg)
 	{
 		if (stupid_norms(&i, bot, &offset, data))
 			return (1);
