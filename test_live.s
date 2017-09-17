@@ -61,16 +61,20 @@
 # xor r2, r2, r2
 # xor r2, r2, r2
 
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# st r1, 6
+# live %0
+# fork %-50
+# xor r2, r2, r2
+# zjmp %-58
+
 st r1, 6
 live %0
-st r1, 6
-live %0
-st r1, 6
-live %0
-st r1, 6
-live %0
-st r1, 6
-live %0
-fork %-50
-xor r2, r2, r2
-zjmp %-58
+
