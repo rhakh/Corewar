@@ -51,7 +51,7 @@ OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 #FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
 
 #For linux only
-FLAGS = -Wall -Wextra -Werror -D_REENTRANT -I/usr/local/include/SDL2 -L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -lSDL2
+FLAGS = -Wall -Wextra -Werror `pkg-config --cflags --libs sdl2`
 
 all: obj $(NAME)
 
