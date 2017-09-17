@@ -56,7 +56,7 @@ void			calculate_winner(t_data *data)
 	nb = 1;
 	max = data->bots_last_live[1];
 	while (++i <= data->bots_count)
-		if (data->bots_last_live[i] > max)
+		if (data->bots_last_live[i] >= max)
 		{
 			max = data->bots_last_live[i];
 			nb = i;
