@@ -47,7 +47,11 @@ OBJDIR = ../obj_vm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
+#For macOS only
+#FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
+
+#For linux only
+FLAGS = -Wall -Wextra -Werror -D_REENTRANT -I/usr/local/include/SDL2 -L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -lSDL2
 
 all: obj $(NAME)
 
@@ -59,7 +63,9 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Headers -F/Library/Frameworks -framework SDL2
+	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
+
+#gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Headers -F/Library/Frameworks -framework SDL2
 
 clean:
 	/bin/rm -rf $(OBJDIR)
