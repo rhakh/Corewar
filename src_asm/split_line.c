@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split_line.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:43:57 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:43:57 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 static void			save_line(t_array_string *arr, t_strp *buff, char *devider)
@@ -14,15 +26,17 @@ static void			save_line(t_array_string *arr, t_strp *buff, char *devider)
 
 static void			devider(char *code, t_strp *buff, t_array_string *arr)
 {
-	int 			i;
+	int				i;
 
 	i = -1;
 	while (code[++i] != '\0')
 	{
 		if (code[i] == ' ' || code[i] == '\t')
 			save_line(arr, buff, NULL);
-		else if (((code[i] == '%') && (is_printable(code[i - 1]) || is_printable(code[i + 1]))) ||
-				 ((code[i] == ':') && (is_printable(code[i - 1]) || is_printable(code[i + 1])))	)
+		else if (((code[i] == '%') && (is_printable(code[i - 1]) ||
+								is_printable(code[i + 1]))) ||
+					((code[i] == ':') && (is_printable(code[i - 1]) ||
+								is_printable(code[i + 1]))))
 			save_line(arr, buff, (code[i] == ':') ? ":" : "%");
 		else if (code[i] == ',')
 			save_line(arr, buff, ",");
@@ -40,7 +54,8 @@ t_array_string		*split_line(char *code)
 	t_strp			*buff;
 	t_array_string	*arr;
 
-	if ((buff = new_strp(30)) == NULL || (arr = new_array_string(6)) == NULL)
+	if ((buff = new_strp(30)) == NULL ||
+		(arr = new_array_string(3)) == NULL)
 		return (NULL);
 	devider(code, buff, arr);
 	del_strp(&buff);

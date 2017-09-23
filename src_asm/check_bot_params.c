@@ -26,6 +26,12 @@ int				is_printable(int c)
 	return (0);
 }
 
+static void		dummy_norms(char *dst, int max_len, char *tmp)
+{
+	ft_bzero(dst, (size_t)max_len);
+	ft_strncpy(dst, tmp + 1, (size_t)(ft_strchr(tmp + 1, '"') - (tmp + 1)));
+}
+
 /*
 ** 0 KO, 2 name , 3 comment
 */
@@ -55,7 +61,18 @@ int				check_bot_params(char *name, char *comment, char *str)
 	if (*tmp != '"' || !ft_strchr(tmp + 1, '"')
 		|| (ft_strchr(tmp + 1, '"') - (tmp + 1)) > max_len)
 		return (0);
-	ft_bzero(dst, (size_t)max_len);
-	ft_strncpy(dst, tmp + 1, (size_t)(ft_strchr(tmp + 1, '"') - (tmp + 1)));
+	dummy_norms(dst, max_len, tmp);
 	return (ret);
+}
+
+void			print_data(t_data *data)
+{
+	int		i;
+
+	i = 0;
+	while (i < data->i)
+	{
+		ft_printf("%s\n", data->arr[i]);
+		i++;
+	}
 }

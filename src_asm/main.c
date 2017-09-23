@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:43:05 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:43:06 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 static void	check_args(int *fd, int argc, char **argv)
@@ -36,7 +48,7 @@ int			main(int argc, char **argv)
 	del_bcode(&data.bcode);
 	if (data.list != NULL)
 		list_del(&(data.list),
-				 ((t_put_label *)data.list->data)->del_put_label);
+				((t_put_label *)data.list->data)->del_put_label);
 	del_label_table(&data.table);
 	del_lex_strs(data.lex_strings);
 	del_all_data(&data.code);

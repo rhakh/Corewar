@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   array_string.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:41:43 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:41:44 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 t_array_string		*new_array_string(size_t size)
@@ -74,27 +86,6 @@ int					add_str_to_array_string(t_array_string *arr, char *str)
 	arr->arr[arr->i] = str;
 	arr->i++;
 	return (1);
-}
-
-void				print_array_string(t_array_string *arr)
-{
-	int		i;
-
-	i = 0;
-	if (arr != NULL)
-	{
-		ft_printf("Array_string = {\n");
-		ft_printf("\tsize = %u\n", arr->size);
-		ft_printf("\ti = %d\n", arr->i);
-		while (i < arr->i)
-		{
-			ft_printf("\t[%d] = %s\n", i, arr->arr[i]);
-			i++;
-		}
-		ft_printf("}\n");
-	}
-	else
-		ft_printf("Array_string = NULL\n");
 }
 
 void				print_string(t_array_string *arr)

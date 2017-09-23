@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helpers.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:43:44 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:43:45 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 int		is_register(const char *str)
@@ -59,9 +71,9 @@ int		is_command(const char *str)
 	int i;
 
 	i = 0;
-	while (op_tab[i].name)
+	while (g_tab[i].name)
 	{
-		if (!ft_strcmp(str, op_tab[i].name))
+		if (!ft_strcmp(str, g_tab[i].name))
 			return (1);
 		i++;
 	}

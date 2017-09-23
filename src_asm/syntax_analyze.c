@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   syntax_analyze.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:42:10 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:42:11 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 static void			correct_labels(t_main *main)
@@ -17,7 +29,7 @@ static void			correct_labels(t_main *main)
 				*put_label->arg = curr_label->offset - put_label->curr_pc;
 			else
 				print_syntax_error_label(" can't find link with this name ",
-										 put_label->name, main);
+										put_label->name, main);
 		}
 		curr = curr->next;
 	}

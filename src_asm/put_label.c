@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   put_label.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:43:50 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:43:51 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
 void			del_put_label(t_put_label **put_label)
@@ -10,11 +22,10 @@ void			del_put_label(t_put_label **put_label)
 	}
 }
 
-
 void			print_put_label(t_put_label *label)
 {
 	ft_printf("label_name = %s, &arg = %p, *arg = %d, curr_pc = %d",
-			  label->name, label->arg, *label->arg, label->curr_pc);
+			label->name, label->arg, *label->arg, label->curr_pc);
 }
 
 t_put_label		*new_put_label(char *name_label, int *arg, int curr_pc)
@@ -30,4 +41,3 @@ t_put_label		*new_put_label(char *name_label, int *arg, int curr_pc)
 	new->curr_pc = curr_pc;
 	return (new);
 }
-

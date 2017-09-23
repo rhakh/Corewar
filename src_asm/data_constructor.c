@@ -69,18 +69,6 @@ t_data			*new_data(size_t size)
 	return (data);
 }
 
-void			print_data(t_data *data)
-{
-	int		i;
-
-	i = 0;
-	while (i < data->i)
-	{
-		ft_printf("%s\n", data->arr[i]);
-		i++;
-	}
-}
-
 void			read_data(int fd, t_data **data)
 {
 	char	*tmp;
