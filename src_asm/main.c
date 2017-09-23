@@ -36,9 +36,9 @@ int			main(int argc, char **argv)
 	del_bcode(&data.bcode);
 	if (data.list != NULL)
 		list_del(&(data.list),
-					((t_put_label *)data.list->data)->del_put_label);
+				 ((t_put_label *)data.list->data)->del_put_label);
 	del_label_table(&data.table);
-	del_lex_strs(&data.lex_strings);
+	del_lex_strs(data.lex_strings);
 	del_all_data(&data.code);
 	close(fd);
 	return (0);

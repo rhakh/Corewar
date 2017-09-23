@@ -98,7 +98,8 @@ void					list_del(t_linked_list **head, void (* function_for_del_data)(void *))
 			if (curr != NULL)
 			{
 				next = curr->next;
-				function_for_del_data(&(curr->data));
+				if (function_for_del_data)
+					function_for_del_data(&(curr->data));
 				curr->data = NULL;
 				curr->next = NULL;
 				free(curr);

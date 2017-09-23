@@ -25,28 +25,29 @@ static void			correct_labels(t_main *main)
 
 static void			build_bcode(t_main *main)
 {
-	int				i;
 	t_label_table	*link;
+	t_linked_list	*curr;
+	t_array_string	*arr;
 
-	i = 0;
-	while (main->lex_strings[i] != NULL)
+	curr = main->lex_strings;
+	while (curr != NULL)
 	{
-		if (main->lex_strings[i]->i >= 2)
+	arr = curr->data;if (arr->i >= 2)
 		{
-			if (1 < main->lex_strings[i]->i &&
-					!ft_strcmp(main->lex_strings[i]->arr[1], ":")
-					&& !is_command(main->lex_strings[i]->arr[0]))
+			if (arr->i > 1 &&
+				!ft_strcmp(arr->arr[1], ":") &&
+				!is_command(arr->arr[0]))
 			{
-				link = new_label_table(main->lex_strings[i]->arr[0], -1);
+				link = new_label_table(arr->arr[0], -1);
 				add_label_to_table(&main->table, link);
 				link->offset = main->pc;
 			}
-			create_command(main, main->lex_strings[i]);
+			create_command(main, arr);
 		}
 		else
 			print_syntax_error(" wrong command or label: ",
-							main->lex_strings[i], main);
-		i++;
+							   arr, main);
+		curr = curr->next;
 	}
 }
 

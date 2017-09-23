@@ -51,7 +51,7 @@ typedef struct			s_put_label
 typedef struct			s_main
 {
 	t_data				*code;
-	t_array_string		**lex_strings;
+	t_linked_list		*lex_strings;
 	t_label_table		*table;
 	t_bcode				*bcode;
 	t_linked_list		*list;
@@ -106,11 +106,10 @@ void					read_data(int fd, t_data **data);
 /*
 ** lex_analyze.c
 */
-
-t_array_string			**lex_analyze(t_main *main, t_data *code);
-void					print_lex(t_array_string **lex_strs);
-void					del_lex_strs(t_array_string ***str);
-int						is_comment(char *str);
+t_linked_list		*lex_analyze(t_main *main, t_data *code);
+void				print_lex(t_linked_list *lex_strs);
+void				del_lex_strs(t_linked_list *lex_strs);
+int 				is_comment(char *str);
 
 /*
 ** syntax_analyze.c

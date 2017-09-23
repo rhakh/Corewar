@@ -6,7 +6,7 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/09/23 12:52:38 by dtelega          ###   ########.fr        #
+#    Updated: 2017/09/03 13:42:36 by rhakh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses $(SRC_SDL) -F/Library/Frameworks -framework SDL2
+gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses $(SRC_SDL) -F/Library/Frameworks -framework SDL2
 
 #gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
 

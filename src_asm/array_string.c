@@ -6,15 +6,14 @@ t_array_string		*new_array_string(size_t size)
 
 	if ((arr = (t_array_string *)malloc(sizeof(t_array_string))) == NULL)
 		return (NULL);
-	if (arr == NULL || (arr->arr = (char **)malloc(sizeof(char *) *
-												size + 1)) == NULL)
+	if ((arr->arr = (char **)malloc(sizeof(char *) * (size + 1))) == NULL)
 	{
 		free(arr);
 		print_error("failed to allocate memory", NULL);
 		exit(2);
 	}
 	arr->i = 0;
-	ft_bzero(arr->arr, sizeof(char *) * size);
+	ft_bzero(arr->arr, sizeof(char *) * (size + 1));
 	arr->size = size;
 	return (arr);
 }
@@ -31,9 +30,10 @@ static int			realloc_array_string(t_array_string *arr)
 		exit(2);
 	}
 	ft_bzero(new, sizeof(char *) * arr->size * 2);
-	while (i < (int)arr->size)
+	while (i < arr->i)
 	{
-		new[i] = arr->arr[i];
+		new[i] = ft_strdup(arr->arr[i]);
+		free(arr->arr[i]);
 		i++;
 	}
 	free(arr->arr);
@@ -51,7 +51,8 @@ void				del_array_string(t_array_string **arr)
 	{
 		while (i < (*arr)->i)
 		{
-			ft_strdel((*arr)->arr + i);
+			if ((*arr)->arr[i])
+				free((*arr)->arr[i]);
 			i++;
 		}
 		free((*arr)->arr);
