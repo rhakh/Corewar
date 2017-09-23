@@ -15,9 +15,9 @@
 void		display_winner(t_data *data, t_bot *bot)
 {
 	wattron(data->stats_win, COLOR_PAIR(bot->number));
-	mvwprintw(data->stats_win, 45, 10, "The winner is");
+	mvwprintw(data->stats_win, 44, 15, "The winner is Player-%d ", bot->number);
 	wattron(data->stats_win, COLOR_PAIR(bot->number + 5) | A_BOLD);
-	mvwprintw(data->stats_win, 45, 25, "%s", bot->name);
+	wprintw(data->stats_win, "%s", bot->name);
 	wattroff(data->stats_win, COLOR_PAIR(bot->number) |
 			COLOR_PAIR(bot->number + 5));
 	mvwprintw(data->stats_win, 47, 25, "Type ctrl+C to exit");
