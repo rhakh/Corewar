@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = my_vm
+NAME = ../corewar
 
 SRC =   args_functions.c \
         bcode_functions.c \
