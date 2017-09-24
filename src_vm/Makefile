@@ -6,7 +6,7 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/09/03 13:42:36 by rhakh            ###   ########.fr        #
+#    Updated: 2017/09/24 13:30:36 by rhakh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,10 @@ OBJDIR = ../obj_vm/
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
 #For macOS only
-#FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
+FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
 
 #For linux only
-FLAGS = -Wall -Wextra -Werror `pkg-config --cflags --libs sdl2`
+#FLAGS = -Wall -Wextra -Werror `pkg-config --cflags --libs sdl2`
 
 all: obj $(NAME)
 
@@ -63,7 +63,8 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
+	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Headers -F/Library/Frameworks -framework SDL2
+#gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
 
 #gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Headers -F/Library/Frameworks -framework SDL2
 
