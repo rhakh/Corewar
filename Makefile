@@ -33,3 +33,6 @@ asm:
 
 libft:
 	make -C new_libft all
+
+config:
+	sudo apt-get install libncurses5-dev pkg-config libsdl2-dev

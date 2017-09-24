@@ -6,7 +6,7 @@
 /*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/16 16:46:00 by rhakh             #+#    #+#             */
-/*   Updated: 2017/09/16 16:46:01 by rhakh            ###   ########.fr       */
+/*   Updated: 2017/09/24 14:30:27 by rhakh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int			validate_magic_number(t_bot *bot)
 			(const unsigned char *)bot->code->str, sizeof(int));
 	if (mag_num == COREWAR_EXEC_MAGIC)
 		return (0);
-	ft_printf("Incorrect magic number\n");
+	ft_printf("{red}Incorrect magic number{eoc}\n");
 	return (1);
 }
 
@@ -35,7 +35,7 @@ int			validate_bot_size(t_bot *bot)
 			PROG_NAME_LENGTH - 12 - COMMENT_LENGTH;
 	if (size1 != size2)
 	{
-		ft_printf("{red}Error:{eoc} declared and actual size are"
+		ft_printf("{red}Error:{eoc} declared and actual size are "
 					"not equal %d != %d\n", size1, size2);
 		return (1);
 	}

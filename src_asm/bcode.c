@@ -6,12 +6,11 @@
 /*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 15:42:40 by rhakh             #+#    #+#             */
-/*   Updated: 2017/09/23 15:42:41 by rhakh            ###   ########.fr       */
+/*   Updated: 2017/09/24 15:27:15 by rhakh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
-#include <stdio.h>
 
 t_bcode				*new_bcode(char oper_number, char arg_type[3], int *args)
 {

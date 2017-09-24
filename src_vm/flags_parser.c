@@ -34,6 +34,11 @@ static int		add_new_player(t_data *data, int *i, char **argv)
 
 static int		add_n_player(t_data *data, int *i, int argc, char **argv)
 {
+	if (*i + 1 >= argc)
+	{
+		ft_printf("{red}Wrong number of player or player not empty{eoc}\n");
+		return (1);
+	}
 	if ((ft_atoi(argv[*i + 1]) >= 1 && ft_atoi(argv[*i + 1]) <= 4) &&
 		(*i + 2 < argc) && ft_atoi(argv[*i + 1]) >= 1 && ft_atoi(argv[*i + 1])
 		<= (MAX_PLAYERS + 1) && data->players[ft_atoi(argv[*i + 1])] == NULL)
@@ -58,16 +63,13 @@ int				first_part_while(char **argv, int *i, int argc, t_data *data)
 	else if (!ft_strcmp("-dump", argv[*i]))
 	{
 		if (*i + 1 < argc)
-		{
-			data->dump = ft_atoi(argv[*i + 1]);
-			(*i)++;
-		}
+			data->dump = ft_atoi(argv[++(*i)]);
 		else
 		{
 			ft_printf("{red}Dump is empty\n{eoc}");
 			return (1);
 		}
-		(*i)++;
+		return (0);
 	}
 	else if (!ft_strcmp("-v", argv[*i]))
 	{

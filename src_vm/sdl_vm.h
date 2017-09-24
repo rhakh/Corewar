@@ -15,10 +15,10 @@
 
 # include <SDL.h>
 # include "vm.h"
-# define MUS_WINNER "sounds/mus.wav"
-# define MUS_BEEP "sounds/crow.wav"
-# define MUS_SPEED "sounds/crow.wav"
-# define MUS_DEAD "sounds/dead.wav"
+# define MUS_WINNER "src_vm/sounds/mus.wav"
+# define MUS_BEEP "src_vm/sounds/crow.wav"
+# define MUS_SPEED "src_vm/sounds/crow.wav"
+# define MUS_DEAD "src_vm/sounds/dead.wav"
 
 typedef struct	s_audio_data
 {
