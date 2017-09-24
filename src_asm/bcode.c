@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bcode.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:42:40 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/24 15:27:15 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
-#include <stdio.h>
 
 t_bcode				*new_bcode(char oper_number, char arg_type[3], int *args)
 {
@@ -51,10 +62,12 @@ void				print_bcode(t_bcode *bcode)
 
 	curr = bcode;
 	ft_printf("{red}BYTE CODE{eoc}\n");
-	ft_printf("{yellow}%s %s %8s %8s %8s{eoc}\n", "OPN", "OC", "ARG1", "ARG2", "ARG3");
+	ft_printf("{yellow}%s %s %8s %8s %8s{eoc}\n",
+			"OPN", "OC", "ARG1", "ARG2", "ARG3");
 	while (curr != NULL)
 	{
-		ft_printf("{yellow}%hh3x %hh2x %8x %8x %8x{eoc}\n", *curr->oper_number, *curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
+		ft_printf("{yellow}%hh3x %hh2x %8x %8x %8x{eoc}\n", *curr->oper_number,
+				*curr->op_code, curr->args[0], curr->args[1], curr->args[2]);
 		curr = curr->next;
 	}
 	ft_printf("\n");

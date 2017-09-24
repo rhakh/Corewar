@@ -6,31 +6,40 @@
 #    By: rhakh <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/28 15:15:42 by rhakh             #+#    #+#              #
-#    Updated: 2017/09/03 13:42:36 by rhakh            ###   ########.fr        #
+#    Updated: 2017/09/24 13:30:36 by rhakh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = my_vm
+NAME = ../corewar
 
-SRC =   vm.c \
+SRC =   args_functions.c \
+        bcode_functions.c \
         bots_functions.c \
-        op.c \
-        args_functions.c \
+        check_live_bots.c \
+        commands_manager.c \
         commands.c \
-        add_players.c \
-        error_managment.c \
         flags_parser.c \
+        initialization.c \
+        ld_functions.c \
         ncurses_creator_win.c \
-        ncurses_windows.c \
+        ncurses_display_debug.c \
         ncurses_display_memory.c \
         ncurses_display_stats.c \
-        ncurses_display_debug.c \
+        ncurses_display_winner.c \
+        ncurses_infinit_cycle.c \
+        ncurses_init.c \
         ncurses_move.c \
         ncurses_print.c \
-        ncurses_init.c \
-        ncurses_infinit_cycle.c \
-        ncurses_display_winner.c \
+        ncurses_windows.c \
+        op.c \
+        pause_time.c \
+        pc_adder.c \
         sdl.c \
+        st_functions.c \
+        usage.c \
+        validate_bots.c \
+        vm.c \
+
 
 SRCDIR = ./
 
@@ -38,7 +47,11 @@ OBJDIR = ../obj_vm/
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
-FLAGS = -I SDL2.framework/Versions/A/Headers #-Wall -Wextra -Werror
+#For macOS only
+#FLAGS = -I ~/Library/Frameworks/Headers -Wall -Wextra -Werror
+
+#For linux only
+FLAGS = -Wall -Wextra -Werror `pkg-config --cflags --libs sdl2 ncurses`
 
 all: obj $(NAME)
 
@@ -50,7 +63,13 @@ $(OBJDIR)%.o:$(SRCDIR)%.c
 	gcc $(FLAGS) -o $@ -c $<
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I SDL2.framework/Versions/A/Headers -F. -framework SDL2
+	gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a $(FLAGS)
+
+#For Linux
+#gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses
+
+#For macOS
+#gcc $(FLAGS) -o $(NAME) $(OBJ) ../new_libft/libft.a -lncurses -I ~/Library/Frameworks/Headers -F/Library/Frameworks -framework SDL2
 
 clean:
 	/bin/rm -rf $(OBJDIR)

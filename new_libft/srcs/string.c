@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   string.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 16:43:52 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 16:43:54 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "string.h"
 
-t_string			*string_new(size_t size)
+t_string				*string_new(size_t size)
 {
 	t_string			*res;
 
@@ -19,16 +31,17 @@ t_string			*string_new(size_t size)
 /*
 ** 0 - ok, 1 - error
 */
+
 static int				string_realloc(t_string *res, size_t new_size)
 {
-	char 	*new_str;
+	char	*new_str;
 
 	if (res)
 	{
 		if ((new_str = (char *)malloc(sizeof(char) * (new_size + 1))) == NULL)
 			return (1);
 		ft_bzero(new_str, (new_size + 1));
-		ft_memcpy(new_str, res->str, (size_t )res->len);
+		ft_memcpy(new_str, res->str, (size_t)res->len);
 		if (res->str)
 			free(res->str);
 		res->str = new_str;
@@ -41,9 +54,11 @@ static int				string_realloc(t_string *res, size_t new_size)
 /*
 ** 0 - ok, 1 - error
 */
-int 					string_append(t_string *res, const char *str, size_t len)
+
+int						string_append(t_string *res, const char *str,
+						size_t len)
 {
-	size_t 		new_size;
+	size_t		new_size;
 
 	if (res)
 	{
@@ -65,9 +80,10 @@ int 					string_append(t_string *res, const char *str, size_t len)
 /*
 ** 0 - ok, 1 - error
 */
-int 					string_append_c(t_string *res, char c)
+
+int						string_append_c(t_string *res, char c)
 {
-	size_t 		new_size;
+	size_t		new_size;
 
 	if (res)
 	{
@@ -79,7 +95,7 @@ int 					string_append_c(t_string *res, char c)
 			if (string_realloc(res, new_size))
 				return (1);
 		}
-		res->str[res->len] = c ;
+		res->str[res->len] = c;
 		res->len++;
 		return (0);
 	}

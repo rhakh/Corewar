@@ -1,20 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   args_functions.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/16 16:43:37 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/16 16:43:38 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "args_functions.h"
 
 /*
 ** i from 1 to 3 must be, -1 - error
 */
-char 		get_arg_type(char command, char opcode, int i)
+
+char		get_arg_type(char command, char opcode, int i)
 {
 	char	arg_type;
 
-	//		arg_type = (char)((opcode >> (4 - ((i) ? (1 << i) : (0)))) & 0b00000011);
-	arg_type = 0;
-//	if (i == 1)
-//		arg_type = (char)((opcode >> 6) & 0b00000011);
-//	else if (i == 2)
-//		arg_type = (char)((opcode >> 4) & 0b00000011);
-//	else if (i == 3)
-//		arg_type = (char)((opcode >> 2) & 0b00000011);
 	arg_type = (char)((opcode >> (6 - (2 * (i - 1)))) & (0b00000011));
 	if (command == 1)
 		arg_type = DIR_CODE;
@@ -25,69 +30,64 @@ char 		get_arg_type(char command, char opcode, int i)
 	return (arg_type);
 }
 
-int 		check_opcode(char command, char opcode)
+int			check_opcode(char command, char opcode)
 {
 	unsigned char	byte_pair;
-	int 			i;
+	int				i;
 
 	i = 0;
-	byte_pair = 0;
-	while (i < op_tab[command - 1].n_arg)
+	while (i < g_tab[command - 1].n_arg)
 	{
 		byte_pair = (unsigned char)((opcode >> (6 - (2 * i))) & 0b00000011);
-//		if (i == 0)
-//			byte_pair = (unsigned char)((opcode >> 6) & 0b00000011);
-//		else if (i == 1)
-//			byte_pair = (unsigned char)((opcode >> 4) & 0b00000011);
-//		else if (i == 2)
-//			byte_pair = (unsigned char)((opcode >> 2) & 0b00000011);
-
 		(byte_pair == REG_CODE) ? (byte_pair = T_REG) : 0;
 		(byte_pair == DIR_CODE) ? (byte_pair = T_DIR) : 0;
 		(byte_pair == IND_CODE) ? (byte_pair = T_IND) : 0;
-		if (!(byte_pair & op_tab[command - 1].type_arg[i]))
+		if (!(byte_pair & g_tab[command - 1].type_arg[i]))
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-int 		get_args(t_data *data, t_bot *bot, char command, char opcode, int args[3])
+static int	stupid_norms(int *i, t_bot *bot, int *o, t_data *d)
 {
-	char 			i;
-	char 			arg_type;
-	char 			offset;
-	unsigned char 	*map;
+	if (get_arg_type(bot->command, bot->opcode, *i + 1) == REG_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, 1);
+		if ((*o += 1) && (bot->args[*i] > REG_NUMBER || bot->args[*i] < 1))
+			return (1);
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == DIR_CODE &&
+			g_tab[bot->command - 1].dir_as_label)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, IND_SIZE);
+		*o += IND_SIZE;
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == DIR_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, DIR_SIZE);
+		*o += DIR_SIZE;
+	}
+	else if (get_arg_type(bot->command, bot->opcode, *i + 1) == IND_CODE)
+	{
+		bot->args[*i] = get_number_from_bcode(d->map + bot->pc + *o, IND_SIZE);
+		*o += IND_SIZE;
+	}
+	else
+		return (1);
+	return (0);
+}
+
+int			get_args(t_data *data, t_bot *bot)
+{
+	int				i;
+	int				offset;
 
 	i = 0;
 	offset = 0;
-	map = data->map + bot->pc;
-	while (i < op_tab[command - 1].n_arg)
+	while (i < g_tab[bot->command - 1].n_arg)
 	{
-		arg_type = get_arg_type(command, opcode, i + 1);
-		if (arg_type == REG_CODE)
-		{
-			args[i] = get_number_from_bcode(map + offset, 1);
-			if (args[i] > REG_NUMBER || args[i] < 1)
-				return (1);
-			offset += 1;
-		}
-		else if (arg_type == DIR_CODE && op_tab[command - 1].dir_as_label)
-		{
-			args[i] = get_number_from_bcode(map + offset, IND_SIZE);
-			offset += IND_SIZE;
-		}
-		else if (arg_type == DIR_CODE)
-		{
-			args[i] = get_number_from_bcode(map + offset, DIR_SIZE);
-			offset += DIR_SIZE;
-		}
-		else if (arg_type == IND_CODE)
-		{
-			args[i] = get_number_from_bcode(map + offset, IND_SIZE);
-			offset += IND_SIZE;
-		}
-		else
+		if (stupid_norms(&i, bot, &offset, data))
 			return (1);
 		i++;
 	}

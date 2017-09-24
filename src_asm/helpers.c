@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helpers.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:43:44 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:43:45 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
-int 	is_register(const char *str)
+int		is_register(const char *str)
 {
 	int i;
 
@@ -14,7 +26,7 @@ int 	is_register(const char *str)
 	return (1);
 }
 
-int 	is_link(const char *str)
+int		is_link(const char *str)
 {
 	int i;
 
@@ -28,7 +40,7 @@ int 	is_link(const char *str)
 	return (1);
 }
 
-int 	is_empty_line(const char *str)
+int		is_empty_line(const char *str)
 {
 	while (*str <= 32 && *str != 0)
 		str++;
@@ -37,7 +49,7 @@ int 	is_empty_line(const char *str)
 	return (0);
 }
 
-int 	is_number(const char *str)
+int		is_number(const char *str)
 {
 	if (*str == '-' || *str == '+')
 	{
@@ -54,14 +66,14 @@ int 	is_number(const char *str)
 		return (0);
 }
 
-int 	is_command(const char *str)
+int		is_command(const char *str)
 {
 	int i;
 
 	i = 0;
-	while (op_tab[i].name)
+	while (g_tab[i].name)
 	{
-		if (!ft_strcmp(str, op_tab[i].name))
+		if (!ft_strcmp(str, g_tab[i].name))
 			return (1);
 		i++;
 	}

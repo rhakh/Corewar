@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   linked_list.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 16:43:25 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 16:43:27 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "linked_list.h"
 
-t_linked_list			*list_new()
+t_linked_list			*list_new(void)
 {
 	t_linked_list		*new;
 
@@ -65,7 +77,8 @@ t_linked_list			*list_append_to_tail(t_linked_list **tail, void *data)
 	return (NULL);
 }
 
-void					list_print(t_linked_list *curr, void (* function_for_print)(void *))
+void					list_print(t_linked_list *curr,
+						void (*function_for_print)(void *))
 {
 	void				*label;
 
@@ -81,7 +94,8 @@ void					list_print(t_linked_list *curr, void (* function_for_print)(void *))
 	}
 }
 
-void					list_del(t_linked_list **head, void (* function_for_del_data)(void *))
+void					list_del(t_linked_list **head,
+						void (*function_for_del_data)(void *))
 {
 	t_linked_list		*curr;
 	t_linked_list		*next;
@@ -98,7 +112,8 @@ void					list_del(t_linked_list **head, void (* function_for_del_data)(void *))
 			if (curr != NULL)
 			{
 				next = curr->next;
-				function_for_del_data(&(curr->data));
+				if (function_for_del_data)
+					function_for_del_data(&(curr->data));
 				curr->data = NULL;
 				curr->next = NULL;
 				free(curr);

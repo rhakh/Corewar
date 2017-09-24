@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vm.h                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/16 16:48:10 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/16 16:48:12 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef VM_H
 # define VM_H
 
@@ -10,16 +22,19 @@
 # include "flags_parser.h"
 # include "ncurses_vm.h"
 # include "sdl_vm.h"
+# include "check_live_bots.h"
+# include "validate_bots.h"
+# include "bots_functions.h"
+# include "bcode_functions.h"
+# include "st_functions.h"
+# include "ld_functions.h"
+# include "pause_time.h"
+# include "pc_adder.h"
+# include "commands_manager.h"
+# include "initialization.h"
+# include "usage.h"
 
-t_bot			*bot_new(int number, t_string *code);
-t_bot			*bot_copy(t_bot *src);
-void 			bot_del(t_bot **bot);
-int 			read_bot(t_string *code, char *file_name);
-int 			validate_bots(t_data *data);
-void			print_bcode(const char *code, int len);
-int				get_number_from_bcode(const unsigned char *code, int num_size);
-int				put_number_to_bcode(t_data *data, int num, int position);
+int				print_dump(t_data *data);
 int				sum_processes(t_data *data);
-int 			command_size(char command, char opcode);
 
 #endif

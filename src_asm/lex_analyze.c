@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lex_analyze.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:42:46 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:42:48 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
-int 				is_comment(char *str)
+int					is_comment(char *str)
 {
 	while (*str <= 32 && *str != 0)
 		str++;
@@ -9,18 +21,15 @@ int 				is_comment(char *str)
 	return (0);
 }
 
-t_array_string		**lex_analyze(t_main *main, t_data *code)
+t_linked_list		*lex_analyze(t_main *main, t_data *code)
 {
-	t_array_string	**lex_strs;
-	int 			i;
-	int 			k;
-	int 			ret;
+	t_linked_list	*lex_strs;
+	t_array_string	*return_arr;
+	int				i;
+	int				ret;
 
-	k = 0;
 	i = -1;
-	if ((lex_strs = (t_array_string **)
-						malloc(sizeof(t_array_string *) * code->i)) == NULL)
-		return (NULL);
+	lex_strs = NULL;
 	while (++i < code->i)
 	{
 		if (!is_empty_line(code->arr[i]) && !is_comment(code->arr[i]))
@@ -30,39 +39,37 @@ t_array_string		**lex_analyze(t_main *main, t_data *code)
 			(ret == 3) ? (main->comm_exist = 1) : 0;
 			if (!ret)
 			{
-				lex_strs[k] = split_line(code->arr[i]);
-				k++;
+				return_arr = split_line(code->arr[i]);
+				list_push_back(&lex_strs, return_arr);
 			}
 		}
 	}
-	lex_strs[k] = NULL; //todo here may be leak
 	return (lex_strs);
 }
 
-void				print_lex(t_array_string **lex_strs)
+void				print_lex(t_linked_list *lex_strs)
 {
-	int 			i;
+	t_linked_list	*curr;
 
-	i = 0;
-	while (lex_strs[i] != NULL)
+	curr = lex_strs;
+	while (curr != NULL)
 	{
-		print_array_string(lex_strs[i]);
-		i++;
+		print_array_string(curr->data);
+		curr = curr->next;
 	}
 }
 
-void				del_lex_strs(t_array_string ***str)
+void				del_lex_strs(t_linked_list *lex_strs)
 {
-	int 			i;
+	t_linked_list	*curr;
+	t_array_string	*arr;
 
-	i = 0;
-	if (*str == NULL)
-		return ;
-	while ((*str)[i] != NULL)
+	curr = lex_strs;
+	while (curr != NULL)
 	{
-		del_array_string((*str) + i);
-		i++;
+		arr = curr->data;
+		del_array_string(&arr);
+		curr = curr->next;
 	}
-	free(*str);
-	*str = NULL;
+	list_del(&lex_strs, NULL);
 }

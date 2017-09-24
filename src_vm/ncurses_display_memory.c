@@ -47,6 +47,8 @@ int		ncurses_print_bot_memory(t_data *data, t_bot *cur_bot, int i, WINDOW *w)
 	print_byte(w, data->map[i], i, COLOR_PAIR(cur_bot->number) | A_REVERSE);
 	i++;
 	j = 0;
+	x = 0;
+	y = x;
 	while (++j < cur_bot->size)
 	{
 		print_byte(w, data->map[i], i, COLOR_PAIR(cur_bot->number));
@@ -65,6 +67,8 @@ void	ncurses_new_line(WINDOW *win)
 	int		x;
 	int		y;
 
+	x = 0;
+	y = x;
 	getyx(win, y, x);
 	wmove(win, y + 1, 1);
 }

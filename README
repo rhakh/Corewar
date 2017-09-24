@@ -1,0 +1,4 @@
+First of all type:
+	$ sudo make config
+Then:
+	$ make

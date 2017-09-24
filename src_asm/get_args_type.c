@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_args_type.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhakh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 15:42:56 by rhakh             #+#    #+#             */
+/*   Updated: 2017/09/23 15:42:57 by rhakh            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
-static int	 		link_or_dir_opc(t_array_string *lex_str, char arg_type[3], int *i, int arg_nbr)
+static int		link_or_dir_opc(t_array_string *lex_str, char arg_type[3],
+								int *i, int arg_nbr)
 {
 	(*i)++;
 	if (*i >= lex_str->i)
@@ -28,8 +41,8 @@ static int	 		link_or_dir_opc(t_array_string *lex_str, char arg_type[3], int *i,
 	return (1);
 }
 
-static int 		determinant(t_array_string *lex_str, char arg_type[3],
-							  int arg_nbr, int *i)
+static int		determinant(t_array_string *lex_str, char arg_type[3],
+							int arg_nbr, int *i)
 {
 	if (*i < lex_str->i && is_number(lex_str->arr[*i]))
 		arg_type[arg_nbr - 1] = T_IND;
@@ -58,7 +71,8 @@ static int 		determinant(t_array_string *lex_str, char arg_type[3],
 	return (1);
 }
 
-int				get_args_type(t_array_string *lex_str, char arg_type[3], int i, int arg_nbr)
+int				get_args_type(t_array_string *lex_str, char arg_type[3],
+							int i, int arg_nbr)
 {
 	if (arg_nbr > 3 || i >= lex_str->i)
 	{

@@ -47,6 +47,8 @@ void		display_players(t_data *data, WINDOW *stats_win, t_bot *cur_bot,
 	int		x;
 	int		y;
 
+	x = 0;
+	y = x;
 	wprintw(stats_win, "Player-%d: ", n_bot + 1);
 	if (data->processes[cur_bot->number] > 0)
 	{
@@ -74,6 +76,8 @@ void		display_defines(t_data *data, WINDOW *stats_win)
 	int x;
 	int y;
 
+	x = 0;
+	y = x;
 	getyx(stats_win, y, x);
 	mvwprintw(stats_win, y + 2, 6, "%-13s: %4d", "CYCLES_TO_DIE",
 			data->cycles_to_die);
